@@ -1,0 +1,1934 @@
+{
+    "pokemon": [
+        {
+            "id": 1,
+            "name_english": "Bulbasaur",
+            "name_french": "Bulbizarre"
+        },
+        {
+            "id": 2,
+            "name_english": "Ivysaur",
+            "name_french": "Herbizarre"
+        },
+        {
+            "id": 3,
+            "name_english": "Venusaur",
+            "name_french": "Florizarre"
+        },
+        {
+            "id": 4,
+            "name_english": "Charmander",
+            "name_french": "Salamèche"
+        },
+        {
+            "id": 5,
+            "name_english": "Charmeleon",
+            "name_french": "Reptincel"
+        },
+        {
+            "id": 6,
+            "name_english": "Charizard",
+            "name_french": "Dracaufeu"
+        },
+        {
+            "id": 7,
+            "name_english": "Squirtle",
+            "name_french": "Carapuce"
+        },
+        {
+            "id": 8,
+            "name_english": "Wartortle",
+            "name_french": "Carabaffe"
+        },
+        {
+            "id": 9,
+            "name_english": "Blastoise",
+            "name_french": "Tortank"
+        },
+        {
+            "id": 10,
+            "name_english": "Caterpie",
+            "name_french": "Chenipan"
+        },
+        {
+            "id": 11,
+            "name_english": "Metapod",
+            "name_french": "Chrysacier"
+        },
+        {
+            "id": 12,
+            "name_english": "Butterfree",
+            "name_french": "Papilusion"
+        },
+        {
+            "id": 13,
+            "name_english": "Weedle",
+            "name_french": "Aspicot"
+        },
+        {
+            "id": 14,
+            "name_english": "Kakuna",
+            "name_french": "Coconfort"
+        },
+        {
+            "id": 15,
+            "name_english": "Beedrill",
+            "name_french": "Dardargnan"
+        },
+        {
+            "id": 16,
+            "name_english": "Pidgey",
+            "name_french": "Roucool"
+        },
+        {
+            "id": 17,
+            "name_english": "Pidgeotto",
+            "name_french": "Roucoups"
+        },
+        {
+            "id": 18,
+            "name_english": "Pidgeot",
+            "name_french": "Roucarnage"
+        },
+        {
+            "id": 19,
+            "name_english": "Rattata",
+            "name_french": "Rattata"
+        },
+        {
+            "id": 20,
+            "name_english": "Raticate",
+            "name_french": "Rattatac"
+        },
+        {
+            "id": 21,
+            "name_english": "Spearow",
+            "name_french": "Piafabec"
+        },
+        {
+            "id": 22,
+            "name_english": "Fearow",
+            "name_french": "Rapasdepic"
+        },
+        {
+            "id": 23,
+            "name_english": "Ekans",
+            "name_french": "Abo"
+        },
+        {
+            "id": 24,
+            "name_english": "Arbok",
+            "name_french": "Arbok"
+        },
+        {
+            "id": 25,
+            "name_english": "Pikachu",
+            "name_french": "Pikachu"
+        },
+        {
+            "id": 26,
+            "name_english": "Raichu",
+            "name_french": "Raichu"
+        },
+        {
+            "id": 27,
+            "name_english": "Sandshrew",
+            "name_french": "Sabelette"
+        },
+        {
+            "id": 28,
+            "name_english": "Sandslash",
+            "name_french": "Sablaireau"
+        },
+        {
+            "id": 29,
+            "name_english": "Nidoran♀",
+            "name_french": "Nidoran♀"
+        },
+        {
+            "id": 30,
+            "name_english": "Nidorina",
+            "name_french": "Nidorina"
+        },
+        {
+            "id": 31,
+            "name_english": "Nidoqueen",
+            "name_french": "Nidoqueen"
+        },
+        {
+            "id": 32,
+            "name_english": "Nidoran♂",
+            "name_french": "Nidoran♂"
+        },
+        {
+            "id": 33,
+            "name_english": "Nidorino",
+            "name_french": "Nidorino"
+        },
+        {
+            "id": 34,
+            "name_english": "Nidoking",
+            "name_french": "Nidoking"
+        },
+        {
+            "id": 35,
+            "name_english": "Clefairy",
+            "name_french": "Mélofée"
+        },
+        {
+            "id": 36,
+            "name_english": "Clefable",
+            "name_french": "Mélodelfe"
+        },
+        {
+            "id": 37,
+            "name_english": "Vulpix",
+            "name_french": "Goupix"
+        },
+        {
+            "id": 38,
+            "name_english": "Ninetales",
+            "name_french": "Feunard"
+        },
+        {
+            "id": 39,
+            "name_english": "Jigglypuff",
+            "name_french": "Rondoudou"
+        },
+        {
+            "id": 40,
+            "name_english": "Wigglytuff",
+            "name_french": "Grodoudou"
+        },
+        {
+            "id": 41,
+            "name_english": "Zubat",
+            "name_french": "Nosferapti"
+        },
+        {
+            "id": 42,
+            "name_english": "Golbat",
+            "name_french": "Nosferalto"
+        },
+        {
+            "id": 43,
+            "name_english": "Oddish",
+            "name_french": "Mystherbe"
+        },
+        {
+            "id": 44,
+            "name_english": "Gloom",
+            "name_french": "Ortide"
+        },
+        {
+            "id": 45,
+            "name_english": "Vileplume",
+            "name_french": "Rafflesia"
+        },
+        {
+            "id": 46,
+            "name_english": "Paras",
+            "name_french": "Paras"
+        },
+        {
+            "id": 47,
+            "name_english": "Parasect",
+            "name_french": "Parasect"
+        },
+        {
+            "id": 48,
+            "name_english": "Venonat",
+            "name_french": "Mimitoss"
+        },
+        {
+            "id": 49,
+            "name_english": "Venomoth",
+            "name_french": "Aéromite"
+        },
+        {
+            "id": 50,
+            "name_english": "Diglett",
+            "name_french": "Taupiqueur"
+        },
+        {
+            "id": 51,
+            "name_english": "Dugtrio",
+            "name_french": "Triopikeur"
+        },
+        {
+            "id": 52,
+            "name_english": "Meowth",
+            "name_french": "Miaouss"
+        },
+        {
+            "id": 53,
+            "name_english": "Persian",
+            "name_french": "Persian"
+        },
+        {
+            "id": 54,
+            "name_english": "Psyduck",
+            "name_french": "Psykokwak"
+        },
+        {
+            "id": 55,
+            "name_english": "Golduck",
+            "name_french": "Akwakwak"
+        },
+        {
+            "id": 56,
+            "name_english": "Mankey",
+            "name_french": "Férosinge"
+        },
+        {
+            "id": 57,
+            "name_english": "Primeape",
+            "name_french": "Colossinge"
+        },
+        {
+            "id": 58,
+            "name_english": "Growlithe",
+            "name_french": "Caninos"
+        },
+        {
+            "id": 59,
+            "name_english": "Arcanine",
+            "name_french": "Arcanin"
+        },
+        {
+            "id": 60,
+            "name_english": "Poliwag",
+            "name_french": "Ptitard"
+        },
+        {
+            "id": 61,
+            "name_english": "Poliwhirl",
+            "name_french": "Têtarte"
+        },
+        {
+            "id": 62,
+            "name_english": "Poliwrath",
+            "name_french": "Tartard"
+        },
+        {
+            "id": 63,
+            "name_english": "Abra",
+            "name_french": "Abra"
+        },
+        {
+            "id": 64,
+            "name_english": "Kadabra",
+            "name_french": "Kadabra"
+        },
+        {
+            "id": 65,
+            "name_english": "Alakazam",
+            "name_french": "Alakazam"
+        },
+        {
+            "id": 66,
+            "name_english": "Machop",
+            "name_french": "Machoc"
+        },
+        {
+            "id": 67,
+            "name_english": "Machoke",
+            "name_french": "Machopeur"
+        },
+        {
+            "id": 68,
+            "name_english": "Machamp",
+            "name_french": "Mackogneur"
+        },
+        {
+            "id": 69,
+            "name_english": "Bellsprout",
+            "name_french": "Chétiflor"
+        },
+        {
+            "id": 70,
+            "name_english": "Weepinbell",
+            "name_french": "Boustiflor"
+        },
+        {
+            "id": 71,
+            "name_english": "Victreebel",
+            "name_french": "Empiflor"
+        },
+        {
+            "id": 72,
+            "name_english": "Tentacool",
+            "name_french": "Tentacool"
+        },
+        {
+            "id": 73,
+            "name_english": "Tentacruel",
+            "name_french": "Tentacruel"
+        },
+        {
+            "id": 74,
+            "name_english": "Geodude",
+            "name_french": "Racaillou"
+        },
+        {
+            "id": 75,
+            "name_english": "Graveler",
+            "name_french": "Gravalanch"
+        },
+        {
+            "id": 76,
+            "name_english": "Golem",
+            "name_french": "Grolem"
+        },
+        {
+            "id": 77,
+            "name_english": "Ponyta",
+            "name_french": "Ponyta"
+        },
+        {
+            "id": 78,
+            "name_english": "Rapidash",
+            "name_french": "Galopa"
+        },
+        {
+            "id": 79,
+            "name_english": "Slowpoke",
+            "name_french": "Ramoloss"
+        },
+        {
+            "id": 80,
+            "name_english": "Slowbro",
+            "name_french": "Flagadoss"
+        },
+        {
+            "id": 81,
+            "name_english": "Magnemite",
+            "name_french": "Magnéti"
+        },
+        {
+            "id": 82,
+            "name_english": "Magneton",
+            "name_french": "Magnéton"
+        },
+        {
+            "id": 83,
+            "name_english": "Farfetch’d",
+            "name_french": "Canarticho"
+        },
+        {
+            "id": 84,
+            "name_english": "Doduo",
+            "name_french": "Doduo"
+        },
+        {
+            "id": 85,
+            "name_english": "Dodrio",
+            "name_french": "Dodrio"
+        },
+        {
+            "id": 86,
+            "name_english": "Seel",
+            "name_french": "Otaria"
+        },
+        {
+            "id": 87,
+            "name_english": "Dewgong",
+            "name_french": "Lamantine"
+        },
+        {
+            "id": 88,
+            "name_english": "Grimer",
+            "name_french": "Tadmorv"
+        },
+        {
+            "id": 89,
+            "name_english": "Muk",
+            "name_french": "Grotadmorv"
+        },
+        {
+            "id": 90,
+            "name_english": "Shellder",
+            "name_french": "Kokiyas"
+        },
+        {
+            "id": 91,
+            "name_english": "Cloyster",
+            "name_french": "Crustabri"
+        },
+        {
+            "id": 92,
+            "name_english": "Gastly",
+            "name_french": "Fantominus"
+        },
+        {
+            "id": 93,
+            "name_english": "Haunter",
+            "name_french": "Spectrum"
+        },
+        {
+            "id": 94,
+            "name_english": "Gengar",
+            "name_french": "Ectoplasma"
+        },
+        {
+            "id": 95,
+            "name_english": "Onix",
+            "name_french": "Onix"
+        },
+        {
+            "id": 96,
+            "name_english": "Drowzee",
+            "name_french": "Soporifik"
+        },
+        {
+            "id": 97,
+            "name_english": "Hypno",
+            "name_french": "Hypnomade"
+        },
+        {
+            "id": 98,
+            "name_english": "Krabby",
+            "name_french": "Krabby"
+        },
+        {
+            "id": 99,
+            "name_english": "Kingler",
+            "name_french": "Krabboss"
+        },
+        {
+            "id": 100,
+            "name_english": "Voltorb",
+            "name_french": "Voltorbe"
+        },
+        {
+            "id": 101,
+            "name_english": "Electrode",
+            "name_french": "Électrode"
+        },
+        {
+            "id": 102,
+            "name_english": "Exeggcute",
+            "name_french": "Noeunoeuf"
+        },
+        {
+            "id": 103,
+            "name_english": "Exeggutor",
+            "name_french": "Noadkoko"
+        },
+        {
+            "id": 104,
+            "name_english": "Cubone",
+            "name_french": "Osselait"
+        },
+        {
+            "id": 105,
+            "name_english": "Marowak",
+            "name_french": "Ossatueur"
+        },
+        {
+            "id": 106,
+            "name_english": "Hitmonlee",
+            "name_french": "Kicklee"
+        },
+        {
+            "id": 107,
+            "name_english": "Hitmonchan",
+            "name_french": "Tygnon"
+        },
+        {
+            "id": 108,
+            "name_english": "Lickitung",
+            "name_french": "Excelangue"
+        },
+        {
+            "id": 109,
+            "name_english": "Koffing",
+            "name_french": "Smogo"
+        },
+        {
+            "id": 110,
+            "name_english": "Weezing",
+            "name_french": "Smogogo"
+        },
+        {
+            "id": 111,
+            "name_english": "Rhyhorn",
+            "name_french": "Rhinocorne"
+        },
+        {
+            "id": 112,
+            "name_english": "Rhydon",
+            "name_french": "Rhinoféros"
+        },
+        {
+            "id": 113,
+            "name_english": "Chansey",
+            "name_french": "Leveinard"
+        },
+        {
+            "id": 114,
+            "name_english": "Tangela",
+            "name_french": "Saquedeneu"
+        },
+        {
+            "id": 115,
+            "name_english": "Kangaskhan",
+            "name_french": "Kangourex"
+        },
+        {
+            "id": 116,
+            "name_english": "Horsea",
+            "name_french": "Hypotrempe"
+        },
+        {
+            "id": 117,
+            "name_english": "Seadra",
+            "name_french": "Hypocéan"
+        },
+        {
+            "id": 118,
+            "name_english": "Goldeen",
+            "name_french": "Poissirène"
+        },
+        {
+            "id": 119,
+            "name_english": "Seaking",
+            "name_french": "Poissoroy"
+        },
+        {
+            "id": 120,
+            "name_english": "Staryu",
+            "name_french": "Stari"
+        },
+        {
+            "id": 121,
+            "name_english": "Starmie",
+            "name_french": "Staross"
+        },
+        {
+            "id": 122,
+            "name_english": "Mr. Mime",
+            "name_french": "M. Mime"
+        },
+        {
+            "id": 123,
+            "name_english": "Scyther",
+            "name_french": "Insécateur"
+        },
+        {
+            "id": 124,
+            "name_english": "Jynx",
+            "name_french": "Lippoutou"
+        },
+        {
+            "id": 125,
+            "name_english": "Electabuzz",
+            "name_french": "Élektek"
+        },
+        {
+            "id": 126,
+            "name_english": "Magmar",
+            "name_french": "Magmar"
+        },
+        {
+            "id": 127,
+            "name_english": "Pinsir",
+            "name_french": "Scarabrute"
+        },
+        {
+            "id": 128,
+            "name_english": "Tauros",
+            "name_french": "Tauros"
+        },
+        {
+            "id": 129,
+            "name_english": "Magikarp",
+            "name_french": "Magicarpe"
+        },
+        {
+            "id": 130,
+            "name_english": "Gyarados",
+            "name_french": "Léviator"
+        },
+        {
+            "id": 131,
+            "name_english": "Lapras",
+            "name_french": "Lokhlass"
+        },
+        {
+            "id": 132,
+            "name_english": "Ditto",
+            "name_french": "Métamorph"
+        },
+        {
+            "id": 133,
+            "name_english": "Eevee",
+            "name_french": "Évoli"
+        },
+        {
+            "id": 134,
+            "name_english": "Vaporeon",
+            "name_french": "Aquali"
+        },
+        {
+            "id": 135,
+            "name_english": "Jolteon",
+            "name_french": "Voltali"
+        },
+        {
+            "id": 136,
+            "name_english": "Flareon",
+            "name_french": "Pyroli"
+        },
+        {
+            "id": 137,
+            "name_english": "Porygon",
+            "name_french": "Porygon"
+        },
+        {
+            "id": 138,
+            "name_english": "Omanyte",
+            "name_french": "Amonita"
+        },
+        {
+            "id": 139,
+            "name_english": "Omastar",
+            "name_french": "Amonistar"
+        },
+        {
+            "id": 140,
+            "name_english": "Kabuto",
+            "name_french": "Kabuto"
+        },
+        {
+            "id": 141,
+            "name_english": "Kabutops",
+            "name_french": "Kabutops"
+        },
+        {
+            "id": 142,
+            "name_english": "Aerodactyl",
+            "name_french": "Ptéra"
+        },
+        {
+            "id": 143,
+            "name_english": "Snorlax",
+            "name_french": "Ronflex"
+        },
+        {
+            "id": 144,
+            "name_english": "Articuno",
+            "name_french": "Artikodin"
+        },
+        {
+            "id": 145,
+            "name_english": "Zapdos",
+            "name_french": "Électhor"
+        },
+        {
+            "id": 146,
+            "name_english": "Moltres",
+            "name_french": "Sulfura"
+        },
+        {
+            "id": 147,
+            "name_english": "Dratini",
+            "name_french": "Minidraco"
+        },
+        {
+            "id": 148,
+            "name_english": "Dragonair",
+            "name_french": "Draco"
+        },
+        {
+            "id": 149,
+            "name_english": "Dragonite",
+            "name_french": "Dracolosse"
+        },
+        {
+            "id": 150,
+            "name_english": "Mewtwo",
+            "name_french": "Mewtwo"
+        },
+        {
+            "id": 151,
+            "name_english": "Mew",
+            "name_french": "Mew"
+        },
+        {
+            "id": 152,
+            "name_english": "Chikorita",
+            "name_french": "Germignon"
+        },
+        {
+            "id": 153,
+            "name_english": "Bayleef",
+            "name_french": "Macronium"
+        },
+        {
+            "id": 154,
+            "name_english": "Meganium",
+            "name_french": "Méganium"
+        },
+        {
+            "id": 155,
+            "name_english": "Cyndaquil",
+            "name_french": "Héricendre"
+        },
+        {
+            "id": 156,
+            "name_english": "Quilava",
+            "name_french": "Feurisson"
+        },
+        {
+            "id": 157,
+            "name_english": "Typhlosion",
+            "name_french": "Typhlosion"
+        },
+        {
+            "id": 158,
+            "name_english": "Totodile",
+            "name_french": "Kaiminus"
+        },
+        {
+            "id": 159,
+            "name_english": "Croconaw",
+            "name_french": "Crocrodil"
+        },
+        {
+            "id": 160,
+            "name_english": "Feraligatr",
+            "name_french": "Aligatueur"
+        },
+        {
+            "id": 161,
+            "name_english": "Sentret",
+            "name_french": "Fouinette"
+        },
+        {
+            "id": 162,
+            "name_english": "Furret",
+            "name_french": "Fouinar"
+        },
+        {
+            "id": 163,
+            "name_english": "Hoothoot",
+            "name_french": "Hoothoot"
+        },
+        {
+            "id": 164,
+            "name_english": "Noctowl",
+            "name_french": "Noarfang"
+        },
+        {
+            "id": 165,
+            "name_english": "Ledyba",
+            "name_french": "Coxy"
+        },
+        {
+            "id": 166,
+            "name_english": "Ledian",
+            "name_french": "Coxyclaque"
+        },
+        {
+            "id": 167,
+            "name_english": "Spinarak",
+            "name_french": "Mimigal"
+        },
+        {
+            "id": 168,
+            "name_english": "Ariados",
+            "name_french": "Migalos"
+        },
+        {
+            "id": 169,
+            "name_english": "Crobat",
+            "name_french": "Nostenfer"
+        },
+        {
+            "id": 170,
+            "name_english": "Chinchou",
+            "name_french": "Loupio"
+        },
+        {
+            "id": 171,
+            "name_english": "Lanturn",
+            "name_french": "Lanturn"
+        },
+        {
+            "id": 172,
+            "name_english": "Pichu",
+            "name_french": "Pichu"
+        },
+        {
+            "id": 173,
+            "name_english": "Cleffa",
+            "name_french": "Mélo"
+        },
+        {
+            "id": 174,
+            "name_english": "Igglybuff",
+            "name_french": "Toudoudou"
+        },
+        {
+            "id": 175,
+            "name_english": "Togepi",
+            "name_french": "Togepi"
+        },
+        {
+            "id": 176,
+            "name_english": "Togetic",
+            "name_french": "Togetic"
+        },
+        {
+            "id": 177,
+            "name_english": "Natu",
+            "name_french": "Natu"
+        },
+        {
+            "id": 178,
+            "name_english": "Xatu",
+            "name_french": "Xatu"
+        },
+        {
+            "id": 179,
+            "name_english": "Mareep",
+            "name_french": "Wattouat"
+        },
+        {
+            "id": 180,
+            "name_english": "Flaaffy",
+            "name_french": "Lainergie"
+        },
+        {
+            "id": 181,
+            "name_english": "Ampharos",
+            "name_french": "Pharamp"
+        },
+        {
+            "id": 182,
+            "name_english": "Bellossom",
+            "name_french": "Joliflor"
+        },
+        {
+            "id": 183,
+            "name_english": "Marill",
+            "name_french": "Marill"
+        },
+        {
+            "id": 184,
+            "name_english": "Azumarill",
+            "name_french": "Azumarill"
+        },
+        {
+            "id": 185,
+            "name_english": "Sudowoodo",
+            "name_french": "Simularbre"
+        },
+        {
+            "id": 186,
+            "name_english": "Politoed",
+            "name_french": "Tarpaud"
+        },
+        {
+            "id": 187,
+            "name_english": "Hoppip",
+            "name_french": "Granivol"
+        },
+        {
+            "id": 188,
+            "name_english": "Skiploom",
+            "name_french": "Floravol"
+        },
+        {
+            "id": 189,
+            "name_english": "Jumpluff",
+            "name_french": "Cotovol"
+        },
+        {
+            "id": 190,
+            "name_english": "Aipom",
+            "name_french": "Capumain"
+        },
+        {
+            "id": 191,
+            "name_english": "Sunkern",
+            "name_french": "Tournegrin"
+        },
+        {
+            "id": 192,
+            "name_english": "Sunflora",
+            "name_french": "Héliatronc"
+        },
+        {
+            "id": 193,
+            "name_english": "Yanma",
+            "name_french": "Yanma"
+        },
+        {
+            "id": 194,
+            "name_english": "Wooper",
+            "name_french": "Axoloto"
+        },
+        {
+            "id": 195,
+            "name_english": "Quagsire",
+            "name_french": "Maraiste"
+        },
+        {
+            "id": 196,
+            "name_english": "Espeon",
+            "name_french": "Mentali"
+        },
+        {
+            "id": 197,
+            "name_english": "Umbreon",
+            "name_french": "Noctali"
+        },
+        {
+            "id": 198,
+            "name_english": "Murkrow",
+            "name_french": "Cornèbre"
+        },
+        {
+            "id": 199,
+            "name_english": "Slowking",
+            "name_french": "Roigada"
+        },
+        {
+            "id": 200,
+            "name_english": "Misdreavus",
+            "name_french": "Feuforêve"
+        },
+        {
+            "id": 201,
+            "name_english": "Unown",
+            "name_french": "Zarbi"
+        },
+        {
+            "id": 202,
+            "name_english": "Wobbuffet",
+            "name_french": "Qulbutoké"
+        },
+        {
+            "id": 203,
+            "name_english": "Girafarig",
+            "name_french": "Girafarig"
+        },
+        {
+            "id": 204,
+            "name_english": "Pineco",
+            "name_french": "Pomdepik"
+        },
+        {
+            "id": 205,
+            "name_english": "Forretress",
+            "name_french": "Foretress"
+        },
+        {
+            "id": 206,
+            "name_english": "Dunsparce",
+            "name_french": "Insolourdo"
+        },
+        {
+            "id": 207,
+            "name_english": "Gligar",
+            "name_french": "Scorplane"
+        },
+        {
+            "id": 208,
+            "name_english": "Steelix",
+            "name_french": "Steelix"
+        },
+        {
+            "id": 209,
+            "name_english": "Snubbull",
+            "name_french": "Snubbull"
+        },
+        {
+            "id": 210,
+            "name_english": "Granbull",
+            "name_french": "Granbull"
+        },
+        {
+            "id": 211,
+            "name_english": "Qwilfish",
+            "name_french": "Qwilfish"
+        },
+        {
+            "id": 212,
+            "name_english": "Scizor",
+            "name_french": "Cizayox"
+        },
+        {
+            "id": 213,
+            "name_english": "Shuckle",
+            "name_french": "Caratroc"
+        },
+        {
+            "id": 214,
+            "name_english": "Heracross",
+            "name_french": "Scarhino"
+        },
+        {
+            "id": 215,
+            "name_english": "Sneasel",
+            "name_french": "Farfuret"
+        },
+        {
+            "id": 216,
+            "name_english": "Teddiursa",
+            "name_french": "Teddiursa"
+        },
+        {
+            "id": 217,
+            "name_english": "Ursaring",
+            "name_french": "Ursaring"
+        },
+        {
+            "id": 218,
+            "name_english": "Slugma",
+            "name_french": "Limagma"
+        },
+        {
+            "id": 219,
+            "name_english": "Magcargo",
+            "name_french": "Volcaropod"
+        },
+        {
+            "id": 220,
+            "name_english": "Swinub",
+            "name_french": "Marcacrin"
+        },
+        {
+            "id": 221,
+            "name_english": "Piloswine",
+            "name_french": "Cochignon"
+        },
+        {
+            "id": 222,
+            "name_english": "Corsola",
+            "name_french": "Corayon"
+        },
+        {
+            "id": 223,
+            "name_english": "Remoraid",
+            "name_french": "Rémoraid"
+        },
+        {
+            "id": 224,
+            "name_english": "Octillery",
+            "name_french": "Octillery"
+        },
+        {
+            "id": 225,
+            "name_english": "Delibird",
+            "name_french": "Cadoizo"
+        },
+        {
+            "id": 226,
+            "name_english": "Mantine",
+            "name_french": "Démanta"
+        },
+        {
+            "id": 227,
+            "name_english": "Skarmory",
+            "name_french": "Airmure"
+        },
+        {
+            "id": 228,
+            "name_english": "Houndour",
+            "name_french": "Malosse"
+        },
+        {
+            "id": 229,
+            "name_english": "Houndoom",
+            "name_french": "Démolosse"
+        },
+        {
+            "id": 230,
+            "name_english": "Kingdra",
+            "name_french": "Hyporoi"
+        },
+        {
+            "id": 231,
+            "name_english": "Phanpy",
+            "name_french": "Phanpy"
+        },
+        {
+            "id": 232,
+            "name_english": "Donphan",
+            "name_french": "Donphan"
+        },
+        {
+            "id": 233,
+            "name_english": "Porygon2",
+            "name_french": "Porygon2"
+        },
+        {
+            "id": 234,
+            "name_english": "Stantler",
+            "name_french": "Cerfrousse"
+        },
+        {
+            "id": 235,
+            "name_english": "Smeargle",
+            "name_french": "Queulorior"
+        },
+        {
+            "id": 236,
+            "name_english": "Tyrogue",
+            "name_french": "Debugant"
+        },
+        {
+            "id": 237,
+            "name_english": "Hitmontop",
+            "name_french": "Kapoera"
+        },
+        {
+            "id": 238,
+            "name_english": "Smoochum",
+            "name_french": "Lippouti"
+        },
+        {
+            "id": 239,
+            "name_english": "Elekid",
+            "name_french": "Élekid"
+        },
+        {
+            "id": 240,
+            "name_english": "Magby",
+            "name_french": "Magby"
+        },
+        {
+            "id": 241,
+            "name_english": "Miltank",
+            "name_french": "Écrémeuh"
+        },
+        {
+            "id": 242,
+            "name_english": "Blissey",
+            "name_french": "Leuphorie"
+        },
+        {
+            "id": 243,
+            "name_english": "Raikou",
+            "name_french": "Raikou"
+        },
+        {
+            "id": 244,
+            "name_english": "Entei",
+            "name_french": "Entei"
+        },
+        {
+            "id": 245,
+            "name_english": "Suicune",
+            "name_french": "Suicune"
+        },
+        {
+            "id": 246,
+            "name_english": "Larvitar",
+            "name_french": "Embrylex"
+        },
+        {
+            "id": 247,
+            "name_english": "Pupitar",
+            "name_french": "Ymphect"
+        },
+        {
+            "id": 248,
+            "name_english": "Tyranitar",
+            "name_french": "Tyranocif"
+        },
+        {
+            "id": 249,
+            "name_english": "Lugia",
+            "name_french": "Lugia"
+        },
+        {
+            "id": 250,
+            "name_english": "Ho-Oh",
+            "name_french": "Ho-Oh"
+        },
+        {
+            "id": 251,
+            "name_english": "Celebi",
+            "name_french": "Celebi"
+        },
+        {
+            "id": 252,
+            "name_english": "Treecko",
+            "name_french": "Arcko"
+        },
+        {
+            "id": 253,
+            "name_english": "Grovyle",
+            "name_french": "Massko"
+        },
+        {
+            "id": 254,
+            "name_english": "Sceptile",
+            "name_french": "Jungko"
+        },
+        {
+            "id": 255,
+            "name_english": "Torchic",
+            "name_french": "Poussifeu"
+        },
+        {
+            "id": 256,
+            "name_english": "Combusken",
+            "name_french": "Galifeu"
+        },
+        {
+            "id": 257,
+            "name_english": "Blaziken",
+            "name_french": "Braségali"
+        },
+        {
+            "id": 258,
+            "name_english": "Mudkip",
+            "name_french": "Gobou"
+        },
+        {
+            "id": 259,
+            "name_english": "Marshtomp",
+            "name_french": "Flobio"
+        },
+        {
+            "id": 260,
+            "name_english": "Swampert",
+            "name_french": "Laggron"
+        },
+        {
+            "id": 261,
+            "name_english": "Poochyena",
+            "name_french": "Medhyèna"
+        },
+        {
+            "id": 262,
+            "name_english": "Mightyena",
+            "name_french": "Grahyèna"
+        },
+        {
+            "id": 263,
+            "name_english": "Zigzagoon",
+            "name_french": "Zigzaton"
+        },
+        {
+            "id": 264,
+            "name_english": "Linoone",
+            "name_french": "Linéon"
+        },
+        {
+            "id": 265,
+            "name_english": "Wurmple",
+            "name_french": "Chenipotte"
+        },
+        {
+            "id": 266,
+            "name_english": "Silcoon",
+            "name_french": "Armulys"
+        },
+        {
+            "id": 267,
+            "name_english": "Beautifly",
+            "name_french": "Charmillon"
+        },
+        {
+            "id": 268,
+            "name_english": "Cascoon",
+            "name_french": "Blindalys"
+        },
+        {
+            "id": 269,
+            "name_english": "Dustox",
+            "name_french": "Papinox"
+        },
+        {
+            "id": 270,
+            "name_english": "Lotad",
+            "name_french": "Nénupiot"
+        },
+        {
+            "id": 271,
+            "name_english": "Lombre",
+            "name_french": "Lombre"
+        },
+        {
+            "id": 272,
+            "name_english": "Ludicolo",
+            "name_french": "Ludicolo"
+        },
+        {
+            "id": 273,
+            "name_english": "Seedot",
+            "name_french": "Grainipiot"
+        },
+        {
+            "id": 274,
+            "name_english": "Nuzleaf",
+            "name_french": "Pifeuil"
+        },
+        {
+            "id": 275,
+            "name_english": "Shiftry",
+            "name_french": "Tengalice"
+        },
+        {
+            "id": 276,
+            "name_english": "Taillow",
+            "name_french": "Nirondelle"
+        },
+        {
+            "id": 277,
+            "name_english": "Swellow",
+            "name_french": "Hélédelle"
+        },
+        {
+            "id": 278,
+            "name_english": "Wingull",
+            "name_french": "Goélise"
+        },
+        {
+            "id": 279,
+            "name_english": "Pelipper",
+            "name_french": "Bekipan"
+        },
+        {
+            "id": 280,
+            "name_english": "Ralts",
+            "name_french": "Tarsal"
+        },
+        {
+            "id": 281,
+            "name_english": "Kirlia",
+            "name_french": "Kirlia"
+        },
+        {
+            "id": 282,
+            "name_english": "Gardevoir",
+            "name_french": "Gardevoir"
+        },
+        {
+            "id": 283,
+            "name_english": "Surskit",
+            "name_french": "Arakdo"
+        },
+        {
+            "id": 284,
+            "name_english": "Masquerain",
+            "name_french": "Maskadra"
+        },
+        {
+            "id": 285,
+            "name_english": "Shroomish",
+            "name_french": "Balignon"
+        },
+        {
+            "id": 286,
+            "name_english": "Breloom",
+            "name_french": "Chapignon"
+        },
+        {
+            "id": 287,
+            "name_english": "Slakoth",
+            "name_french": "Parecool"
+        },
+        {
+            "id": 288,
+            "name_english": "Vigoroth",
+            "name_french": "Vigoroth"
+        },
+        {
+            "id": 289,
+            "name_english": "Slaking",
+            "name_french": "Monaflèmit"
+        },
+        {
+            "id": 290,
+            "name_english": "Nincada",
+            "name_french": "Ningale"
+        },
+        {
+            "id": 291,
+            "name_english": "Ninjask",
+            "name_french": "Ninjask"
+        },
+        {
+            "id": 292,
+            "name_english": "Shedinja",
+            "name_french": "Munja"
+        },
+        {
+            "id": 293,
+            "name_english": "Whismur",
+            "name_french": "Chuchmur"
+        },
+        {
+            "id": 294,
+            "name_english": "Loudred",
+            "name_french": "Ramboum"
+        },
+        {
+            "id": 295,
+            "name_english": "Exploud",
+            "name_french": "Brouhabam"
+        },
+        {
+            "id": 296,
+            "name_english": "Makuhita",
+            "name_french": "Makuhita"
+        },
+        {
+            "id": 297,
+            "name_english": "Hariyama",
+            "name_french": "Hariyama"
+        },
+        {
+            "id": 298,
+            "name_english": "Azurill",
+            "name_french": "Azurill"
+        },
+        {
+            "id": 299,
+            "name_english": "Nosepass",
+            "name_french": "Tarinor"
+        },
+        {
+            "id": 300,
+            "name_english": "Skitty",
+            "name_french": "Skitty"
+        },
+        {
+            "id": 301,
+            "name_english": "Delcatty",
+            "name_french": "Delcatty"
+        },
+        {
+            "id": 302,
+            "name_english": "Sableye",
+            "name_french": "Ténéfix"
+        },
+        {
+            "id": 303,
+            "name_english": "Mawile",
+            "name_french": "Mysdibule"
+        },
+        {
+            "id": 304,
+            "name_english": "Aron",
+            "name_french": "Galekid"
+        },
+        {
+            "id": 305,
+            "name_english": "Lairon",
+            "name_french": "Galegon"
+        },
+        {
+            "id": 306,
+            "name_english": "Aggron",
+            "name_french": "Galeking"
+        },
+        {
+            "id": 307,
+            "name_english": "Meditite",
+            "name_french": "Méditikka"
+        },
+        {
+            "id": 308,
+            "name_english": "Medicham",
+            "name_french": "Charmina"
+        },
+        {
+            "id": 309,
+            "name_english": "Electrike",
+            "name_french": "Dynavolt"
+        },
+        {
+            "id": 310,
+            "name_english": "Manectric",
+            "name_french": "Élecsprint"
+        },
+        {
+            "id": 311,
+            "name_english": "Plusle",
+            "name_french": "Posipi"
+        },
+        {
+            "id": 312,
+            "name_english": "Minun",
+            "name_french": "Négapi"
+        },
+        {
+            "id": 313,
+            "name_english": "Volbeat",
+            "name_french": "Muciole"
+        },
+        {
+            "id": 314,
+            "name_english": "Illumise",
+            "name_french": "Lumivole"
+        },
+        {
+            "id": 315,
+            "name_english": "Roselia",
+            "name_french": "Rosélia"
+        },
+        {
+            "id": 316,
+            "name_english": "Gulpin",
+            "name_french": "Gloupti"
+        },
+        {
+            "id": 317,
+            "name_english": "Swalot",
+            "name_french": "Avaltout"
+        },
+        {
+            "id": 318,
+            "name_english": "Carvanha",
+            "name_french": "Carvanha"
+        },
+        {
+            "id": 319,
+            "name_english": "Sharpedo",
+            "name_french": "Sharpedo"
+        },
+        {
+            "id": 320,
+            "name_english": "Wailmer",
+            "name_french": "Wailmer"
+        },
+        {
+            "id": 321,
+            "name_english": "Wailord",
+            "name_french": "Wailord"
+        },
+        {
+            "id": 322,
+            "name_english": "Numel",
+            "name_french": "Chamallot"
+        },
+        {
+            "id": 323,
+            "name_english": "Camerupt",
+            "name_french": "Camérupt"
+        },
+        {
+            "id": 324,
+            "name_english": "Torkoal",
+            "name_french": "Chartor"
+        },
+        {
+            "id": 325,
+            "name_english": "Spoink",
+            "name_french": "Spoink"
+        },
+        {
+            "id": 326,
+            "name_english": "Grumpig",
+            "name_french": "Groret"
+        },
+        {
+            "id": 327,
+            "name_english": "Spinda",
+            "name_french": "Spinda"
+        },
+        {
+            "id": 328,
+            "name_english": "Trapinch",
+            "name_french": "Kraknoix"
+        },
+        {
+            "id": 329,
+            "name_english": "Vibrava",
+            "name_french": "Vibraninf"
+        },
+        {
+            "id": 330,
+            "name_english": "Flygon",
+            "name_french": "Libégon"
+        },
+        {
+            "id": 331,
+            "name_english": "Cacnea",
+            "name_french": "Cacnea"
+        },
+        {
+            "id": 332,
+            "name_english": "Cacturne",
+            "name_french": "Cacturne"
+        },
+        {
+            "id": 333,
+            "name_english": "Swablu",
+            "name_french": "Tylton"
+        },
+        {
+            "id": 334,
+            "name_english": "Altaria",
+            "name_french": "Altaria"
+        },
+        {
+            "id": 335,
+            "name_english": "Zangoose",
+            "name_french": "Mangriff"
+        },
+        {
+            "id": 336,
+            "name_english": "Seviper",
+            "name_french": "Séviper"
+        },
+        {
+            "id": 337,
+            "name_english": "Lunatone",
+            "name_french": "Séléroc"
+        },
+        {
+            "id": 338,
+            "name_english": "Solrock",
+            "name_french": "Solaroc"
+        },
+        {
+            "id": 339,
+            "name_english": "Barboach",
+            "name_french": "Barloche"
+        },
+        {
+            "id": 340,
+            "name_english": "Whiscash",
+            "name_french": "Barbicha"
+        },
+        {
+            "id": 341,
+            "name_english": "Corphish",
+            "name_french": "Écrapince"
+        },
+        {
+            "id": 342,
+            "name_english": "Crawdaunt",
+            "name_french": "Colhomard"
+        },
+        {
+            "id": 343,
+            "name_english": "Baltoy",
+            "name_french": "Balbuto"
+        },
+        {
+            "id": 344,
+            "name_english": "Claydol",
+            "name_french": "Kaorine"
+        },
+        {
+            "id": 345,
+            "name_english": "Lileep",
+            "name_french": "Lilia"
+        },
+        {
+            "id": 346,
+            "name_english": "Cradily",
+            "name_french": "Vacilys"
+        },
+        {
+            "id": 347,
+            "name_english": "Anorith",
+            "name_french": "Anorith"
+        },
+        {
+            "id": 348,
+            "name_english": "Armaldo",
+            "name_french": "Armaldo"
+        },
+        {
+            "id": 349,
+            "name_english": "Feebas",
+            "name_french": "Barpau"
+        },
+        {
+            "id": 350,
+            "name_english": "Milotic",
+            "name_french": "Milobellus"
+        },
+        {
+            "id": 351,
+            "name_english": "Castform",
+            "name_french": "Morphéo"
+        },
+        {
+            "id": 352,
+            "name_english": "Kecleon",
+            "name_french": "Kecleon"
+        },
+        {
+            "id": 353,
+            "name_english": "Shuppet",
+            "name_french": "Polichombr"
+        },
+        {
+            "id": 354,
+            "name_english": "Banette",
+            "name_french": "Branette"
+        },
+        {
+            "id": 355,
+            "name_english": "Duskull",
+            "name_french": "Skelénox"
+        },
+        {
+            "id": 356,
+            "name_english": "Dusclops",
+            "name_french": "Téraclope"
+        },
+        {
+            "id": 357,
+            "name_english": "Tropius",
+            "name_french": "Tropius"
+        },
+        {
+            "id": 358,
+            "name_english": "Chimecho",
+            "name_french": "Éoko"
+        },
+        {
+            "id": 359,
+            "name_english": "Absol",
+            "name_french": "Absol"
+        },
+        {
+            "id": 360,
+            "name_english": "Wynaut",
+            "name_french": "Okéoké"
+        },
+        {
+            "id": 361,
+            "name_english": "Snorunt",
+            "name_french": "Stalgamin"
+        },
+        {
+            "id": 362,
+            "name_english": "Glalie",
+            "name_french": "Oniglali"
+        },
+        {
+            "id": 363,
+            "name_english": "Spheal",
+            "name_french": "Obalie"
+        },
+        {
+            "id": 364,
+            "name_english": "Sealeo",
+            "name_french": "Phogleur"
+        },
+        {
+            "id": 365,
+            "name_english": "Walrein",
+            "name_french": "Kaimorse"
+        },
+        {
+            "id": 366,
+            "name_english": "Clamperl",
+            "name_french": "Coquiperl"
+        },
+        {
+            "id": 367,
+            "name_english": "Huntail",
+            "name_french": "Serpang"
+        },
+        {
+            "id": 368,
+            "name_english": "Gorebyss",
+            "name_french": "Rosabyss"
+        },
+        {
+            "id": 369,
+            "name_english": "Relicanth",
+            "name_french": "Relicanth"
+        },
+        {
+            "id": 370,
+            "name_english": "Luvdisc",
+            "name_french": "Lovdisc"
+        },
+        {
+            "id": 371,
+            "name_english": "Bagon",
+            "name_french": "Draby"
+        },
+        {
+            "id": 372,
+            "name_english": "Shelgon",
+            "name_french": "Drackhaus"
+        },
+        {
+            "id": 373,
+            "name_english": "Salamence",
+            "name_french": "Drattak"
+        },
+        {
+            "id": 374,
+            "name_english": "Beldum",
+            "name_french": "Terhal"
+        },
+        {
+            "id": 375,
+            "name_english": "Metang",
+            "name_french": "Métang"
+        },
+        {
+            "id": 376,
+            "name_english": "Metagross",
+            "name_french": "Métalosse"
+        },
+        {
+            "id": 377,
+            "name_english": "Regirock",
+            "name_french": "Regirock"
+        },
+        {
+            "id": 378,
+            "name_english": "Regice",
+            "name_french": "Regice"
+        },
+        {
+            "id": 379,
+            "name_english": "Registeel",
+            "name_french": "Registeel"
+        },
+        {
+            "id": 380,
+            "name_english": "Latias",
+            "name_french": "Latias"
+        },
+        {
+            "id": 381,
+            "name_english": "Latios",
+            "name_french": "Latios"
+        },
+        {
+            "id": 382,
+            "name_english": "Kyogre",
+            "name_french": "Kyogre"
+        },
+        {
+            "id": 383,
+            "name_english": "Groudon",
+            "name_french": "Groudon"
+        },
+        {
+            "id": 384,
+            "name_english": "Rayquaza",
+            "name_french": "Rayquaza"
+        },
+        {
+            "id": 385,
+            "name_english": "Jirachi",
+            "name_french": "Jirachi"
+        },
+        {
+            "id": 386,
+            "name_english": "Deoxys",
+            "name_french": "Deoxys"
+        }
+    ]
+}
