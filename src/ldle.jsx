@@ -1,7 +1,8 @@
 import useSWR from 'swr';
-import Search from './components/searchBar';
+import axios from 'axios';
 import {useState, useEffect} from 'react';
 import pokemons from './pokemon.json';
+import PokemonRow from './components/classic/PokemonRow';
 
 const randNumber = nombreAleatoire(1, 386);
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
@@ -22,20 +23,18 @@ function Ldle() {
     // se renseigner sur useMemo;
     const [searchId, setSearchId] = useState(null);
     const [guesses, setGuesses] = useState([]);
+    const [pokemon, setPokemon] = useState(null);
 
     const { data: poke1, error: error1, isLoading: isLoading1 } = useSWR('https://pokeapi.co/api/v2/pokemon/' + randNumber, fetcher);
     const { data: poke2, error: error2, isLoading: isLoading2 } = useSWR(poke1?.species.url, fetcher);
     const { data: poke3, error: error3, isLoading: isLoading3 } = useSWR(poke2?.evolution_chain.url, fetcher);
-
-    const { data: pokeSearch1, error: errorSearch1, isLoading: loadingSearch1 } = useSWR(searchId ? `https://pokeapi.co/api/v2/pokemon/${searchId}` : null, fetcher);
-    const { data: pokeSearch2, error: errorSearch2, isLoading: loadingSearch2 } = useSWR(pokeSearch1?.species.url, fetcher);
-    const { data: pokeSearch3, error: errorSearch3, isLoading: loadingSearch3 } = useSWR(pokeSearch2?.evolution_chain.url, fetcher);
     
     const error = error1 || error2 || error3;
     const isLoading = isLoading1 || isLoading2 || isLoading3;
 
-    if (poke3) {
+    if (poke3 && !pokemon) {
         const name = poke1.name;
+        const types = poke1.types;
         const taille = (poke1.height / 10).toFixed(1);
         //console.log(taille + 'm');
         const poids = (poke1.weight / 10).toFixed(1);
@@ -70,6 +69,7 @@ function Ldle() {
         }
         const pokemonData = {
             name: name,
+            types: types,
             taille: taille,
             poids: poids,
             cri: cri,
@@ -83,50 +83,13 @@ function Ldle() {
             habitat: habitat,
             stadeEvo: stadeEvo
         };
+
+        setPokemon(pokemonData);
     }
-
-    useEffect(() => {
-
-        if (pokeSearch3) {
-            const nameSearch = pokeSearch1.name;
-            const tailleSearch = (pokeSearch1.height / 10).toFixed(1);
-            const poidsSearch = (pokeSearch1.weight / 10).toFixed(1);
-            const sprite_offSearch = pokeSearch1.sprites.other['official-artwork'].front_default;
-            const gifSearch = pokeSearch1.sprites.other.showdown.front_default;
-            const spriteSearch = pokeSearch1.sprites.versions['generation-iv'].platinum.front_default;
-            const nameFrSearch = pokeSearch2.names[4].name;
-            let generation = pokeSearch2.generation.url.replace('/', ' ');
-            const genSearch = generation.slice(-2).slice(0,1)
-            let habitatSearch = '';//poke2.habitat.name;
-            habitats.forEach(val => {
-                if (pokeSearch2.habitat.name == val.name) {
-                    habitatSearch = val.trad;
-                }
-            })
-            var stadeEvoSearch = 0;
-            if (pokeSearch3.chain.species.name == name) {
-                stadeEvoSearch = 1;
-            } else if (pokeSearch3.chain.evolves_to.species == name) {
-                stadeEvoSearch = 2;
-            } else {
-                stadeEvoSearch = 3;
-            }
-
-            const newGuess = {
-                taille: tailleSearch,
-                poids: poidsSearch,
-                sprite_off: sprite_offSearch,
-                gif: gifSearch,
-                sprite: spriteSearch,
-                nameFr: nameFrSearch,
-                gen: genSearch,
-                habitat: habitatSearch,
-                stadeEvo: stadeEvoSearch
-            };
-
-            setGuesses(prevGuesses => [...prevGuesses, newGuess])
-        }
-    }, [pokeSearch1, pokeSearch2, pokeSearch3]);
+    /*useEffect(() => {
+        console.log(pokemon);
+        console.log(guesses);
+    }, [guesses]);*/
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -144,6 +107,60 @@ function Ldle() {
         }
 
         setSearchId(pokemonId);
+        const fetchData = async() => {
+            try {
+                const pokeSearch1 = await axios.get(`https://pokeapi.co/api/v2/pokemon/${pokemonId}`);
+                const pokeSearch2 = await axios.get(pokeSearch1?.data?.species.url);
+                const pokeSearch3 = await axios.get(pokeSearch2?.data?.evolution_chain.url);
+
+                if (pokeSearch3) {
+                    const nameSearch = pokeSearch1.data.name;
+                    const typesSearch = pokeSearch1.data.types;
+                    const tailleSearch = (pokeSearch1.data.height / 10).toFixed(1);
+                    const poidsSearch = (pokeSearch1.data.weight / 10).toFixed(1);
+                    const sprite_offSearch = pokeSearch1.data.sprites.other['official-artwork'].front_default;
+                    const gifSearch = pokeSearch1.data.sprites.other.showdown.front_default;
+                    const spriteSearch = pokeSearch1.data.sprites.versions['generation-iv'].platinum.front_default;
+                    const nameFrSearch = pokeSearch2.data.names[4].name;
+                    let generation = pokeSearch2.data.generation.url.replace('/', ' ');
+                    const genSearch = generation.slice(-2).slice(0,1)
+                    let habitatSearch = '';//poke2.habitat.name;
+                    habitats.forEach(val => {
+                        if (pokeSearch2.data.habitat.name == val.name) {
+                            habitatSearch = val.trad;
+                        }
+                    })
+
+                    var stadeEvoSearch = 0;
+                    if (pokeSearch3.data.chain.species.name == nameSearch) {
+                        stadeEvoSearch = 1;
+                    } else if (pokeSearch3.data.chain.evolves_to[0].species.name == nameSearch) {
+                        stadeEvoSearch = 2;
+                    } else {
+                        stadeEvoSearch = 3;
+                    }
+        
+                    const newGuess = {
+                        types: typesSearch,
+                        taille: tailleSearch,
+                        poids: poidsSearch,
+                        sprite_off: sprite_offSearch,
+                        gif: gifSearch,
+                        sprite: spriteSearch,
+                        nameFr: nameFrSearch,
+                        gen: genSearch,
+                        habitat: habitatSearch,
+                        stadeEvo: stadeEvoSearch
+                    };
+                    setGuesses(prevGuesses => [...prevGuesses, newGuess]);
+                }
+            } catch(error) {
+                console.log(error);
+            }
+        }
+
+        fetchData();
+        
     }
     // pokedex, gmax, mega, desc rapide ex : pokemon graine "genera", generation, habitat
     return (
@@ -161,7 +178,7 @@ function Ldle() {
                 </form>
             )}
             {error ? <p>{error}</p> : null}
-            
+            <PokemonTable guesses={guesses}/>
         </div>
     )
 }
@@ -170,20 +187,27 @@ function nombreAleatoire(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-function PokemonTable() {
+function PokemonTable({guesses}) {
+    const rows = [];
+
+    for(let guess of guesses) {
+        rows.push(<PokemonRow pokemon={guess} key={guess.nameFr} />);
+    }
 
     return <table>
                 <thead>
-                    <th>Pokemon</th>
-                    <th>Type 1</th>
-                    <th>Type 2</th>
-                    <th>Habitat</th>
-                    <th>Stade d'évolution</th>
-                    <th>Hauteur</th>
-                    <th>Poids</th>
+                    <tr>
+                        <th>Pokemon</th>
+                        <th>Type 1</th>
+                        <th>Type 2</th>
+                        <th>Habitat</th>
+                        <th>Stade d&apos;évolution</th>
+                        <th>Hauteur</th>
+                        <th>Poids</th>
+                    </tr>
                 </thead>
                 <tbody>
-                    
+                    {rows}
                 </tbody>
             </table>
 }
