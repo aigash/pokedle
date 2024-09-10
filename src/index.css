@@ -58,8 +58,26 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-.imgClassic {
-  width:100px;
+.imgClassic, table td {
+  width:110px;
+  height:110px;
+  border:5px solid white;
+}
+table td {
+  font-weight:600;
+  font-size:1.1rem;
+}
+
+.up {
+  background: url('src/assets/up.svg'), rgba(239,68,68);
+}
+.down {
+  background: url('src/assets/down.svg'), rgba(239,68,68);
+}
+.up, .down {
+  background-repeat:no-repeat;
+  background-size:30%;
+  background-position:85% 15%;
 }
 
 @media (prefers-color-scheme: light) {
