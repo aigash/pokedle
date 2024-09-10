@@ -60,9 +60,10 @@ function Ldle() {
             }
         })
         var stadeEvo = 0;
+        
         if (poke3.chain.species.name == name) {
             stadeEvo = 1;
-        } else if (poke3.chain.evolves_to.species == name) {
+        } else if (poke3.chain.evolves_to[0].species == name) {
             stadeEvo = 2;
         } else {
             stadeEvo = 3;
@@ -168,6 +169,7 @@ function Ldle() {
                     });
 
                     var stadeEvoSearch = 0;
+
                     if (pokeSearch3.data.chain.species.name == nameSearch) {
                         stadeEvoSearch = 1;
                     } else if (pokeSearch3.data.chain.evolves_to[0].species.name == nameSearch) {
@@ -175,7 +177,7 @@ function Ldle() {
                     } else {
                         stadeEvoSearch = 3;
                     }
-        
+
                     const newGuess = {
                         type1: type1,
                         type2: type2,
