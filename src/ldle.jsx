@@ -67,9 +67,28 @@ function Ldle() {
         } else {
             stadeEvo = 3;
         }
+
+        let type1 = '';
+        let type2 = '';
+
+        pokemons.types.forEach(val => {
+            if (types[0].type.name == val.name_english) {
+                type1 = val;
+            }
+
+            if (types.length > 1) {
+                if (types[1].type.name == val.name_english) {
+                    type2 = val;
+                }
+            } else {
+                type2 = 'Aucun';
+            }
+        });
+
         const pokemonData = {
             name: name,
-            types: types,
+            type1: type1,
+            type2: type2,
             taille: taille,
             poids: poids,
             cri: cri,
@@ -131,6 +150,23 @@ function Ldle() {
                         }
                     })
 
+                    let type1 = '';
+                    let type2 = '';
+
+                    pokemons.types.forEach(val => {
+                        if (typesSearch[0].type.name == val.name_english) {
+                            type1 = val;
+                        }
+            
+                        if (typesSearch.length > 1) {
+                            if (typesSearch[1].type.name == val.name_english) {
+                                type2 = val;
+                            }
+                        } else {
+                            type2 = 'Aucun';
+                        }
+                    });
+
                     var stadeEvoSearch = 0;
                     if (pokeSearch3.data.chain.species.name == nameSearch) {
                         stadeEvoSearch = 1;
@@ -141,7 +177,8 @@ function Ldle() {
                     }
         
                     const newGuess = {
-                        types: typesSearch,
+                        type1: type1,
+                        type2: type2,
                         taille: tailleSearch,
                         poids: poidsSearch,
                         sprite_off: sprite_offSearch,
@@ -178,7 +215,7 @@ function Ldle() {
                 </form>
             )}
             {error ? <p>{error}</p> : null}
-            <PokemonTable guesses={guesses}/>
+            <PokemonTable guesses={guesses} pokemon={pokemon}/>
         </div>
     )
 }
@@ -187,11 +224,11 @@ function nombreAleatoire(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-function PokemonTable({guesses}) {
+function PokemonTable({guesses, pokemon}) {
     const rows = [];
 
     for(let guess of guesses) {
-        rows.push(<PokemonRow pokemon={guess} key={guess.nameFr} />);
+        rows.push(<PokemonRow guess={guess} pokemon={pokemon} key={guess.nameFr} />);
     }
 
     return <table>

@@ -1,4 +1,24 @@
 {
+    "types": [
+        { "name_french": "Acier", "name_english": "steel", "classe": "bg-gray-400" },
+        { "name_french": "Combat", "name_english": "fighting", "classe": "bg-red-700" },
+        { "name_french": "Dragon", "name_english": "dragon", "classe": "bg-indigo-600" },
+        { "name_french": "Eau", "name_english": "water", "classe": "bg-blue-500" },
+        { "name_french": "Électrik", "name_english": "electric", "classe": "bg-yellow-400" },
+        { "name_french": "Fée", "name_english": "fairy", "classe": "bg-pink-300" },
+        { "name_french": "Feu", "name_english": "fire", "classe": "bg-orange-500" },
+        { "name_french": "Glace", "name_english": "ice", "classe": "bg-cyan-200" },
+        { "name_french": "Insecte", "name_english": "bug", "classe": "bg-lime-600" },
+        { "name_french": "Normal", "name_english": "normal", "classe": "bg-gray-300" },
+        { "name_french": "Plante", "name_english": "grass", "classe": "bg-green-500" },
+        { "name_french": "Poison", "name_english": "poison", "classe": "bg-purple-600" },
+        { "name_french": "Psy", "name_english": "psychic", "classe": "bg-pink-500" },
+        { "name_french": "Roche", "name_english": "rock", "classe": "bg-yellow-700" },
+        { "name_french": "Sol", "name_english": "ground", "classe": "bg-yellow-600" },
+        { "name_french": "Spectre", "name_english": "ghost", "classe": "bg-purple-800" },
+        { "name_french": "Ténèbres", "name_english": "dark", "classe": "bg-gray-700" },
+        { "name_french": "Vol", "name_english": "flying", "classe": "bg-blue-300" }
+    ],
     "pokemon": [
         {
             "id": 1,
