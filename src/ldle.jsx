@@ -7,23 +7,16 @@ import PokemonRow from './components/classic/PokemonRow';
 const randNumber = nombreAleatoire(1, 386);
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
-const habitats = [
-    { name: "cave", trad: "Grottes" },
-    { name: "forest", trad: "Forêts" },
-    { name: "grassland", trad: "Champs" },
-    { name: "mountain", trad: "Montagnes" },
-    { name: "rare", trad: "Rares" },
-    { name: "rough-terrain", trad: "Milieux hostiles" },
-    { name: "sea", trad: "Mers" },
-    { name: "urban", trad: "Urbains" },
-    { name: "waters-edge", trad: "Marécages" }
-]
-
 function Ldle() {
     // se renseigner sur useMemo;
     const [searchId, setSearchId] = useState(null);
     const [guesses, setGuesses] = useState([]);
     const [pokemon, setPokemon] = useState(null);
+    const [pokemonSearch, setPokemonSearch] = useState('');
+
+    /*const [suggestions, setSuggestions] = useState(pokemons.pokemon);
+
+    console.log(suggestions);*/
 
     const { data: poke1, error: error1, isLoading: isLoading1 } = useSWR('https://pokeapi.co/api/v2/pokemon/' + randNumber, fetcher);
     const { data: poke2, error: error2, isLoading: isLoading2 } = useSWR(poke1?.species.url, fetcher);
@@ -34,10 +27,11 @@ function Ldle() {
 
     if (poke3 && !pokemon) {
         const name = poke1.name;
+        const nameSpecies = poke1.species.name;
         const types = poke1.types;
-        const taille = (poke1.height / 10).toFixed(1);
+        const taille = poke1.height;
         //console.log(taille + 'm');
-        const poids = (poke1.weight / 10).toFixed(1);
+        const poids = poke1.weight;
         //console.log(poids + 'kg');
         const cri = poke1.cries.latest;
         const sprite_off = poke1.sprites.other['official-artwork'].front_default;
@@ -54,16 +48,15 @@ function Ldle() {
         let generation = poke2.generation.url.replace('/', ' ');
         const gen = generation.slice(-2).slice(0,1)
         let habitat = '';//poke2.habitat.name;
-        habitats.forEach(val => {
-            if (poke2.habitat.name == val.name) {
-                habitat = val.trad;
+        pokemons.habitats.forEach(val => {
+            if (poke2.habitat.name == val.name_english) {
+                habitat = val.name_french;
             }
         })
         var stadeEvo = 0;
-        
-        if (poke3.chain.species.name == name) {
+        if (poke3.chain.species.name == nameSpecies) {
             stadeEvo = 1;
-        } else if (poke3.chain.evolves_to[0].species == name) {
+        } else if (poke3.chain.evolves_to[0].species.name == nameSpecies) {
             stadeEvo = 2;
         } else {
             stadeEvo = 3;
@@ -107,9 +100,8 @@ function Ldle() {
         setPokemon(pokemonData);
     }
     /*useEffect(() => {
-        console.log(pokemon);
-        console.log(guesses);
-    }, [guesses]);*/
+        
+    }, []);*/
 
     function handleSubmit(e) {
         e.preventDefault();
@@ -135,9 +127,10 @@ function Ldle() {
 
                 if (pokeSearch3) {
                     const nameSearch = pokeSearch1.data.name;
+                    const nameSpeciesSearch = pokeSearch1.data.species.name;
                     const typesSearch = pokeSearch1.data.types;
-                    const tailleSearch = (pokeSearch1.data.height / 10).toFixed(1);
-                    const poidsSearch = (pokeSearch1.data.weight / 10).toFixed(1);
+                    const tailleSearch = pokeSearch1.data.height;
+                    const poidsSearch = pokeSearch1.data.weight;
                     const sprite_offSearch = pokeSearch1.data.sprites.other['official-artwork'].front_default;
                     const gifSearch = pokeSearch1.data.sprites.other.showdown.front_default;
                     const spriteSearch = pokeSearch1.data.sprites.versions['generation-iv'].platinum.front_default;
@@ -145,9 +138,9 @@ function Ldle() {
                     let generation = pokeSearch2.data.generation.url.replace('/', ' ');
                     const genSearch = generation.slice(-2).slice(0,1)
                     let habitatSearch = '';//poke2.habitat.name;
-                    habitats.forEach(val => {
-                        if (pokeSearch2.data.habitat.name == val.name) {
-                            habitatSearch = val.trad;
+                    pokemons.habitats.forEach(val => {
+                        if (pokeSearch2.data.habitat.name == val.name_english) {
+                            habitatSearch = val.name_french;
                         }
                     })
 
@@ -169,10 +162,9 @@ function Ldle() {
                     });
 
                     var stadeEvoSearch = 0;
-
-                    if (pokeSearch3.data.chain.species.name == nameSearch) {
+                    if (pokeSearch3.data.chain.species.name == nameSpeciesSearch) {
                         stadeEvoSearch = 1;
-                    } else if (pokeSearch3.data.chain.evolves_to[0].species.name == nameSearch) {
+                    } else if (pokeSearch3.data.chain.evolves_to[0].species.name == nameSpeciesSearch) {
                         stadeEvoSearch = 2;
                     } else {
                         stadeEvoSearch = 3;
@@ -192,6 +184,7 @@ function Ldle() {
                         stadeEvo: stadeEvoSearch
                     };
                     setGuesses(prevGuesses => [...prevGuesses, newGuess]);
+                    setPokemonSearch(nameFrSearch);
                 }
             } catch(error) {
                 console.log(error);
@@ -201,23 +194,60 @@ function Ldle() {
         fetchData();
         
     }
+
+    function handleSuggestionClick(pokemonName) {
+        console.log(pokemonName);
+    }
+
+    const resetGame = () => {
+        setSearchId(null);
+        setGuesses([]);
+        setPokemon(null);
+        window.location.reload();
+    };
+
     // pokedex, gmax, mega, desc rapide ex : pokemon graine "genera", generation, habitat
     return (
-        <div className='flex flex-col gap-4'>
-            {isLoading ? (
-                <span className="loading loading-spinner loading-lg"></span>
-            ) : (
-                <form
-                    onSubmit={(e) => {
-                        handleSubmit(e);
-                    }}
-                >
-                    <input name='pokeSearch' id='pokeSearch' placeholder="Tape un nom de Pokémon..."/>
-                    <button type='submit'>GO</button>
-                </form>
-            )}
-            {error ? <p>{error}</p> : null}
-            <PokemonTable guesses={guesses} pokemon={pokemon}/>
+        <div className='relative containerClassic'>
+            <div className='flex flex-col gap-4' id='classic'>
+                {isLoading ? (
+                    <span className="loading loading-spinner loading-lg"></span>
+                ) : (
+                    <div>
+                        <form
+                            className='flex'
+                            onSubmit={(e) => {
+                                handleSubmit(e);
+                            }}
+                        >
+                            <div className='relative'>
+                                <input name='pokeSearch' id='pokeSearch' placeholder="Tape un nom de Pokémon..."/>
+                                {/*suggestions.length > 0 && (
+                                    /*<ul className="absolute">
+                                        {suggestions.map((pokemon) => (
+                                            <li 
+                                                key={pokemon.id} 
+                                                onClick={() => handleSuggestionClick(pokemon.name_french)}
+                                                className="cursor-pointer hover:bg-gray-100 p-2"
+                                            >
+                                                {pokemon.name_french}
+                                            </li>
+                                        ))}
+                                    </ul>
+                                )*/}
+                            </div>
+                            <button type='submit'>GO</button>
+                        </form>
+                    </div>
+                )}
+                {error ? <p>{error}</p> : null}
+                <PokemonTable guesses={guesses} pokemon={pokemon}/>
+            </div>
+            {pokemon?.nameFr == pokemonSearch ? (
+                    <EndAndReload pokemon={pokemonSearch} onReset={resetGame} />
+                ) : (
+                    ""
+                )}
         </div>
     )
 }
@@ -249,6 +279,20 @@ function PokemonTable({guesses, pokemon}) {
                     {rows}
                 </tbody>
             </table>
+}
+
+function EndAndReload({pokemon, onReset}) {
+    return <div className='alerte absolute'>
+                <div>
+                    <h2>Bsahtek, tu as trouvé {pokemon}</h2>
+                    <button
+                        onClick={onReset}
+                    >
+                        Rejouer
+                    </button>
+                </div>
+            </div>
+    
 }
 
 export default Ldle

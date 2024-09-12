@@ -1,4 +1,15 @@
 {
+    "habitats": [
+        { "name_english": "cave", "name_french": "Grottes" },
+        { "name_english": "forest", "name_french": "Forêts" },
+        { "name_english": "grassland", "name_french": "Champs" },
+        { "name_english": "mountain", "name_french": "Montagnes" },
+        { "name_english": "rare", "name_french": "Rares" },
+        { "name_english": "rough-terrain", "name_french": "Milieux hostiles" },
+        { "name_english": "sea", "name_french": "Mers" },
+        { "name_english": "urban", "name_french": "Urbains" },
+        { "name_english": "waters-edge", "name_french": "Marécages" }
+    ],
     "types": [
         { "name_french": "Acier", "name_english": "steel", "classe": "bg-gray-400" },
         { "name_french": "Combat", "name_english": "fighting", "classe": "bg-red-700" },
