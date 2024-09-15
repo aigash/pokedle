@@ -101,6 +101,21 @@ table td {
   padding: 20px;
 }
 
+.tableClassic {
+  width:100%;
+}
+
+#suggestionsClassic {
+  max-height:500px;
+  overflow-y: scroll;
+  width:100%;
+  display:none;
+  background-color:white;
+}
+#suggestionsClassic li {
+  text-align:start;
+}
+
 @media (prefers-color-scheme: light) {
   :root {
     color: #213547;

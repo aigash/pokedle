@@ -2,7 +2,9 @@ import useSWR from 'swr';
 import axios from 'axios';
 import {useState, useEffect} from 'react';
 import pokemons from './pokemon.json';
-import PokemonRow from './components/classic/PokemonRow';
+import PokemonTable from './components/classic/PokemonTable';
+import EndAndReload from './components/EndAndReload';
+import Indice from './components/Indices';
 
 const randNumber = nombreAleatoire(1, 386);
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
@@ -14,9 +16,7 @@ function Ldle() {
     const [pokemon, setPokemon] = useState(null);
     const [pokemonSearch, setPokemonSearch] = useState('');
 
-    /*const [suggestions, setSuggestions] = useState(pokemons.pokemon);
-
-    console.log(suggestions);*/
+    const [suggestions, setSuggestions] = useState(pokemons.pokemon);
 
     const { data: poke1, error: error1, isLoading: isLoading1 } = useSWR('https://pokeapi.co/api/v2/pokemon/' + randNumber, fetcher);
     const { data: poke2, error: error2, isLoading: isLoading2 } = useSWR(poke1?.species.url, fetcher);
@@ -38,6 +38,13 @@ function Ldle() {
         const gif = poke1.sprites.other.showdown.front_default;
         const sprite = poke1.sprites.versions['generation-iv'].platinum.front_default;
         const nameFr = poke2.names[4].name;
+        let couleur = null;
+        for (const pokemon of pokemons.pokemon) {
+            if (pokemon.id === poke1.id) {
+                couleur = pokemon.couleur;
+                break;
+            }
+        }
         let desc = '';//poke2.flavor_text_entries[34].flavor_text;
         poke2.flavor_text_entries.forEach(val => {
             if (val.version.name == 'omega-ruby' && val.language.name == 'fr') {
@@ -64,12 +71,10 @@ function Ldle() {
 
         let type1 = '';
         let type2 = '';
-
         pokemons.types.forEach(val => {
             if (types[0].type.name == val.name_english) {
                 type1 = val;
             }
-
             if (types.length > 1) {
                 if (types[1].type.name == val.name_english) {
                     type2 = val;
@@ -80,6 +85,7 @@ function Ldle() {
         });
 
         const pokemonData = {
+            couleur: couleur,
             name: name,
             type1: type1,
             type2: type2,
@@ -96,28 +102,28 @@ function Ldle() {
             habitat: habitat,
             stadeEvo: stadeEvo
         };
-
         setPokemon(pokemonData);
     }
     /*useEffect(() => {
         
     }, []);*/
-
     function handleSubmit(e) {
         e.preventDefault();
-
         const formData = new FormData(e.currentTarget);
         const pokeSearch = formData.get('pokeSearch');
 
+        e.currentTarget.querySelector('#pokeSearch').value = '';
+        e.currentTarget.querySelector('#pokeSearch').focus();
+
         let pokemonId = null;
-        
+        let couleurSearch = null;
         for (const pokemon of pokemons.pokemon) {
             if (pokemon.name_french.toLowerCase() === pokeSearch.toLowerCase()) {
                 pokemonId = pokemon.id;
+                couleurSearch = pokemon.couleur;
                 break;
             }
         }
-
         setSearchId(pokemonId);
         const fetchData = async() => {
             try {
@@ -126,7 +132,7 @@ function Ldle() {
                 const pokeSearch3 = await axios.get(pokeSearch2?.data?.evolution_chain.url);
 
                 if (pokeSearch3) {
-                    const nameSearch = pokeSearch1.data.name;
+                    //const nameSearch = pokeSearch1.data.name;
                     const nameSpeciesSearch = pokeSearch1.data.species.name;
                     const typesSearch = pokeSearch1.data.types;
                     const tailleSearch = pokeSearch1.data.height;
@@ -171,6 +177,7 @@ function Ldle() {
                     }
 
                     const newGuess = {
+                        couleur: couleurSearch,
                         type1: type1,
                         type2: type2,
                         taille: tailleSearch,
@@ -183,8 +190,11 @@ function Ldle() {
                         habitat: habitatSearch,
                         stadeEvo: stadeEvoSearch
                     };
-                    setGuesses(prevGuesses => [...prevGuesses, newGuess]);
+                    setGuesses(prevGuesses => [newGuess, ...prevGuesses]);
                     setPokemonSearch(nameFrSearch);
+                    setSuggestions(prevSuggestions => prevSuggestions.filter(
+                        pokemon => pokemon.name_french.toLowerCase() !== nameFrSearch.toLowerCase()
+                    ));
                 }
             } catch(error) {
                 console.log(error);
@@ -195,8 +205,36 @@ function Ldle() {
         
     }
 
+    function handleSuggestions(e) {
+        const suggestionsList = e.target.parentElement.querySelector('ul');
+        suggestionsList.style.display = 'block';
+
+        const inputValue = e.target.value.toLowerCase();
+        const listItems = suggestionsList.querySelectorAll('li');
+
+        listItems.forEach(item => {
+            if (item.textContent.toLowerCase().startsWith(inputValue)) {
+                item.style.display = 'block';
+            } else {
+                item.style.display = 'none';
+            }
+        });
+
+        document.addEventListener('click', function clickOutside(event) {
+            if (!suggestionsList.contains(event.target) && event.target !== e.target) {
+                suggestionsList.style.display = 'none';
+                // Suppression du gestionnaire après utilisation
+                document.removeEventListener('click', clickOutside);
+            }
+        });
+    }
+
     function handleSuggestionClick(pokemonName) {
         console.log(pokemonName);
+        document.getElementById('pokeSearch').value = pokemonName;
+        setTimeout(() => {
+            document.getElementById('submitClassic').click();
+        }, 300);
     }
 
     const resetGame = () => {
@@ -221,9 +259,17 @@ function Ldle() {
                             }}
                         >
                             <div className='relative'>
-                                <input name='pokeSearch' id='pokeSearch' placeholder="Tape un nom de Pokémon..."/>
-                                {/*suggestions.length > 0 && (
-                                    /*<ul className="absolute">
+                                <input 
+                                    name='pokeSearch' 
+                                    id='pokeSearch'
+                                    autoComplete="off"
+                                    onChange={(e) => {
+                                        handleSuggestions(e);
+                                    }} 
+                                    placeholder="Tape un nom de Pokémon..."
+                                />
+                                {suggestions.length > 0 && (
+                                    <ul className="absolute" id='suggestionsClassic'>
                                         {suggestions.map((pokemon) => (
                                             <li 
                                                 key={pokemon.id} 
@@ -234,17 +280,22 @@ function Ldle() {
                                             </li>
                                         ))}
                                     </ul>
-                                )*/}
+                                )}
                             </div>
-                            <button type='submit'>GO</button>
+                            <button id='submitClassic' type='submit'>GO</button>
                         </form>
                     </div>
                 )}
                 {error ? <p>{error}</p> : null}
-                <PokemonTable guesses={guesses} pokemon={pokemon}/>
+                {guesses.length > 0 ? 
+                    <div>
+                        <h3>Essais : {guesses.length}</h3>
+                        <Indice modeJeu='classic' pokemon={pokemon} />
+                        <PokemonTable guesses={guesses} pokemon={pokemon} nbEssais={guesses.length}/>
+                    </div> : ''}
             </div>
             {pokemon?.nameFr == pokemonSearch ? (
-                    <EndAndReload pokemon={pokemonSearch} onReset={resetGame} />
+                    <EndAndReload pokemon={pokemonSearch} onReset={resetGame} nbrEssais={guesses.length} />
                 ) : (
                     ""
                 )}
@@ -254,45 +305,6 @@ function Ldle() {
 
 function nombreAleatoire(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
-}
-
-function PokemonTable({guesses, pokemon}) {
-    const rows = [];
-
-    for(let guess of guesses) {
-        rows.push(<PokemonRow guess={guess} pokemon={pokemon} key={guess.nameFr} />);
-    }
-
-    return <table>
-                <thead>
-                    <tr>
-                        <th>Pokemon</th>
-                        <th>Type 1</th>
-                        <th>Type 2</th>
-                        <th>Habitat</th>
-                        <th>Stade d&apos;évolution</th>
-                        <th>Hauteur</th>
-                        <th>Poids</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    {rows}
-                </tbody>
-            </table>
-}
-
-function EndAndReload({pokemon, onReset}) {
-    return <div className='alerte absolute'>
-                <div>
-                    <h2>Bsahtek, tu as trouvé {pokemon}</h2>
-                    <button
-                        onClick={onReset}
-                    >
-                        Rejouer
-                    </button>
-                </div>
-            </div>
-    
 }
 
 export default Ldle
