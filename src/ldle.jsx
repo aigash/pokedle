@@ -290,12 +290,12 @@ function Ldle() {
                 {guesses.length > 0 ? 
                     <div>
                         <h3>Essais : {guesses.length}</h3>
-                        <Indice modeJeu='classic' pokemon={pokemon} />
+                        <Indice modeJeu='classic' pokemon={pokemon} nbEssais={guesses.length} />
                         <PokemonTable guesses={guesses} pokemon={pokemon} nbEssais={guesses.length}/>
                     </div> : ''}
             </div>
             {pokemon?.nameFr == pokemonSearch ? (
-                    <EndAndReload pokemon={pokemonSearch} onReset={resetGame} nbrEssais={guesses.length} />
+                    <EndAndReload pokemon={pokemonSearch} onReset={resetGame} nbEssais={guesses.length} />
                 ) : (
                     ""
                 )}
