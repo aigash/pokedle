@@ -8,7 +8,7 @@ const router = createBrowserRouter([
     element: <App />,
   },
   {
-    path: "/poke",
+    path: "/classic",
     element: <Poke />
   }
 ]);

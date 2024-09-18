@@ -9,7 +9,7 @@ import Indice from './components/Indices';
 const randNumber = nombreAleatoire(1, 386);
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
-function Ldle() {
+function Classic() {
     // se renseigner sur useMemo;
     const [searchId, setSearchId] = useState(null);
     const [guesses, setGuesses] = useState([]);
@@ -60,13 +60,16 @@ function Ldle() {
                 habitat = val.name_french;
             }
         })
-        var stadeEvo = 0;
-        if (poke3.chain.species.name == nameSpecies) {
-            stadeEvo = 1;
-        } else if (poke3.chain.evolves_to[0].species.name == nameSpecies) {
+        let stadeEvo = 1;
+        const evolutionChain = poke3.chain;
+
+        if (evolutionChain.species.name !== nameSpecies) {
             stadeEvo = 2;
-        } else {
-            stadeEvo = 3;
+            const secondStage = evolutionChain.evolves_to;
+            
+            if (!secondStage.some(evolution => evolution.species.name === nameSpecies)) {
+                stadeEvo = 3;
+            }
         }
 
         let type1 = '';
@@ -167,13 +170,16 @@ function Ldle() {
                         }
                     });
 
-                    var stadeEvoSearch = 0;
-                    if (pokeSearch3.data.chain.species.name == nameSpeciesSearch) {
-                        stadeEvoSearch = 1;
-                    } else if (pokeSearch3.data.chain.evolves_to[0].species.name == nameSpeciesSearch) {
+                    let stadeEvoSearch = 1;
+                    const evolutionChain = pokeSearch3.data.chain;
+
+                    if (evolutionChain.species.name !== nameSpeciesSearch) {
                         stadeEvoSearch = 2;
-                    } else {
-                        stadeEvoSearch = 3;
+                        const secondStage = evolutionChain.evolves_to;
+                        
+                        if (!secondStage.some(evolution => evolution.species.name === nameSpeciesSearch)) {
+                            stadeEvoSearch = 3;
+                        }
                     }
 
                     const newGuess = {
@@ -307,4 +313,4 @@ function nombreAleatoire(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
 
-export default Ldle
+export default Classic

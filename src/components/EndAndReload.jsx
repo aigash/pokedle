@@ -1,8 +1,8 @@
-export default function EndAndReload({pokemon, onReset, nbrEssais}) {
+export default function EndAndReload({pokemon, onReset, nbEssais}) {
     return <div className='alerte fixed'>
                 <div>
                     <h2>Bsahtek, tu as trouvé {pokemon}</h2>
-                    <p>Nombre d'essais : {nbrEssais}</p>
+                    <p>Nombre d'essais : {nbEssais}</p>
                     <button
                         onClick={onReset}
                     >

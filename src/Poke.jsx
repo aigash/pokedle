@@ -1,10 +1,10 @@
-import Ldle from './ldle';
+import Classic from './Classic';
 
 function Poke() {
     
     return (
         <div>
-            <Ldle />
+            <Classic />
         </div>
     )
 }
