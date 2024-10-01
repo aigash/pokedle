@@ -257,38 +257,43 @@ function Classic() {
                 {isLoading ? (
                     <span className="loading loading-spinner loading-lg"></span>
                 ) : (
-                    <div>
+                    <div className='flex justify-center'>
                         <form
-                            className='flex'
+                            className='shadow-lg p-4'
+                            id="formClassic"
                             onSubmit={(e) => {
                                 handleSubmit(e);
                             }}
                         >
-                            <div className='relative'>
-                                <input 
-                                    name='pokeSearch' 
-                                    id='pokeSearch'
-                                    autoComplete="off"
-                                    onChange={(e) => {
-                                        handleSuggestions(e);
-                                    }} 
-                                    placeholder="Tape un nom de Pokémon..."
-                                />
-                                {suggestions.length > 0 && (
-                                    <ul className="absolute" id='suggestionsClassic'>
-                                        {suggestions.map((pokemon) => (
-                                            <li 
-                                                key={pokemon.id} 
-                                                onClick={() => handleSuggestionClick(pokemon.name_french)}
-                                                className="cursor-pointer hover:bg-gray-100 p-2"
-                                            >
-                                                {pokemon.name_french}
-                                            </li>
-                                        ))}
-                                    </ul>
-                                )}
+                            <h2 className="mb-2">Trouve le Pokémon du jour !</h2>
+                            <div className='flex justify-center'>
+                                <div className='relative'>
+                                    <input 
+                                        name='pokeSearch' 
+                                        id='pokeSearch'
+                                        autoComplete="off"
+                                        onChange={(e) => {
+                                            handleSuggestions(e);
+                                        }} 
+                                        placeholder="Tape un nom de Pokémon..."
+                                        className="ring-1 ring-inset ring-gray-300 rounded-l-md px-3"
+                                    />
+                                    {suggestions.length > 0 && (
+                                        <ul className="absolute" id='suggestionsClassic'>
+                                            {suggestions.map((pokemon) => (
+                                                <li 
+                                                    key={pokemon.id} 
+                                                    onClick={() => handleSuggestionClick(pokemon.name_french)}
+                                                    className="cursor-pointer hover:bg-gray-100 p-2"
+                                                >
+                                                    {pokemon.name_french}
+                                                </li>
+                                            ))}
+                                        </ul>
+                                    )}
+                                </div>
+                                <button id='submitClassic' type='submit' className="btn btn-primary rounded-r-md bg-red-500 text-white">GO</button>
                             </div>
-                            <button id='submitClassic' type='submit'>GO</button>
                         </form>
                     </div>
                 )}
