@@ -266,7 +266,7 @@ function Classic() {
                             }}
                         >
                             <h2 className="mb-2">Trouve le Pokémon du jour !</h2>
-                            <div className='flex justify-center'>
+                            <div className='flex justify-center mb-3'>
                                 <div className='relative'>
                                     <input 
                                         name='pokeSearch' 
@@ -294,14 +294,14 @@ function Classic() {
                                 </div>
                                 <button id='submitClassic' type='submit' className="btn btn-primary rounded-r-md bg-red-500 text-white">GO</button>
                             </div>
+                            <h3 className='mb-2'>Essais : {guesses.length}</h3>
+                            <Indice modeJeu='classic' pokemon={pokemon} nbEssais={guesses.length} />
                         </form>
                     </div>
                 )}
                 {error ? <p>{error}</p> : null}
                 {guesses.length > 0 ? 
                     <div className='flex justify-center flex-col items-center'>
-                        <h3>Essais : {guesses.length}</h3>
-                        <Indice modeJeu='classic' pokemon={pokemon} nbEssais={guesses.length} />
                         <PokemonTable guesses={guesses} pokemon={pokemon} nbEssais={guesses.length}/>
                     </div> : ''}
             </div>

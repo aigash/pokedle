@@ -61,13 +61,14 @@ button:focus-visible {
 .containerClassic {
   width:100vw;
   min-height:100vh;
-  background: url('assets/background.png');
+  background: url('assets/backgroundpkmn.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50%;
+  background-attachment: fixed;
 }
 #formClassic {
-  width:30%;
+  width:35%;
   background-color:white;
   border-radius:20px;
 }
@@ -77,6 +78,10 @@ button:focus-visible {
 #submitClassic {
   border-top-left-radius: 0px;
   border-bottom-left-radius: 0px;
+}
+
+.tableClassic {
+  overflow: hidden;
 }
 
 table td {

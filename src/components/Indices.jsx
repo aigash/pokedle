@@ -47,10 +47,10 @@ export default function Indice({modeJeu, pokemon, nbEssais}) {
     if (modeJeu == 'classic') {
         return <div className='indices'>
             <div></div>
-            <div className='flex'>
-                <div><div onClick={(e) => showIndice(e,'gen')}>Génération<div>4 essai(s)</div></div></div>
-                <div><div onClick={(e) => showIndice(e,'cri')}>Cri<div>7 essai(s)</div></div></div>
-                <div><div onClick={(e) => showIndice(e,'desc_courte')}>Description<div>10 essai(s)</div></div></div>
+            <div className='flex justify-center'>
+                <div><div className="rounded-md border-gray-400 bg-white hover:bg-red-100 p-2 border border-red-500" onClick={(e) => showIndice(e,'gen')}>Génération<div>4 essai(s)</div></div></div>
+                <div><div className="rounded-md border-gray-400 bg-white hover:bg-red-100 p-2 border border-red-500" onClick={(e) => showIndice(e,'cri')}>Cri<div>7 essai(s)</div></div></div>
+                <div><div className="rounded-md border-gray-400 bg-white hover:bg-red-100 p-2 border border-red-500" onClick={(e) => showIndice(e,'desc_courte')}>Description<div>10 essai(s)</div></div></div>
             </div>
         </div>
     } else if (modeJeu == 'pokedex') {
