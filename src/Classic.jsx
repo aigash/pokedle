@@ -299,7 +299,7 @@ function Classic() {
                 )}
                 {error ? <p>{error}</p> : null}
                 {guesses.length > 0 ? 
-                    <div>
+                    <div className='flex justify-center flex-col items-center'>
                         <h3>Essais : {guesses.length}</h3>
                         <Indice modeJeu='classic' pokemon={pokemon} nbEssais={guesses.length} />
                         <PokemonTable guesses={guesses} pokemon={pokemon} nbEssais={guesses.length}/>

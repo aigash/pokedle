@@ -2,7 +2,7 @@ export default function PokemonRow ({guess, pokemon}) {
     console.log(guess);
     console.log(pokemon);
     return <tr>
-        <td><img className='imgClassic' src={guess.sprite_off} /></td>
+        <td><img className='imgClassic' src={guess.gif} /></td>
         <td className={guess.type1.name_french == pokemon.type1.name_french || guess.type1.name_french == pokemon.type2.name_french ? 'bg-green-500' : 'bg-red-500'}>{guess.type1.name_french}</td>
         <td className={guess.type2.name_french == pokemon.type1.name_french || guess.type2.name_french == pokemon.type2.name_french ? 'bg-green-500' : 'bg-red-500'}>{(guess.type2 == 'Aucun' ? 'Aucun' : guess.type2.name_french)}</td>
         <td className={

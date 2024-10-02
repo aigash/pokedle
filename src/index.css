@@ -79,7 +79,7 @@ button:focus-visible {
   border-bottom-left-radius: 0px;
 }
 
-.imgClassic, table td {
+table td {
   width:110px;
   height:110px;
   border:5px solid white;
@@ -87,6 +87,11 @@ button:focus-visible {
 table td {
   font-weight:600;
   font-size:1.1rem;
+}
+table tbody tr > td:nth-child(1) {
+  display:flex;
+  justify-content:center;
+  align-items:center;
 }
 
 .up {
@@ -115,10 +120,6 @@ table td {
   background-color: white;
   border-radius: 10px;
   padding: 20px;
-}
-
-.tableClassic {
-  width:100%;
 }
 
 #suggestionsClassic {
