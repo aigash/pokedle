@@ -254,56 +254,71 @@ function Classic() {
     return (
         <div className='relative containerClassic'>
             <div className='flex flex-col gap-4' id='classic'>
-                {isLoading ? (
-                    <span className="loading loading-spinner loading-lg"></span>
-                ) : (
-                    <div className='flex justify-center'>
-                        <form
-                            className='shadow-lg p-4'
-                            id="formClassic"
-                            onSubmit={(e) => {
-                                handleSubmit(e);
-                            }}
-                        >
-                            <h2 className="mb-2">Trouve le Pokémon du jour !</h2>
-                            <div className='flex justify-center mb-3'>
-                                <div className='relative'>
-                                    <input 
-                                        name='pokeSearch' 
-                                        id='pokeSearch'
-                                        autoComplete="off"
-                                        onChange={(e) => {
-                                            handleSuggestions(e);
-                                        }} 
-                                        placeholder="Tape un nom de Pokémon..."
-                                        className="ring-1 ring-inset ring-gray-300 rounded-l-md px-3"
-                                    />
-                                    {suggestions.length > 0 && (
-                                        <ul className="absolute" id='suggestionsClassic'>
-                                            {suggestions.map((pokemon) => (
-                                                <li 
-                                                    key={pokemon.id} 
-                                                    onClick={() => handleSuggestionClick(pokemon.name_french)}
-                                                    className="cursor-pointer hover:bg-gray-100 p-2"
-                                                >
-                                                    {pokemon.name_french}
-                                                </li>
-                                            ))}
-                                        </ul>
-                                    )}
+                <div className='flex justify-center flex-col items-center'>
+                    {isLoading ? (
+                        <span className="loading loading-spinner loading-lg"></span>
+                    ) : (
+                        <div className='flex justify-between mb-6 entete'>
+                            <form
+                                className='p-3 rounded-xl flex flex-col justify-between'
+                                id="formClassic"
+                                onSubmit={(e) => {
+                                    handleSubmit(e);
+                                }}
+                            >
+                                <h2 className="mb-2">Trouve le Pokémon du jour !</h2>
+                                <div className='flex justify-center'>
+                                    <div className='relative'>
+                                        <input 
+                                            name='pokeSearch' 
+                                            id='pokeSearch'
+                                            autoComplete="off"
+                                            onChange={(e) => {
+                                                handleSuggestions(e);
+                                            }} 
+                                            placeholder="Tape un nom de Pokémon..."
+                                            className="ring-1 ring-inset ring-gray-300 rounded-l-md px-3"
+                                        />
+                                        {suggestions.length > 0 && (
+                                            <ul className="absolute" id='suggestionsClassic'>
+                                                {suggestions.map((pokemon) => (
+                                                    <li 
+                                                        key={pokemon.id} 
+                                                        onClick={() => handleSuggestionClick(pokemon.name_french)}
+                                                        className="cursor-pointer hover:bg-gray-100 p-2"
+                                                    >
+                                                        {pokemon.name_french}
+                                                    </li>
+                                                ))}
+                                            </ul>
+                                        )}
+                                    </div>
+                                    <button id='submitClassic' type='submit' className="btn btn-primary rounded-r-md bg-red-500 text-white">GO</button>
                                 </div>
-                                <button id='submitClassic' type='submit' className="btn btn-primary rounded-r-md bg-red-500 text-white">GO</button>
+                            </form>
+
+                            <div className="blocAth rounded-xl p-3">
+                                <div className='flex w-full justify-center'>
+                                    <img src='src/assets/pokemon.png'></img>
+                                </div>
                             </div>
-                            <h3 className='mb-2'>Essais : {guesses.length}</h3>
-                            <Indice modeJeu='classic' pokemon={pokemon} nbEssais={guesses.length} />
-                        </form>
-                    </div>
-                )}
-                {error ? <p>{error}</p> : null}
-                {guesses.length > 0 ? 
-                    <div className='flex justify-center flex-col items-center'>
-                        <PokemonTable guesses={guesses} pokemon={pokemon} nbEssais={guesses.length}/>
-                    </div> : ''}
+
+                            <div className="blocAth rounded-xl flex-col p-3">
+                                <h3 className='mb-[-10px]'>Essai(s)</h3>
+                                <p className='nbEssais font-medium text-5xl leading-normal'>{guesses.length}</p>
+                            </div>
+
+                            <Indice typeIndice='Gen' pokemon={pokemon} nbEssais={guesses.length} nbRequis='4' numIndice='1'></Indice>
+                            <Indice typeIndice='Cri' pokemon={pokemon} nbEssais={guesses.length} nbRequis='7' numIndice='2'></Indice>
+                            <Indice typeIndice='Desc.' pokemon={pokemon} nbEssais={guesses.length} nbRequis='10' numIndice='3'></Indice>
+                        </div>
+                    )}
+                    {error ? <p>{error}</p> : null}
+                    {guesses.length > 0 ? 
+                        
+                            <PokemonTable guesses={guesses} pokemon={pokemon} nbEssais={guesses.length}/>
+                        : ''}
+                </div>
             </div>
             {pokemon?.nameFr == pokemonSearch ? (
                     <EndAndReload pokemon={pokemonSearch} onReset={resetGame} nbEssais={guesses.length} />

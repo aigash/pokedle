@@ -1,6 +1,7 @@
 import {createBrowserRouter} from "react-router-dom";
 import App from './App'; // Assurez-vous que ces imports sont corrects
-import Poke from './Poke';
+import Classic from './Classic';
+import Desc from './Desc';
 
 const router = createBrowserRouter([
   {
@@ -9,7 +10,11 @@ const router = createBrowserRouter([
   },
   {
     path: "/classic",
-    element: <Poke />
+    element: <Classic />
+  },
+  {
+    path: "/desc",
+    element: <Desc />
   }
 ]);
 

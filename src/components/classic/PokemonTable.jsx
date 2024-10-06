@@ -6,7 +6,7 @@ export default function PokemonTable({guesses, pokemon}) {
         rows.push(<PokemonRow guess={guess} pokemon={pokemon} key={guess.nameFr} />);
     }
 
-    return <table className='tableClassic bg-white rounded-md shadow-lg'>
+    return <table className='tableClassic rounded-xl shadow-lg border-separate border-spacing-2'>
                 <thead>
                     <tr>
                         <th>Pokemon</th>

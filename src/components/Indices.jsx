@@ -1,16 +1,20 @@
-export default function Indice({modeJeu, pokemon, nbEssais}) {
-    console.log(nbEssais);
-    function showIndice(e, typeIndice) {
+
+export default function Indice({typeIndice, pokemon, nbEssais, nbRequis, numIndice}) {
+    /*if (nbEssais < nbRequis) {
+      return <div>{nbRequis - nbEssais} essai(s) restant(s)</div>;
+    }*/
+
+    function showIndice(e) {
+        if (nbEssais < nbRequis) {
+            return false;
+        }
+        
         switch (typeIndice) {
-            case 'gen':
-                if (nbEssais > 3) {
-                    e.target.children[0].innerHTML = (pokemon.gen == '1' ? '1 (Rouge/Bleu)' : (pokemon.gen == '2' ? '2 (Or/Argent)' : '3 (Rubis/Saphir)'));
-                }
+            case 'Gen':
+                e.target.parentNode.innerHTML = (pokemon.gen == '1' ? '1 (Rouge/Bleu)' : (pokemon.gen == '2' ? '2 (Or/Argent)' : '3 (Rubis/Saphir)'));
                 break;
-            case 'cri':
-                if (nbEssais > 1) {
-                    console.log(e);
-                    e.target.children[0].innerHTML = "<div class='audio-player'><audio controls src="+pokemon.cri+"></audio><button class='play-button'></button></div>";
+            case 'Cri':
+                e.target.parentNode.innerHTML = "<div class='audio-player'><audio controls src="+pokemon.cri+"></audio><button class='play-button'></button></div>";
                     setTimeout(() => {
                         const audioPlayer = e.target.querySelector('.audio-player');
                         const audio = audioPlayer.querySelector('audio');
@@ -27,40 +31,23 @@ export default function Indice({modeJeu, pokemon, nbEssais}) {
                             }
                         });
                     }, 0);
-                }
                 break;
-            case 'desc_courte':
-                if (nbEssais > 9) {
-                    e.target.children[0].innerHTML = pokemon.desc_rapide;
-                }
+            case 'Desc.':
+                e.target.parentNode.innerHTML = pokemon.desc_rapide;
                 break;
-            case 'empreintes':
+            case 'Empreintes':
                 break;
-            case 'type1':
+            case 'Type1':
                 break;
-            case 'type2':
+            case 'Type2':
                 break;
         }
-
     }
 
-    if (modeJeu == 'classic') {
-        return <div className='indices'>
-            <div></div>
-            <div className='flex justify-center'>
-                <div><div className="rounded-md border-gray-400 bg-white hover:bg-red-100 p-2 border border-red-500" onClick={(e) => showIndice(e,'gen')}>Génération<div>4 essai(s)</div></div></div>
-                <div><div className="rounded-md border-gray-400 bg-white hover:bg-red-100 p-2 border border-red-500" onClick={(e) => showIndice(e,'cri')}>Cri<div>7 essai(s)</div></div></div>
-                <div><div className="rounded-md border-gray-400 bg-white hover:bg-red-100 p-2 border border-red-500" onClick={(e) => showIndice(e,'desc_courte')}>Description<div>10 essai(s)</div></div></div>
-            </div>
-        </div>
-    } else if (modeJeu == 'pokedex') {
-        return <div className='indices'>
-            <div></div>
-            <div>
-                <div><div onClick={(e) => showIndice(e,'empreintes')}>Génération</div></div>
-                <div><div onClick={(e) => showIndice(e,'type1')}></div></div>
-                <div><div onClick={(e) => showIndice(e,'type2')}></div></div>
-            </div>
-        </div>
-    }
+    return (<div className={"blocAth rounded-xl flex-col p-3" + (nbEssais < nbRequis ? " indiceDesac" : "")}>
+                <h3>{typeIndice}</h3>
+                <div onClick={(e) => showIndice(e)} className='text-sm'>
+                    <img src={`/src/assets/indice${numIndice}.png`} alt={`Indice ${numIndice}`}></img>
+                </div>
+            </div>);
 }
