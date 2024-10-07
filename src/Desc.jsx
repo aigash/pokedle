@@ -35,6 +35,8 @@ export default function Desc() {
                 desc = val.flavor_text.replace(new RegExp(nameFr, 'gi'), '[pokemon]');
             }
         })
+        let generation = poke2.generation.url.replace('/', ' ');
+        const gen = generation.slice(-2).slice(0,1);
         let type1 = '';
         let type2 = '';
         pokemons.types.forEach(val => {
@@ -58,6 +60,7 @@ export default function Desc() {
             sprite: sprite,
             nameFr: nameFr,
             desc: desc,
+            gen: gen,
         };
         setPokemon(pokemonData);
     }
@@ -91,12 +94,15 @@ export default function Desc() {
                     const gifSearch = pokeSearch1.data.sprites.other.showdown.front_default;
                     const spriteSearch = pokeSearch1.data.sprites.versions['generation-iv'].platinum.front_default;
                     const nameFrSearch = pokeSearch2.data.names[4].name;
+                    let generation = pokeSearch2.data.generation.url.replace('/', ' ');
+                    const genSearch = generation.slice(-2).slice(0,1);
     
                     const newGuess = {
                         sprite_off: sprite_offSearch,
                         gif: gifSearch,
                         sprite: spriteSearch,
                         nameFr: nameFrSearch,
+                        gen: genSearch,
                     };
                     setGuesses(prevGuesses => [newGuess, ...prevGuesses]);
                     setPokemonSearch(nameFrSearch);

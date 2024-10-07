@@ -53,7 +53,7 @@ function Classic() {
         })
         const desc_rapide = poke2.genera[3].genus;
         let generation = poke2.generation.url.replace('/', ' ');
-        const gen = generation.slice(-2).slice(0,1)
+        const gen = generation.slice(-2).slice(0,1);
         let habitat = '';//poke2.habitat.name;
         pokemons.habitats.forEach(val => {
             if (poke2.habitat.name == val.name_english) {
@@ -145,7 +145,7 @@ function Classic() {
                     const spriteSearch = pokeSearch1.data.sprites.versions['generation-iv'].platinum.front_default;
                     const nameFrSearch = pokeSearch2.data.names[4].name;
                     let generation = pokeSearch2.data.generation.url.replace('/', ' ');
-                    const genSearch = generation.slice(-2).slice(0,1)
+                    const genSearch = generation.slice(-2).slice(0,1);
                     let habitatSearch = '';//poke2.habitat.name;
                     pokemons.habitats.forEach(val => {
                         if (pokeSearch2.data.habitat.name == val.name_english) {
