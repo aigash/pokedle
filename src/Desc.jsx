@@ -28,6 +28,7 @@ export default function Desc() {
         const sprite_off = poke1.sprites.other['official-artwork'].front_default;
         const gif = poke1.sprites.other.showdown.front_default;
         const sprite = poke1.sprites.versions['generation-iv'].platinum.front_default;
+        const cri = poke1.cries.latest;
         const nameFr = poke2.names[4].name;
         let desc;//poke2.flavor_text_entries[34].flavor_text;
         poke2.flavor_text_entries.forEach(val => {
@@ -55,6 +56,7 @@ export default function Desc() {
             name: name,
             type1: type1,
             type2: type2,
+            cri: cri,
             sprite_off: sprite_off,
             gif: gif,
             sprite: sprite,
