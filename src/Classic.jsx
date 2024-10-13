@@ -297,15 +297,15 @@ function Classic() {
                                 </div>
                             </form>
 
-                            <div className="blocAth rounded-xl p-3">
-                                <div className='flex w-full justify-center'>
-                                    <img src='src/assets/pokemon.png'></img>
-                                </div>
-                            </div>
-
                             <div className="blocAth rounded-xl flex-col p-3">
                                 <h3 className='mb-[-10px]'>Essai(s)</h3>
                                 <p className='nbEssais font-medium text-5xl leading-normal'>{guesses.length}</p>
+                            </div>
+                            
+                            <div className="blocAth rounded-xl p-3">
+                                <div className='flex w-full justify-center'>
+                                    <img src='src/assets/pokedex.png'></img>
+                                </div>
                             </div>
 
                             <Indice typeIndice='Gen' pokemon={pokemon} nbEssais={guesses.length} nbRequis='4' numIndice='1'></Indice>

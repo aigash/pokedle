@@ -211,7 +211,7 @@ export default function Desc() {
 
                                 <div className="blocAth rounded-xl p-3">
                                     <div className='flex w-full justify-center'>
-                                        <img src='src/assets/pokemon.png'></img>
+                                        <img src='src/assets/pokedex.png'></img>
                                     </div>
                                 </div>
 
