@@ -1,116 +1,37 @@
 import useSWR from 'swr';
 import axios from 'axios';
-import {useState, useEffect} from 'react';
+import {useState, useEffect, useMemo} from 'react';
 import pokemons from './pokemon.json';
 import PokemonTable from './components/classic/PokemonTable';
 import EndAndReload from './components/EndAndReload';
 import Indice from './components/Indices';
+import { usePokemonData } from './hooks/usePokemonData';
 
 const randNumber = nombreAleatoire(1, 386);
 const fetcher = (...args) => fetch(...args).then((res) => res.json());
 
 function Classic() {
-    // se renseigner sur useMemo;
     const [searchId, setSearchId] = useState(null);
     const [guesses, setGuesses] = useState([]);
-    const [pokemon, setPokemon] = useState(null);
     const [pokemonSearch, setPokemonSearch] = useState('');
-
     const [suggestions, setSuggestions] = useState(pokemons.pokemon);
 
-    const { data: poke1, error: error1, isLoading: isLoading1 } = useSWR('https://pokeapi.co/api/v2/pokemon/' + randNumber, fetcher);
-    const { data: poke2, error: error2, isLoading: isLoading2 } = useSWR(poke1?.species.url, fetcher);
-    const { data: poke3, error: error3, isLoading: isLoading3 } = useSWR(poke2?.evolution_chain.url, fetcher);
-    
-    const error = error1 || error2 || error3;
-    const isLoading = isLoading1 || isLoading2 || isLoading3;
+    const randNumber = useMemo(() => nombreAleatoire(1, 386), []);
+    const { pokemonData: mysteryPokemon, isLoading, error } = usePokemonData(randNumber, pokemons);
 
-    if (poke3 && !pokemon) {
-        const name = poke1.name;
-        const nameSpecies = poke1.species.name;
-        const types = poke1.types;
-        const taille = poke1.height;
-        //console.log(taille + 'm');
-        const poids = poke1.weight;
-        //console.log(poids + 'kg');
-        const cri = poke1.cries.latest;
-        const sprite_off = poke1.sprites.other['official-artwork'].front_default;
-        const gif = poke1.sprites.other.showdown.front_default;
-        const sprite = poke1.sprites.versions['generation-iv'].platinum.front_default;
-        const nameFr = poke2.names[4].name;
-        let couleur = null;
-        for (const pokemon of pokemons.pokemon) {
-            if (pokemon.id === poke1.id) {
-                couleur = pokemon.couleur;
-                break;
-            }
-        }
-        let desc = '';//poke2.flavor_text_entries[34].flavor_text;
-        poke2.flavor_text_entries.forEach(val => {
-            if (val.version.name == 'omega-ruby' && val.language.name == 'fr') {
-                desc = val.flavor_text.replace(new RegExp(nameFr, 'gi'), '[pokemon]');
-            }
-        })
-        const desc_rapide = poke2.genera[3].genus;
-        let generation = poke2.generation.url.replace('/', ' ');
-        const gen = generation.slice(-2).slice(0,1);
-        let habitat = '';//poke2.habitat.name;
-        pokemons.habitats.forEach(val => {
-            if (poke2.habitat.name == val.name_english) {
-                habitat = val.name_french;
-            }
-        })
-        let stadeEvo = 1;
-        const evolutionChain = poke3.chain;
-
-        if (evolutionChain.species.name !== nameSpecies) {
-            stadeEvo = 2;
-            const secondStage = evolutionChain.evolves_to;
-            
-            if (!secondStage.some(evolution => evolution.species.name === nameSpecies)) {
-                stadeEvo = 3;
-            }
-        }
-
-        let type1 = '';
-        let type2 = '';
-        pokemons.types.forEach(val => {
-            if (types[0].type.name == val.name_english) {
-                type1 = val;
-            }
-            if (types.length > 1) {
-                if (types[1].type.name == val.name_english) {
-                    type2 = val;
-                }
-            } else {
-                type2 = 'Aucun';
-            }
-        });
-
-        const pokemonData = {
-            couleur: couleur,
-            name: name,
-            type1: type1,
-            type2: type2,
-            taille: taille,
-            poids: poids,
-            cri: cri,
-            sprite_off: sprite_off,
-            gif: gif,
-            sprite: sprite,
-            nameFr: nameFr,
-            desc: desc,
-            desc_rapide: desc_rapide,
-            gen: gen,
-            habitat: habitat,
-            stadeEvo: stadeEvo
-        };
-        setPokemon(pokemonData);
+    if (isLoading) {
+        return <div>Chargement en cours...</div>;
     }
-    /*useEffect(() => {
-        
-    }, []);*/
-    function handleSubmit(e) {
+
+    if (error) {
+        return <div>Une erreur est survenue: {error}</div>;
+    }
+
+    if (!mysteryPokemon) {
+        return <div>Aucune donnée Pokémon trouvée</div>;
+    }
+
+    const handleSubmit = async (e) => {
         e.preventDefault();
         const formData = new FormData(e.currentTarget);
         const pokeSearch = formData.get('pokeSearch');
@@ -246,7 +167,6 @@ function Classic() {
     const resetGame = () => {
         setSearchId(null);
         setGuesses([]);
-        setPokemon(null);
         window.location.reload();
     };
 
@@ -308,19 +228,19 @@ function Classic() {
                                 </div>
                             </div>
 
-                            <Indice typeIndice='Gen' pokemon={pokemon} nbEssais={guesses.length} nbRequis='4' numIndice='1'></Indice>
-                            <Indice typeIndice='Cri' pokemon={pokemon} nbEssais={guesses.length} nbRequis='7' numIndice='2'></Indice>
-                            <Indice typeIndice='Desc.' pokemon={pokemon} nbEssais={guesses.length} nbRequis='10' numIndice='3'></Indice>
+                            <Indice typeIndice='Gen' pokemon={mysteryPokemon} nbEssais={guesses.length} nbRequis='4' numIndice='1'></Indice>
+                            <Indice typeIndice='Cri' pokemon={mysteryPokemon} nbEssais={guesses.length} nbRequis='7' numIndice='2'></Indice>
+                            <Indice typeIndice='Desc.' pokemon={mysteryPokemon} nbEssais={guesses.length} nbRequis='10' numIndice='3'></Indice>
                         </div>
                     )}
                     {error ? <p>{error}</p> : null}
                     {guesses.length > 0 ? 
                         
-                            <PokemonTable guesses={guesses} pokemon={pokemon} nbEssais={guesses.length}/>
+                            <PokemonTable guesses={guesses} pokemon={mysteryPokemon} nbEssais={guesses.length}/>
                         : ''}
                 </div>
             </div>
-            {pokemon?.nameFr == pokemonSearch ? (
+            {mysteryPokemon?.nameFr == pokemonSearch ? (
                     <EndAndReload pokemon={pokemonSearch} onReset={resetGame} nbEssais={guesses.length} />
                 ) : (
                     ""
