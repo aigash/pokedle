@@ -80,3 +80,42 @@ export const formatPokemonData = (rawData, pokemons) => {
         )?.flavor_text || ''
     };
 };
+
+export const getRandomPokemonId = (min, max) => {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+};
+
+export const searchPokemonByName = async (pokemonName, pokemons) => {
+  if (!pokemonName || !pokemons?.pokemon) return null;
+  
+  const pokemon = pokemons.pokemon.find(p => 
+    p.name_french.toLowerCase() === pokemonName.toLowerCase()
+  );
+  if (!pokemon) return null;
+  
+  const data = await fetchPokemonData(pokemon.id);
+  return formatPokemonData(data, pokemons);
+};
+
+export const sanitizeDescription = (description, pokemonName) => {
+  if (!description || !pokemonName) return description;
+  
+  // Créer un tableau de variantes du nom (avec/sans accents, majuscules/minuscules)
+  const variants = [
+    pokemonName,
+    pokemonName.toLowerCase(),
+    pokemonName.toUpperCase(),
+    // Gestion des accents
+    pokemonName.normalize("NFD").replace(/[\u0300-\u036f]/g, ""),
+    // Cas spéciaux comme "M. Mime" ou "M.Mime"
+    pokemonName.replace(/\s/g, ''),
+    pokemonName.replace(/\./g, '. '),
+  ];
+
+  let sanitizedDesc = description;
+  variants.forEach(variant => {
+    sanitizedDesc = sanitizedDesc.replace(new RegExp(variant, 'gi'), '[???]');
+  });
+
+  return sanitizedDesc;
+};
