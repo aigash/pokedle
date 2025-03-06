@@ -1,24 +1,23 @@
-import { useMemo, useState } from 'react';
+import  { useMemo, useState } from 'react';
 import pokemons from './pokemon.json';
 import EndAndReload from './components/EndAndReload';
-import Indice from './components/Indices';
 import { usePokemonData } from './hooks/usePokemonData';
 import { usePokemonGame } from './hooks/usePokemonGame';
-import { getRandomPokemonId, sanitizeDescription } from './services/pokemonService';
+import { getRandomPokemonId } from './services/pokemonService';
 import PokemonSearchForm from './components/PokemonSearchForm';
 import Pokedex from './components/Pokedex';
 import GuessSticker from './components/GuessSticker';
 
-export default function Desc() {
+export default function Silhouette() {
     const randomId = useMemo(() => getRandomPokemonId(1, 386), []);
     const { pokemonData: pokemon, isLoading, error } = usePokemonData(randomId, pokemons);
     const { guesses, suggestions, pokemonSearch, handleGuess, resetGame } = usePokemonGame(pokemons);
     const [isModalOpen, setIsModalOpen] = useState(false);
 
-    const sanitizedDesc = useMemo(() => {
-        if (!pokemon?.desc || !pokemon?.nameFr) return "";
-        return sanitizeDescription(pokemon.desc, pokemon.nameFr);
-    }, [pokemon?.desc, pokemon?.nameFr]);
+    const spriteOff = useMemo(() => {
+        if (!pokemon?.sprite_off || !pokemon?.nameFr) return "";
+        return pokemon.sprite_off;
+    }, [pokemon?.sprite_off, pokemon?.nameFr]);
 
     const handleSubmit = async (pokemonName) => {
         if (!pokemonName) return;
@@ -38,16 +37,16 @@ export default function Desc() {
     }
 
     return (
-        <div className='relative containerDesc'>
-            <div className='flex flex-col gap-4' id='desc'>
+        <div className='containerSilhouette'>
+            <div className='flex flex-col gap-4' id='silhouette'>
                 <div className='flex justify-center flex-col items-center'>
                     {isLoading ? (
                         <span className="loading loading-spinner loading-lg"></span>
                     ) : (
                         <div>
-                            <div id='desc_pokedex' className='p-3 rounded-xl bg-white mb-6'>
-                                <h2>À quel Pokémon est associée cette phrase du Pokédex ?</h2>
-                                <samp>❝{sanitizedDesc || "Chargement en cours..."}❞</samp>
+                            <div id='silhouette_pokedex' className='p-3 rounded-xl bg-white mb-6'>
+                                <h2>À quel Pokémon appartient cette silhouette ?</h2>
+                                <div></div>
                             </div>
                             <div className='flex justify-between mb-6 entete'>
                                 <PokemonSearchForm 
@@ -66,10 +65,6 @@ export default function Desc() {
                                     <h3 className='mb-[-10px]'>Essai(s)</h3>
                                     <p className='nbEssais font-medium text-5xl leading-normal'>{guesses.length}</p>
                                 </div>
-
-                                <Indice typeIndice='Gen' pokemon={pokemon} nbEssais={guesses.length} nbRequis='4' numIndice='1' />
-                                <Indice typeIndice='Cri' pokemon={pokemon} nbEssais={guesses.length} nbRequis='7' numIndice='2' />
-                                <Indice typeIndice='Desc.' pokemon={pokemon} nbEssais={guesses.length} nbRequis='10' numIndice='3' />
                             </div>
                         </div>
                     )}
@@ -83,7 +78,6 @@ export default function Desc() {
                     )}
                 </div>
             </div>
-            
             {pokemon?.nameFr === pokemonSearch && (
                 <EndAndReload pokemon={pokemonSearch} onReset={resetGame} nbEssais={guesses.length} />
             )}

@@ -3,7 +3,7 @@
   width: 100vw;
   min-height: 100vh;
 }
-#classic, #desc {
+#classic, #desc, #silhouette {
   margin: 0 auto;
   padding: 2rem;
   text-align: center;

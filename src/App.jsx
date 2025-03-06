@@ -18,7 +18,7 @@ function App() {
         <h3>Description</h3>
       </div>
 
-      <div className='p-3 rounded-md bg-red-500 text-white' id='modeSilhouette'>
+      <div className='p-3 rounded-md bg-red-500 text-white' id='modeSilhouette' onClick={(e) => launchMode('silhouette')}>
         <h3>Silhouette</h3>
       </div>
 

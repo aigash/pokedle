@@ -58,7 +58,7 @@ button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
 }
 
-.containerClassic, .containerDesc {
+.containerClassic, .containerDesc, .containerSilhouette {
   width:100vw;
   min-height:100vh;
   background: url('assets/backgroundpkmn.png');
@@ -67,7 +67,7 @@ button:focus-visible {
   background-position: 50%;
   background-attachment: fixed;
 }
-.entete, #desc_pokedex {
+.entete, #desc_pokedex, #blocGuesses {
   width:954px;
 }
 #formClassic {
