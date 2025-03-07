@@ -13,15 +13,15 @@ export default function PokemonRow ({guess, pokemon}) {
                 : ((guess.couleur[0] !== pokemon.couleur[0] && guess.couleur[0] !== pokemon.couleur[1]) &&
                    (guess.couleur[1] !== pokemon.couleur[0] && guess.couleur[1] !== pokemon.couleur[1]))
                     ? 'bg-red-500'
-                    : 'bg-yellow-500'
+                    : 'bg-yellow-400'
             : guess.couleur.length > 1 && pokemon.couleur.length === 1
                 ? (guess.couleur[0] !== pokemon.couleur[0] && guess.couleur[1] !== pokemon.couleur[0])
                     ? 'bg-red-500'
-                    : 'bg-yellow-500'
+                    : 'bg-yellow-400'
                 : guess.couleur.length === 1 && pokemon.couleur.length > 1
                     ? (guess.couleur[0] !== pokemon.couleur[0] && guess.couleur[0] !== pokemon.couleur[1])
                         ? 'bg-red-500'
-                        : 'bg-yellow-500'
+                        : 'bg-yellow-400'
                     : guess.couleur[0] === pokemon.couleur[0]
                         ? 'bg-green-500'
                         : 'bg-red-500'

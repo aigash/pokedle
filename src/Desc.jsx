@@ -75,7 +75,7 @@ export default function Desc() {
                     )}
                     {error && <p>{error}</p>}
                     {guesses.length > 0 && (
-                        <div id='blocGuesses' className="grid grid-cols-[repeat(auto-fill,minmax(7rem,7rem))] gap-4 justify-between">
+                        <div id='guessesDesc' className="grid grid-cols-7 gap-4 justify-between">
                             {guesses.map((guess, index) => (
                                 <GuessSticker key={`${guess.nameFr}-${index}`} guess={guess} pokemon={pokemon} />
                             ))}

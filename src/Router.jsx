@@ -2,7 +2,7 @@ import {createBrowserRouter} from "react-router-dom";
 import App from './App'; // Assurez-vous que ces imports sont corrects
 import Classic from './Classic';
 import Desc from './Desc';
-import Silhouette from "./silhouette";
+import Pixels from "./Pixels";
 
 const router = createBrowserRouter([
   {
@@ -18,8 +18,8 @@ const router = createBrowserRouter([
     element: <Desc />
   },
   {
-    path: "/silhouette",
-    element: <Silhouette />
+    path: "/pixels",
+    element: <Pixels />
   },
 ]);
 

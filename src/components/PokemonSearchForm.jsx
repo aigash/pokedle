@@ -16,8 +16,7 @@ export default function PokemonSearchForm({ onSubmit, suggestions, onSuggestionC
     }
 
     const filtered = suggestions
-      .filter(pokemon => pokemon.name_french.toLowerCase().includes(value.toLowerCase()))
-      .slice(0, 5);
+      .filter(pokemon => pokemon.name_french.toLowerCase().includes(value.toLowerCase()));
     
     setFilteredSuggestions(filtered);
     setShowSuggestions(true);
@@ -26,6 +25,7 @@ export default function PokemonSearchForm({ onSubmit, suggestions, onSuggestionC
   const handleSuggestionClick = (pokemonName) => {
     onSuggestionClick(pokemonName);
     setSearchValue('');
+    document.getElementById('pokeSearch').focus();
     setShowSuggestions(false);
   };
 
@@ -62,7 +62,7 @@ export default function PokemonSearchForm({ onSubmit, suggestions, onSuggestionC
         </button>
         
         {showSuggestions && filteredSuggestions.length > 0 && (
-          <div className="absolute w-full bg-white border rounded-b mt-12 shadow-lg z-10">
+          <div className="absolute w-full bg-white border rounded-b mt-12 shadow-lg z-10 max-h-[240px] overflow-y-auto">
             {filteredSuggestions.map((pokemon) => (
               <div
                 key={pokemon.name_french}

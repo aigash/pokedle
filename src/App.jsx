@@ -18,8 +18,8 @@ function App() {
         <h3>Description</h3>
       </div>
 
-      <div className='p-3 rounded-md bg-red-500 text-white' id='modeSilhouette' onClick={(e) => launchMode('silhouette')}>
-        <h3>Silhouette</h3>
+      <div className='p-3 rounded-md bg-red-500 text-white' id='modePixels' onClick={(e) => launchMode('pixels')}>
+        <h3>Pixels</h3>
       </div>
 
     </div>
