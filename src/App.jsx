@@ -1,29 +1,22 @@
 import './App.css'
+import GameMode from './components/GameMode';
 
-function App() {
+export default function App() {
   function launchMode(mode) {
     window.location.href = '/' + mode;
   }
 
   return (
-    <div id='modesJeux' className='flex flex-col items-center gap-2'>
+    <div id='modesJeux' className='flex flex-col items-center'>
 
-      <img className='w-80' src='src/assets/pokedeule.png'></img>
+      <img className='h-44 mb-6' src='src/assets/pokedeule.png'></img>
 
-      <div className='p-3 rounded-md bg-red-500 text-white' id='modeClassique' onClick={(e) => launchMode('classic')}>
-        <h3>Classique</h3>
+      <div className='flex flex-col p-3 rounded-xl bg-white/60'>
+        <GameMode img='src/assets/classic.svg' titre='Classique' onclick={(e) => launchMode('classic')} />
+        <GameMode img='src/assets/desc.svg' titre='Description' onclick={(e) => launchMode('desc')} />
+        <GameMode img='src/assets/pixels.svg' titre='Pixels' onclick={(e) => launchMode('pixels')} />
       </div>
-
-      <div className='p-3 rounded-md bg-red-500 text-white' id='modeDesc' onClick={(e) => launchMode('desc')}>
-        <h3>Description</h3>
-      </div>
-
-      <div className='p-3 rounded-md bg-red-500 text-white' id='modePixels' onClick={(e) => launchMode('pixels')}>
-        <h3>Pixels</h3>
-      </div>
-
     </div>
   )
 }
 
-export default App

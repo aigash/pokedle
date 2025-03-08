@@ -8,9 +8,12 @@ import { usePokemonGame } from './hooks/usePokemonGame';
 import { getRandomPokemonId } from './services/pokemonService';
 import PokemonSearchForm from './components/PokemonSearchForm';
 import Pokedex from './components/Pokedex';
+import { useDailyRandomNumber } from './hooks/useDailyRandomNumber';
 
 function Classic() {
-    const randomId = useMemo(() => getRandomPokemonId(1, 386), []);
+    //const randomId = useMemo(() => getRandomPokemonId(1, 386), []);
+    const randomId = useDailyRandomNumber(1, 386);
+
     const { pokemonData: mysteryPokemon, isLoading, error } = usePokemonData(randomId, pokemons);
     const { guesses, suggestions, pokemonSearch, handleGuess, resetGame } = usePokemonGame(pokemons);
     const [isModalOpen, setIsModalOpen] = useState(false);

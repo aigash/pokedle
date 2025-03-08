@@ -8,9 +8,11 @@ import { getRandomPokemonId, sanitizeDescription } from './services/pokemonServi
 import PokemonSearchForm from './components/PokemonSearchForm';
 import Pokedex from './components/Pokedex';
 import GuessSticker from './components/GuessSticker';
+import { useDailyRandomNumber } from './hooks/useDailyRandomNumber';
 
 export default function Desc() {
-    const randomId = useMemo(() => getRandomPokemonId(1, 386), []);
+    //const randomId = useMemo(() => getRandomPokemonId(1, 386), []);
+    const randomId = useDailyRandomNumber(1, 386);
     const { pokemonData: pokemon, isLoading, error } = usePokemonData(randomId, pokemons);
     const { guesses, suggestions, pokemonSearch, handleGuess, resetGame } = usePokemonGame(pokemons);
     const [isModalOpen, setIsModalOpen] = useState(false);

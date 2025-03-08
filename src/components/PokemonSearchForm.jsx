@@ -58,7 +58,7 @@ export default function PokemonSearchForm({ onSubmit, suggestions, onSuggestionC
           id="submitClassic"
           className="bg-red-500 text-white px-4 rounded-r hover:bg-red-600"
         >
-          Valider
+          GO
         </button>
         
         {showSuggestions && filteredSuggestions.length > 0 && (
