@@ -1,52 +1,85 @@
 import { useState, useEffect } from 'react';
 
 export const useDailyRandomNumber = (min, max, seed = '') => {
-  const [randomNumber, setRandomNumber] = useState(null);
-
-  useEffect(() => {
-    // Fonction pour générer un nombre aléatoire basé sur une date et un seed optionnel
-    const generateDailyNumber = () => {
-      const today = new Date();
-      const dateString = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
-      
-      const dailySeed = dateString + seed;
-      
-      // Utiliser une fonction de hachage simple pour générer un nombre basé sur la date
-      let hash = 0;
-      for (let i = 0; i < dailySeed.length; i++) {
-        hash = ((hash << 5) - hash) + dailySeed.charCodeAt(i);
-        hash |= 0; // Convertir en entier 32 bits
-      }
-      
-      // Convertir le hash en un nombre dans la plage spécifiée
-      const normalizedHash = Math.abs(hash) / 2147483647; // Diviser par MAX_INT
-      return Math.floor(normalizedHash * (max - min + 1)) + min;
-    };
-
-    // Générer le nombre au chargement du composant
-    setRandomNumber(generateDailyNumber());
+  // Fonction pour générer un nombre aléatoire basé sur la date
+  const generateDailyNumber = (dateString) => {
+    const dailySeed = dateString + seed;
     
-    // Vérifier s'il faut régénérer le nombre à minuit
+    let hash = 0;
+    for (let i = 0; i < dailySeed.length; i++) {
+      hash = ((hash << 5) - hash) + dailySeed.charCodeAt(i);
+      hash |= 0;
+    }
+    
+    const normalizedHash = Math.abs(hash) / 2147483647;
+    return Math.floor(normalizedHash * (max - min + 1)) + min;
+  };
+
+  // Initialiser l'état avec le nombre stocké ou un nouveau nombre
+  const [randomNumber, setRandomNumber] = useState(() => {
+    const today = new Date();
+    console.log(today);
+    const dateString = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
+    
+    // Vérifier localStorage pour une valeur existante
+    const storedData = localStorage.getItem('dailyRandomNumber');
+    if (storedData) {
+      const { date, number, usedSeed, usedMin, usedMax } = JSON.parse(storedData);
+      
+      // Si la date stockée est aujourd'hui et les paramètres sont les mêmes, utiliser le nombre stocké
+      if (date === dateString && usedSeed === seed && usedMin === min && usedMax === max) {
+        return number;
+      }
+    }
+    
+    // Sinon générer un nouveau nombre et le stocker
+    const newNumber = generateDailyNumber(dateString);
+    localStorage.setItem('dailyRandomNumber', JSON.stringify({
+      date: dateString,
+      number: newNumber,
+      usedSeed: seed,
+      usedMin: min,
+      usedMax: max
+    }));
+    
+    return newNumber;
+  });
+
+  // Effet pour vérifier périodiquement si la date a changé
+  useEffect(() => {
     const checkForNewDay = () => {
       const now = new Date();
-      const tomorrow = new Date(now);
-      tomorrow.setDate(tomorrow.getDate() + 1);
-      tomorrow.setHours(0, 0, 0, 0);
+      const currentDateString = `${now.getFullYear()}-${String(now.getMonth() + 1).padStart(2, '0')}-${String(now.getDate()).padStart(2, '0')}`;
       
-      const timeUntilMidnight = tomorrow - now;
-      
-      // Programmer la mise à jour pour minuit
-      const timerId = setTimeout(() => {
-        setRandomNumber(generateDailyNumber());
-        checkForNewDay(); // Réinitialiser pour le jour suivant
-      }, timeUntilMidnight);
-      
-      return () => clearTimeout(timerId);
+      const storedData = localStorage.getItem('dailyRandomNumber');
+      if (storedData) {
+        const { date, usedSeed, usedMin, usedMax } = JSON.parse(storedData);
+        
+        // Si la date a changé ou les paramètres ont changé, générer un nouveau nombre
+        if (date !== currentDateString || usedSeed !== seed || usedMin !== min || usedMax !== max) {
+          const newNumber = generateDailyNumber(currentDateString);
+          
+          localStorage.setItem('dailyRandomNumber', JSON.stringify({
+            date: currentDateString,
+            number: newNumber,
+            usedSeed: seed,
+            usedMin: min,
+            usedMax: max
+          }));
+          
+          setRandomNumber(newNumber);
+        }
+      }
     };
+
+    // Vérifier immédiatement au montage du composant
+    checkForNewDay();
     
-    const cleanup = checkForNewDay();
-    return cleanup;
+    // Puis vérifier périodiquement (toutes les minutes)
+    const intervalId = setInterval(checkForNewDay, 60000);
+    
+    return () => clearInterval(intervalId);
   }, [min, max, seed]);
 
   return randomNumber;
-}
+};

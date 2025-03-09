@@ -37,7 +37,8 @@ function Classic() {
 
     return (
         <div className='relative containerClassic'>
-            <div className='flex flex-col gap-4' id='classic'>
+            <div className='flex flex-col gap-4 relative' id='classic'>
+                <a href='/'><img src='src/assets/pokedeule.png' className='absolute top-0 left-0 w-[180px]' /></a>
                 <div className='flex justify-center flex-col items-center'>
                     {isLoading ? (
                         <span className="loading loading-spinner loading-lg"></span>

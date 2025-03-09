@@ -67,7 +67,6 @@ button:focus-visible {
 }
 
 .containerClassic, .containerDesc, .containerPixels {
-  width:100vw;
   min-height:100vh;
   background: url('assets/backgroundpkmn.png');
   background-repeat: no-repeat;

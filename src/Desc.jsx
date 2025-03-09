@@ -41,7 +41,8 @@ export default function Desc() {
 
     return (
         <div className='relative containerDesc'>
-            <div className='flex flex-col gap-4' id='desc'>
+            <div className='flex flex-col gap-4 relative' id='desc'>
+                <a href='/'><img src='src/assets/pokedeule.png' className='absolute top-0 left-0 w-[180px]' /></a>
                 <div className='flex justify-center flex-col items-center'>
                     {isLoading ? (
                         <span className="loading loading-spinner loading-lg"></span>
