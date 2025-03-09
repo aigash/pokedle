@@ -1,18 +1,19 @@
 import  { useMemo, useState } from 'react';
-import pokemons from './pokemon.json';
-import EndAndReload from './components/EndAndReload';
-import { usePokemonData } from './hooks/usePokemonData';
-import { usePokemonGame } from './hooks/usePokemonGame';
-import { getRandomPokemonId } from './services/pokemonService';
-import PokemonSearchForm from './components/PokemonSearchForm';
-import Pokedex from './components/Pokedex';
-import GuessSticker from './components/GuessSticker';
+import pokemons from '../pokemon.json';
+import EndAndReload from '../components/common/EndAndReload';
+import { usePokemonData } from '../hooks/usePokemonData';
+import { usePokemonGame } from '../hooks/usePokemonGame';
+import { getRandomPokemonId } from '../services/pokemonService';
+import PokemonSearchForm from '../components/common/PokemonSearchForm';
+import Pokedex from '../components/common/Pokedex';
+import GuessSticker from '../components/common/GuessSticker';
 import { Pixelify } from 'react-pixelify';
-import { useDailyRandomNumber } from './hooks/useDailyRandomNumber';
+import { useDailyRandomNumber } from '../hooks/useDailyRandomNumber';
+import Loading from '../components/common/Loading';
 
 export default function Pixels() {
-    //const randomId = useMemo(() => getRandomPokemonId(1, 386), []);
-    const randomId = useDailyRandomNumber(1, 386);
+    const randomId = useMemo(() => getRandomPokemonId(1, 386), []);
+    //const randomId = useDailyRandomNumber(1, 386);
     
     const { pokemonData: pokemon, isLoading, error } = usePokemonData(randomId, pokemons);
     const { guesses, suggestions, pokemonSearch, handleGuess, resetGame } = usePokemonGame(pokemons);
@@ -32,7 +33,7 @@ export default function Pixels() {
     };
 
     if (isLoading) {
-        return <div>Chargement en cours...</div>;
+        <Loading />;
     }
 
     if (error) {
@@ -40,7 +41,7 @@ export default function Pixels() {
     }
 
     if (!pokemon) {
-        return <div>Aucune donnée Pokémon trouvée</div>;
+        <Loading />;
     }
 
     return (
@@ -72,7 +73,7 @@ export default function Pixels() {
 
                                 <div id='openPokedex' className="blocAth rounded-xl p-3" onClick={() => setIsModalOpen(true)}>
                                     <div className='flex w-full justify-center'>
-                                        <img src='src/assets/pokedex.png' alt="Pokedex" />
+                                        <img src='src/assets/img/icones/pokedex.png' alt="Pokedex" />
                                     </div>
                                 </div>
 

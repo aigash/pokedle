@@ -10,7 +10,7 @@ export default function Pokedex({ isModalOpen, onClose }) {
                 >
                     <div className="max-w-[90%] h-[90%] flex justify-center opacity-30 hover:opacity-100 transition-all">
                         <img 
-                            src="src/assets/background.png" 
+                            src="src/assets/img/background.png" 
                             alt="Pokedex" 
                             className=""
                         />

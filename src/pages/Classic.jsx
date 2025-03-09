@@ -1,25 +1,28 @@
 import {useState, useMemo} from 'react';
-import pokemons from './pokemon.json';
-import PokemonTable from './components/classic/PokemonTable';
-import EndAndReload from './components/EndAndReload';
-import Indice from './components/Indices';
-import { usePokemonData } from './hooks/usePokemonData';
-import { usePokemonGame } from './hooks/usePokemonGame';
-import { getRandomPokemonId } from './services/pokemonService';
-import PokemonSearchForm from './components/PokemonSearchForm';
-import Pokedex from './components/Pokedex';
-import { useDailyRandomNumber } from './hooks/useDailyRandomNumber';
+import pokemons from '../pokemon.json';
+import PokemonTable from '../components/classic/PokemonTable';
+import EndAndReload from '../components/common/EndAndReload';
+import Indice from '../components/common/Indices';
+import { usePokemonData } from '../hooks/usePokemonData';
+import { usePokemonGame } from '../hooks/usePokemonGame';
+import { getRandomPokemonId } from '../services/pokemonService';
+import PokemonSearchForm from '../components/common/PokemonSearchForm';
+import Pokedex from '../components/common/Pokedex';
+import { useDailyRandomNumber } from '../hooks/useDailyRandomNumber';
+import { useParam } from '../hooks/useParam';
+import Loading from '../components/common/Loading';
 
 function Classic() {
-    //const randomId = useMemo(() => getRandomPokemonId(1, 386), []);
-    const randomId = useDailyRandomNumber(1, 386);
+    const randomId = useMemo(() => getRandomPokemonId(1, 386), []);
+    //const randomId = useDailyRandomNumber(1, 386);
+    //console.log(useParam('mode'));
 
     const { pokemonData: mysteryPokemon, isLoading, error } = usePokemonData(randomId, pokemons);
     const { guesses, suggestions, pokemonSearch, handleGuess, resetGame } = usePokemonGame(pokemons);
     const [isModalOpen, setIsModalOpen] = useState(false);
 
     if (isLoading) {
-        return <div>Chargement en cours...</div>;
+        <Loading />;
     }
 
     if (error) {
@@ -27,7 +30,7 @@ function Classic() {
     }
 
     if (!mysteryPokemon) {
-        return <div>Aucune donnée Pokémon trouvée</div>;
+        <Loading />;
     }
 
     const handleSubmit = async (pokemonName) => {
@@ -57,7 +60,7 @@ function Classic() {
                             
                             <div id='openPokedex' className="blocAth rounded-xl p-3" onClick={() => setIsModalOpen(true)}>
                                 <div className='flex w-full justify-center'>
-                                    <img src='src/assets/pokedex.png' alt="Pokedex" />
+                                    <img src='src/assets/img/icones/pokedex.png' alt="Pokedex" />
                                 </div>
                             </div>
 

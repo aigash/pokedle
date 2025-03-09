@@ -1,5 +1,5 @@
-import './App.css'
-import GameMode from './components/GameMode';
+import './assets/css/App.css'
+import GameMode from './components/accueil/GameMode';
 
 export default function App() {
   function launchMode(mode) {
@@ -16,9 +16,9 @@ export default function App() {
           <h2 className='text-[#305380] text-2xl py-1.5 font-semibold border-b border-[#305380]/80'>Modes de jeu</h2>
         </div>
       
-        <GameMode img='src/assets/classic.svg' titre='Classique' onclick={(e) => launchMode('classic')} />
-        <GameMode img='src/assets/desc.svg' titre='Description' onclick={(e) => launchMode('desc')} />
-        <GameMode img='src/assets/pixels.svg' titre='Pixels' onclick={(e) => launchMode('pixels')} />
+        <GameMode img='src/assets/img/icones/classic.svg' titre='Classique' onclick={(e) => launchMode('classic')} />
+        <GameMode img='src/assets/img/icones/desc.svg' titre='Description' onclick={(e) => launchMode('desc')} />
+        <GameMode img='src/assets/img/icones/pixels.svg' titre='Pixels' onclick={(e) => launchMode('pixels')} />
       </div>
     </div>
   )

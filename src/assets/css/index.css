@@ -60,15 +60,15 @@ button:focus-visible {
 
 #modesJeux {
   min-height: 100vh;
-  background: url('assets/main-screen.jpg');
+  background: url('../img/backgrounds/main-screen.jpg');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50%;
 }
 
-.containerClassic, .containerDesc, .containerPixels {
+.containerClassic, .containerDesc, .containerPixels, #loading {
   min-height:100vh;
-  background: url('assets/backgroundpkmn.png');
+  background: url('../img/backgrounds/backgroundpkmn.png');
   background-repeat: no-repeat;
   background-size: cover;
   background-position: 50%;
@@ -133,10 +133,10 @@ table tbody tr > td:nth-child(1) {
 }
 
 .up {
-  background: url('src/assets/up.svg'), rgba(239,68,68);
+  background: url('src/assets/img/icones/up.svg'), rgba(239,68,68);
 }
 .down {
-  background: url('src/assets/down.svg'), rgba(239,68,68);
+  background: url('src/assets/img/icones/down.svg'), rgba(239,68,68);
 }
 .up, .down {
   background-repeat:no-repeat;

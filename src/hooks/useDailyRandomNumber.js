@@ -18,7 +18,6 @@ export const useDailyRandomNumber = (min, max, seed = '') => {
   // Initialiser l'état avec le nombre stocké ou un nouveau nombre
   const [randomNumber, setRandomNumber] = useState(() => {
     const today = new Date();
-    console.log(today);
     const dateString = `${today.getFullYear()}-${String(today.getMonth() + 1).padStart(2, '0')}-${String(today.getDate()).padStart(2, '0')}`;
     
     // Vérifier localStorage pour une valeur existante

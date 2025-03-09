@@ -1,8 +1,8 @@
 import {createBrowserRouter} from "react-router-dom";
 import App from './App'; // Assurez-vous que ces imports sont corrects
-import Classic from './Classic';
-import Desc from './Desc';
-import Pixels from "./Pixels";
+import Classic from './pages/Classic';
+import Desc from './pages/Desc';
+import Pixels from "./pages/Pixels";
 
 const router = createBrowserRouter([
   {

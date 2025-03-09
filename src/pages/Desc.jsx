@@ -1,18 +1,19 @@
 import { useMemo, useState } from 'react';
-import pokemons from './pokemon.json';
-import EndAndReload from './components/EndAndReload';
-import Indice from './components/Indices';
-import { usePokemonData } from './hooks/usePokemonData';
-import { usePokemonGame } from './hooks/usePokemonGame';
-import { getRandomPokemonId, sanitizeDescription } from './services/pokemonService';
-import PokemonSearchForm from './components/PokemonSearchForm';
-import Pokedex from './components/Pokedex';
-import GuessSticker from './components/GuessSticker';
-import { useDailyRandomNumber } from './hooks/useDailyRandomNumber';
+import pokemons from '../pokemon.json';
+import EndAndReload from '../components/common/EndAndReload';
+import Indice from '../components/common/Indices';
+import { usePokemonData } from '../hooks/usePokemonData';
+import { usePokemonGame } from '../hooks/usePokemonGame';
+import { getRandomPokemonId, sanitizeDescription } from '../services/pokemonService';
+import PokemonSearchForm from '../components/common/PokemonSearchForm';
+import Pokedex from '../components/common/Pokedex';
+import GuessSticker from '../components/common/GuessSticker';
+import { useDailyRandomNumber } from '../hooks/useDailyRandomNumber';
+import Loading from '../components/common/Loading';
 
 export default function Desc() {
-    //const randomId = useMemo(() => getRandomPokemonId(1, 386), []);
-    const randomId = useDailyRandomNumber(1, 386);
+    const randomId = useMemo(() => getRandomPokemonId(1, 386), []);
+    //const randomId = useDailyRandomNumber(1, 386);
     const { pokemonData: pokemon, isLoading, error } = usePokemonData(randomId, pokemons);
     const { guesses, suggestions, pokemonSearch, handleGuess, resetGame } = usePokemonGame(pokemons);
     const [isModalOpen, setIsModalOpen] = useState(false);
@@ -28,7 +29,7 @@ export default function Desc() {
     };
 
     if (isLoading) {
-        return <div>Chargement en cours...</div>;
+        <Loading />;
     }
 
     if (error) {
@@ -36,7 +37,7 @@ export default function Desc() {
     }
 
     if (!pokemon) {
-        return <div>Aucune donnée Pokémon trouvée</div>;
+        <Loading />;
     }
 
     return (
@@ -61,7 +62,7 @@ export default function Desc() {
 
                                 <div id='openPokedex' className="blocAth rounded-xl p-3" onClick={() => setIsModalOpen(true)}>
                                     <div className='flex w-full justify-center'>
-                                        <img src='src/assets/pokedex.png' alt="Pokedex" />
+                                        <img src='src/assets/img/icones/pokedex.png' alt="Pokedex" />
                                     </div>
                                 </div>
 

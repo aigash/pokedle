@@ -68,7 +68,7 @@ export default function Indice({typeIndice, pokemon, nbEssais, nbRequis, numIndi
     return (<div className={"blocAth rounded-xl flex-col p-3" + (nbEssais < nbRequis ? " indiceDesac" : "")}>
                 <h3>{typeIndice}</h3>
                 <div onClick={(e) => showIndice(e)} className='text-sm'>
-                    <img src={`/src/assets/indice${numIndice}.png`} alt={`Indice ${numIndice}`}></img>
+                    <img src={`/src/assets/img/icones/indice${numIndice}.png`} alt={`Indice ${numIndice}`}></img>
                 </div>
             </div>);
 }
