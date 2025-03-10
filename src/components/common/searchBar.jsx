@@ -4,7 +4,7 @@ export function Search({ placeholder, value, onChange, id }) {
             <input
                 type="text"
                 id={id}
-                className="w-full p-2 border rounded-l focus:outline-none"
+                className="w-full py-2 px-4 border rounded-l focus:outline-none"
                 value={value}
                 placeholder={placeholder}
                 onChange={(e) => onChange(e.target.value)}

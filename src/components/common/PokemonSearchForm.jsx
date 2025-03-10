@@ -1,10 +1,13 @@
 import { useState } from 'react';
 import { Search } from './searchBar';
+import { useEffect } from 'react';
+import PropTypes from 'prop-types';
 
 export default function PokemonSearchForm({ onSubmit, suggestions, onSuggestionClick }) {
   const [searchValue, setSearchValue] = useState('');
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [filteredSuggestions, setFilteredSuggestions] = useState([]);
+  const [selectedIndex, setSelectedIndex] = useState(0);
 
   const handleChange = (value) => {
     setSearchValue(value);
@@ -16,7 +19,18 @@ export default function PokemonSearchForm({ onSubmit, suggestions, onSuggestionC
     }
 
     const filtered = suggestions
-      .filter(pokemon => pokemon.name_french.toLowerCase().includes(value.toLowerCase()));
+      .filter(pokemon => 
+        pokemon.name_french
+          .normalize('NFD')
+          .replace(/[\u0300-\u036f]/g, "")
+          .toLowerCase()
+          .startsWith(
+            value
+              .normalize('NFD')
+              .replace(/[\u0300-\u036f]/g, "")
+              .toLowerCase()
+          )
+      );
     
     setFilteredSuggestions(filtered);
     setShowSuggestions(true);
@@ -38,6 +52,26 @@ export default function PokemonSearchForm({ onSubmit, suggestions, onSuggestionC
       setShowSuggestions(false);
     }
   };
+
+  const handleKeyDown = (e) => {
+    if (showSuggestions) {
+      if (e.key === 'ArrowDown') {
+        setSelectedIndex((prevIndex) => Math.min(prevIndex + 1, filteredSuggestions.length - 1));
+      } else if (e.key === 'ArrowUp') {
+        setSelectedIndex((prevIndex) => Math.max(prevIndex - 1, 0));
+      } else if (e.key === 'Enter' && selectedIndex >= 0) {
+        handleSuggestionClick(filteredSuggestions[selectedIndex].name_french);
+      }
+    }
+  };
+
+  useEffect(() => {
+    const handleKeyDownGlobal = (e) => handleKeyDown(e);
+    document.addEventListener('keydown', handleKeyDownGlobal);
+    return () => {
+      document.removeEventListener('keydown', handleKeyDownGlobal);
+    };
+  }, [showSuggestions, filteredSuggestions, selectedIndex]);
 
   return (
     <form 
@@ -63,10 +97,10 @@ export default function PokemonSearchForm({ onSubmit, suggestions, onSuggestionC
         
         {showSuggestions && filteredSuggestions.length > 0 && (
           <div className="absolute w-full bg-white border rounded-b mt-12 shadow-lg z-10 max-h-[240px] overflow-y-auto">
-            {filteredSuggestions.map((pokemon) => (
+            {filteredSuggestions.map((pokemon, index) => (
               <div
                 key={pokemon.name_french}
-                className="p-2 hover:bg-gray-100 cursor-pointer"
+                className={`py-2 hover:bg-[#EBC008]/10 cursor-pointer text-left px-4 ${selectedIndex === index ? 'bg-[#EBC008]/10' : ''}`}
                 onClick={() => handleSuggestionClick(pokemon.name_french)}
               >
                 {pokemon.name_french}
@@ -78,3 +112,11 @@ export default function PokemonSearchForm({ onSubmit, suggestions, onSuggestionC
     </form>
   );
 } 
+
+PokemonSearchForm.propTypes = {
+  onSubmit: PropTypes.func.isRequired,
+  suggestions: PropTypes.arrayOf(PropTypes.shape({
+    name_french: PropTypes.string.isRequired,
+  })).isRequired,
+  onSuggestionClick: PropTypes.func.isRequired,
+};

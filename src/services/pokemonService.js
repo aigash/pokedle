@@ -77,7 +77,8 @@ export const formatPokemonData = (rawData, pokemons) => {
         cri: pokeData.cries.latest,
         desc: speciesData.flavor_text_entries.find(entry => 
             entry.version.name === 'omega-ruby' && entry.language.name === 'fr'
-        )?.flavor_text || ''
+        )?.flavor_text || '',
+        desc_courte: speciesData.genera[3].genus,
     };
 };
 

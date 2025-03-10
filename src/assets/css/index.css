@@ -50,9 +50,6 @@ button {
   cursor: pointer;
   transition: border-color 0.25s;
 }
-button:hover {
-  border-color: #646cff;
-}
 button:focus,
 button:focus-visible {
   outline: 4px auto -webkit-focus-ring-color;
@@ -184,13 +181,12 @@ table tbody tr > td:nth-child(1) {
   display: none;
 }
 .play-button {
-  width: 40px;
-  height: 40px;
+  width: 51px;
+  height: 51px;
   border-radius: 50%;
-  background-color: #fff;
-  border: 2px solid #000;
   cursor: pointer;
   position: relative;
+  background-color: rgb(241 245 249 / 1);
 }
 .play-button:focus {
   border:none;
@@ -202,9 +198,12 @@ table tbody tr > td:nth-child(1) {
   left: 50%;
   top: 50%;
   transform: translate(-40%, -50%);
-  border-left: 15px solid #000;
+  border-left: 15px solid #213547;
   border-top: 10px solid transparent;
   border-bottom: 10px solid transparent;
+}
+.play-button:hover::before { 
+  border-left: 15px solid rgb(239 68 68 / 1);
 }
 .play-button.playing::before {
   transform: translate(-50%, -50%);

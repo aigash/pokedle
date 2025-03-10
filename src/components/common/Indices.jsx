@@ -52,7 +52,7 @@ export default function Indice({typeIndice, pokemon, nbEssais, nbRequis, numIndi
                 });
                 break;
             case 'Desc.':
-                parentNode.innerHTML = pokemon.desc;
+                parentNode.innerHTML = pokemon.desc_courte;
                 break;
             case 'Empreintes':
                 break;
