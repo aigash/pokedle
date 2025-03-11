@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 export default function PokemonRow ({guess, pokemon}) {
     console.log(guess);
     //console.log(pokemon);
@@ -32,3 +34,33 @@ export default function PokemonRow ({guess, pokemon}) {
         <td className={(guess.poids > pokemon.poids ? 'bg-red-500 down' : (guess.poids < pokemon.poids ? 'bg-red-500 up' : 'bg-green-500')) + ' rounded-md'}>{(guess.poids / 10).toFixed(1)}kg</td>
     </tr>
 }
+
+PokemonRow.propTypes = {
+    guess: PropTypes.shape({
+        gif: PropTypes.string.isRequired,
+        type1: PropTypes.shape({
+            name_french: PropTypes.string.isRequired,
+        }).isRequired,
+        type2: PropTypes.shape({
+            name_french: PropTypes.string.isRequired,
+        }),
+        couleur: PropTypes.arrayOf(PropTypes.string).isRequired,
+        habitat: PropTypes.string.isRequired,
+        stadeEvo: PropTypes.number.isRequired,
+        taille: PropTypes.number.isRequired,
+        poids: PropTypes.number.isRequired,
+    }).isRequired,
+    pokemon: PropTypes.shape({
+        type1: PropTypes.shape({
+            name_french: PropTypes.string.isRequired,
+        }).isRequired,
+        type2: PropTypes.shape({
+            name_french: PropTypes.string.isRequired,
+        }),
+        couleur: PropTypes.arrayOf(PropTypes.string).isRequired,
+        habitat: PropTypes.string.isRequired,
+        stadeEvo: PropTypes.number.isRequired,
+        taille: PropTypes.number.isRequired,
+        poids: PropTypes.number.isRequired,
+    }).isRequired,
+};

@@ -8,7 +8,7 @@ import PokemonSearchForm from '../components/common/PokemonSearchForm';
 import Pokedex from '../components/common/Pokedex';
 import GuessSticker from '../components/common/GuessSticker';
 import { Pixelify } from 'react-pixelify';
-import { useDailyRandomNumber } from '../hooks/useDailyRandomNumber';
+//import { useDailyRandomNumber } from '../hooks/useDailyRandomNumber';
 import Loading from '../components/common/Loading';
 
 export default function Pixels() {
@@ -28,12 +28,19 @@ export default function Pixels() {
 
     const handleSubmit = async (pokemonName) => {
         if (!pokemonName) return;
-        await handleGuess(pokemonName);
-        setPixelSize(prevSize => Math.max(prevSize - 9, 0));
+
+        const isDuplicate = guesses.some(guess => guess.nameFr.toLowerCase() === pokemonName.toLowerCase());
+        if (isDuplicate) return;
+        // On stocke le résultat dans une fonction afin d'éviter que setPixelSize ne s'active sur un guess qui n'existe pas (ça évite la triche en spammant des lettre + entrée)
+        const result = await handleGuess(pokemonName);
+        
+        if (result !== null) {
+            setPixelSize(prevSize => Math.max(prevSize - 9, 0));
+        }
     };
 
     if (isLoading) {
-        <Loading />;
+        return <Loading />;
     }
 
     if (error) {
@@ -41,7 +48,7 @@ export default function Pixels() {
     }
 
     if (!pokemon) {
-        <Loading />;
+        return <Loading />;
     }
 
     return (
@@ -95,7 +102,7 @@ export default function Pixels() {
                 </div>
             </div>
             {pokemon?.nameFr === pokemonSearch && (
-                <EndAndReload pokemon={pokemonSearch} onReset={resetGame} nbEssais={guesses.length} />
+                <EndAndReload pokemon={pokemon} onReset={resetGame} nbEssais={guesses.length} />
             )}
             <Pokedex isModalOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
         </div>

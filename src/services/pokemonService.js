@@ -15,7 +15,7 @@ export const fetchPokemonData = async (pokemonId) => {
             evolutionData: evolutionResponse.data
         };
     } catch (error) {
-        throw new Error("Erreur lors de la récupération des données Pokémon");
+        throw new Error("Erreur lors de la récupération des données Pokémon : " + error);
     }
 };
 

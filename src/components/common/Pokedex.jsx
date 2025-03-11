@@ -12,12 +12,13 @@ export default function Pokedex({ isModalOpen, onClose }) {
                 >
                     <div className="max-w-[90%] max-h-[85%] flex flex-wrap opacity-30 hover:opacity-100 transition-all gap-0.5">
                         {pokemonData.pokemon.map((pokemon, index) => (
-                            <img 
-                                key={index}
-                                src={`src/assets/img/pokemons/${pokemon.img}`} 
-                                title={pokemon.name_french} 
-                                className="w-[56px] h-[56px]"
-                            />
+                            <div key={index} className={`relative group`}>
+                                <img 
+                                    src={`src/assets/img/pokemons/${pokemon.img}`}
+                                    className="w-[56px] h-[56px]"
+                                />
+                                <span className="hidden absolute bottom-full left-1/2 bg-black/70 text-white p-1.5 rounded z-10 opacity-0 group-hover:block group-hover:opacity-100 transition-opacity duration-200 ease-in-out">{pokemon.name_french}</span>
+                            </div>
                         ))}
                     </div>
                 </div>

@@ -74,7 +74,7 @@ function Classic() {
                 </div>
             </div>
             {mysteryPokemon?.nameFr === pokemonSearch && (
-                <EndAndReload pokemon={pokemonSearch} onReset={resetGame} nbEssais={guesses.length} />
+                <EndAndReload pokemon={mysteryPokemon} onReset={resetGame} nbEssais={guesses.length} />
             )}
             <Pokedex isModalOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
         </div>

@@ -1,13 +1,16 @@
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { Search } from './searchBar';
-import { useEffect } from 'react';
 import PropTypes from 'prop-types';
 
-export default function PokemonSearchForm({ onSubmit, suggestions, onSuggestionClick }) {
+export default function PokemonSearchForm({ onSubmit, suggestions, onSuggestionClick, inputRef }) {
   const [searchValue, setSearchValue] = useState('');
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [filteredSuggestions, setFilteredSuggestions] = useState([]);
   const [selectedIndex, setSelectedIndex] = useState(0);
+  // État pour vérifier que le formulaire est soumis ou non, cet état est utile afin d'éviter le spam de réponse qui pouvait entrainer 2 même guesses d'affilée
+  const [isSubmitting, setIsSubmitting] = useState(false);
+  // Enregistre les pokemons déjà guess
+  const [submittedPokemons, setSubmittedPokemons] = useState(new Set());
 
   const handleChange = (value) => {
     setSearchValue(value);
@@ -37,19 +40,42 @@ export default function PokemonSearchForm({ onSubmit, suggestions, onSuggestionC
   };
 
   const handleSuggestionClick = (pokemonName) => {
+    // Ne pas permettre de soumettre un Pokémon déjà deviné
+    if (submittedPokemons.has(pokemonName)) {
+      return;
+    }
+
     onSuggestionClick(pokemonName);
     setSearchValue('');
     document.getElementById('pokeSearch').focus();
     setShowSuggestions(false);
+
+    // Ajouter le Pokémon à la liste des Pokémon soumis
+    const newSubmittedPokemons = new Set(submittedPokemons);
+    newSubmittedPokemons.add(pokemonName);
+    setSubmittedPokemons(newSubmittedPokemons);
   };
 
-  const handleSubmit = (e) => {
+  const handleSubmit = async (e) => {
     e.preventDefault();
     const trimmedValue = searchValue.trim();
-    if (trimmedValue) {
-      onSubmit(trimmedValue);
-      setSearchValue('');
-      setShowSuggestions(false);
+    // Vérifier si le formulaire est en cours ou non
+    if (trimmedValue && !isSubmitting && !submittedPokemons.has(trimmedValue)) { 
+      setIsSubmitting(true); // Indique que le formulaire est en cours de soumission
+      try {
+        await onSubmit(trimmedValue); // on attend la fin de la soumission    
+        
+        // Ajouter le Pokémon à la liste des Pokémon soumis
+        const newSubmittedPokemons = new Set(submittedPokemons);
+        newSubmittedPokemons.add(trimmedValue);
+        setSubmittedPokemons(newSubmittedPokemons);
+      } catch (error) {
+        console.error('Erreuer lors de la soumission du formulaire : ', error);
+      } finally {
+        setSearchValue('');
+        setShowSuggestions(false);
+        setIsSubmitting(false); // on réinitialise l'état
+      }      
     }
   };
 
@@ -60,18 +86,32 @@ export default function PokemonSearchForm({ onSubmit, suggestions, onSuggestionC
       } else if (e.key === 'ArrowUp') {
         setSelectedIndex((prevIndex) => Math.max(prevIndex - 1, 0));
       } else if (e.key === 'Enter' && selectedIndex >= 0) {
-        handleSuggestionClick(filteredSuggestions[selectedIndex].name_french);
+        const selectedPokemon = filteredSuggestions[selectedIndex].name_french;
+        // Ne pas permettre de sélectionner un Pokémon déjà guess
+        console.log(selectedPokemon);
+        console.log(submittedPokemons);
+        if (!submittedPokemons.has(selectedPokemon)) {
+          handleSuggestionClick(selectedPokemon);
+        }
       }
     }
   };
 
   useEffect(() => {
-    const handleKeyDownGlobal = (e) => handleKeyDown(e);
+    const handleKeyDownGlobal = (e) => {
+      if (showSuggestions && filteredSuggestions.length > 0) {
+        handleKeyDown(e);
+      }
+    };
+    
     document.addEventListener('keydown', handleKeyDownGlobal);
     return () => {
       document.removeEventListener('keydown', handleKeyDownGlobal);
     };
   }, [showSuggestions, filteredSuggestions, selectedIndex]);
+
+  // Fonction pour vérifier si un Pokémon a déjà été guess
+  const isPokemonSubmitted = (pokemonName) => submittedPokemons.has(pokemonName);
 
   return (
     <form 
@@ -86,27 +126,32 @@ export default function PokemonSearchForm({ onSubmit, suggestions, onSuggestionC
           placeholder="Nom du Pokémon..."
           value={searchValue}
           onChange={handleChange}
+          ref={inputRef}
         />
         <button
           type="submit"
           id="submitClassic"
           className="bg-red-500 text-white px-4 rounded-r hover:bg-red-600"
+          disabled={isSubmitting || isPokemonSubmitted(searchValue.trim())} // désactive le bouton pendant la soumission du formulaire
         >
           GO
         </button>
         
         {showSuggestions && filteredSuggestions.length > 0 && (
           <div className="absolute w-full bg-white border rounded-b mt-12 shadow-lg z-10 max-h-[240px] overflow-y-auto">
-            {filteredSuggestions.map((pokemon, index) => (
-              <div
-                key={pokemon.name_french}
-                className={`py-2 hover:bg-[#EBC008]/10 cursor-pointer text-left px-4 flex items-center ${selectedIndex === index ? 'bg-[#EBC008]/10' : ''}`}
-                onClick={() => handleSuggestionClick(pokemon.name_french)}
-              >
-                <img src={`src/assets/img/pokemons/${pokemon.img}`} className="w-10 h-10 mr-4" />
-                {pokemon.name_french}
-              </div>
-            ))}
+            {filteredSuggestions.map((pokemon, index) => {
+              const isSubmitted = isPokemonSubmitted(pokemon.name_french);
+              return (
+                <div
+                  key={pokemon.name_french}
+                  className={`py-2 hover:bg-[#EBC008]/10 cursor-pointer text-left px-4 flex items-center ${selectedIndex === index ? 'bg-[#EBC008]/10' : ''}`}
+                  onClick={() => !isSubmitted && handleSuggestionClick(pokemon.name_french)}
+                >
+                  <img src={`src/assets/img/pokemons/${pokemon.img}`} className="w-10 h-10 mr-4" />
+                  {pokemon.name_french}
+                </div>
+              );
+            })}
           </div>
         )}
       </div>
@@ -120,4 +165,5 @@ PokemonSearchForm.propTypes = {
     name_french: PropTypes.string.isRequired,
   })).isRequired,
   onSuggestionClick: PropTypes.func.isRequired,
+  inputRef: PropTypes.shape({ current: PropTypes.instanceOf(Element) })
 };

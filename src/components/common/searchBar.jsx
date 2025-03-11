@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 export function Search({ placeholder, value, onChange, id }) {
     return (
         <div className="w-full">
@@ -14,5 +16,12 @@ export function Search({ placeholder, value, onChange, id }) {
         </div>
     );
 }
+
+Search.propTypes = {
+    placeholder: PropTypes.string.isRequired,
+    value: PropTypes.string.isRequired,
+    onChange: PropTypes.func.isRequired,
+    id: PropTypes.string.isRequired,
+};
 
 export default Search;

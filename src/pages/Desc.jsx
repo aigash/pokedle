@@ -29,7 +29,7 @@ export default function Desc() {
     };
 
     if (isLoading) {
-        <Loading />;
+        return <Loading />;
     }
 
     if (error) {
@@ -37,7 +37,7 @@ export default function Desc() {
     }
 
     if (!pokemon) {
-        <Loading />;
+        return <Loading />;
     }
 
     return (
@@ -89,7 +89,7 @@ export default function Desc() {
             </div>
             
             {pokemon?.nameFr === pokemonSearch && (
-                <EndAndReload pokemon={pokemonSearch} onReset={resetGame} nbEssais={guesses.length} />
+                <EndAndReload pokemon={pokemon} onReset={resetGame} nbEssais={guesses.length} />
             )}
             <Pokedex isModalOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
         </div>

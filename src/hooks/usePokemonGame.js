@@ -11,7 +11,9 @@ export const usePokemonGame = (pokemons) => {
     
     const result = await searchPokemonByName(pokemonName, pokemons);
     if (result) {
-      setGuesses(prev => [result, ...prev]);
+      if (!guesses.some(guess => guess.nameFr.toLowerCase() === result.nameFr.toLowerCase())) {
+        setGuesses(prev => [result, ...prev]); // Ajoute le résultat uniquement s'il n'est pas déjà dans les guesses
+      }
       setPokemonSearch(result.nameFr);
       setSuggestions(prev => prev.filter(
         p => p.name_french.toLowerCase() !== result.nameFr.toLowerCase()
