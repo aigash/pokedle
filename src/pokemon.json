@@ -35,2317 +35,2703 @@
             "id": 1,
             "name_english": "Bulbasaur",
             "name_french": "Bulbizarre",
-            "couleur": ["Vert"]
+            "couleur": ["Vert"],
+            "img": "1_Bulbizarre.png"
         },
         {
             "id": 2,
             "name_english": "Ivysaur",
             "name_french": "Herbizarre",
-            "couleur": ["Vert", "Rose"]
+            "couleur": ["Vert", "Rose"],
+            "img": "2_Herbizarre.png"
         },
         {
             "id": 3,
             "name_english": "Venusaur",
             "name_french": "Florizarre",
-            "couleur": ["Vert", "Rose"]
+            "couleur": ["Vert", "Rose"],
+            "img": "3_Florizarre.png"
         },
         {
             "id": 4,
             "name_english": "Charmander",
             "name_french": "Salamèche",
-            "couleur": ["Orange", "Crème"]
+            "couleur": ["Orange", "Crème"],
+            "img": "4_Salamèche.png"
         },
         {
             "id": 5,
             "name_english": "Charmeleon",
             "name_french": "Reptincel",
-            "couleur": ["Orange", "Crème"]
+            "couleur": ["Orange", "Crème"],
+            "img": "5_Reptincel.png"
         },
         {
             "id": 6,
             "name_english": "Charizard",
             "name_french": "Dracaufeu",
-            "couleur": ["Orange", "Crème"]
+            "couleur": ["Orange", "Crème"],
+            "img": "6_Dracaufeu.png"
         },
         {
             "id": 7,
             "name_english": "Squirtle",
             "name_french": "Carapuce",
-            "couleur": ["Bleu", "Crème"]
+            "couleur": ["Bleu", "Crème"],
+            "img": "7_Carapuce.png"
         },
         {
             "id": 8,
             "name_english": "Wartortle",
             "name_french": "Carabaffe",
-            "couleur": ["Bleu", "Crème"]
+            "couleur": ["Bleu", "Crème"],
+            "img": "8_Carabaffe.png"
         },
         {
             "id": 9,
             "name_english": "Blastoise",
             "name_french": "Tortank",
-            "couleur": ["Bleu", "Crème"]
+            "couleur": ["Bleu", "Crème"],
+            "img": "9_Tortank.png"
         },
         {
             "id": 10,
             "name_english": "Caterpie",
             "name_french": "Chenipan",
-            "couleur": ["Vert", "Crème"]
+            "couleur": ["Vert", "Crème"],
+            "img": "10_Chenipan.png"
         },
         {
             "id": 11,
             "name_english": "Metapod",
             "name_french": "Chrysacier",
-            "couleur": ["Vert"]
+            "couleur": ["Vert"],
+            "img": "11_Chrysacier.png"
         },
         {
             "id": 12,
             "name_english": "Butterfree",
             "name_french": "Papilusion",
-            "couleur": ["Violet", "Blanc"]
+            "couleur": ["Violet", "Blanc"],
+            "img": "12_Papilusion.png"
         },
         {
             "id": 13,
             "name_english": "Weedle",
             "name_french": "Aspicot",
-            "couleur": ["Marron"]
+            "couleur": ["Marron"],
+            "img": "13_Aspicot.png"
         },
         {
             "id": 14,
             "name_english": "Kakuna",
             "name_french": "Coconfort",
-            "couleur": ["Jaune"]
+            "couleur": ["Jaune"],
+            "img": "14_Coconfort.png"
         },
         {
             "id": 15,
             "name_english": "Beedrill",
             "name_french": "Dardargnan",
-            "couleur": ["Jaune", "Noir"]
+            "couleur": ["Jaune", "Noir"],
+            "img": "15_Dardargnan.png"
         },
         {
             "id": 16,
             "name_english": "Pidgey",
             "name_french": "Roucool",
-            "couleur": ["Marron", "Crème"]
+            "couleur": ["Marron", "Crème"],
+            "img": "16_Roucool.png"
         },
         {
             "id": 17,
             "name_english": "Pidgeotto",
             "name_french": "Roucoups",
-            "couleur": ["Marron", "Crème"]
+            "couleur": ["Marron", "Crème"],
+            "img": "17_Roucoups.png"
         },
         {
             "id": 18,
             "name_english": "Pidgeot",
             "name_french": "Roucarnage",
-            "couleur": ["Marron", "Crème"]
+            "couleur": ["Marron", "Crème"],
+            "img": "18_Roucarnage.png"
         },
         {
             "id": 19,
             "name_english": "Rattata",
             "name_french": "Rattata",
-            "couleur": ["Violet", "Crème"]
+            "couleur": ["Violet", "Crème"],
+            "img": "19_Rattata.png"
         },
         {
             "id": 20,
             "name_english": "Raticate",
             "name_french": "Rattatac",
-            "couleur": ["Marron", "Crème"]
+            "couleur": ["Marron", "Crème"],
+            "img": "20_Rattatac.png"
         },
         {
             "id": 21,
             "name_english": "Spearow",
             "name_french": "Piafabec",
-            "couleur": ["Marron", "Rouge"]
+            "couleur": ["Marron", "Rouge"],
+            "img": "21_Piafabec.png"
         },
         {
             "id": 22,
             "name_english": "Fearow",
             "name_french": "Rapasdepic",
-            "couleur": ["Marron"]
+            "couleur": ["Marron"],
+            "img": "22_Rapasdepic.png"
         },
         {
             "id": 23,
             "name_english": "Ekans",
             "name_french": "Abo",
-            "couleur": ["Violet"]
+            "couleur": ["Violet"],
+            "img": "23_Abo.png"
         },
         {
             "id": 24,
             "name_english": "Arbok",
             "name_french": "Arbok",
-            "couleur": ["Violet", "Noir"]
+            "couleur": ["Violet", "Noir"],
+            "img": "24_Arbok.png"
         },
         {
             "id": 25,
             "name_english": "Pikachu",
             "name_french": "Pikachu",
-            "couleur": ["Jaune"]
+            "couleur": ["Jaune"],
+            "img": "25_Pikachu.png"
         },
         {
             "id": 26,
             "name_english": "Raichu",
             "name_french": "Raichu",
-            "couleur": ["Orange", "Crème"]
+            "couleur": ["Orange", "Crème"],
+            "img": "26_Raichu.png"
         },
         {
             "id": 27,
             "name_english": "Sandshrew",
             "name_french": "Sabelette",
-            "couleur": ["Jaune", "Crème"]
+            "couleur": ["Jaune", "Crème"],
+            "img": "27_Sabelette.png"
         },
         {
             "id": 28,
             "name_english": "Sandslash",
             "name_french": "Sablaireau",
-            "couleur": ["Jaune", "Marron"]
+            "couleur": ["Jaune", "Marron"],
+            "img": "28_Sablaireau.png"
         },
         {
             "id": 29,
             "name_english": "Nidoran♀",
             "name_french": "Nidoran♀",
-            "couleur": ["Bleu"]
+            "couleur": ["Bleu"],
+            "img": "29_Nidoran♀.png"
         },
         {
             "id": 30,
             "name_english": "Nidorina",
             "name_french": "Nidorina",
-            "couleur": ["Bleu"]
+            "couleur": ["Bleu"],
+            "img": "30_Nidorina.png"
         },
         {
             "id": 31,
             "name_english": "Nidoqueen",
             "name_french": "Nidoqueen",
-            "couleur": ["Bleu", "Crème"]
+            "couleur": ["Bleu", "Crème"],
+            "img": "31_Nidoqueen.png"
         },
         {
             "id": 32,
             "name_english": "Nidoran♂",
             "name_french": "Nidoran♂",
-            "couleur": ["Violet", "Vert"]
+            "couleur": ["Violet", "Vert"],
+            "img": "32_Nidoran♂.png"
         },
         {
             "id": 33,
             "name_english": "Nidorino",
             "name_french": "Nidorino",
-            "couleur": ["Violet", "Vert"]
+            "couleur": ["Violet", "Vert"],
+            "img": "33_Nidorino.png"
         },
         {
             "id": 34,
             "name_english": "Nidoking",
             "name_french": "Nidoking",
-            "couleur": ["Violet", "Crème"]
+            "couleur": ["Violet", "Crème"],
+            "img": "34_Nidoking.png"
         },
         {
             "id": 35,
             "name_english": "Clefairy",
             "name_french": "Mélofée",
-            "couleur": ["Rose"]
+            "couleur": ["Rose"],
+            "img": "35_Mélofée.png"
         },
         {
             "id": 36,
             "name_english": "Clefable",
             "name_french": "Mélodelfe",
-            "couleur": ["Rose"]
+            "couleur": ["Rose"],
+            "img": "36_Mélodelfe.png"
         },
         {
             "id": 37,
             "name_english": "Vulpix",
             "name_french": "Goupix",
-            "couleur": ["Marron", "Orange"]
+            "couleur": ["Marron", "Orange"],
+            "img": "37_Goupix.png"
         },
         {
             "id": 38,
             "name_english": "Ninetales",
             "name_french": "Feunard",
-            "couleur": ["Crème"]
+            "couleur": ["Crème"],
+            "img": "38_Feunard.png"
         },
         {
             "id": 39,
             "name_english": "Jigglypuff",
             "name_french": "Rondoudou",
-            "couleur": ["Rose"]
+            "couleur": ["Rose"],
+            "img": "39_Rondoudou.png"
         },
         {
             "id": 40,
             "name_english": "Wigglytuff",
             "name_french": "Grodoudou",
-            "couleur": ["Rose", "Blanc"]
+            "couleur": ["Rose", "Blanc"],
+            "img": "40_Grodoudou.png"
         },
         {
             "id": 41,
             "name_english": "Zubat",
             "name_french": "Nosferapti",
-            "couleur": ["Bleu", "Violet"]
+            "couleur": ["Bleu", "Violet"],
+            "img": "41_Nosferapti.png"
         },
         {
             "id": 42,
             "name_english": "Golbat",
             "name_french": "Nosferalto",
-            "couleur": ["Bleu", "Violet"]
+            "couleur": ["Bleu", "Violet"],
+            "img": "42_Nosferalto.png"
         },
         {
             "id": 43,
             "name_english": "Oddish",
             "name_french": "Mystherbe",
-            "couleur": ["Bleu", "Vert"]
+            "couleur": ["Bleu", "Vert"],
+            "img": "43_Mystherbe.png"
         },
         {
             "id": 44,
             "name_english": "Gloom",
             "name_french": "Ortide",
-            "couleur": ["Bleu", "Orange"]
+            "couleur": ["Bleu", "Orange"],
+            "img": "44_Ortide.png"
         },
         {
             "id": 45,
             "name_english": "Vileplume",
             "name_french": "Rafflesia",
-            "couleur": ["Bleu", "Rouge"]
+            "couleur": ["Bleu", "Rouge"],
+            "img": "45_Rafflesia.png"
         },
         {
             "id": 46,
             "name_english": "Paras",
             "name_french": "Paras",
-            "couleur": ["Orange", "Rouge"]
+            "couleur": ["Orange", "Rouge"],
+            "img": "46_Paras.png"
         },
         {
             "id": 47,
             "name_english": "Parasect",
             "name_french": "Parasect",
-            "couleur": ["Orange", "Rouge"]
+            "couleur": ["Orange", "Rouge"],
+            "img": "47_Parasect.png"
         },
         {
             "id": 48,
             "name_english": "Venonat",
             "name_french": "Mimitoss",
-            "couleur": ["Violet"]
+            "couleur": ["Violet"],
+            "img": "48_Mimitoss.png"
         },
         {
             "id": 49,
             "name_english": "Venomoth",
             "name_french": "Aéromite",
-            "couleur": ["Violet"]
+            "couleur": ["Violet"],
+            "img": "49_Aéromite.png"
         },
         {
             "id": 50,
             "name_english": "Diglett",
             "name_french": "Taupiqueur",
-            "couleur": ["Marron", "Gris"]
+            "couleur": ["Marron", "Gris"],
+            "img": "50_Taupiqueur.png"
         },
         {
             "id": 51,
             "name_english": "Dugtrio",
             "name_french": "Triopikeur",
-            "couleur": ["Marron", "Gris"]
+            "couleur": ["Marron", "Gris"],
+            "img": "51_Triopikeur.png"
         },
         {
             "id": 52,
             "name_english": "Meowth",
             "name_french": "Miaouss",
-            "couleur": ["Crème", "Marron"]
+            "couleur": ["Crème", "Marron"],
+            "img": "52_Miaouss.png"
         },
         {
             "id": 53,
             "name_english": "Persian",
             "name_french": "Persian",
-            "couleur": ["Crème"]
+            "couleur": ["Crème"],
+            "img": "53_Persian.png"
         },
         {
             "id": 54,
             "name_english": "Psyduck",
             "name_french": "Psykokwak",
-            "couleur": ["Jaune", "Crème"]
+            "couleur": ["Jaune", "Crème"],
+            "img": "54_Psykokwak.png"
         },
         {
             "id": 55,
             "name_english": "Golduck",
             "name_french": "Akwakwak",
-            "couleur": ["Bleu", "Crème"]
+            "couleur": ["Bleu", "Crème"],
+            "img": "55_Akwakwak.png"
         },
         {
             "id": 56,
             "name_english": "Mankey",
             "name_french": "Férosinge",
-            "couleur": ["Crème", "Marron"]
+            "couleur": ["Crème", "Marron"],
+            "img": "56_Férosinge.png"
         },
         {
             "id": 57,
             "name_english": "Primeape",
             "name_french": "Colossinge",
-            "couleur": ["Crème", "Marron"]
+            "couleur": ["Crème", "Marron"],
+            "img": "57_Colossinge.png"
         },
         {
             "id": 58,
             "name_english": "Growlithe",
             "name_french": "Caninos",
-            "couleur": ["Orange", "Crème"]
+            "couleur": ["Orange", "Crème"],
+            "img": "58_Caninos.png"
         },
         {
             "id": 59,
             "name_english": "Arcanine",
             "name_french": "Arcanin",
-            "couleur": ["Orange", "Crème"]
+            "couleur": ["Orange", "Crème"],
+            "img": "59_Arcanin.png"
         },
         {
             "id": 60,
             "name_english": "Poliwag",
             "name_french": "Ptitard",
-            "couleur": ["Bleu", "Blanc"]
+            "couleur": ["Bleu", "Blanc"],
+            "img": "60_Ptitard.png"
         },
         {
             "id": 61,
             "name_english": "Poliwhirl",
             "name_french": "Têtarte",
-            "couleur": ["Bleu", "Blanc"]
+            "couleur": ["Bleu", "Blanc"],
+            "img": "61_Têtarte.png"
         },
         {
             "id": 62,
             "name_english": "Poliwrath",
             "name_french": "Tartard",
-            "couleur": ["Bleu", "Blanc"]
+            "couleur": ["Bleu", "Blanc"],
+            "img": "62_Tartard.png"
         },
         {
             "id": 63,
             "name_english": "Abra",
             "name_french": "Abra",
-            "couleur": ["Jaune", "Marron"]
+            "couleur": ["Jaune", "Marron"],
+            "img": "63_Abra.png"
         },
         {
             "id": 64,
             "name_english": "Kadabra",
             "name_french": "Kadabra",
-            "couleur": ["Jaune", "Marron"]
+            "couleur": ["Jaune", "Marron"],
+            "img": "64_Kadabra.png"
         },
         {
             "id": 65,
             "name_english": "Alakazam",
             "name_french": "Alakazam",
-            "couleur": ["Jaune", "Marron"]
+            "couleur": ["Jaune", "Marron"],
+            "img": "65_Alakazam.png"
         },
         {
             "id": 66,
             "name_english": "Machop",
             "name_french": "Machoc",
-            "couleur": ["Gris"]
+            "couleur": ["Gris"],
+            "img": "66_Machoc.png"
         },
         {
             "id": 67,
             "name_english": "Machoke",
             "name_french": "Machopeur",
-            "couleur": ["Gris"]
+            "couleur": ["Gris"],
+            "img": "67_Machopeur.png"
         },
         {
             "id": 68,
             "name_english": "Machamp",
             "name_french": "Mackogneur",
-            "couleur": ["Gris"]
+            "couleur": ["Gris"],
+            "img": "68_Mackogneur.png"
         },
         {
             "id": 69,
             "name_english": "Bellsprout",
             "name_french": "Chétiflor",
-            "couleur": ["Vert", "Jaune"]
+            "couleur": ["Vert", "Jaune"],
+            "img": "69_Chétiflor.png"
         },
         {
             "id": 70,
             "name_english": "Weepinbell",
             "name_french": "Boustiflor",
-            "couleur": ["Jaune", "Vert"]
+            "couleur": ["Jaune", "Vert"],
+            "img": "70_Boustiflor.png"
         },
         {
             "id": 71,
             "name_english": "Victreebel",
             "name_french": "Empiflor",
-            "couleur": ["Jaune", "Vert"]
+            "couleur": ["Jaune", "Vert"],
+            "img": "71_Empiflor.png"
         },
         {
             "id": 72,
             "name_english": "Tentacool",
             "name_french": "Tentacool",
-            "couleur": ["Bleu", "Rouge"]
+            "couleur": ["Bleu", "Rouge"],
+            "img": "72_Tentacool.png"
         },
         {
             "id": 73,
             "name_english": "Tentacruel",
             "name_french": "Tentacruel",
-            "couleur": ["Bleu", "Rouge"]
+            "couleur": ["Bleu", "Rouge"],
+            "img": "73_Tentacruel.png"
         },
         {
             "id": 74,
             "name_english": "Geodude",
             "name_french": "Racaillou",
-            "couleur": ["Marron"]
+            "couleur": ["Marron"],
+            "img": "74_Racaillou.png"
         },
         {
             "id": 75,
             "name_english": "Graveler",
             "name_french": "Gravalanch",
-            "couleur": ["Marron"]
+            "couleur": ["Marron"],
+            "img": "75_Gravalanch.png"
         },
         {
             "id": 76,
             "name_english": "Golem",
             "name_french": "Grolem",
-            "couleur": ["Marron"]
+            "couleur": ["Marron"],
+            "img": "76_Grolem.png"
         },
         {
             "id": 77,
             "name_english": "Ponyta",
             "name_french": "Ponyta",
-            "couleur": ["Crème", "Orange"]
+            "couleur": ["Crème", "Orange"],
+            "img": "77_Ponyta.png"
         },
         {
             "id": 78,
             "name_english": "Rapidash",
             "name_french": "Galopa",
-            "couleur": ["Crème", "Orange"]
+            "couleur": ["Crème", "Orange"],
+            "img": "78_Galopa.png"
         },
         {
             "id": 79,
             "name_english": "Slowpoke",
             "name_french": "Ramoloss",
-            "couleur": ["Rose"]
+            "couleur": ["Rose"],
+            "img": "79_Ramoloss.png"
         },
         {
             "id": 80,
             "name_english": "Slowbro",
             "name_french": "Flagadoss",
-            "couleur": ["Rose", "Gris"]
+            "couleur": ["Rose", "Gris"],
+            "img": "80_Flagadoss.png"
         },
         {
             "id": 81,
             "name_english": "Magnemite",
             "name_french": "Magnéti",
-            "couleur": ["Gris"]
+            "couleur": ["Gris"],
+            "img": "81_Magnéti.png"
         },
         {
             "id": 82,
             "name_english": "Magneton",
             "name_french": "Magnéton",
-            "couleur": ["Gris"]
+            "couleur": ["Gris"],
+            "img": "82_Magnéton.png"
         },
         {
             "id": 83,
-            "name_english": "Farfetch’d",
+            "name_english": "Farfetch'd",
             "name_french": "Canarticho",
-            "couleur": ["Marron", "Blanc"]
+            "couleur": ["Marron", "Blanc"],
+            "img": "83_Canarticho.png"
         },
         {
             "id": 84,
             "name_english": "Doduo",
             "name_french": "Doduo",
-            "couleur": ["Marron", "Noir"]
+            "couleur": ["Marron", "Noir"],
+            "img": "84_Doduo.png"
         },
         {
             "id": 85,
             "name_english": "Dodrio",
             "name_french": "Dodrio",
-            "couleur": ["Marron", "Noir"]
+            "couleur": ["Marron", "Noir"],
+            "img": "85_Dodrio.png"
         },
         {
             "id": 86,
             "name_english": "Seel",
             "name_french": "Otaria",
-            "couleur": ["Blanc"]
+            "couleur": ["Blanc"],
+            "img": "86_Otaria.png"
         },
         {
             "id": 87,
             "name_english": "Dewgong",
             "name_french": "Lamantine",
-            "couleur": ["Blanc"]
+            "couleur": ["Blanc"],
+            "img": "87_Lamantine.png"
         },
         {
             "id": 88,
             "name_english": "Grimer",
             "name_french": "Tadmorv",
-            "couleur": ["Violet"]
+            "couleur": ["Violet"],
+            "img": "88_Tadmorv.png"
         },
         {
             "id": 89,
             "name_english": "Muk",
             "name_french": "Grotadmorv",
-            "couleur": ["Violet"]
+            "couleur": ["Violet"],
+            "img": "89_Grotadmorv.png"
         },
         {
             "id": 90,
             "name_english": "Shellder",
             "name_french": "Kokiyas",
-            "couleur": ["Violet", "Noir"]
+            "couleur": ["Violet", "Noir"],
+            "img": "90_Kokiyas.png"
         },
         {
             "id": 91,
             "name_english": "Cloyster",
             "name_french": "Crustabri",
-            "couleur": ["Violet", "Noir"]
+            "couleur": ["Violet", "Noir"],
+            "img": "91_Crustabri.png"
         },
         {
             "id": 92,
             "name_english": "Gastly",
             "name_french": "Fantominus",
-            "couleur": ["Violet", "Noir"]
+            "couleur": ["Violet", "Noir"],
+            "img": "92_Fantominus.png"
         },
         {
             "id": 93,
             "name_english": "Haunter",
             "name_french": "Spectrum",
-            "couleur": ["Violet"]
+            "couleur": ["Violet"],
+            "img": "93_Spectrum.png"
         },
         {
             "id": 94,
             "name_english": "Gengar",
             "name_french": "Ectoplasma",
-            "couleur": ["Violet"]
+            "couleur": ["Violet"],
+            "img": "94_Ectoplasma.png"
         },
         {
             "id": 95,
             "name_english": "Onix",
             "name_french": "Onix",
-            "couleur": ["Gris"]
+            "couleur": ["Gris"],
+            "img": "95_Onix.png"
         },
         {
             "id": 96,
             "name_english": "Drowzee",
             "name_french": "Soporifik",
-            "couleur": ["Jaune", "Marron"]
+            "couleur": ["Jaune", "Marron"],
+            "img": "96_Soporifik.png"
         },
         {
             "id": 97,
             "name_english": "Hypno",
             "name_french": "Hypnomade",
-            "couleur": ["Jaune", "Blanc"]
+            "couleur": ["Jaune", "Blanc"],
+            "img": "97_Hypnomade.png"
         },
         {
             "id": 98,
             "name_english": "Krabby",
             "name_french": "Krabby",
-            "couleur": ["Orange", "Crème"]
+            "couleur": ["Orange", "Crème"],
+            "img": "98_Krabby.png"
         },
         {
             "id": 99,
             "name_english": "Kingler",
             "name_french": "Krabboss",
-            "couleur": ["Orange", "Crème"]
+            "couleur": ["Orange", "Crème"],
+            "img": "99_Krabboss.png"
         },
         {
             "id": 100,
             "name_english": "Voltorb",
             "name_french": "Voltorbe",
-            "couleur": ["Rouge", "Blanc"]
+            "couleur": ["Rouge", "Blanc"],
+            "img": "100_Voltorbe.png"
         },
         {
             "id": 101,
             "name_english": "Electrode",
             "name_french": "Électrode",
-            "couleur": ["Blanc", "Rouge"]
+            "couleur": ["Blanc", "Rouge"],
+            "img": "101_Électrode.png"
         },
         {
             "id": 102,
             "name_english": "Exeggcute",
             "name_french": "Noeunoeuf",
-            "couleur": ["Rose"]
+            "couleur": ["Rose"],
+            "img": "102_Noeunoeuf.png"
         },
         {
             "id": 103,
             "name_english": "Exeggutor",
             "name_french": "Noadkoko",
-            "couleur": ["Marron", "Vert"]
+            "couleur": ["Marron", "Vert"],
+            "img": "103_Noadkoko.png"
         },
         {
             "id": 104,
             "name_english": "Cubone",
             "name_french": "Osselait",
-            "couleur": ["Marron", "Blanc"]
+            "couleur": ["Marron", "Blanc"],
+            "img": "104_Osselait.png"
         },
         {
             "id": 105,
             "name_english": "Marowak",
             "name_french": "Ossatueur",
-            "couleur": ["Marron", "Blanc"]
+            "couleur": ["Marron", "Blanc"],
+            "img": "105_Ossatueur.png"
         },
         {
             "id": 106,
             "name_english": "Hitmonlee",
             "name_french": "Kicklee",
-            "couleur": ["Marron", "Crème"]
+            "couleur": ["Marron", "Crème"],
+            "img": "106_Kicklee.png"
         },
         {
             "id": 107,
             "name_english": "Hitmonchan",
             "name_french": "Tygnon",
-            "couleur": ["Marron", "Gris"]
+            "couleur": ["Marron", "Gris"],
+            "img": "107_Tygnon.png"
         },
         {
             "id": 108,
             "name_english": "Lickitung",
             "name_french": "Excelangue",
-            "couleur": ["Rose", "Crème"]
+            "couleur": ["Rose", "Crème"],
+            "img": "108_Excelangue.png"
         },
         {
             "id": 109,
             "name_english": "Koffing",
             "name_french": "Smogo",
-            "couleur": ["Violet"]
+            "couleur": ["Violet"],
+            "img": "109_Smogo.png"
         },
         {
             "id": 110,
             "name_english": "Weezing",
             "name_french": "Smogogo",
-            "couleur": ["Violet"]
+            "couleur": ["Violet"],
+            "img": "110_Smogogo.png"
         },
         {
             "id": 111,
             "name_english": "Rhyhorn",
             "name_french": "Rhinocorne",
-            "couleur": ["Gris"]
+            "couleur": ["Gris"],
+            "img": "111_Rhinocorne.png"
         },
         {
             "id": 112,
             "name_english": "Rhydon",
             "name_french": "Rhinoféros",
-            "couleur": ["Gris", "Crème"]
+            "couleur": ["Gris", "Crème"],
+            "img": "112_Rhinoféros.png"
         },
         {
             "id": 113,
             "name_english": "Chansey",
             "name_french": "Leveinard",
-            "couleur": ["Rose"]
+            "couleur": ["Rose"],
+            "img": "113_Leveinard.png"
         },
         {
             "id": 114,
             "name_english": "Tangela",
             "name_french": "Saquedeneu",
-            "couleur": ["Bleu", "Noir"]
+            "couleur": ["Bleu", "Noir"],
+            "img": "114_Saquedeneu.png"
         },
         {
             "id": 115,
             "name_english": "Kangaskhan",
             "name_french": "Kangourex",
-            "couleur": ["Marron", "Crème"]
+            "couleur": ["Marron", "Crème"],
+            "img": "115_Kangourex.png"
         },
         {
             "id": 116,
             "name_english": "Horsea",
             "name_french": "Hypotrempe",
-            "couleur": ["Bleu", "Crème"]
+            "couleur": ["Bleu", "Crème"],
+            "img": "116_Hypotrempe.png"
         },
         {
             "id": 117,
             "name_english": "Seadra",
             "name_french": "Hypocéan",
-            "couleur": ["Bleu", "Crème"]
+            "couleur": ["Bleu", "Crème"],
+            "img": "117_Hypocéan.png"
         },
         {
             "id": 118,
             "name_english": "Goldeen",
             "name_french": "Poissirène",
-            "couleur": ["Blanc", "Rouge"]
+            "couleur": ["Blanc", "Rouge"],
+            "img": "118_Poissirène.png"
         },
         {
             "id": 119,
             "name_english": "Seaking",
             "name_french": "Poissoroy",
-            "couleur": ["Rouge", "Blanc"]
+            "couleur": ["Rouge", "Blanc"],
+            "img": "119_Poissoroy.png"
         },
         {
             "id": 120,
             "name_english": "Staryu",
             "name_french": "Stari",
-            "couleur": ["Marron", "Jaune"]
+            "couleur": ["Marron", "Jaune"],
+            "img": "120_Stari.png"
         },
         {
             "id": 121,
             "name_english": "Starmie",
             "name_french": "Staross",
-            "couleur": ["Violet", "Jaune"]
+            "couleur": ["Violet", "Jaune"],
+            "img": "121_Staross.png"
         },
         {
             "id": 122,
             "name_english": "Mr. Mime",
             "name_french": "M. Mime",
-            "couleur": ["Rose", "Blanc"]
+            "couleur": ["Rose", "Blanc"],
+            "img": "122_M. Mime.png"
         },
         {
             "id": 123,
             "name_english": "Scyther",
             "name_french": "Insécateur",
-            "couleur": ["Vert", "Crème"]
+            "couleur": ["Vert", "Crème"],
+            "img": "123_Insécateur.png"
         },
         {
             "id": 124,
             "name_english": "Jynx",
             "name_french": "Lippoutou",
-            "couleur": ["Violet", "Rouge"]
+            "couleur": ["Violet", "Rouge"],
+            "img": "124_Lippoutou.png"
         },
         {
             "id": 125,
             "name_english": "Electabuzz",
             "name_french": "Élektek",
-            "couleur": ["Jaune", "Noir"]
+            "couleur": ["Jaune", "Noir"],
+            "img": "125_Élektek.png"
         },
         {
             "id": 126,
             "name_english": "Magmar",
             "name_french": "Magmar",
-            "couleur": ["Orange", "Jaune"]
+            "couleur": ["Orange", "Jaune"],
+            "img": "126_Magmar.png"
         },
         {
             "id": 127,
             "name_english": "Pinsir",
             "name_french": "Scarabrute",
-            "couleur": ["Marron", "Gris"]
+            "couleur": ["Marron", "Gris"],
+            "img": "127_Scarabrute.png"
         },
         {
             "id": 128,
             "name_english": "Tauros",
             "name_french": "Tauros",
-            "couleur": ["Marron"]
+            "couleur": ["Marron"],
+            "img": "128_Tauros.png"
         },
         {
             "id": 129,
             "name_english": "Magikarp",
             "name_french": "Magicarpe",
-            "couleur": ["Orange", "Jaune"]
+            "couleur": ["Orange", "Jaune"],
+            "img": "129_Magicarpe.png"
         },
         {
             "id": 130,
             "name_english": "Gyarados",
             "name_french": "Léviator",
-            "couleur": ["Bleu", "Crème"]
+            "couleur": ["Bleu", "Crème"],
+            "img": "130_Léviator.png"
         },
         {
             "id": 131,
             "name_english": "Lapras",
             "name_french": "Lokhlass",
-            "couleur": ["Bleu", "Gris"]
+            "couleur": ["Bleu", "Gris"],
+            "img": "131_Lokhlass.png"
         },
         {
             "id": 132,
             "name_english": "Ditto",
             "name_french": "Métamorph",
-            "couleur": ["Violet"]
+            "couleur": ["Violet"],
+            "img": "132_Métamorph.png"
         },
         {
             "id": 133,
             "name_english": "Eevee",
             "name_french": "Évoli",
-            "couleur": ["Marron", "Crème"]
+            "couleur": ["Marron", "Crème"],
+            "img": "133_Évoli.png"
         },
         {
             "id": 134,
             "name_english": "Vaporeon",
             "name_french": "Aquali",
-            "couleur": ["Bleu", "Blanc"]
+            "couleur": ["Bleu", "Blanc"],
+            "img": "134_Aquali.png"
         },
         {
             "id": 135,
             "name_english": "Jolteon",
             "name_french": "Voltali",
-            "couleur": ["Jaune", "Blanc"]
+            "couleur": ["Jaune", "Blanc"],
+            "img": "135_Voltali.png"
         },
         {
             "id": 136,
             "name_english": "Flareon",
             "name_french": "Pyroli",
-            "couleur": ["Orange", "Jaune"]
+            "couleur": ["Orange", "Jaune"],
+            "img": "136_Pyroli.png"
         },
         {
             "id": 137,
             "name_english": "Porygon",
             "name_french": "Porygon",
-            "couleur": ["Rose", "Bleu"]
+            "couleur": ["Rose", "Bleu"],
+            "img": "137_Porygon.png"
         },
         {
             "id": 138,
             "name_english": "Omanyte",
             "name_french": "Amonita",
-            "couleur": ["Crème", "Bleu"]
+            "couleur": ["Crème", "Bleu"],
+            "img": "138_Amonita.png"
         },
         {
             "id": 139,
             "name_english": "Omastar",
             "name_french": "Amonistar",
-            "couleur": ["Crème", "Bleu"]
+            "couleur": ["Crème", "Bleu"],
+            "img": "139_Amonistar.png"
         },
         {
             "id": 140,
             "name_english": "Kabuto",
             "name_french": "Kabuto",
-            "couleur": ["Marron", "Noir"]
+            "couleur": ["Marron", "Noir"],
+            "img": "140_Kabuto.png"
         },
         {
             "id": 141,
             "name_english": "Kabutops",
             "name_french": "Kabutops",
-            "couleur": ["Marron", "Blanc"]
+            "couleur": ["Marron", "Blanc"],
+            "img": "141_Kabutops.png"
         },
         {
             "id": 142,
             "name_english": "Aerodactyl",
             "name_french": "Ptéra",
-            "couleur": ["Gris", "Violet"]
+            "couleur": ["Gris", "Violet"],
+            "img": "142_Ptéra.png"
         },
         {
             "id": 143,
             "name_english": "Snorlax",
             "name_french": "Ronflex",
-            "couleur": ["Vert", "Crème"]
+            "couleur": ["Vert", "Crème"],
+            "img": "143_Ronflex.png"
         },
         {
             "id": 144,
             "name_english": "Articuno",
             "name_french": "Artikodin",
-            "couleur": ["Bleu"]
+            "couleur": ["Bleu"],
+            "img": "144_Artikodin.png"
         },
         {
             "id": 145,
             "name_english": "Zapdos",
             "name_french": "Électhor",
-            "couleur": ["Jaune", "Noir"]
+            "couleur": ["Jaune", "Noir"],
+            "img": "145_Électhor.png"
         },
         {
             "id": 146,
             "name_english": "Moltres",
             "name_french": "Sulfura",
-            "couleur": ["Jaune", "Orange"]
+            "couleur": ["Jaune", "Orange"],
+            "img": "146_Sulfura.png"
         },
         {
             "id": 147,
             "name_english": "Dratini",
             "name_french": "Minidraco",
-            "couleur": ["Bleu", "Blanc"]
+            "couleur": ["Bleu", "Blanc"],
+            "img": "147_Minidraco.png"
         },
         {
             "id": 148,
             "name_english": "Dragonair",
             "name_french": "Draco",
-            "couleur": ["Bleu", "Blanc"]
+            "couleur": ["Bleu", "Blanc"],
+            "img": "148_Draco.png"
         },
         {
             "id": 149,
             "name_english": "Dragonite",
             "name_french": "Dracolosse",
-            "couleur": ["Orange", "Crème"]
+            "couleur": ["Orange", "Crème"],
+            "img": "149_Dracolosse.png"
         },
         {
             "id": 150,
             "name_english": "Mewtwo",
             "name_french": "Mewtwo",
-            "couleur": ["Violet"]
+            "couleur": ["Violet"],
+            "img": "150_Mewtwo.png"
         },
         {
             "id": 151,
             "name_english": "Mew",
             "name_french": "Mew",
-            "couleur": ["Rose"]
+            "couleur": ["Rose"],
+            "img": "151_Mew.png"
         },
         {
             "id": 152,
             "name_english": "Chikorita",
             "name_french": "Germignon",
-            "couleur": ["Vert"]
+            "couleur": ["Vert"],
+            "img": "152_Germignon.png"
         },
         {
             "id": 153,
             "name_english": "Bayleef",
             "name_french": "Macronium",
-            "couleur": ["Vert", "Jaune"]
+            "couleur": ["Vert", "Jaune"],
+            "img": "153_Macronium.png"
         },
         {
             "id": 154,
             "name_english": "Meganium",
             "name_french": "Méganium",
-            "couleur": ["Vert", "Rose"]
+            "couleur": ["Vert", "Rose"],
+            "img": "154_Méganium.png"
         },
         {
             "id": 155,
             "name_english": "Cyndaquil",
             "name_french": "Héricendre",
-            "couleur": ["Vert", "Crème"]
+            "couleur": ["Vert", "Crème"],
+            "img": "155_Héricendre.png"
         },
         {
             "id": 156,
             "name_english": "Quilava",
             "name_french": "Feurisson",
-            "couleur": ["Vert", "Crème"]
+            "couleur": ["Vert", "Crème"],
+            "img": "156_Feurisson.png"
         },
         {
             "id": 157,
             "name_english": "Typhlosion",
             "name_french": "Typhlosion",
-            "couleur": ["Vert", "Crème"]
+            "couleur": ["Vert", "Crème"],
+            "img": "157_Typhlosion.png"
         },
         {
             "id": 158,
             "name_english": "Totodile",
             "name_french": "Kaiminus",
-            "couleur": ["Bleu"]
+            "couleur": ["Bleu"],
+            "img": "158_Kaiminus.png"
         },
         {
             "id": 159,
             "name_english": "Croconaw",
             "name_french": "Crocrodil",
-            "couleur": ["Bleu", "Crème"]
+            "couleur": ["Bleu", "Crème"],
+            "img": "159_Crocrodil.png"
         },
         {
             "id": 160,
             "name_english": "Feraligatr",
             "name_french": "Aligatueur",
-            "couleur": ["Bleu", "Rouge"]
+            "couleur": ["Bleu", "Rouge"],
+            "img": "160_Aligatueur.png"
         },
         {
             "id": 161,
             "name_english": "Sentret",
             "name_french": "Fouinette",
-            "couleur": ["Marron", "Crème"]
+            "couleur": ["Marron", "Crème"],
+            "img": "161_Fouinette.png"
         },
         {
             "id": 162,
             "name_english": "Furret",
             "name_french": "Fouinar",
-            "couleur": ["Marron", "Crème"]
+            "couleur": ["Marron", "Crème"],
+            "img": "162_Fouinar.png"
         },
         {
             "id": 163,
             "name_english": "Hoothoot",
             "name_french": "Hoothoot",
-            "couleur": ["Marron", "Crème"]
+            "couleur": ["Marron", "Crème"],
+            "img": "163_Hoothoot.png"
         },
         {
             "id": 164,
             "name_english": "Noctowl",
             "name_french": "Noarfang",
-            "couleur": ["Marron", "Crème"]
+            "couleur": ["Marron", "Crème"],
+            "img": "164_Noarfang.png"
         },
         {
             "id": 165,
             "name_english": "Ledyba",
             "name_french": "Coxy",
-            "couleur": ["Rouge", "Noir"]
+            "couleur": ["Rouge", "Noir"],
+            "img": "165_Coxy.png"
         },
         {
             "id": 166,
             "name_english": "Ledian",
             "name_french": "Coxyclaque",
-            "couleur": ["Rouge", "Noir"]
+            "couleur": ["Rouge", "Noir"],
+            "img": "166_Coxyclaque.png"
         },
         {
             "id": 167,
             "name_english": "Spinarak",
             "name_french": "Mimigal",
-            "couleur": ["Vert", "Jaune"]
+            "couleur": ["Vert", "Jaune"],
+            "img": "167_Mimigal.png"
         },
         {
             "id": 168,
             "name_english": "Ariados",
             "name_french": "Migalos",
-            "couleur": ["Rouge", "Jaune"]
+            "couleur": ["Rouge", "Jaune"],
+            "img": "168_Migalos.png"
         },
         {
             "id": 169,
             "name_english": "Crobat",
             "name_french": "Nostenfer",
-            "couleur": ["Violet", "Bleu"]
+            "couleur": ["Violet", "Bleu"],
+            "img": "169_Nostenfer.png"
         },
         {
             "id": 170,
             "name_english": "Chinchou",
             "name_french": "Loupio",
-            "couleur": ["Bleu", "Jaune"]
+            "couleur": ["Bleu", "Jaune"],
+            "img": "170_Loupio.png"
         },
         {
             "id": 171,
             "name_english": "Lanturn",
             "name_french": "Lanturn",
-            "couleur": ["Bleu", "Jaune"]
+            "couleur": ["Bleu", "Jaune"],
+            "img": "171_Lanturn.png"
         },
         {
             "id": 172,
             "name_english": "Pichu",
             "name_french": "Pichu",
-            "couleur": ["Jaune", "Noir"]
+            "couleur": ["Jaune", "Noir"],
+            "img": "172_Pichu.png"
         },
         {
             "id": 173,
             "name_english": "Cleffa",
             "name_french": "Mélo",
-            "couleur": ["Rose", "Marron"]
+            "couleur": ["Rose", "Marron"],
+            "img": "173_Mélo.png"
         },
         {
             "id": 174,
             "name_english": "Igglybuff",
             "name_french": "Toudoudou",
-            "couleur": ["Rose"]
+            "couleur": ["Rose"],
+            "img": "174_Toudoudou.png"
         },
         {
             "id": 175,
             "name_english": "Togepi",
             "name_french": "Togepi",
-            "couleur": ["Blanc", "Crème"]
+            "couleur": ["Blanc", "Crème"],
+            "img": "175_Togepi.png"
         },
         {
             "id": 176,
             "name_english": "Togetic",
             "name_french": "Togetic",
-            "couleur": ["Blanc"]
+            "couleur": ["Blanc"],
+            "img": "176_Togetic.png"
         },
         {
             "id": 177,
             "name_english": "Natu",
             "name_french": "Natu",
-            "couleur": ["Vert", "Rouge"]
+            "couleur": ["Vert", "Rouge"],
+            "img": "177_Natu.png"
         },
         {
             "id": 178,
             "name_english": "Xatu",
             "name_french": "Xatu",
-            "couleur": ["Vert", "Blanc"]
+            "couleur": ["Vert", "Blanc"],
+            "img": "178_Xatu.png"
         },
         {
             "id": 179,
             "name_english": "Mareep",
             "name_french": "Wattouat",
-            "couleur": ["Bleu", "Crème"]
+            "couleur": ["Bleu", "Crème"],
+            "img": "179_Wattouat.png"
         },
         {
             "id": 180,
             "name_english": "Flaaffy",
             "name_french": "Lainergie",
-            "couleur": ["Rose", "Blanc"]
+            "couleur": ["Rose", "Blanc"],
+            "img": "180_Lainergie.png"
         },
         {
             "id": 181,
             "name_english": "Ampharos",
             "name_french": "Pharamp",
-            "couleur": ["Jaune", "Blanc"]
+            "couleur": ["Jaune", "Blanc"],
+            "img": "181_Pharamp.png"
         },
         {
             "id": 182,
             "name_english": "Bellossom",
             "name_french": "Joliflor",
-            "couleur": ["Vert", "Rouge"]
+            "couleur": ["Vert", "Rouge"],
+            "img": "182_Joliflor.png"
         },
         {
             "id": 183,
             "name_english": "Marill",
             "name_french": "Marill",
-            "couleur": ["Bleu", "Blanc"]
+            "couleur": ["Bleu", "Blanc"],
+            "img": "183_Marill.png"
         },
         {
             "id": 184,
             "name_english": "Azumarill",
             "name_french": "Azumarill",
-            "couleur": ["Bleu", "Blanc"]
+            "couleur": ["Bleu", "Blanc"],
+            "img": "184_Azumarill.png"
         },
         {
             "id": 185,
             "name_english": "Sudowoodo",
             "name_french": "Simularbre",
-            "couleur": ["Marron", "Vert"]
+            "couleur": ["Marron", "Vert"],
+            "img": "185_Simularbre.png"
         },
         {
             "id": 186,
             "name_english": "Politoed",
             "name_french": "Tarpaud",
-            "couleur": ["Vert", "Jaune"]
+            "couleur": ["Vert", "Jaune"],
+            "img": "186_Tarpaud.png"
         },
         {
             "id": 187,
             "name_english": "Hoppip",
             "name_french": "Granivol",
-            "couleur": ["Rose", "Vert"]
+            "couleur": ["Rose", "Vert"],
+            "img": "187_Granivol.png"
         },
         {
             "id": 188,
             "name_english": "Skiploom",
             "name_french": "Floravol",
-            "couleur": ["Vert", "Jaune"]
+            "couleur": ["Vert", "Jaune"],
+            "img": "188_Floravol.png"
         },
         {
             "id": 189,
             "name_english": "Jumpluff",
             "name_french": "Cotovol",
-            "couleur": ["Bleu", "Blanc"]
+            "couleur": ["Bleu", "Blanc"],
+            "img": "189_Cotovol.png"
         },
         {
             "id": 190,
             "name_english": "Aipom",
             "name_french": "Capumain",
-            "couleur": ["Violet", "Crème"]
+            "couleur": ["Violet", "Crème"],
+            "img": "190_Capumain.png"
         },
         {
             "id": 191,
             "name_english": "Sunkern",
             "name_french": "Tournegrin",
-            "couleur": ["Jaune", "Marron"]
+            "couleur": ["Jaune", "Marron"],
+            "img": "191_Tournegrin.png"
         },
         {
             "id": 192,
             "name_english": "Sunflora",
             "name_french": "Héliatronc",
-            "couleur": ["Vert", "Jaune"]
+            "couleur": ["Vert", "Jaune"],
+            "img": "192_Héliatronc.png"
         },
         {
             "id": 193,
             "name_english": "Yanma",
             "name_french": "Yanma",
-            "couleur": ["Rouge", "Vert"]
+            "couleur": ["Rouge", "Vert"],
+            "img": "193_Yanma.png"
         },
         {
             "id": 194,
             "name_english": "Wooper",
             "name_french": "Axoloto",
-            "couleur": ["Bleu"]
+            "couleur": ["Bleu"],
+            "img": "194_Axoloto.png"
         },
         {
             "id": 195,
             "name_english": "Quagsire",
             "name_french": "Maraiste",
-            "couleur": ["Bleu"]
+            "couleur": ["Bleu"],
+            "img": "195_Maraiste.png"
         },
         {
             "id": 196,
             "name_english": "Espeon",
             "name_french": "Mentali",
-            "couleur": ["Violet"]
+            "couleur": ["Violet"],
+            "img": "196_Mentali.png"
         },
         {
             "id": 197,
             "name_english": "Umbreon",
             "name_french": "Noctali",
-            "couleur": ["Noir", "Jaune"]
+            "couleur": ["Noir", "Jaune"],
+            "img": "197_Noctali.png"
         },
         {
             "id": 198,
             "name_english": "Murkrow",
             "name_french": "Cornèbre",
-            "couleur": ["Noir", "Jaune"]
+            "couleur": ["Noir", "Jaune"],
+            "img": "198_Cornèbre.png"
         },
         {
             "id": 199,
             "name_english": "Slowking",
             "name_french": "Roigada",
-            "couleur": ["Rose", "Gris"]
+            "couleur": ["Rose", "Gris"],
+            "img": "199_Roigada.png"
         },
         {
             "id": 200,
             "name_english": "Misdreavus",
             "name_french": "Feuforêve",
-            "couleur": ["Vert", "Rose"]
+            "couleur": ["Vert", "Rose"],
+            "img": "200_Feuforêve.png"
         },
         {
             "id": 201,
             "name_english": "Unown",
             "name_french": "Zarbi",
-            "couleur": ["Noir", "Blanc"]
+            "couleur": ["Noir", "Blanc"],
+            "img": "201_Zarbi.png"
         },
         {
             "id": 202,
             "name_english": "Wobbuffet",
             "name_french": "Qulbutoké",
-            "couleur": ["bleu", "Noir"]
+            "couleur": ["Bleu", "Noir"],
+            "img": "202_Qulbutoké.png"
         },
         {
             "id": 203,
             "name_english": "Girafarig",
             "name_french": "Girafarig",
-            "couleur": ["Jaune", "Marron"]
+            "couleur": ["Jaune", "Marron"],
+            "img": "203_Girafarig.png"
         },
         {
             "id": 204,
             "name_english": "Pineco",
             "name_french": "Pomdepik",
-            "couleur": ["Vert"]
+            "couleur": ["Vert"],
+            "img": "204_Pomdepik.png"
         },
         {
             "id": 205,
             "name_english": "Forretress",
             "name_french": "Foretress",
-            "couleur": ["Violet", "Rouge"]
+            "couleur": ["Violet", "Rouge"],
+            "img": "205_Foretress.png"
         },
         {
             "id": 206,
             "name_english": "Dunsparce",
             "name_french": "Insolourdo",
-            "couleur": ["Jaune", "Bleu"]
+            "couleur": ["Jaune", "Bleu"],
+            "img": "206_Insolourdo.png"
         },
         {
             "id": 207,
             "name_english": "Gligar",
             "name_french": "Scorplane",
-            "couleur": ["Rose", "bleu"]
+            "couleur": ["Rose", "Bleu"],
+            "img": "207_Scorplane.png"
         },
         {
             "id": 208,
             "name_english": "Steelix",
             "name_french": "Steelix",
-            "couleur": ["Gris"]
+            "couleur": ["Gris"],
+            "img": "208_Steelix.png"
         },
         {
             "id": 209,
             "name_english": "Snubbull",
             "name_french": "Snubbull",
-            "couleur": ["Rose", "Noir"]
+            "couleur": ["Rose", "Noir"],
+            "img": "209_Snubbull.png"
         },
         {
             "id": 210,
             "name_english": "Granbull",
             "name_french": "Granbull",
-            "couleur": ["Violet", "Noir"]
+            "couleur": ["Violet", "Noir"],
+            "img": "210_Granbull.png"
         },
         {
             "id": 211,
             "name_english": "Qwilfish",
             "name_french": "Qwilfish",
-            "couleur": ["Vert", "Jaune"]
+            "couleur": ["Vert", "Jaune"],
+            "img": "211_Qwilfish.png"
         },
         {
             "id": 212,
             "name_english": "Scizor",
             "name_french": "Cizayox",
-            "couleur": ["Rouge", "Noir"]
+            "couleur": ["Rouge", "Noir"],
+            "img": "212_Cizayox.png"
         },
         {
             "id": 213,
             "name_english": "Shuckle",
             "name_french": "Caratroc",
-            "couleur": ["Jaune", "Rouge"]
+            "couleur": ["Jaune", "Rouge"],
+            "img": "213_Caratroc.png"
         },
         {
             "id": 214,
             "name_english": "Heracross",
             "name_french": "Scarhino",
-            "couleur": ["Bleu"]
+            "couleur": ["Bleu"],
+            "img": "214_Scarhino.png"
         },
         {
             "id": 215,
             "name_english": "Sneasel",
             "name_french": "Farfuret",
-            "couleur": ["Bleu", "Rouge"]
+            "couleur": ["Bleu", "Rouge"],
+            "img": "215_Farfuret.png"
         },
         {
             "id": 216,
             "name_english": "Teddiursa",
             "name_french": "Teddiursa",
-            "couleur": ["Orange", "Crème"]
+            "couleur": ["Orange", "Crème"],
+            "img": "216_Teddiursa.png"
         },
         {
             "id": 217,
             "name_english": "Ursaring",
             "name_french": "Ursaring",
-            "couleur": ["Marron", "Crème"]
+            "couleur": ["Marron", "Crème"],
+            "img": "217_Ursaring.png"
         },
         {
             "id": 218,
             "name_english": "Slugma",
             "name_french": "Limagma",
-            "couleur": ["Orange"]
+            "couleur": ["Orange"],
+            "img": "218_Limagma.png"
         },
         {
             "id": 219,
             "name_english": "Magcargo",
             "name_french": "Volcaropod",
-            "couleur": ["Orange", "Gris"]
+            "couleur": ["Orange", "Gris"],
+            "img": "219_Volcaropod.png"
         },
         {
             "id": 220,
             "name_english": "Swinub",
             "name_french": "Marcacrin",
-            "couleur": ["Marron"]
+            "couleur": ["Marron"],
+            "img": "220_Marcacrin.png"
         },
         {
             "id": 221,
             "name_english": "Piloswine",
             "name_french": "Cochignon",
-            "couleur": ["Marron"]
+            "couleur": ["Marron"],
+            "img": "221_Cochignon.png"
         },
         {
             "id": 222,
             "name_english": "Corsola",
             "name_french": "Corayon",
-            "couleur": ["Rose", "Blanc"]
+            "couleur": ["Rose", "Blanc"],
+            "img": "222_Corayon.png"
         },
         {
             "id": 223,
             "name_english": "Remoraid",
             "name_french": "Rémoraid",
-            "couleur": ["Gris", "Blanc"]
+            "couleur": ["Gris", "Blanc"],
+            "img": "223_Rémoraid.png"
         },
         {
             "id": 224,
             "name_english": "Octillery",
             "name_french": "Octillery",
-            "couleur": ["Rouge", "Jaune"]
+            "couleur": ["Rouge", "Jaune"],
+            "img": "224_Octillery.png"
         },
         {
             "id": 225,
             "name_english": "Delibird",
             "name_french": "Cadoizo",
-            "couleur": ["Rouge", "Blanc"]
+            "couleur": ["Rouge", "Blanc"],
+            "img": "225_Cadoizo.png"
         },
         {
             "id": 226,
             "name_english": "Mantine",
             "name_french": "Démanta",
-            "couleur": ["Bleu", "Blanc"]
+            "couleur": ["Bleu", "Blanc"],
+            "img": "226_Démanta.png"
         },
         {
             "id": 227,
             "name_english": "Skarmory",
             "name_french": "Airmure",
-            "couleur": ["Gris", "Rouge"]
+            "couleur": ["Gris", "Rouge"],
+            "img": "227_Airmure.png"
         },
         {
             "id": 228,
             "name_english": "Houndour",
             "name_french": "Malosse",
-            "couleur": ["Noir", "Orange"]
+            "couleur": ["Noir", "Orange"],
+            "img": "228_Malosse.png"
         },
         {
             "id": 229,
             "name_english": "Houndoom",
             "name_french": "Démolosse",
-            "couleur": ["Noir", "Orange"]
+            "couleur": ["Noir", "Orange"],
+            "img": "229_Démolosse.png"
         },
         {
             "id": 230,
             "name_english": "Kingdra",
             "name_french": "Hyporoi",
-            "couleur": ["Bleu", "Jaune"]
+            "couleur": ["Bleu", "Jaune"],
+            "img": "230_Hyporoi.png"
         },
         {
             "id": 231,
             "name_english": "Phanpy",
             "name_french": "Phanpy",
-            "couleur": ["Bleu", "Rouge"]
+            "couleur": ["Bleu", "Rouge"],
+            "img": "231_Phanpy.png"
         },
         {
             "id": 232,
             "name_english": "Donphan",
             "name_french": "Donphan",
-            "couleur": ["Noir", "Bleu"]
+            "couleur": ["Noir", "Bleu"],
+            "img": "232_Donphan.png"
         },
         {
             "id": 233,
             "name_english": "Porygon2",
             "name_french": "Porygon2",
-            "couleur": ["Rose", "Bleu"]
+            "couleur": ["Rose", "Bleu"],
+            "img": "233_Porygon2.png"
         },
         {
             "id": 234,
             "name_english": "Stantler",
             "name_french": "Cerfrousse",
-            "couleur": ["Marron", "Crème"]
+            "couleur": ["Marron", "Crème"],
+            "img": "234_Cerfrousse.png"
         },
         {
             "id": 235,
             "name_english": "Smeargle",
             "name_french": "Queulorior",
-            "couleur": ["Crème", "Marron"]
+            "couleur": ["Crème", "Marron"],
+            "img": "235_Queulorior.png"
         },
         {
             "id": 236,
             "name_english": "Tyrogue",
             "name_french": "Debugant",
-            "couleur": ["Violet", "Marron"]
+            "couleur": ["Violet", "Marron"],
+            "img": "236_Debugant.png"
         },
         {
             "id": 237,
             "name_english": "Hitmontop",
             "name_french": "Kapoera",
-            "couleur": ["Marron", "Bleu"]
+            "couleur": ["Marron", "Bleu"],
+            "img": "237_Kapoera.png"
         },
         {
             "id": 238,
             "name_english": "Smoochum",
             "name_french": "Lippouti",
-            "couleur": ["Rose", "Jaune"]
+            "couleur": ["Rose", "Jaune"],
+            "img": "238_Lippouti.png"
         },
         {
             "id": 239,
             "name_english": "Elekid",
             "name_french": "Élekid",
-            "couleur": ["Jaune", "Noir"]
+            "couleur": ["Jaune", "Noir"],
+            "img": "239_Élekid.png"
         },
         {
             "id": 240,
             "name_english": "Magby",
             "name_french": "Magby",
-            "couleur": ["Rouge", "Jaune"]
+            "couleur": ["Rouge", "Jaune"],
+            "img": "240_Magby.png"
         },
         {
             "id": 241,
             "name_english": "Miltank",
             "name_french": "Écrémeuh",
-            "couleur": ["Rose", "Noir"]
+            "couleur": ["Rose", "Noir"],
+            "img": "241_Écrémeuh.png"
         },
         {
             "id": 242,
             "name_english": "Blissey",
             "name_french": "Leuphorie",
-            "couleur": ["Rose", "Blanc"]
+            "couleur": ["Rose", "Blanc"],
+            "img": "242_Leuphorie.png"
         },
         {
             "id": 243,
             "name_english": "Raikou",
             "name_french": "Raikou",
-            "couleur": ["Jaune", "Blanc"]
+            "couleur": ["Jaune", "Blanc"],
+            "img": "243_Raikou.png"
         },
         {
             "id": 244,
             "name_english": "Entei",
             "name_french": "Entei",
-            "couleur": ["Marron", "Gris"]
+            "couleur": ["Marron", "Gris"],
+            "img": "244_Entei.png"
         },
         {
             "id": 245,
             "name_english": "Suicune",
             "name_french": "Suicune",
-            "couleur": ["Bleu", "Violet"]
+            "couleur": ["Bleu", "Violet"],
+            "img": "245_Suicune.png"
         },
         {
             "id": 246,
             "name_english": "Larvitar",
             "name_french": "Embrylex",
-            "couleur": ["Vert", "Rouge"]
+            "couleur": ["Vert", "Rouge"],
+            "img": "246_Embrylex.png"
         },
         {
             "id": 247,
             "name_english": "Pupitar",
             "name_french": "Ymphect",
-            "couleur": ["Gris"]
+            "couleur": ["Gris"],
+            "img": "247_Ymphect.png"
         },
         {
             "id": 248,
             "name_english": "Tyranitar",
             "name_french": "Tyranocif",
-            "couleur": ["Vert", "Gris"]
+            "couleur": ["Vert", "Gris"],
+            "img": "248_Tyranocif.png"
         },
         {
             "id": 249,
             "name_english": "Lugia",
             "name_french": "Lugia",
-            "couleur": ["Blanc", "Bleu"]
+            "couleur": ["Blanc", "Bleu"],
+            "img": "249_Lugia.png"
         },
         {
             "id": 250,
             "name_english": "Ho-Oh",
             "name_french": "Ho-Oh",
-            "couleur": ["Rouge", "Blanc"]
+            "couleur": ["Rouge", "Blanc"],
+            "img": "250_Ho-Oh.png"
         },
         {
             "id": 251,
             "name_english": "Celebi",
             "name_french": "Celebi",
-            "couleur": ["Vert"]
+            "couleur": ["Vert"],
+            "img": "251_Celebi.png"
         },
         {
             "id": 252,
             "name_english": "Treecko",
             "name_french": "Arcko",
-            "couleur": ["Vert", "Rose"]
+            "couleur": ["Vert", "Rose"],
+            "img": "252_Arcko.png"
         },
         {
             "id": 253,
             "name_english": "Grovyle",
             "name_french": "Massko",
-            "couleur": ["Vert", "Rose"]
+            "couleur": ["Vert", "Rose"],
+            "img": "253_Massko.png"
         },
         {
             "id": 254,
             "name_english": "Sceptile",
             "name_french": "Jungko",
-            "couleur": ["Vert", "Rose"]
+            "couleur": ["Vert", "Rose"],
+            "img": "254_Jungko.png"
         },
         {
             "id": 255,
             "name_english": "Torchic",
             "name_french": "Poussifeu",
-            "couleur": ["Orange", "Jaune"]
+            "couleur": ["Orange", "Jaune"],
+            "img": "255_Poussifeu.png"
         },
         {
             "id": 256,
             "name_english": "Combusken",
             "name_french": "Galifeu",
-            "couleur": ["Jaune", "Orange"]
+            "couleur": ["Jaune", "Orange"],
+            "img": "256_Galifeu.png"
         },
         {
             "id": 257,
             "name_english": "Blaziken",
             "name_french": "Braségali",
-            "couleur": ["Rouge", "Jaune"]
+            "couleur": ["Rouge", "Jaune"],
+            "img": "257_Braségali.png"
         },
         {
             "id": 258,
             "name_english": "Mudkip",
             "name_french": "Gobou",
-            "couleur": ["Bleu", "Orange"]
+            "couleur": ["Bleu", "Orange"],
+            "img": "258_Gobou.png"
         },
         {
             "id": 259,
             "name_english": "Marshtomp",
             "name_french": "Flobio",
-            "couleur": ["Bleu", "Orange"]
+            "couleur": ["Bleu", "Orange"],
+            "img": "259_Flobio.png"
         },
         {
             "id": 260,
             "name_english": "Swampert",
             "name_french": "Laggron",
-            "couleur": ["Bleu", "Orange"]
+            "couleur": ["Bleu", "Orange"],
+            "img": "260_Laggron.png"
         },
         {
             "id": 261,
             "name_english": "Poochyena",
             "name_french": "Medhyèna",
-            "couleur": ["Gris", "Noir"]
+            "couleur": ["Gris", "Noir"],
+            "img": "261_Medhyèna.png"
         },
         {
             "id": 262,
             "name_english": "Mightyena",
             "name_french": "Grahyèna",
-            "couleur": ["Gris", "Noir"]
+            "couleur": ["Gris", "Noir"],
+            "img": "262_Grahyèna.png" 
         },
         {
             "id": 263,
             "name_english": "Zigzagoon",
             "name_french": "Zigzaton",
-            "couleur": ["Marron", "Crème"]
+            "couleur": ["Marron", "Crème"],
+            "img": "263_Zigzaton.png"
         },
         {
             "id": 264,
             "name_english": "Linoone",
             "name_french": "Linéon",
-            "couleur": ["Marron", "Crème"]
+            "couleur": ["Marron", "Crème"],
+            "img": "264_Linéon.png"
         },
         {
             "id": 265,
             "name_english": "Wurmple",
             "name_french": "Chenipotte",
-            "couleur": ["Rouge", "Blanc"]
+            "couleur": ["Rouge", "Blanc"],
+            "img": "265_Chenipotte.png"
         },
         {
             "id": 266,
             "name_english": "Silcoon",
             "name_french": "Armulys",
-            "couleur": ["Blanc"]
+            "couleur": ["Blanc"],
+            "img": "266_Armulys.png"
         },
         {
             "id": 267,
             "name_english": "Beautifly",
             "name_french": "Charmillon",
-            "couleur": ["Vert", "Blanc"]
+            "couleur": ["Vert", "Blanc"],
+            "img": "267_Charmillon.png"
         },
         {
             "id": 268,
             "name_english": "Cascoon",
             "name_french": "Blindalys",
-            "couleur": ["Violet"]
+            "couleur": ["Violet"],
+            "img": "268_Blindalys.png"
         },
         {
             "id": 269,
             "name_english": "Dustox",
             "name_french": "Papinox",
-            "couleur": ["Vert", "Violet"]
+            "couleur": ["Vert", "Violet"],
+            "img": "269_Papinox.png"
         },
         {
             "id": 270,
             "name_english": "Lotad",
             "name_french": "Nénupiot",
-            "couleur": ["Vert", "Bleu"]
+            "couleur": ["Vert", "Bleu"],
+            "img": "270_Nénupiot.png"
         },
         {
             "id": 271,
             "name_english": "Lombre",
             "name_french": "Lombre",
-            "couleur": ["Vert"]
+            "couleur": ["Vert"],
+            "img": "271_Lombre.png"
         },
         {
             "id": 272,
             "name_english": "Ludicolo",
             "name_french": "Ludicolo",
-            "couleur": ["Vert", "Crème"]
+            "couleur": ["Vert", "Crème"],
+            "img": "272_Ludicolo.png"
         },
         {
             "id": 273,
             "name_english": "Seedot",
             "name_french": "Grainipiot",
-            "couleur": ["Marron", "Gris"]
+            "couleur": ["Marron", "Gris"],
+            "img": "273_Grainipiot.png"
         },
         {
             "id": 274,
             "name_english": "Nuzleaf",
             "name_french": "Pifeuil",
-            "couleur": ["Marron", "Crème"]
+            "couleur": ["Marron", "Crème"],
+            "img": "274_Pifeuil.png"
         },
         {
             "id": 275,
             "name_english": "Shiftry",
             "name_french": "Tengalice",
-            "couleur": ["Marron", "Blanc"]
+            "couleur": ["Marron", "Blanc"],
+            "img": "275_Tengalice.png"
         },
         {
             "id": 276,
             "name_english": "Taillow",
             "name_french": "Nirondelle",
-            "couleur": ["Bleu", "Rouge"]
+            "couleur": ["Bleu", "Rouge"],
+            "img": "276_Nirondelle.png"
         },
         {
             "id": 277,
             "name_english": "Swellow",
             "name_french": "Hélédelle",
-            "couleur": ["Bleu", "Rouge"]
+            "couleur": ["Bleu", "Rouge"],
+            "img": "277_Hélédelle.png"
         },
         {
             "id": 278,
             "name_english": "Wingull",
             "name_french": "Goélise",
-            "couleur": ["Blanc", "Bleu"]
+            "couleur": ["Blanc", "Bleu"],
+            "img": "278_Goélise.png"
         },
         {
             "id": 279,
             "name_english": "Pelipper",
             "name_french": "Bekipan",
-            "couleur": ["Blanc", "Jaune"]
+            "couleur": ["Blanc", "Jaune"],
+            "img": "279_Bekipan.png"
         },
         {
             "id": 280,
             "name_english": "Ralts",
             "name_french": "Tarsal",
-            "couleur": ["Vert", "Blanc"]
+            "couleur": ["Vert", "Blanc"],
+            "img": "280_Tarsal.png"
         },
         {
             "id": 281,
             "name_english": "Kirlia",
             "name_french": "Kirlia",
-            "couleur": ["Vert", "Blanc"]
+            "couleur": ["Vert", "Blanc"],
+            "img": "281_Kirlia.png"
         },
         {
             "id": 282,
             "name_english": "Gardevoir",
             "name_french": "Gardevoir",
-            "couleur": ["Vert", "Blanc"]
+            "couleur": ["Vert", "Blanc"],
+            "img": "282_Gardevoir.png"
         },
         {
             "id": 283,
             "name_english": "Surskit",
             "name_french": "Arakdo",
-            "couleur": ["Bleu", "Jaune"]
+            "couleur": ["Bleu", "Jaune"],
+            "img": "283_Arakdo.png"
         },
         {
             "id": 284,
             "name_english": "Masquerain",
             "name_french": "Maskadra",
-            "couleur": ["Bleu", "Orange"]
+            "couleur": ["Bleu", "Orange"],
+            "img": "284_Maskadra.png"
         },
         {
             "id": 285,
             "name_english": "Shroomish",
             "name_french": "Balignon",
-            "couleur": ["Vert"]
+            "couleur": ["Vert"],
+            "img": "285_Balignon.png"
         },
         {
             "id": 286,
             "name_english": "Breloom",
             "name_french": "Chapignon",
-            "couleur": ["Vert"]
+            "couleur": ["Vert"],
+            "img": "286_Chapignon.png"
         },
         {
             "id": 287,
             "name_english": "Slakoth",
             "name_french": "Parecool",
-            "couleur": ["Marron"]
+            "couleur": ["Marron"],
+            "img": "287_Parecool.png"
         },
         {
             "id": 288,
             "name_english": "Vigoroth",
             "name_french": "Vigoroth",
-            "couleur": ["Blanc", "Rouge"]
+            "couleur": ["Blanc", "Rouge"],
+            "img": "288_Vigoroth.png"
         },
         {
             "id": 289,
             "name_english": "Slaking",
             "name_french": "Monaflèmit",
-            "couleur": ["Marron", "Blanc"]
+            "couleur": ["Marron", "Blanc"],
+            "img": "289_Monaflèmit.png"
         },
         {
             "id": 290,
             "name_english": "Nincada",
             "name_french": "Ningale",
-            "couleur": ["Gris", "Marron"]
+            "couleur": ["Gris", "Marron"],
+            "img": "290_Ningale.png"
         },
         {
             "id": 291,
             "name_english": "Ninjask",
             "name_french": "Ninjask",
-            "couleur": ["Jaune", "Noir"]
+            "couleur": ["Jaune", "Noir"],
+            "img": "291_Ninjask.png"
         },
         {
             "id": 292,
             "name_english": "Shedinja",
             "name_french": "Munja",
-            "couleur": ["Jaune", "Gris"]
+            "couleur": ["Jaune", "Gris"],
+            "img": "292_Munja.png"
         },
         {
             "id": 293,
             "name_english": "Whismur",
             "name_french": "Chuchmur",
-            "couleur": ["Violet", "Jaune"]
+            "couleur": ["Violet", "Jaune"],
+            "img": "293_Chuchmur.png"
         },
         {
             "id": 294,
             "name_english": "Loudred",
             "name_french": "Ramboum",
-            "couleur": ["Bleu", "Jaune"]
+            "couleur": ["Bleu", "Jaune"],
+            "img": "294_Ramboum.png"
         },
         {
             "id": 295,
             "name_english": "Exploud",
             "name_french": "Brouhabam",
-            "couleur": ["Bleu", "Jaune"]
+            "couleur": ["Bleu", "Jaune"],
+            "img": "295_Brouhabam.png"
         },
         {
             "id": 296,
             "name_english": "Makuhita",
             "name_french": "Makuhita",
-            "couleur": ["Jaune", "Noir"]
+            "couleur": ["Jaune", "Noir"],
+            "img": "296_Makuhita.png"
         },
         {
             "id": 297,
             "name_english": "Hariyama",
             "name_french": "Hariyama",
-            "couleur": ["Jaune", "Orange"]
+            "couleur": ["Jaune", "Orange"],
+            "img": "297_Hariyama.png"
         },
         {
             "id": 298,
             "name_english": "Azurill",
             "name_french": "Azurill",
-            "couleur": ["Bleu"]
+            "couleur": ["Bleu"],
+            "img": "298_Azurill.png"
         },
         {
             "id": 299,
             "name_english": "Nosepass",
             "name_french": "Tarinor",
-            "couleur": ["Bleu", "Rouge"]
+            "couleur": ["Bleu", "Rouge"],
+            "img": "299_Tarinor.png"
         },
         {
             "id": 300,
             "name_english": "Skitty",
             "name_french": "Skitty",
-            "couleur": ["Rose", "Crème"]
+            "couleur": ["Rose", "Crème"],
+            "img": "300_Skitty.png"
         },
         {
             "id": 301,
             "name_english": "Delcatty",
             "name_french": "Delcatty",
-            "couleur": ["Violet", "Crème"]
+            "couleur": ["Violet", "Crème"],
+            "img": "301_Delcatty.png"
         },
         {
             "id": 302,
             "name_english": "Sableye",
             "name_french": "Ténéfix",
-            "couleur": ["Violet"]
+            "couleur": ["Violet"],
+            "img": "302_Ténéfix.png"
         },
         {
             "id": 303,
             "name_english": "Mawile",
             "name_french": "Mysdibule",
-            "couleur": ["Jaune", "Noir"]
+            "couleur": ["Jaune", "Noir"],
+            "img": "303_Mysdibule.png"
         },
         {
             "id": 304,
             "name_english": "Aron",
             "name_french": "Galekid",
-            "couleur": ["Gris", "Noir"]
+            "couleur": ["Gris", "Noir"],
+            "img": "304_Galekid.png"
         },
         {
             "id": 305,
             "name_english": "Lairon",
             "name_french": "Galegon",
-            "couleur": ["Gris", "Noir"]
+            "couleur": ["Gris", "Noir"],
+            "img": "305_Galegon.png"
         },
         {
             "id": 306,
             "name_english": "Aggron",
             "name_french": "Galeking",
-            "couleur": ["Gris", "Noir"]
+            "couleur": ["Gris", "Noir"],
+            "img": "306_Galeking.png"
         },
         {
             "id": 307,
             "name_english": "Meditite",
             "name_french": "Méditikka",
-            "couleur": ["Bleu", "Blanc"]
+            "couleur": ["Bleu", "Blanc"],
+            "img": "307_Méditikka.png"
         },
         {
             "id": 308,
             "name_english": "Medicham",
             "name_french": "Charmina",
-            "couleur": ["Rouge", "Blanc"]
+            "couleur": ["Rouge", "Blanc"],
+            "img": "308_Charmina.png"
         },
         {
             "id": 309,
             "name_english": "Electrike",
             "name_french": "Dynavolt",
-            "couleur": ["Vert", "Jaune"]
+            "couleur": ["Vert", "Jaune"],
+            "img": "309_Dynavolt.png"
         },
         {
             "id": 310,
             "name_english": "Manectric",
             "name_french": "Élecsprint",
-            "couleur": ["Bleu", "Jaune"]
+            "couleur": ["Bleu", "Jaune"],
+            "img": "310_Élecsprint.png"
         },
         {
             "id": 311,
             "name_english": "Plusle",
             "name_french": "Posipi",
-            "couleur": ["Crème", "Rouge"]
+            "couleur": ["Crème", "Rouge"],
+            "img": "311_Posipi.png"
         },
         {
             "id": 312,
             "name_english": "Minun",
             "name_french": "Négapi",
-            "couleur": ["Crème", "Bleu"]
+            "couleur": ["Crème", "Bleu"],
+            "img": "312_Négapi.png"
         },
         {
             "id": 313,
             "name_english": "Volbeat",
             "name_french": "Muciole",
-            "couleur": ["Bleu", "Rouge"]
+            "couleur": ["Bleu", "Rouge"],
+            "img": "313_Muciole.png"
         },
         {
             "id": 314,
             "name_english": "Illumise",
             "name_french": "Lumivole",
-            "couleur": ["Bleu", "Violet"]
+            "couleur": ["Bleu", "Violet"],
+            "img": "314_Lumivole.png"
         },
         {
             "id": 315,
             "name_english": "Roselia",
             "name_french": "Rosélia",
-            "couleur": ["Vert"]
+            "couleur": ["Vert"],
+            "img": "315_Rosélia.png"
         },
         {
             "id": 316,
             "name_english": "Gulpin",
             "name_french": "Gloupti",
-            "couleur": ["Vert", "Jaune"]
+            "couleur": ["Vert", "Jaune"],
+            "img": "316_Gloupti.png"
         },
         {
             "id": 317,
             "name_english": "Swalot",
             "name_french": "Avaltout",
-            "couleur": ["Violet", "Noir"]
+            "couleur": ["Violet", "Noir"],
+            "img": "317_Avaltout.png"
         },
         {
             "id": 318,
             "name_english": "Carvanha",
             "name_french": "Carvanha",
-            "couleur": ["Bleu", "Rouge"]
+            "couleur": ["Bleu", "Rouge"],
+            "img": "318_Carvanha.png"
         },
         {
             "id": 319,
             "name_english": "Sharpedo",
             "name_french": "Sharpedo",
-            "couleur": ["Bleu", "Blanc"]
+            "couleur": ["Bleu", "Blanc"],
+            "img": "319_Sharpedo.png"
         },
         {
             "id": 320,
             "name_english": "Wailmer",
             "name_french": "Wailmer",
-            "couleur": ["Bleu", "Crème"]
+            "couleur": ["Bleu", "Crème"],
+            "img": "320_Wailmer.png"
         },
         {
             "id": 321,
             "name_english": "Wailord",
             "name_french": "Wailord",
-            "couleur": ["Bleu", "Blanc"]
+            "couleur": ["Bleu", "Blanc"],
+            "img": "321_Wailord.png"
         },
         {
             "id": 322,
             "name_english": "Numel",
             "name_french": "Chamallot",
-            "couleur": ["Jaune", "Vert"]
+            "couleur": ["Jaune", "Vert"],
+            "img": "322_Chamallot.png"
         },
         {
             "id": 323,
             "name_english": "Camerupt",
             "name_french": "Camérupt",
-            "couleur": ["Rouge", "Gris"]
+            "couleur": ["Rouge", "Gris"],
+            "img": "323_Camérupt.png"
         },
         {
             "id": 324,
             "name_english": "Torkoal",
             "name_french": "Chartor",
-            "couleur": ["Orange", "Noir"]
+            "couleur": ["Orange", "Noir"],
+            "img": "324_Chartor.png"
         },
         {
             "id": 325,
             "name_english": "Spoink",
             "name_french": "Spoink",
-            "couleur": ["Gris", "Rose"]
+            "couleur": ["Gris", "Rose"],
+            "img": "325_Spoink.png"
         },
         {
             "id": 326,
             "name_english": "Grumpig",
             "name_french": "Groret",
-            "couleur": ["Noir", "Violet"]
+            "couleur": ["Noir", "Violet"],
+            "img": "326_Groret.png"
         },
         {
             "id": 327,
             "name_english": "Spinda",
             "name_french": "Spinda",
-            "couleur": ["Crème", "Rouge"]
+            "couleur": ["Crème", "Rouge"],
+            "img": "327_Spinda.png"
         },
         {
             "id": 328,
             "name_english": "Trapinch",
             "name_french": "Kraknoix",
-            "couleur": ["Orange"]
+            "couleur": ["Orange"],
+            "img": "328_Kraknoix.png"
         },
         {
             "id": 329,
             "name_english": "Vibrava",
             "name_french": "Vibraninf",
-            "couleur": ["Vert", "Jaune"]
+            "couleur": ["Vert", "Jaune"],
+            "img": "329_Vibraninf.png"
         },
         {
             "id": 330,
             "name_english": "Flygon",
             "name_french": "Libégon",
-            "couleur": ["Vert", "Rouge"]
+            "couleur": ["Vert", "Rouge"],
+            "img": "330_Libégon.png"
         },
         {
             "id": 331,
             "name_english": "Cacnea",
             "name_french": "Cacnea",
-            "couleur": ["Vert"]
+            "couleur": ["Vert"],
+            "img": "331_Cacnea.png"
         },
         {
             "id": 332,
             "name_english": "Cacturne",
             "name_french": "Cacturne",
-            "couleur": ["Vert"]
+            "couleur": ["Vert"],
+            "img": "332_Cacturne.png"
         },
         {
             "id": 333,
             "name_english": "Swablu",
             "name_french": "Tylton",
-            "couleur": ["Bleu", "Blanc"]
+            "couleur": ["Bleu", "Blanc"],
+            "img": "333_Tylton.png"
         },
         {
             "id": 334,
             "name_english": "Altaria",
             "name_french": "Altaria",
-            "couleur": ["Bleu", "Blanc"]
+            "couleur": ["Bleu", "Blanc"],
+            "img": "334_Altaria.png"
         },
         {
             "id": 335,
             "name_english": "Zangoose",
             "name_french": "Mangriff",
-            "couleur": ["Blanc", "Rouge"]
+            "couleur": ["Blanc", "Rouge"],
+            "img": "335_Mangriff.png"
         },
         {
             "id": 336,
             "name_english": "Seviper",
             "name_french": "Séviper",
-            "couleur": ["Noir", "Jaune"]
+            "couleur": ["Noir", "Jaune"],
+            "img": "336_Séviper.png"
         },
         {
             "id": 337,
             "name_english": "Lunatone",
             "name_french": "Séléroc",
-            "couleur": ["Crème", "Noir"]
+            "couleur": ["Crème", "Noir"],
+            "img": "337_Séléroc.png"
         },
         {
             "id": 338,
             "name_english": "Solrock",
             "name_french": "Solaroc",
-            "couleur": ["Orange", "Jaune"]
+            "couleur": ["Orange", "Jaune"],
+            "img": "338_Solaroc.png"
         },
         {
             "id": 339,
             "name_english": "Barboach",
             "name_french": "Barloche",
-            "couleur": ["Gris", "Bleu"]
+            "couleur": ["Gris", "Bleu"],
+            "img": "339_Barloche.png"
         },
         {
             "id": 340,
             "name_english": "Whiscash",
             "name_french": "Barbicha",
-            "couleur": ["Bleu", "Jaune"]
+            "couleur": ["Bleu", "Jaune"],
+            "img": "340_Barbicha.png"
         },
         {
             "id": 341,
             "name_english": "Corphish",
             "name_french": "Écrapince",
-            "couleur": ["Orange", "Crème"]
+            "couleur": ["Orange", "Crème"],
+            "img": "341_Écrapince.png"
         },
         {
             "id": 342,
             "name_english": "Crawdaunt",
             "name_french": "Colhomard",
-            "couleur": ["Orange", "Crème"]
+            "couleur": ["Orange", "Crème"],
+            "img": "342_Colhomard.png"
         },
         {
             "id": 343,
             "name_english": "Baltoy",
             "name_french": "Balbuto",
-            "couleur": ["Marron", "Rose"]
+            "couleur": ["Marron", "Rose"],
+            "img": "343_Balbuto.png"
         },
         {
             "id": 344,
             "name_english": "Claydol",
             "name_french": "Kaorine",
-            "couleur": ["Marron", "Rose"]
+            "couleur": ["Marron", "Rose"],
+            "img": "344_Kaorine.png"
         },
         {
             "id": 345,
             "name_english": "Lileep",
             "name_french": "Lilia",
-            "couleur": ["Violet", "Rose"]
+            "couleur": ["Violet", "Rose"],
+            "img": "345_Lilia.png"
         },
         {
             "id": 346,
             "name_english": "Cradily",
             "name_french": "Vacilys",
-            "couleur": ["Vert", "Rose"]
+            "couleur": ["Vert", "Rose"],
+            "img": "346_Vacilys.png"
         },
         {
             "id": 347,
             "name_english": "Anorith",
             "name_french": "Anorith",
-            "couleur": ["Gris", "Blanc"]
+            "couleur": ["Gris", "Blanc"],
+            "img": "347_Anorith.png"
         },
         {
             "id": 348,
             "name_english": "Armaldo",
             "name_french": "Armaldo",
-            "couleur": ["Bleu", "Noir"]
+            "couleur": ["Bleu", "Noir"],
+            "img": "348_Armaldo.png"
         },
         {
             "id": 349,
             "name_english": "Feebas",
             "name_french": "Barpau",
-            "couleur": ["Crème", "Bleu"]
+            "couleur": ["Crème", "Bleu"],
+            "img": "349_Barpau.png"
         },
         {
             "id": 350,
             "name_english": "Milotic",
             "name_french": "Milobellus",
-            "couleur": ["Crème", "Rose"]
+            "couleur": ["Crème", "Rose"],
+            "img": "350_Milobellus.png"
         },
         {
             "id": 351,
             "name_english": "Castform",
             "name_french": "Morphéo",
-            "couleur": ["Gris", "Blanc"]
+            "couleur": ["Gris", "Blanc"],
+            "img": "351_Morphéo.png"
         },
         {
             "id": 352,
             "name_english": "Kecleon",
             "name_french": "Kecleon",
-            "couleur": ["Vert", "Jaune"]
+            "couleur": ["Vert", "Jaune"],
+            "img": "352_Kecleon.png"
         },
         {
             "id": 353,
             "name_english": "Shuppet",
             "name_french": "Polichombr",
-            "couleur": ["Noir"]
+            "couleur": ["Noir"],
+            "img": "353_Polichombr.png"
         },
         {
             "id": 354,
             "name_english": "Banette",
             "name_french": "Branette",
-            "couleur": ["Noir", "Jaune"]
+            "couleur": ["Noir", "Jaune"],
+            "img": "354_Branette.png"
         },
         {
             "id": 355,
             "name_english": "Duskull",
             "name_french": "Skelénox",
-            "couleur": ["Noir", "Blanc"]
+            "couleur": ["Noir", "Blanc"],
+            "img": "355_Skelénox.png"
         },
         {
             "id": 356,
             "name_english": "Dusclops",
             "name_french": "Téraclope",
-            "couleur": ["Gris", "Blanc"]
+            "couleur": ["Gris", "Blanc"],
+            "img": "356_Téraclope.png"
         },
         {
             "id": 357,
             "name_english": "Tropius",
             "name_french": "Tropius",
-            "couleur": ["Vert", "Marron"]
+            "couleur": ["Vert", "Marron"],
+            "img": "357_Tropius.png"
         },
         {
             "id": 358,
             "name_english": "Chimecho",
             "name_french": "Éoko",
-            "couleur": ["Bleu", "Rouge"]
+            "couleur": ["Bleu", "Rouge"],
+            "img": "358_Éoko.png"
         },
         {
             "id": 359,
             "name_english": "Absol",
             "name_french": "Absol",
-            "couleur": ["Blanc", "Noir"]
+            "couleur": ["Blanc", "Noir"],
+            "img": "359_Absol.png"
         },
         {
             "id": 360,
             "name_english": "Wynaut",
             "name_french": "Okéoké",
-            "couleur": ["Bleu", "Noir"]
+            "couleur": ["Bleu", "Noir"],
+            "img": "360_Okéoké.png"
         },
         {
             "id": 361,
             "name_english": "Snorunt",
             "name_french": "Stalgamin",
-            "couleur": ["Jaune", "Noir"]
+            "couleur": ["Jaune", "Noir"],
+            "img": "361_Stalgamin.png"
         },
         {
             "id": 362,
             "name_english": "Glalie",
             "name_french": "Oniglali",
-            "couleur": ["Bleu", "Noir"]
+            "couleur": ["Bleu", "Noir"],
+            "img": "362_Oniglali.png"
         },
         {
             "id": 363,
             "name_english": "Spheal",
             "name_french": "Obalie",
-            "couleur": ["Bleu", "Crème"]
+            "couleur": ["Bleu", "Crème"],
+            "img": "363_Obalie.png"
         },
         {
             "id": 364,
             "name_english": "Sealeo",
             "name_french": "Phogleur",
-            "couleur": ["Bleu", "Crème"]
+            "couleur": ["Bleu", "Crème"],
+            "img": "364_Phogleur.png"
         },
         {
             "id": 365,
             "name_english": "Walrein",
             "name_french": "Kaimorse",
-            "couleur": ["Bleu", "Blanc"]
+            "couleur": ["Bleu", "Blanc"],
+            "img": "365_Kaimorse.png"
         },
         {
             "id": 366,
             "name_english": "Clamperl",
             "name_french": "Coquiperl",
-            "couleur": ["Bleu", "Rose"]
+            "couleur": ["Bleu", "Rose"],
+            "img": "366_Coquiperl.png"
         },
         {
             "id": 367,
             "name_english": "Huntail",
             "name_french": "Serpang",
-            "couleur": ["Bleu", "Orange"]
+            "couleur": ["Bleu", "Orange"],
+            "img": "367_Serpang.png"
         },
         {
             "id": 368,
             "name_english": "Gorebyss",
             "name_french": "Rosabyss",
-            "couleur": ["Rose", "Violet"]
+            "couleur": ["Rose", "Violet"],
+            "img": "368_Rosabyss.png"
         },
         {
             "id": 369,
             "name_english": "Relicanth",
             "name_french": "Relicanth",
-            "couleur": ["Marron"]
+            "couleur": ["Marron"],
+            "img": "369_Relicanth.png"
         },
         {
             "id": 370,
             "name_english": "Luvdisc",
             "name_french": "Lovdisc",
-            "couleur": ["Rose"]
+            "couleur": ["Rose"],
+            "img": "370_Lovdisc.png"
         },
         {
             "id": 371,
             "name_english": "Bagon",
             "name_french": "Draby",
-            "couleur": ["Bleu", "Gris"]
+            "couleur": ["Bleu", "Gris"],
+            "img": "371_Draby.png"
         },
         {
             "id": 372,
             "name_english": "Shelgon",
             "name_french": "Drackhaus",
-            "couleur": ["Blanc", "Noir"]
+            "couleur": ["Blanc", "Noir"],
+            "img": "372_Drackhaus.png"
         },
         {
             "id": 373,
             "name_english": "Salamence",
             "name_french": "Drattak",
-            "couleur": ["Bleu", "Rouge"]
+            "couleur": ["Bleu", "Rouge"],
+            "img": "373_Drattak.png"
         },
         {
             "id": 374,
             "name_english": "Beldum",
             "name_french": "Terhal",
-            "couleur": ["Bleu"]
+            "couleur": ["Bleu"],
+            "img": "374_Terhal.png"
         },
         {
             "id": 375,
             "name_english": "Metang",
             "name_french": "Métang",
-            "couleur": ["Bleu", "Gris"]
+            "couleur": ["Bleu", "Gris"],
+            "img": "375_Métang.png"
         },
         {
             "id": 376,
             "name_english": "Metagross",
             "name_french": "Métalosse",
-            "couleur": ["Bleu", "Gris"]
+            "couleur": ["Bleu", "Gris"],
+            "img": "376_Métalosse.png"
         },
         {
             "id": 377,
             "name_english": "Regirock",
             "name_french": "Regirock",
-            "couleur": ["Marron", "Orange"]
+            "couleur": ["Marron", "Orange"],
+            "img": "377_Regirock.png"
         },
         {
             "id": 378,
             "name_english": "Regice",
             "name_french": "Regice",
-            "couleur": ["Bleu"]
+            "couleur": ["Bleu"],
+            "img": "378_Regice.png"
         },
         {
             "id": 379,
             "name_english": "Registeel",
             "name_french": "Registeel",
-            "couleur": ["Gris", "Noir"]
+            "couleur": ["Gris", "Noir"],
+            "img": "379_Registeel.png"
         },
         {
             "id": 380,
             "name_english": "Latias",
             "name_french": "Latias",
-            "couleur": ["Blanc", "Rouge"]
+            "couleur": ["Blanc", "Rouge"],
+            "img": "380_Latias.png"
         },
         {
             "id": 381,
             "name_english": "Latios",
             "name_french": "Latios",
-            "couleur": ["Blanc", "Bleu"]
+            "couleur": ["Blanc", "Bleu"],
+            "img": "381_Latios.png"
         },
         {
             "id": 382,
             "name_english": "Kyogre",
             "name_french": "Kyogre",
-            "couleur": ["Bleu", "Blanc"]
+            "couleur": ["Bleu", "Blanc"],
+            "img": "382_Kyogre.png"
         },
         {
             "id": 383,
             "name_english": "Groudon",
             "name_french": "Groudon",
-            "couleur": ["Rouge", "Gris"]
+            "couleur": ["Rouge", "Gris"],
+            "img": "383_Groudon.png"
         },
         {
             "id": 384,
             "name_english": "Rayquaza",
             "name_french": "Rayquaza",
-            "couleur": ["Vert"]
+            "couleur": ["Vert"],
+            "img": "384_Rayquaza.png"
         },
         {
             "id": 385,
             "name_english": "Jirachi",
             "name_french": "Jirachi",
-            "couleur": ["Jaune", "Blanc"]
+            "couleur": ["Jaune", "Blanc"],
+            "img": "385_Jirachi.png"
         },
         {
             "id": 386,
             "name_english": "Deoxys",
             "name_french": "Deoxys",
-            "couleur": ["Rouge", "Bleu"]
+            "couleur": ["Rouge", "Bleu"],
+            "img": "386_Deoxys.png"
         }
     ]
 }

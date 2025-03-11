@@ -100,9 +100,10 @@ export default function PokemonSearchForm({ onSubmit, suggestions, onSuggestionC
             {filteredSuggestions.map((pokemon, index) => (
               <div
                 key={pokemon.name_french}
-                className={`py-2 hover:bg-[#EBC008]/10 cursor-pointer text-left px-4 ${selectedIndex === index ? 'bg-[#EBC008]/10' : ''}`}
+                className={`py-2 hover:bg-[#EBC008]/10 cursor-pointer text-left px-4 flex items-center ${selectedIndex === index ? 'bg-[#EBC008]/10' : ''}`}
                 onClick={() => handleSuggestionClick(pokemon.name_french)}
               >
+                <img src={`src/assets/img/pokemons/${pokemon.img}`} className="w-10 h-10 mr-4" />
                 {pokemon.name_french}
               </div>
             ))}
