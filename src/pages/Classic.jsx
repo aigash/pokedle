@@ -1,16 +1,16 @@
 import {useState, useMemo} from 'react';
 import pokemons from '../pokemon.json';
-import PokemonTable from '../components/classic/PokemonTable';
+import Loading from '../components/common/Loading';
 import EndAndReload from '../components/common/EndAndReload';
+import PokemonSearchForm from '../components/common/PokemonSearchForm';
+import Pokedex from '../components/common/Pokedex';
 import Indice from '../components/common/Indices';
+import PokemonTable from '../components/classic/PokemonTable';
+//import { useDailyRandomNumber } from '../hooks/useDailyRandomNumber';
+//import { useParam } from '../hooks/useParam';
 import { usePokemonData } from '../hooks/usePokemonData';
 import { usePokemonGame } from '../hooks/usePokemonGame';
 import { getRandomPokemonId } from '../services/pokemonService';
-import PokemonSearchForm from '../components/common/PokemonSearchForm';
-import Pokedex from '../components/common/Pokedex';
-import { useDailyRandomNumber } from '../hooks/useDailyRandomNumber';
-import { useParam } from '../hooks/useParam';
-import Loading from '../components/common/Loading';
 
 function Classic() {
     const randomId = useMemo(() => getRandomPokemonId(1, 386), []);

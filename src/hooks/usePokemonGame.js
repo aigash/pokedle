@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { getRandomPokemonId, fetchPokemonData, formatPokemonData, searchPokemonByName } from '../services/pokemonService';
+import { searchPokemonByName } from '../services/pokemonService';
 
 export const usePokemonGame = (pokemons) => {
   const [guesses, setGuesses] = useState([]);

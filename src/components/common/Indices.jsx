@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 export default function Indice({typeIndice, pokemon, nbEssais, nbRequis, numIndice}) {
     /*if (nbEssais < nbRequis) {
       return <div>{nbRequis - nbEssais} essai(s) restant(s)</div>;
@@ -9,14 +11,22 @@ export default function Indice({typeIndice, pokemon, nbEssais, nbRequis, numIndi
         }
         
         const parentNode = e.target.parentNode;
+        let audio;
         
         switch (typeIndice) {
             case 'Gen':
-                parentNode.innerHTML = (pokemon.gen == '1' ? '1 (Rouge/Bleu)' : (pokemon.gen == '2' ? '2 (Or/Argent)' : '3 (Rubis/Saphir)'));
+                parentNode.innerHTML = (
+                        pokemon.gen == '1' ? 
+                            '<div class="flex flex-col items-center"><p class="font-semibold text-2xl">1</p><p>(Rouge/Bleu)</p></div>'
+                        : (pokemon.gen == '2' ? 
+                            '<div class="flex flex-col items-center"><p class="font-semibold text-2xl">2</p><p>(Or/Argent)</p></div>' 
+                        : '<div class="flex flex-col items-center"><p class="font-semibold text-2xl">3</p><p>(Rubis/Saphir)</p></div>'
+                        )
+                );
                 break;
             case 'Cri':
                 // Créer l'audio element avant de l'insérer dans le DOM
-                const audio = new Audio(pokemon.cri);
+                audio = new Audio(pokemon.cri);
                 audio.preload = 'auto';
                 
                 parentNode.innerHTML = "<div class='audio-player'><button class='play-button'></button></div>";
@@ -52,7 +62,7 @@ export default function Indice({typeIndice, pokemon, nbEssais, nbRequis, numIndi
                 });
                 break;
             case 'Desc.':
-                parentNode.innerHTML = pokemon.desc_courte;
+                parentNode.innerHTML = '<div><p class="font-semibold">' + pokemon.desc_courte + '</p></div>';
                 break;
             case 'Empreintes':
                 break;
@@ -72,3 +82,24 @@ export default function Indice({typeIndice, pokemon, nbEssais, nbRequis, numIndi
                 </div>
             </div>);
 }
+
+Indice.propTypes = {
+    typeIndice: PropTypes.string.isRequired,
+    pokemon: PropTypes.shape({
+        gen: PropTypes.string,
+        cri: PropTypes.string,
+        desc_courte: PropTypes.string,
+        type1: PropTypes.shape({
+            name_french: PropTypes.string,
+        }),
+        type2: PropTypes.oneOfType([
+            PropTypes.string,
+            PropTypes.shape({
+                name_french: PropTypes.string,
+            }),
+        ]),
+    }).isRequired,
+    nbEssais: PropTypes.number.isRequired,
+    nbRequis: PropTypes.number.isRequired,
+    numIndice: PropTypes.number.isRequired,
+};

@@ -1,3 +1,4 @@
+import PropTypes from 'prop-types';
 import PokemonRow from './PokemonRow';
 
 export default function PokemonTable({ guesses, pokemon }) {
@@ -29,3 +30,8 @@ export default function PokemonTable({ guesses, pokemon }) {
         </table>
     );
 }
+
+PokemonTable.propTypes = {
+    guesses: PropTypes.array.isRequired,
+    pokemon: PropTypes.object.isRequired,
+};
