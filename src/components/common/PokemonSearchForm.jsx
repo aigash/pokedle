@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Search } from './searchBar';
 import PropTypes from 'prop-types';
 
-export default function PokemonSearchForm({ onSubmit, suggestions, onSuggestionClick, inputRef, disabled }) {
+export default function PokemonSearchForm({ onSubmit, suggestions, onSuggestionClick, inputRef, disabled = false }) {
   const [searchValue, setSearchValue] = useState('');
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [filteredSuggestions, setFilteredSuggestions] = useState([]);
@@ -180,8 +180,4 @@ PokemonSearchForm.propTypes = {
   onSuggestionClick: PropTypes.func.isRequired,
   inputRef: PropTypes.shape({ current: PropTypes.instanceOf(Element) }),
   disabled: PropTypes.bool
-};
-
-PokemonSearchForm.defaultProps = {
-  disabled: false
 };

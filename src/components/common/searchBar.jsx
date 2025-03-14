@@ -1,7 +1,7 @@
 import PropTypes from 'prop-types';
 import { forwardRef } from 'react';
 
-export const Search = forwardRef(({ placeholder, value, onChange, id, disabled }, ref) => {
+export const Search = forwardRef(({ placeholder, value, onChange, id, disabled = false }, ref) => {
     return (
         <div className="w-full">
             <input
@@ -28,10 +28,6 @@ Search.propTypes = {
     onChange: PropTypes.func.isRequired,
     id: PropTypes.string.isRequired,
     disabled: PropTypes.bool,
-};
-
-Search.defaultProps = {
-    disabled: false,
 };
 
 export default Search;
