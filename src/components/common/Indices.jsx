@@ -1,9 +1,21 @@
 import PropTypes from 'prop-types';
 
+import indice1 from '../../assets/img/icones/indice1.png';
+import indice2 from '../../assets/img/icones/indice2.png';
+import indice3 from '../../assets/img/icones/indice3.png';
+
 export default function Indice({typeIndice, pokemon, nbEssais, nbRequis, numIndice}) {
     /*if (nbEssais < nbRequis) {
       return <div>{nbRequis - nbEssais} essai(s) restant(s)</div>;
     }*/
+      const getIndiceImage = () => {
+        switch(numIndice) {
+            case 1: return indice1;
+            case 2: return indice2;
+            case 3: return indice3;
+            default: return indice1;
+        }
+    };
 
     function showIndice(e) {
         if (nbEssais < nbRequis) {
@@ -78,7 +90,7 @@ export default function Indice({typeIndice, pokemon, nbEssais, nbRequis, numIndi
     return (<div className={"blocAth rounded-xl flex-col p-3" + (nbEssais < nbRequis ? " indiceDesac" : "")}>
                 <h3>{typeIndice}</h3>
                 <div onClick={(e) => showIndice(e)} className='text-sm'>
-                    <img src={`/src/assets/img/icones/indice${numIndice}.png`} alt={`Indice ${numIndice}`}></img>
+                    <img src={getIndiceImage()} alt={`Indice ${numIndice}`}></img>
                 </div>
             </div>);
 }

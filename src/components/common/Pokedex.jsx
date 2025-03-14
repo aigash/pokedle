@@ -2,6 +2,9 @@ import { PropTypes } from 'prop-types';
 import pokemonData from '../../pokemon.json';
 
 export default function Pokedex({ isModalOpen, onClose }) {
+    const getImageUrl = (imgPath) => {
+        return `/assets/img/pokemons/${imgPath}`;
+    };
     return (
         <>
             {isModalOpen && (
@@ -13,7 +16,7 @@ export default function Pokedex({ isModalOpen, onClose }) {
                         {pokemonData.pokemon.map((pokemon, index) => (
                             <div key={index} className={`relative group`}>
                                 <img 
-                                    src={`src/assets/img/pokemons/${pokemon.img}`}
+                                    src={getImageUrl(pokemon.img)}
                                     className="w-[56px] h-[56px]"
                                 />
                                 <span className="hidden absolute bottom-full left-1/2 bg-black/70 text-white p-1.5 rounded z-10 opacity-0 group-hover:block group-hover:opacity-100 transition-opacity duration-200 ease-in-out">{pokemon.name_french}</span>

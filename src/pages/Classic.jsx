@@ -13,6 +13,9 @@ import { usePokemonData } from '../hooks/usePokemonData';
 import { usePokemonGame } from '../hooks/usePokemonGame';
 import { getRandomPokemonId } from '../services/pokemonService';
 
+import pokedexIcon from '../assets/img/icones/pokedex.png';
+import logoIcon from '../assets/pokedeule.png';
+
 function Classic() {
     const randomId = useMemo(() => getRandomPokemonId(1, 386), []);
     //const randomId = useDailyRandomNumber(1, 386);
@@ -84,7 +87,7 @@ function Classic() {
     return (
         <div className='relative containerClassic'>
             <div className='flex flex-col gap-4 relative' id='classic'>
-                <a href='/'><img src='src/assets/pokedeule.png' className='absolute top-0 left-0 w-[180px]' /></a>
+                <a href='/'><img src={logoIcon} className='absolute top-0 left-0 w-[180px]' /></a>
                 <div className='flex justify-center flex-col items-center'>
                     <div className='flex justify-between mb-6 entete'>
                         <PokemonSearchForm 
@@ -102,7 +105,7 @@ function Classic() {
                         
                         <div id='openPokedex' className="blocAth rounded-xl p-3" onClick={() => togglePokedexModal(true)}>
                             <div className='flex w-full justify-center'>
-                                <img src='src/assets/img/icones/pokedex.png' alt="Pokedex" />
+                                <img src={pokedexIcon} alt="Pokedex" />
                             </div>
                         </div>
 

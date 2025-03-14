@@ -12,6 +12,9 @@ import { Pixelify } from 'react-pixelify';
 //import { useDailyRandomNumber } from '../hooks/useDailyRandomNumber';
 import Loading from '../components/common/Loading';
 
+import pokedexIcon from '../assets/img/icones/pokedex.png';
+import logoIcon from '../assets/pokedeule.png';
+
 export default function Pixels() {
     const randomId = useMemo(() => getRandomPokemonId(1, 386), []);
     //const randomId = useDailyRandomNumber(1, 386);
@@ -96,7 +99,7 @@ export default function Pixels() {
     return (
         <div className='containerPixels'>
             <div className='flex flex-col gap-4 relative' id='pixels'>
-                <a href='/'><img src='src/assets/pokedeule.png' className='absolute top-0 left-0 w-[180px]' /></a>
+                <a href='/'><img src={ logoIcon } className='absolute top-0 left-0 w-[180px]' /></a>
                 <div className='flex justify-center flex-col items-center'>
                     <div>
                         <div id='pixels_pokedex' className='p-3 rounded-xl bg-white mb-6'>
@@ -121,7 +124,7 @@ export default function Pixels() {
 
                             <div id='openPokedex' className="blocAth rounded-xl p-3" onClick={() => togglePokedexModal(true)}>
                                 <div className='flex w-full justify-center'>
-                                    <img src='src/assets/img/icones/pokedex.png' alt="Pokedex" />
+                                    <img src={ pokedexIcon } alt="Pokedex" />
                                 </div>
                             </div>
 
