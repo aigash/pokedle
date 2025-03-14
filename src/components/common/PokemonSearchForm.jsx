@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react';
 import { Search } from './searchBar';
 import PropTypes from 'prop-types';
 
-export default function PokemonSearchForm({ onSubmit, suggestions, onSuggestionClick, inputRef }) {
+export default function PokemonSearchForm({ onSubmit, suggestions, onSuggestionClick, inputRef, disabled }) {
   const [searchValue, setSearchValue] = useState('');
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [filteredSuggestions, setFilteredSuggestions] = useState([]);
@@ -11,6 +11,12 @@ export default function PokemonSearchForm({ onSubmit, suggestions, onSuggestionC
   const [isSubmitting, setIsSubmitting] = useState(false);
   // Enregistre les pokemons déjà guess
   const [submittedPokemons, setSubmittedPokemons] = useState(new Set());
+
+  useEffect(() => {
+    if (inputRef && inputRef.current && !disabled) {
+      inputRef.current.focus();
+    }
+  }, [inputRef, disabled]);
 
   const handleChange = (value) => {
     setSearchValue(value);
@@ -41,14 +47,17 @@ export default function PokemonSearchForm({ onSubmit, suggestions, onSuggestionC
 
   const handleSuggestionClick = (pokemonName) => {
     // Ne pas permettre de soumettre un Pokémon déjà deviné
-    if (submittedPokemons.has(pokemonName)) {
+    if (submittedPokemons.has(pokemonName) || disabled) {
       return;
     }
 
     onSuggestionClick(pokemonName);
     setSearchValue('');
-    document.getElementById('pokeSearch').focus();
+    if (!disabled && document.getElementById('pokeSearch')) {
+      document.getElementById('pokeSearch').focus();
+    }
     setShowSuggestions(false);
+    setSelectedIndex(0); // reset la position du curseur après une suggestion
 
     // Ajouter le Pokémon à la liste des Pokémon soumis
     const newSubmittedPokemons = new Set(submittedPokemons);
@@ -58,6 +67,8 @@ export default function PokemonSearchForm({ onSubmit, suggestions, onSuggestionC
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    if (disabled) return;
+
     const trimmedValue = searchValue.trim();
     // Vérifier si le formulaire est en cours ou non
     if (trimmedValue && !isSubmitting && !submittedPokemons.has(trimmedValue)) { 
@@ -74,6 +85,7 @@ export default function PokemonSearchForm({ onSubmit, suggestions, onSuggestionC
       } finally {
         setSearchValue('');
         setShowSuggestions(false);
+        setSelectedIndex(0); // reset la position du curseur après une suggestion
         setIsSubmitting(false); // on réinitialise l'état
       }      
     }
@@ -88,8 +100,8 @@ export default function PokemonSearchForm({ onSubmit, suggestions, onSuggestionC
       } else if (e.key === 'Enter' && selectedIndex >= 0) {
         const selectedPokemon = filteredSuggestions[selectedIndex].name_french;
         // Ne pas permettre de sélectionner un Pokémon déjà guess
-        console.log(selectedPokemon);
-        console.log(submittedPokemons);
+        //console.log(selectedPokemon);
+        //console.log(submittedPokemons);
         if (!submittedPokemons.has(selectedPokemon)) {
           handleSuggestionClick(selectedPokemon);
         }
@@ -127,17 +139,18 @@ export default function PokemonSearchForm({ onSubmit, suggestions, onSuggestionC
           value={searchValue}
           onChange={handleChange}
           ref={inputRef}
+          disabled={disabled}
         />
         <button
           type="submit"
           id="submitClassic"
           className="bg-red-500 text-white px-4 rounded-r hover:bg-red-600"
-          disabled={isSubmitting || isPokemonSubmitted(searchValue.trim())} // désactive le bouton pendant la soumission du formulaire
+          disabled={isSubmitting || isPokemonSubmitted(searchValue.trim()) || disabled} // désactive le bouton pendant la soumission du formulaire
         >
           GO
         </button>
         
-        {showSuggestions && filteredSuggestions.length > 0 && (
+        {showSuggestions && filteredSuggestions.length > 0 && !disabled && (
           <div className="absolute w-full bg-white border rounded-b mt-12 shadow-lg z-10 max-h-[240px] overflow-y-auto">
             {filteredSuggestions.map((pokemon, index) => {
               const isSubmitted = isPokemonSubmitted(pokemon.name_french);
@@ -165,5 +178,10 @@ PokemonSearchForm.propTypes = {
     name_french: PropTypes.string.isRequired,
   })).isRequired,
   onSuggestionClick: PropTypes.func.isRequired,
-  inputRef: PropTypes.shape({ current: PropTypes.instanceOf(Element) })
+  inputRef: PropTypes.shape({ current: PropTypes.instanceOf(Element) }),
+  disabled: PropTypes.bool
+};
+
+PokemonSearchForm.defaultProps = {
+  disabled: false
 };

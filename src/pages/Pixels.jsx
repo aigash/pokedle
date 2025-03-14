@@ -1,4 +1,4 @@
-import  { useMemo, useState } from 'react';
+import  { useMemo, useState, useEffect, useRef } from 'react';
 import pokemons from '../pokemon.json';
 import EndAndReload from '../components/common/EndAndReload';
 import { usePokemonData } from '../hooks/usePokemonData';
@@ -19,6 +19,23 @@ export default function Pixels() {
     const { guesses, suggestions, pokemonSearch, handleGuess, resetGame } = usePokemonGame(pokemons);
     const [isModalOpen, setIsModalOpen] = useState(false);
     const [pixelSize, setPixelSize] = useState(120);
+
+    const [isGameWon, setIsGameWon] = useState(false);
+    const [showEndModal, setShowEndModal] = useState(true);
+
+    const searchInputRef = useRef(null);
+    useEffect(() => {
+        if (searchInputRef.current) {
+            searchInputRef.current.focus();
+        }
+    }, []);
+
+    useEffect(() => {
+        if (pokemon?.nameFr === pokemonSearch) {
+            setIsGameWon(true);
+            setShowEndModal(true);
+        }
+    }, [pokemon, pokemonSearch]);
 
     const spriteOff = useMemo(() => {
         if (!pokemon?.sprite_off || !pokemon?.nameFr) return "";
@@ -51,6 +68,15 @@ export default function Pixels() {
         return <Loading />;
     }
 
+    const handleCloseEndModal = () => {
+        setShowEndModal(false);
+    };
+    const handleResetGame = () => {
+        setIsGameWon(false);
+        setShowEndModal(true);
+        resetGame();
+    };
+
     return (
         <div className='containerPixels'>
             <div className='flex flex-col gap-4 relative' id='pixels'>
@@ -76,6 +102,8 @@ export default function Pixels() {
                                     onSubmit={handleSubmit}
                                     suggestions={suggestions}
                                     onSuggestionClick={handleSubmit}
+                                    inputRef={searchInputRef}
+                                    disabled={isGameWon}
                                 />
 
                                 <div id='openPokedex' className="blocAth rounded-xl p-3" onClick={() => setIsModalOpen(true)}>
@@ -101,8 +129,30 @@ export default function Pixels() {
                     )}
                 </div>
             </div>
-            {pokemon?.nameFr === pokemonSearch && (
-                <EndAndReload pokemon={pokemon} onReset={resetGame} nbEssais={guesses.length} />
+
+            {isGameWon && !showEndModal && (
+                <div className="fixed bottom-4 left-0 right-0 flex justify-center">
+                    <div className="bg-white p-3 rounded-xl shadow-lg flex items-center">
+                        <div className="mr-3">
+                            <p className="font-bold">Bien joué ! Tu as trouvé {pokemon.nameFr} en {guesses.length} essais.</p>
+                        </div>
+                        <button
+                            className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 focus:outline-none"
+                            onClick={handleResetGame}
+                        >
+                            Rejouer
+                        </button>
+                    </div>
+                </div>
+            )}
+            
+            {isGameWon && showEndModal &&  (
+                <EndAndReload 
+                    pokemon={pokemon} 
+                    onReset={handleResetGame} 
+                    nbEssais={guesses.length}
+                    onClose={handleCloseEndModal}
+                />
             )}
             <Pokedex isModalOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
         </div>

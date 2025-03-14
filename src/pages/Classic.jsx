@@ -1,4 +1,4 @@
-import {useState, useMemo} from 'react';
+import {useState, useMemo, useEffect, useRef } from 'react';
 import pokemons from '../pokemon.json';
 import Loading from '../components/common/Loading';
 import EndAndReload from '../components/common/EndAndReload';
@@ -21,6 +21,23 @@ function Classic() {
     const { guesses, suggestions, pokemonSearch, handleGuess, resetGame } = usePokemonGame(pokemons);
     const [isModalOpen, setIsModalOpen] = useState(false);
 
+    const [isGameWon, setIsGameWon] = useState(false);
+    const [showEndModal, setShowEndModal] = useState(true);
+
+    const searchInputRef = useRef(null);
+    useEffect(() => {
+        if (searchInputRef.current) {
+            searchInputRef.current.focus();
+        }
+    }, []);
+
+    useEffect(() => {
+        if (mysteryPokemon?.nameFr === pokemonSearch) {
+            setIsGameWon(true);
+            setShowEndModal(true);
+        }
+    }, [mysteryPokemon, pokemonSearch]);
+
     if (isLoading) {
         <Loading />;
     }
@@ -38,6 +55,15 @@ function Classic() {
         await handleGuess(pokemonName);
     };
 
+    const handleCloseEndModal = () => {
+        setShowEndModal(false);
+    };
+    const handleResetGame = () => {
+        setIsGameWon(false);
+        setShowEndModal(true);
+        resetGame();
+    };
+
     return (
         <div className='relative containerClassic'>
             <div className='flex flex-col gap-4 relative' id='classic'>
@@ -51,6 +77,8 @@ function Classic() {
                                 onSubmit={handleSubmit}
                                 suggestions={suggestions}
                                 onSuggestionClick={handleSubmit}
+                                inputRef={searchInputRef}
+                                disabled={isGameWon}
                             />
 
                             <div className="blocAth rounded-xl flex-col p-3">
@@ -73,8 +101,31 @@ function Classic() {
                     {guesses.length > 0 && <PokemonTable guesses={guesses} pokemon={mysteryPokemon} nbEssais={guesses.length}/>}
                 </div>
             </div>
-            {mysteryPokemon?.nameFr === pokemonSearch && (
-                <EndAndReload pokemon={mysteryPokemon} onReset={resetGame} nbEssais={guesses.length} />
+
+            {isGameWon && !showEndModal && (
+                <div className="fixed bottom-4 left-0 right-0 flex justify-center">
+                    <div className="bg-white p-3 rounded-xl shadow-lg flex items-center">
+                        <div className="mr-3">
+                            <p className="font-bold">Bien joué ! Tu as trouvé {mysteryPokemon.nameFr} en {guesses.length} essais.</p>
+                        </div>
+                        <button
+                            className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 focus:outline-none"
+                            onClick={handleResetGame}
+                        >
+                            Rejouer
+                        </button>
+                    </div>
+                </div>
+            )}
+
+
+            {isGameWon && showEndModal &&  (
+                <EndAndReload 
+                    pokemon={mysteryPokemon} 
+                    onReset={handleResetGame} 
+                    nbEssais={guesses.length}
+                    onClose={handleCloseEndModal}
+                />
             )}
             <Pokedex isModalOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
         </div>

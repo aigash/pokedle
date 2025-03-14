@@ -16,9 +16,9 @@ export default function App() {
           <h2 className='text-[#305380] text-2xl py-1.5 font-semibold border-b border-[#305380]/80'>Modes de jeu</h2>
         </div>
       
-        <GameMode img='src/assets/img/icones/classic.svg' titre='Classique' onclick={(e) => launchMode('classic')} />
-        <GameMode img='src/assets/img/icones/desc.svg' titre='Description' onclick={(e) => launchMode('desc')} />
-        <GameMode img='src/assets/img/icones/pixels.svg' titre='Pixels' onclick={(e) => launchMode('pixels')} />
+        <GameMode img='src/assets/img/icones/classic.svg' titre='Classique' onclick={() => launchMode('classic')} />
+        <GameMode img='src/assets/img/icones/desc.svg' titre='Description' onclick={() => launchMode('desc')} />
+        <GameMode img='src/assets/img/icones/pixels.svg' titre='Pixels' onclick={() => launchMode('pixels')} />
       </div>
     </div>
   )

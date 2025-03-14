@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useMemo, useState, useEffect, useRef } from 'react';
 import pokemons from '../pokemon.json';
 import Loading from '../components/common/Loading';
 import EndAndReload from '../components/common/EndAndReload';
@@ -18,10 +18,28 @@ export default function Desc() {
     const { guesses, suggestions, pokemonSearch, handleGuess, resetGame } = usePokemonGame(pokemons);
     const [isModalOpen, setIsModalOpen] = useState(false);
 
+    const [isGameWon, setIsGameWon] = useState(false);
+    const [showEndModal, setShowEndModal] = useState(true);
+
     const sanitizedDesc = useMemo(() => {
         if (!pokemon?.desc || !pokemon?.nameFr) return "";
         return sanitizeDescription(pokemon.desc, pokemon.nameFr);
     }, [pokemon?.desc, pokemon?.nameFr]);
+
+    const searchInputRef = useRef(null);
+
+    useEffect(() => {
+        if (searchInputRef.current) {
+            searchInputRef.current.focus();
+        }
+    }, []);
+
+    useEffect(() => {
+        if (pokemon?.nameFr === pokemonSearch) {
+            setIsGameWon(true);
+            setShowEndModal(true);
+        }
+    }, [pokemon, pokemonSearch]);
 
     const handleSubmit = async (pokemonName) => {
         if (!pokemonName) return;
@@ -39,6 +57,15 @@ export default function Desc() {
     if (!pokemon) {
         return <Loading />;
     }
+
+    const handleCloseEndModal = () => {
+        setShowEndModal(false);
+    };
+    const handleResetGame = () => {
+        setIsGameWon(false);
+        setShowEndModal(true);
+        resetGame();
+    };
 
     return (
         <div className='relative containerDesc'>
@@ -58,6 +85,8 @@ export default function Desc() {
                                     onSubmit={handleSubmit}
                                     suggestions={suggestions}
                                     onSuggestionClick={handleSubmit}
+                                    inputRef={searchInputRef}
+                                    disabled={isGameWon}
                                 />
 
                                 <div id='openPokedex' className="blocAth rounded-xl p-3" onClick={() => setIsModalOpen(true)}>
@@ -87,9 +116,29 @@ export default function Desc() {
                     )}
                 </div>
             </div>
+            {isGameWon && !showEndModal && (
+                <div className="fixed bottom-4 left-0 right-0 flex justify-center">
+                    <div className="bg-white p-3 rounded-xl shadow-lg flex items-center">
+                        <div className="mr-3">
+                            <p className="font-bold">Bien joué ! Tu as trouvé {pokemon.nameFr} en {guesses.length} essais.</p>
+                        </div>
+                        <button
+                            className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 focus:outline-none"
+                            onClick={handleResetGame}
+                        >
+                            Rejouer
+                        </button>
+                    </div>
+                </div>
+            )}
             
-            {pokemon?.nameFr === pokemonSearch && (
-                <EndAndReload pokemon={pokemon} onReset={resetGame} nbEssais={guesses.length} />
+            {isGameWon && showEndModal &&  (
+                <EndAndReload 
+                    pokemon={pokemon} 
+                    onReset={handleResetGame} 
+                    nbEssais={guesses.length}
+                    onClose={handleCloseEndModal}
+                />
             )}
             <Pokedex isModalOpen={isModalOpen} onClose={() => setIsModalOpen(false)} />
         </div>

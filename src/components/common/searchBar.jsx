@@ -1,6 +1,7 @@
 import PropTypes from 'prop-types';
+import { forwardRef } from 'react';
 
-export function Search({ placeholder, value, onChange, id }) {
+export const Search = forwardRef(({ placeholder, value, onChange, id, disabled }, ref) => {
     return (
         <div className="w-full">
             <input
@@ -12,16 +13,25 @@ export function Search({ placeholder, value, onChange, id }) {
                 onChange={(e) => onChange(e.target.value)}
                 autoComplete="off"
                 aria-label={placeholder}
+                ref={ref}
+                disabled={disabled}
             />
         </div>
     );
-}
+});
+
+Search.displayName = 'Search';
 
 Search.propTypes = {
     placeholder: PropTypes.string.isRequired,
     value: PropTypes.string.isRequired,
     onChange: PropTypes.func.isRequired,
     id: PropTypes.string.isRequired,
+    disabled: PropTypes.bool,
+};
+
+Search.defaultProps = {
+    disabled: false,
 };
 
 export default Search;
