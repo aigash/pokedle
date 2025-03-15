@@ -27,7 +27,7 @@ export default function EndAndReload({ pokemon, onReset, nbEssais, onClose }) {
         <div className='alerte fixed'>
             <div className='relative'>
                 <button 
-                    className="absolute top-2 right-2 text-black focus:outline-none"
+                    className="absolute top-2 right-2 text-black focus:outline-none bg-white"
                     onClick={onClose}
                     aria-label="Close"
                 >

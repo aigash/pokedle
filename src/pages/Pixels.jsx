@@ -23,7 +23,7 @@ export default function Pixels() {
     const { guesses, suggestions, pokemonSearch, handleGuess, resetGame } = usePokemonGame(pokemons);
 
     // Indice de pixélisation
-    const [pixelSize, setPixelSize] = useState(120);
+    const [pixelSize, setPixelSize] = useState(110);
 
     const [gameState, setGameState] = useState({
         isModalOpen: false,
