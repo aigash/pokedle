@@ -11,7 +11,12 @@
         // Check if we need to redirect
         const urlParams = new URLSearchParams(window.location.search);
         const redirectPath = urlParams.get('redirect');
-        if (redirectPath) {
+        
+        // Get the current path without the /pokedle prefix
+        const currentPath = window.location.pathname.replace(/^\/pokedle\/?/, '');
+        
+        // Only redirect if we have a redirect parameter and we're not already on a game route
+        if (redirectPath && !currentPath) {
           // Remove the query parameter
           const newUrl = window.location.pathname + window.location.hash;
           window.history.replaceState(null, null, newUrl);
