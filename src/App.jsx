@@ -15,9 +15,9 @@ export default function App() {
   }
 
   return (
-    <div id='modesJeux' className='flex flex-col items-center'>
+    <div id='modesJeux' className='flex flex-col min-h-screen items-center bg-[65%] sm:bg-[50%] bg-no-repeat bg-cover bg-[url("../img/backgrounds/main-screen.jpg")]'>
 
-      <img className='h-44 mb-6' src={logoImage}></img>
+      <img className='sm:h-44 mb-6' src={logoImage}></img>
 
       <div className='flex flex-col p-3 rounded-xl bg-white/60'>
         <div className='px-3 mb-3'>

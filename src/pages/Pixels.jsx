@@ -22,6 +22,7 @@ export default function Pixels() {
     const { pokemonData: pokemon, isLoading, error } = usePokemonData(randomId, pokemons);
     const { guesses, suggestions, pokemonSearch, handleGuess, resetGame } = usePokemonGame(pokemons);
 
+    // Indice de pixélisation
     const [pixelSize, setPixelSize] = useState(120);
 
     const [gameState, setGameState] = useState({
@@ -30,6 +31,42 @@ export default function Pixels() {
         showEndModal: true
     });
 
+    // Partie qui gère le responsive du canvas
+    const [dimensions, setDimensions] = useState({
+        width: 538,
+        height: 450
+    });
+    useEffect(() => {
+        function handleResize() {
+            if (window.innerWidth < 380) {
+                setDimensions({
+                    width: 260,
+                    height: 220
+                });
+            } else if (window.innerWidth < 500) {
+                setDimensions({
+                    width: 320,
+                    height: 280
+                });
+            } else if (window.innerWidth < 640) {
+                setDimensions({
+                    width: 420,
+                    height: 380
+                });
+            } else {
+                setDimensions({
+                    width: 538,
+                    height: 450
+                });
+            }
+        }
+        handleResize();
+        window.addEventListener('resize', handleResize);
+
+        return () => window.removeEventListener('resize', handleResize);
+    }, []);
+
+    // auto focus sur le champ de recherche
     const searchInputRef = useRef(null);
     useEffect(() => {
         if (searchInputRef.current) {
@@ -99,21 +136,21 @@ export default function Pixels() {
     return (
         <div className='containerPixels'>
             <div className='flex flex-col gap-4 relative' id='pixels'>
-                <a href='/'><img src={ logoIcon } className='absolute top-0 left-0 w-[180px]' /></a>
-                <div className='flex justify-center flex-col items-center'>
-                    <div>
+                <a href='/pokedle'><img src={ logoIcon } className='absolute top-0 left-0 w-[180px]' /></a>
+                <div className='flex justify-center flex-col items-center mt-12 xl:mt-0'>
+                    <div className='flex flex-col items-center'>
                         <div id='pixels_pokedex' className='p-3 rounded-xl bg-white mb-6'>
                             <h2>Quel Pokémon a été pixelisé ?</h2>
                             <div>
                                 <Pixelify 
                                     src={spriteOff}
                                     pixelSize={pixelSize}
-                                    width={538}
-                                    height={450}
+                                    width={dimensions.width}
+                                    height={dimensions.height}
                                 />
                             </div>
                         </div>
-                        <div className='flex justify-between mb-6 entetePixels'>
+                        <div className='flex justify-between mb-6 entetePixels gap-3 flex-wrap'>
                             <PokemonSearchForm 
                                 onSubmit={handleSubmit}
                                 suggestions={suggestions}
@@ -121,16 +158,17 @@ export default function Pixels() {
                                 inputRef={searchInputRef}
                                 disabled={isGameWon}
                             />
-
-                            <div id='openPokedex' className="blocAth rounded-xl p-3" onClick={() => togglePokedexModal(true)}>
-                                <div className='flex w-full justify-center'>
-                                    <img src={ pokedexIcon } alt="Pokedex" />
+                            <div className='flex gap-3 flex-wrap'>
+                                <div id='openPokedex' className="blocAth rounded-xl p-3" onClick={() => togglePokedexModal(true)}>
+                                    <div className='flex w-full justify-center'>
+                                        <img src={ pokedexIcon } alt="Pokedex" />
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div className="blocAth rounded-xl flex-col p-3">
-                                <h3 className='mb-[-10px]'>Essai(s)</h3>
-                                <p className='nbEssais font-medium text-5xl leading-normal'>{guesses.length}</p>
+                                <div className="blocAth rounded-xl flex-col p-3">
+                                    <h3 className='mb-[-10px]'>Essai(s)</h3>
+                                    <p className='nbEssais font-medium text-5xl leading-normal'>{guesses.length}</p>
+                                </div>
                             </div>
                         </div>
                     </div>

@@ -5,6 +5,7 @@ export const usePokemonGame = (pokemons) => {
   const [guesses, setGuesses] = useState([]);
   const [suggestions, setSuggestions] = useState(pokemons?.pokemon || []);
   const [pokemonSearch, setPokemonSearch] = useState('');
+  //const [resetCounter, setResetCounter] = useState(0);
 
   const handleGuess = async (pokemonName) => {
     if (!pokemonName || !pokemons) return null;
@@ -26,6 +27,7 @@ export const usePokemonGame = (pokemons) => {
     setGuesses([]);
     setSuggestions(pokemons?.pokemon || []);
     setPokemonSearch('');
+    
     window.location.reload();
   };
 
@@ -35,5 +37,6 @@ export const usePokemonGame = (pokemons) => {
     pokemonSearch,
     handleGuess,
     resetGame
+    //resetCounter
   };
 }; 

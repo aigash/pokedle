@@ -1,10 +1,10 @@
-import {createBrowserRouter} from "react-router-dom";
+import {createHashRouter} from "react-router-dom";
 import App from './App'; // Assurez-vous que ces imports sont corrects
 import Classic from './pages/Classic';
 import Desc from './pages/Desc';
 import Pixels from "./pages/Pixels";
 
-const router = createBrowserRouter([
+const router = createHashRouter([
   {
     path: "/",
     element: <App />,
@@ -21,8 +21,6 @@ const router = createBrowserRouter([
     path: "/pixels",
     element: <Pixels />
   },
-], {
-  basename: "/pokedle"
-});
+]);
 
 export default router;

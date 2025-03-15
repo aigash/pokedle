@@ -3,6 +3,10 @@ import { Search } from './searchBar';
 import PropTypes from 'prop-types';
 
 export default function PokemonSearchForm({ onSubmit, suggestions, onSuggestionClick, inputRef, disabled = false }) {
+  const getImageUrl = (imgPath) => {
+      return `${import.meta.env.BASE_URL}/assets/img/pokemons/${imgPath}`;
+  };
+
   const [searchValue, setSearchValue] = useState('');
   const [showSuggestions, setShowSuggestions] = useState(false);
   const [filteredSuggestions, setFilteredSuggestions] = useState([]);
@@ -128,7 +132,7 @@ export default function PokemonSearchForm({ onSubmit, suggestions, onSuggestionC
   return (
     <form 
       id="formClassic"
-      className="p-3 rounded-xl flex flex-col justify-between" 
+      className="p-3 rounded-xl flex flex-col justify-between grow" 
       onSubmit={handleSubmit}
     >
       <h2 className="mb-2">Trouve le Pokémon du jour !</h2>
@@ -160,7 +164,7 @@ export default function PokemonSearchForm({ onSubmit, suggestions, onSuggestionC
                   className={`py-2 hover:bg-[#EBC008]/10 cursor-pointer text-left px-4 flex items-center ${selectedIndex === index ? 'bg-[#EBC008]/10' : ''}`}
                   onClick={() => !isSubmitted && handleSuggestionClick(pokemon.name_french)}
                 >
-                  <img src={`src/assets/img/pokemons/${pokemon.img}`} className="w-10 h-10 mr-4" />
+                  <img src={getImageUrl(pokemon.img)} className="w-10 h-10 mr-4" />
                   {pokemon.name_french}
                 </div>
               );

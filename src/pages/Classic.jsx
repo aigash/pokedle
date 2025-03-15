@@ -87,9 +87,9 @@ function Classic() {
     return (
         <div className='relative containerClassic'>
             <div className='flex flex-col gap-4 relative' id='classic'>
-                <a href='/'><img src={logoIcon} className='absolute top-0 left-0 w-[180px]' /></a>
-                <div className='flex justify-center flex-col items-center'>
-                    <div className='flex justify-between mb-6 entete'>
+                <a href='/pokedle'><img src={logoIcon} className='absolute top-0 left-0 w-[180px]' /></a>
+                <div className='flex justify-center flex-col items-center mt-12 2xl:mt-0'>
+                    <div className='flex justify-between mb-6 entete gap-3 flex-wrap'>
                         <PokemonSearchForm 
                             onSubmit={handleSubmit}
                             suggestions={suggestions}
@@ -97,21 +97,22 @@ function Classic() {
                             inputRef={searchInputRef}
                             disabled={isGameWon}
                         />
-
-                        <div className="blocAth rounded-xl flex-col p-3">
-                            <h3 className='mb-[-10px]'>Essai(s)</h3>
-                            <p className='nbEssais font-medium text-5xl leading-normal'>{guesses.length}</p>
-                        </div>
-                        
-                        <div id='openPokedex' className="blocAth rounded-xl p-3" onClick={() => togglePokedexModal(true)}>
-                            <div className='flex w-full justify-center'>
-                                <img src={pokedexIcon} alt="Pokedex" />
+                        <div className='flex gap-3 flex-wrap'>
+                            <div className="blocAth rounded-xl flex-col p-3">
+                                <h3 className='mb-[-10px]'>Essai(s)</h3>
+                                <p className='nbEssais font-medium text-5xl leading-normal'>{guesses.length}</p>
                             </div>
-                        </div>
+                            
+                            <div id='openPokedex' className="blocAth rounded-xl p-3" onClick={() => togglePokedexModal(true)}>
+                                <div className='flex w-full justify-center'>
+                                    <img src={pokedexIcon} alt="Pokedex" />
+                                </div>
+                            </div>
 
-                        <Indice typeIndice='Gen' pokemon={mysteryPokemon} nbEssais={guesses.length} nbRequis={4} numIndice={1} />
-                        <Indice typeIndice='Cri' pokemon={mysteryPokemon} nbEssais={guesses.length} nbRequis={7} numIndice={2} />
-                        <Indice typeIndice='Desc.' pokemon={mysteryPokemon} nbEssais={guesses.length} nbRequis={10} numIndice={3} />
+                            <Indice typeIndice='Gen' pokemon={mysteryPokemon} nbEssais={guesses.length} nbRequis={4} numIndice={1} />
+                            <Indice typeIndice='Cri' pokemon={mysteryPokemon} nbEssais={guesses.length} nbRequis={7} numIndice={2} />
+                            <Indice typeIndice='Desc.' pokemon={mysteryPokemon} nbEssais={guesses.length} nbRequis={10} numIndice={3} />
+                        </div>
                     </div>
                     {guesses.length > 0 && <PokemonTable guesses={guesses} pokemon={mysteryPokemon} nbEssais={guesses.length}/>}
                 </div>

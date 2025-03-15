@@ -87,14 +87,14 @@ export default function Desc() {
     return (
         <div className='relative containerDesc'>
             <div className='flex flex-col gap-4 relative' id='desc'>
-                <a href='/'><img src={ logoIcon } className='absolute top-0 left-0 w-[180px]' /></a>
-                <div className='flex justify-center flex-col items-center'>
-                    <div>
-                        <div id='desc_pokedex' className='p-3 rounded-xl bg-white mb-6'>
+                <a href='/pokedle'><img src={ logoIcon } className='absolute top-0 left-0 w-[180px]' /></a>
+                <div className='flex justify-center flex-col items-center mt-12 2xl:mt-0'>
+                    <div className='flex flex-col items-center'>
+                        <div id='desc_pokedex' className='p-3 rounded-xl bg-white mb-3'>
                             <h2>À quel Pokémon est associée cette phrase du Pokédex ?</h2>
                             <samp>❝{sanitizedDesc || "Chargement en cours..."}❞</samp>
                         </div>
-                        <div className='flex justify-between mb-6 entete'>
+                        <div className='flex justify-between mb-6 entete gap-3 flex-wrap'>
                             <PokemonSearchForm 
                                 onSubmit={handleSubmit}
                                 suggestions={suggestions}
@@ -102,25 +102,26 @@ export default function Desc() {
                                 inputRef={searchInputRef}
                                 disabled={isGameWon}
                             />
-
-                            <div id='openPokedex' className="blocAth rounded-xl p-3" onClick={() => togglePokedexModal(true)}>
-                                <div className='flex w-full justify-center'>
-                                    <img src={ pokedexIcon } alt="Pokedex" />
+                            <div className='flex gap-3 flex-wrap'>
+                                <div id='openPokedex' className="blocAth rounded-xl p-3" onClick={() => togglePokedexModal(true)}>
+                                    <div className='flex w-full justify-center'>
+                                        <img src={ pokedexIcon } alt="Pokedex" />
+                                    </div>
                                 </div>
-                            </div>
 
-                            <div className="blocAth rounded-xl flex-col p-3">
-                                <h3 className='mb-[-10px]'>Essai(s)</h3>
-                                <p className='nbEssais font-medium text-5xl leading-normal'>{guesses.length}</p>
-                            </div>
+                                <div className="blocAth rounded-xl flex-col p-3">
+                                    <h3 className='mb-[-10px]'>Essai(s)</h3>
+                                    <p className='nbEssais font-medium text-5xl leading-normal'>{guesses.length}</p>
+                                </div>
 
-                            <Indice typeIndice='Gen' pokemon={pokemon} nbEssais={guesses.length} nbRequis={4} numIndice={1} />
-                            <Indice typeIndice='Cri' pokemon={pokemon} nbEssais={guesses.length} nbRequis={7} numIndice={2} />
-                            <Indice typeIndice='Desc.' pokemon={pokemon} nbEssais={guesses.length} nbRequis={10} numIndice={3} />
+                                <Indice typeIndice='Gen' pokemon={pokemon} nbEssais={guesses.length} nbRequis={4} numIndice={1} />
+                                <Indice typeIndice='Cri' pokemon={pokemon} nbEssais={guesses.length} nbRequis={7} numIndice={2} />
+                                <Indice typeIndice='Desc.' pokemon={pokemon} nbEssais={guesses.length} nbRequis={10} numIndice={3} />
+                            </div>
                         </div>
                     </div>
                     {guesses.length > 0 && (
-                        <div id='guessesDesc' className="grid grid-cols-7 gap-4 justify-between">
+                        <div id='guessesDesc' className="grid grid-cols-3 sm:grid-cols-5 md:grid-cols-6 lg:grid-cols-7 gap-4 justify-between">
                             {guesses.map((guess, index) => (
                                 <GuessSticker key={`${guess.nameFr}-${index}`} guess={guess} pokemon={pokemon} />
                             ))}

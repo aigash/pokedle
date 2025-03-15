@@ -3,7 +3,7 @@ import pokemonData from '../../pokemon.json';
 
 export default function Pokedex({ isModalOpen, onClose }) {
     const getImageUrl = (imgPath) => {
-        return `/assets/img/pokemons/${imgPath}`;
+        return `${import.meta.env.BASE_URL}/assets/img/pokemons/${imgPath}`;
     };
     return (
         <>
