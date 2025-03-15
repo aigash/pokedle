@@ -29,10 +29,10 @@ export default function Indice({typeIndice, pokemon, nbEssais, nbRequis, numIndi
             case 'Gen':
                 parentNode.innerHTML = (
                         pokemon.gen == '1' ? 
-                            '<div class="flex flex-col items-center"><p class="font-semibold text-2xl">1</p><p>(Rouge/Bleu)</p></div>'
+                            '<div class="flex flex-col items-center"><p class="font-semibold text-2xl text-black">1</p><p>(Rouge/Bleu)</p></div>'
                         : (pokemon.gen == '2' ? 
-                            '<div class="flex flex-col items-center"><p class="font-semibold text-2xl">2</p><p>(Or/Argent)</p></div>' 
-                        : '<div class="flex flex-col items-center"><p class="font-semibold text-2xl">3</p><p>(Rubis/Saphir)</p></div>'
+                            '<div class="flex flex-col items-center"><p class="font-semibold text-2xl text-black">2</p><p>(Or/Argent)</p></div>' 
+                        : '<div class="flex flex-col items-center"><p class="font-semibold text-2xl text-black">3</p><p>(Rubis/Saphir)</p></div>'
                         )
                 );
                 break;
@@ -74,7 +74,7 @@ export default function Indice({typeIndice, pokemon, nbEssais, nbRequis, numIndi
                 });
                 break;
             case 'Desc.':
-                parentNode.innerHTML = '<div><p class="font-semibold">' + pokemon.desc_courte + '</p></div>';
+                parentNode.innerHTML = '<div><p class="font-semibold text-black">' + pokemon.desc_courte + '</p></div>';
                 break;
             case 'Empreintes':
                 break;
@@ -88,7 +88,7 @@ export default function Indice({typeIndice, pokemon, nbEssais, nbRequis, numIndi
     }
 
     return (<div className={"blocAth rounded-xl flex-col p-3" + (nbEssais < nbRequis ? " indiceDesac" : "")}>
-                <h3>{typeIndice}</h3>
+                <h3 className='text-black'>{typeIndice}</h3>
                 <div onClick={(e) => showIndice(e)} className='text-sm'>
                     <img src={getIndiceImage()} alt={`Indice ${numIndice}`}></img>
                 </div>

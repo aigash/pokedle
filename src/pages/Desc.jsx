@@ -91,8 +91,8 @@ export default function Desc() {
                 <div className='flex justify-center flex-col items-center mt-12 2xl:mt-0'>
                     <div className='flex flex-col items-center'>
                         <div id='desc_pokedex' className='p-3 rounded-xl bg-white mb-3'>
-                            <h2>À quel Pokémon est associée cette phrase du Pokédex ?</h2>
-                            <samp>❝{sanitizedDesc || "Chargement en cours..."}❞</samp>
+                            <h2 className='text-black'>À quel Pokémon est associée cette phrase du Pokédex ?</h2>
+                            <samp className='text-black'>❝{sanitizedDesc || "Chargement en cours..."}❞</samp>
                         </div>
                         <div className='flex justify-between mb-6 entete gap-3 flex-wrap'>
                             <PokemonSearchForm 
@@ -110,8 +110,8 @@ export default function Desc() {
                                 </div>
 
                                 <div className="blocAth rounded-xl flex-col p-3">
-                                    <h3 className='mb-[-10px]'>Essai(s)</h3>
-                                    <p className='nbEssais font-medium text-5xl leading-normal'>{guesses.length}</p>
+                                    <h3 className='mb-[-10px] text-black'>Essai(s)</h3>
+                                    <p className='nbEssais font-medium text-5xl leading-normal text-black'>{guesses.length}</p>
                                 </div>
 
                                 <Indice typeIndice='Gen' pokemon={pokemon} nbEssais={guesses.length} nbRequis={4} numIndice={1} />

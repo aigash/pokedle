@@ -7,7 +7,7 @@ export const Search = forwardRef(({ placeholder, value, onChange, id, disabled =
             <input
                 type="text"
                 id={id}
-                className="w-full py-2 px-4 border rounded-l focus:outline-none bg-white"
+                className="w-full py-2 px-4 border rounded-l focus:outline-none bg-white text-black"
                 value={value}
                 placeholder={placeholder}
                 onChange={(e) => onChange(e.target.value)}

@@ -135,7 +135,7 @@ export default function PokemonSearchForm({ onSubmit, suggestions, onSuggestionC
       className="p-3 rounded-xl flex flex-col justify-between grow" 
       onSubmit={handleSubmit}
     >
-      <h2 className="mb-2">Trouve le Pokémon du jour !</h2>
+      <h2 className="mb-2 text-black">Trouve le Pokémon du jour !</h2>
       <div className="relative flex">
         <Search
           id="pokeSearch"

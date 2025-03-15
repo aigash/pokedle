@@ -8,7 +8,7 @@ export default function PokemonTable({ guesses, pokemon }) {
         <div className='w-[90%] lg:w-auto overflow-x-scroll'>
             <table className='tableClassic rounded-xl shadow-lg border-separate border-spacing-2 bg-white/80 border border-white/90'>
                 <thead>
-                    <tr>
+                    <tr className='text-black'>
                         <th>Pokemon</th>
                         <th>Type 1</th>
                         <th>Type 2</th>

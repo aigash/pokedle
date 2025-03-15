@@ -166,8 +166,8 @@ export default function Pixels() {
                                 </div>
 
                                 <div className="blocAth rounded-xl flex-col p-3">
-                                    <h3 className='mb-[-10px]'>Essai(s)</h3>
-                                    <p className='nbEssais font-medium text-5xl leading-normal'>{guesses.length}</p>
+                                    <h3 className='mb-[-10px] text-black'>Essai(s)</h3>
+                                    <p className='nbEssais font-medium text-5xl leading-normal text-black'>{guesses.length}</p>
                                 </div>
                             </div>
                         </div>

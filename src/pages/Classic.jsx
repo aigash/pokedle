@@ -99,8 +99,8 @@ function Classic() {
                         />
                         <div className='flex gap-3 flex-wrap'>
                             <div className="blocAth rounded-xl flex-col p-3">
-                                <h3 className='mb-[-10px]'>Essai(s)</h3>
-                                <p className='nbEssais font-medium text-5xl leading-normal'>{guesses.length}</p>
+                                <h3 className='mb-[-10px] text-black'>Essai(s)</h3>
+                                <p className='nbEssais font-medium text-5xl leading-normal text-black'>{guesses.length}</p>
                             </div>
                             
                             <div id='openPokedex' className="blocAth rounded-xl p-3" onClick={() => togglePokedexModal(true)}>
