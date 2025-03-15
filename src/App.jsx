@@ -1,5 +1,6 @@
 import './assets/css/App.css'
 import GameMode from './components/accueil/GameMode';
+import { useNavigate } from 'react-router-dom';
 
 import logoImage from './assets/pokedeule.png';
 import classicIcon from './assets/img/icones/classic.svg';
@@ -7,8 +8,10 @@ import descIcon from './assets/img/icones/desc.svg';
 import pixelsIcon from './assets/img/icones/pixels.svg';
 
 export default function App() {
+  const navigate = useNavigate();
+  
   function launchMode(mode) {
-    window.location.href = '/' + mode;
+    navigate('/' + mode);
   }
 
   return (

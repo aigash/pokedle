@@ -21,6 +21,8 @@ const router = createBrowserRouter([
     path: "/pixels",
     element: <Pixels />
   },
-]);
+], {
+  basename: "/pokedle"
+});
 
 export default router;
