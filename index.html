@@ -1,12 +1,27 @@
 <!doctype html>
 <html lang="en">
-
   <head>
     <meta charset="UTF-8"/>
     <link rel="icon" type="image/svg+xml" href="/pokedle/vite.svg"/>
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <title>Vite + React</title>
-    <script type="module" crossorigin src="/pokedle/assets/index-BdcJrpF5.js"></script>
+
+    <script>
+      (function() {
+        // Check if we need to redirect
+        const urlParams = new URLSearchParams(window.location.search);
+        const redirectPath = urlParams.get('redirect');
+        if (redirectPath) {
+          // Remove the query parameter
+          const newUrl = window.location.pathname + window.location.hash;
+          window.history.replaceState(null, null, newUrl);
+          
+          // Set the correct route in your application
+          window.initialPath = '/' + redirectPath;
+        }
+      })();
+    </script>
+    <script type="module" crossorigin src="/pokedle/assets/index-CuWXcBy5.js"></script>
     <link rel="stylesheet" crossorigin href="/pokedle/assets/index-CpdGB_xt.css">
   </head>
 
