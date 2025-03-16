@@ -1,4 +1,3 @@
-import './assets/css/App.css'
 import GameMode from './components/accueil/GameMode';
 import { useNavigate } from 'react-router-dom';
 

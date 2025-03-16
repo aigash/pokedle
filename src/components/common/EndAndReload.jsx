@@ -40,7 +40,7 @@ export default function EndAndReload({ pokemon, onReset, nbEssais, onClose }) {
                 <img className='mb-4' src={pokemon.sprite_off} alt="Trophée" />
                 <button
                     ref={buttonRef}
-                    className="bg-red-500 focus:outline-none text-white hover:bg-red-600"
+                    className="bg-red-500 focus:outline-none text-white hover:bg-red-600 px-4 py-2 rounded"
                     onClick={onReset}
                 >
                     Rejouer

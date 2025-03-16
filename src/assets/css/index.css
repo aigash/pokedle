@@ -7,10 +7,6 @@
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
-  background-color: #242424;
-
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -25,42 +21,14 @@
   display: none;
 }
 
-a {
-  font-weight: 500;
-  color: #646cff;
-  text-decoration: inherit;
-}
-a:hover {
-  color: #535bf2;
-}
-
-body {
-  margin: 0;
-  display: flex;
-  place-items: center;
-  min-width: 320px;
-  min-height: 100vh;
-}
-
 h1 {
   font-size: 3.2em;
   line-height: 1.1;
 }
 
-button {
-  border-radius: 8px;
-  border: 1px solid transparent;
-  padding: 0.6em 1.2em;
-  font-size: 1em;
-  font-weight: 500;
-  font-family: inherit;
-  background-color: #1a1a1a;
-  cursor: pointer;
-  transition: border-color 0.25s;
-}
-button:focus,
-button:focus-visible {
-  outline: 4px auto -webkit-focus-ring-color;
+#classic, #desc, #pixels {
+  margin: 0 auto;
+  text-align: center;
 }
 
 .containerClassic, .containerDesc, .containerPixels, #loading {
@@ -76,17 +44,6 @@ button:focus-visible {
   width:90%;
 }
 
-#formClassic {
-  background-color:white;
-  height:104px;
-}
-#pokeSearch {
-  height:100%;
-}
-#submitClassic {
-  border-top-left-radius: 0px;
-  border-bottom-left-radius: 0px;
-}
 .blocAth {
   width: 88px;
   height:104px;
@@ -95,9 +52,7 @@ button:focus-visible {
   align-items:center;
   justify-content:space-between;
 }
-.indices {
-  gap:0.8em;
-}
+
 .indiceDesac img {
   filter: saturate(0);
 }
@@ -147,18 +102,6 @@ table tbody tr > td:nth-child(1) {
   background-color: white;
   border-radius: 10px;
   padding: 20px;
-}
-
-#suggestionsClassic {
-  z-index:10;
-  max-height:500px;
-  overflow-y: scroll;
-  width:100%;
-  display:none;
-  background-color:white;
-}
-#suggestionsClassic li {
-  text-align:start;
 }
 
 .indices > div:nth-child(2) {

@@ -1,80 +1,43 @@
-import { useMemo, useState, useEffect, useRef } from 'react';
+import { useEffect, useRef } from 'react';
 import pokemons from '../pokemon.json';
 import Loading from '../components/common/Loading';
 import EndAndReload from '../components/common/EndAndReload';
 import EndAndReloadMini from '../components/common/EndAndReloadMini';
 import Indice from '../components/common/Indices';
 import PokemonSearchForm from '../components/common/PokemonSearchForm';
+import NbEssais from '../components/common/NbEssais';
+import PokedexATH from '../components/common/PokedexATH';
 import Pokedex from '../components/common/Pokedex';
 import GuessSticker from '../components/common/GuessSticker';
+import BlocDesc from '../components/desc/BlocDesc';
 // import { useDailyRandomNumber } from '../hooks/useDailyRandomNumber';
-import { usePokemonData } from '../hooks/usePokemonData';
-import { usePokemonGame } from '../hooks/usePokemonGame';
-import { getRandomPokemonId, sanitizeDescription } from '../services/pokemonService';
+import { useDescGame } from '../hooks/useGames/useDescGame';
+import ErrorBoundary from '../components/common/ErrorBoundary';
 
-import pokedexIcon from '../assets/img/icones/pokedex.png';
 import logoIcon from '../assets/pokedeule.png';
 
-export default function Desc() {
-    const randomId = useMemo(() => getRandomPokemonId(1, 386), []);
-    //const randomId = useDailyRandomNumber(1, 386);
-    const { pokemonData: pokemon, isLoading, error } = usePokemonData(randomId, pokemons);
-    const { guesses, suggestions, pokemonSearch, handleGuess, resetGame } = usePokemonGame(pokemons);
-
-    const [gameState, setGameState] = useState({
-        isModalOpen: false,
-        isGameWon: false,
-        showEndModal: true
-    });
+function DescContent() {
+    const {
+        pokemon,
+        isLoading,
+        error,
+        guesses,
+        suggestions,
+        gameState,
+        sanitizedDesc,
+        handleSubmit,
+        handleCloseEndModal,
+        handleResetGame,
+        togglePokedexModal
+    } = useDescGame(pokemons);
 
     const searchInputRef = useRef(null);
-    const sanitizedDesc = useMemo(() => {
-        if (!pokemon?.desc || !pokemon?.nameFr) return "";
-        return sanitizeDescription(pokemon.desc, pokemon.nameFr);
-    }, [pokemon?.desc, pokemon?.nameFr]);
 
     useEffect(() => {
         if (searchInputRef.current) {
             searchInputRef.current.focus();
         }
     }, []);
-
-    useEffect(() => {
-        if (pokemon?.nameFr === pokemonSearch) {
-            setGameState(prev => ({
-                ...prev,
-                isGameWon: true,
-                showEndModal: true
-            }));
-        }
-    }, [pokemon?.nameFr, pokemonSearch]);
-
-    const handleSubmit = async (pokemonName) => {
-        if (!pokemonName) return;
-        await handleGuess(pokemonName);
-    };
-
-    const handleCloseEndModal = () => {
-        setGameState(prev => ({
-            ...prev,
-            showEndModal: false
-        }));
-    };
-    const handleResetGame = () => {
-        setGameState({
-            isModalOpen: false,
-            isGameWon: false,
-            showEndModal: true
-        });
-        resetGame();
-    };
-
-    const togglePokedexModal = (isOpen) => {
-        setGameState(prev => ({
-            ...prev,
-            isModalOpen: isOpen
-        }));
-    };
 
     if (isLoading) { return <Loading />; }
 
@@ -90,10 +53,7 @@ export default function Desc() {
                 <a href='/pokedle'><img src={ logoIcon } className='absolute top-0 left-0 w-[180px]' /></a>
                 <div className='flex justify-center flex-col items-center mt-12 2xl:mt-0'>
                     <div className='flex flex-col items-center'>
-                        <div id='desc_pokedex' className='p-3 rounded-xl bg-white mb-3'>
-                            <h2 className='text-black'>À quel Pokémon est associée cette phrase du Pokédex ?</h2>
-                            <samp className='text-black'>❝{sanitizedDesc || "Chargement en cours..."}❞</samp>
-                        </div>
+                        <BlocDesc>{sanitizedDesc || "Chargement en cours..."}</BlocDesc>
                         <div className='flex justify-between mb-6 entete gap-3 flex-wrap'>
                             <PokemonSearchForm 
                                 onSubmit={handleSubmit}
@@ -103,16 +63,8 @@ export default function Desc() {
                                 disabled={isGameWon}
                             />
                             <div className='flex gap-3 flex-wrap'>
-                                <div id='openPokedex' className="blocAth rounded-xl p-3" onClick={() => togglePokedexModal(true)}>
-                                    <div className='flex w-full justify-center'>
-                                        <img src={ pokedexIcon } alt="Pokedex" />
-                                    </div>
-                                </div>
-
-                                <div className="blocAth rounded-xl flex-col p-3">
-                                    <h3 className='mb-[-10px] text-black'>Essai(s)</h3>
-                                    <p className='nbEssais font-medium text-5xl leading-normal text-black'>{guesses.length}</p>
-                                </div>
+                                <NbEssais nbEssais={guesses.length} />
+                                <PokedexATH togglePokedexModal={togglePokedexModal} />
 
                                 <Indice typeIndice='Gen' pokemon={pokemon} nbEssais={guesses.length} nbRequis={4} numIndice={1} />
                                 <Indice typeIndice='Cri' pokemon={pokemon} nbEssais={guesses.length} nbRequis={7} numIndice={2} />
@@ -147,5 +99,13 @@ export default function Desc() {
             )}
             <Pokedex isModalOpen={isModalOpen} onClose={() => togglePokedexModal(false)} />
         </div>
+    );
+}
+
+export default function Desc() {
+    return (
+        <ErrorBoundary>
+            <DescContent />
+        </ErrorBoundary>
     );
 }
