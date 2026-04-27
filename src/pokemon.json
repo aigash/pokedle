@@ -378,14 +378,14 @@
             "id": 50,
             "name_english": "Diglett",
             "name_french": "Taupiqueur",
-            "couleur": ["Marron", "Gris"],
+            "couleur": ["Marron"],
             "img": "50_Taupiqueur.png"
         },
         {
             "id": 51,
             "name_english": "Dugtrio",
             "name_french": "Triopikeur",
-            "couleur": ["Marron", "Gris"],
+            "couleur": ["Marron"],
             "img": "51_Triopikeur.png"
         },
         {
@@ -546,21 +546,21 @@
             "id": 74,
             "name_english": "Geodude",
             "name_french": "Racaillou",
-            "couleur": ["Marron"],
+            "couleur": ["Gris"],
             "img": "74_Racaillou.png"
         },
         {
             "id": 75,
             "name_english": "Graveler",
             "name_french": "Gravalanch",
-            "couleur": ["Marron"],
+            "couleur": ["Gris"],
             "img": "75_Gravalanch.png"
         },
         {
             "id": 76,
             "name_english": "Golem",
             "name_french": "Grolem",
-            "couleur": ["Marron"],
+            "couleur": ["Gris", "Marron"],
             "img": "76_Grolem.png"
         },
         {
@@ -1078,7 +1078,7 @@
             "id": 150,
             "name_english": "Mewtwo",
             "name_french": "Mewtwo",
-            "couleur": ["Violet"],
+            "couleur": ["Gris", "Violet"],
             "img": "150_Mewtwo.png"
         },
         {
@@ -1113,21 +1113,21 @@
             "id": 155,
             "name_english": "Cyndaquil",
             "name_french": "Héricendre",
-            "couleur": ["Vert", "Crème"],
+            "couleur": ["Bleu", "Crème"],
             "img": "155_Héricendre.png"
         },
         {
             "id": 156,
             "name_english": "Quilava",
             "name_french": "Feurisson",
-            "couleur": ["Vert", "Crème"],
+            "couleur": ["Bleu", "Crème"],
             "img": "156_Feurisson.png"
         },
         {
             "id": 157,
             "name_english": "Typhlosion",
             "name_french": "Typhlosion",
-            "couleur": ["Vert", "Crème"],
+            "couleur": ["Bleu", "Crème"],
             "img": "157_Typhlosion.png"
         },
         {

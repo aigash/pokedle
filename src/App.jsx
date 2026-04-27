@@ -5,6 +5,7 @@ import logoImage from './assets/pokedeule.png';
 import classicIcon from './assets/img/icones/classic.svg';
 import descIcon from './assets/img/icones/desc.svg';
 import pixelsIcon from './assets/img/icones/pixels.svg';
+import backgroundImage from './assets/img/backgrounds/background.png';
 
 export default function App() {
   const navigate = useNavigate();
@@ -14,7 +15,18 @@ export default function App() {
   }
 
   return (
-    <div id='modesJeux' className='flex flex-col min-h-screen items-center bg-[65%] sm:bg-[50%] bg-no-repeat bg-cover bg-[url("../img/backgrounds/main-screen.jpg")]'>
+    <div
+      id='modesJeux'
+      className='flex flex-col min-h-screen items-center'
+      style={{
+        background: `
+          url(${backgroundImage}) center/cover no-repeat,
+          linear-gradient(107deg, var(--bg-color1), var(--bg-color2)),
+          #fff
+        `,
+        backgroundBlendMode: 'overlay, normal, normal'
+      }}
+    >
 
       <img className='sm:h-44 mb-6' src={logoImage}></img>
 
