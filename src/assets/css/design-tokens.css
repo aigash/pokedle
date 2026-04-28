@@ -1,5 +1,5 @@
 :root {
-    --main-color: #1C208A
+    --main-color: #1C208A;
     --secondary-jaune: #BFE900;
 
     --bg-color1: rgba(0,8,100,0.8);
@@ -10,7 +10,7 @@
     --text-violet-color: #1C208A;
     --placeholder-color: rgba(28, 32, 138, 0.8);
     
-    --border: 1px solid #7681fb;
+    --border: #7681fb;
 
     --green1: #00af5d;
     --green2: rgba(0,175,93,0.6);

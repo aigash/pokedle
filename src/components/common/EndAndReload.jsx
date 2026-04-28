@@ -27,7 +27,7 @@ export default function EndAndReload({ pokemon, onReset, nbEssais, onClose }) {
         <div className='alerte fixed'>
             <div className='relative'>
                 <button 
-                    className="absolute top-2 right-2 text-black focus:outline-none bg-white"
+                    className="absolute top-2 right-2 text-black focus:outline-hidden bg-white"
                     onClick={onClose}
                     aria-label="Close"
                 >
@@ -40,7 +40,7 @@ export default function EndAndReload({ pokemon, onReset, nbEssais, onClose }) {
                 <img className='mb-4' src={pokemon.sprite_off} alt="Trophée" />
                 <button
                     ref={buttonRef}
-                    className="bg-red-500 focus:outline-none text-white hover:bg-red-600 px-4 py-2 rounded"
+                    className="bg-red-500 focus:outline-hidden text-white hover:bg-red-600 px-4 py-2 rounded-sm"
                     onClick={onReset}
                 >
                     Rejouer

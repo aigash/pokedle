@@ -39,7 +39,7 @@ class ErrorBoundary extends React.Component {
   render() {
     if (this.state.hasError) {
       return (
-        <div className="error-container p-4 bg-red-100 border border-red-400 text-red-700 rounded m-4">
+        <div className="error-container p-4 bg-red-100 border border-red-400 text-red-700 rounded-sm m-4">
           <h2 className="text-xl font-bold mb-2">Oups ! Quelque chose s&apos;est mal passé</h2>
           <p className="mb-2">Une erreur est survenue dans l&apos;application Pokédle.</p>
           {this.state.error && (
@@ -50,13 +50,13 @@ class ErrorBoundary extends React.Component {
           )}
           <div className="mt-4 flex gap-2">
             <button 
-              className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded"
+              className="bg-red-500 hover:bg-red-700 text-white font-bold py-2 px-4 rounded-sm"
               onClick={this.handleReset}
             >
               Réessayer
             </button>
             <button 
-              className="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded"
+              className="bg-gray-500 hover:bg-gray-700 text-white font-bold py-2 px-4 rounded-sm"
               onClick={() => window.location.href = '/pokedle'}
             >
               Retour à l&apos;accueil

@@ -8,7 +8,7 @@ export default function EndAndReloadMini({ pokemon, nbEssais, onReset }) {
                     <p className="font-bold text-black">Bien joué ! Tu as trouvé {pokemon.nameFr} en {nbEssais} essais.</p>
                 </div>
                 <button
-                    className="bg-red-500 text-white px-4 py-2 rounded hover:bg-red-600 focus:outline-none"
+                    className="bg-red-500 text-white px-4 py-2 rounded-sm hover:bg-red-600 focus:outline-hidden"
                     onClick={onReset}
                 >
                     Rejouer

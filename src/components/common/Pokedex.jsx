@@ -88,7 +88,7 @@ export default function Pokedex({ isModalOpen, onClose }) {
                                 className="w-[56px] h-[56px]"
                                 alt={pokemon.name_french}
                             />
-                            <span className="hidden absolute bottom-full left-1/2 transform -translate-x-1/2 bg-black/70 text-white p-1.5 rounded z-10 opacity-0 group-hover:block group-hover:opacity-100 transition-opacity duration-200 ease-in-out whitespace-nowrap">
+                            <span className="hidden absolute bottom-full left-1/2 transform -translate-x-1/2 bg-black/70 text-white p-1.5 rounded-sm z-10 opacity-0 group-hover:block group-hover:opacity-100 transition-opacity duration-200 ease-in-out whitespace-nowrap">
                                 {pokemon.name_french}
                             </span>
                         </div>
