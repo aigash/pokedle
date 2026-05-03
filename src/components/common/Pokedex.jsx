@@ -78,14 +78,14 @@ export default function Pokedex({ isModalOpen, onClose }) {
             ) : (
                 // Version desktop: modale centrée avec hover
                 <div 
-                    className="max-w-[90%] max-h-[85%] flex flex-wrap opacity-15 hover:opacity-100 transition-all gap-0.5 overflow-auto"
+                    className="max-w-[1400px] max-h-[85%] flex flex-wrap overflow-auto"
                     onClick={(e) => e.stopPropagation()}
                 >
                     {pokemonData.pokemon.map((pokemon, index) => (
                         <div key={index} className="relative group">
                             <img 
                                 src={getImageUrl(pokemon.img)}
-                                className="w-[56px] h-[56px]"
+                                className=""
                                 alt={pokemon.name_french}
                             />
                             <span className="hidden absolute bottom-full left-1/2 transform -translate-x-1/2 bg-black/70 text-white p-1.5 rounded-sm z-10 opacity-0 group-hover:block group-hover:opacity-100 transition-opacity duration-200 ease-in-out whitespace-nowrap">

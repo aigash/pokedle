@@ -3,9 +3,9 @@ import React from 'react';
 
 function NbEssaisComponent({ nbEssais }) {
     return (
-        <div className="blocAth rounded-xl flex-col p-3">
-            <h3 className='mb-[-10px] text-black'>Essai(s)</h3>
-            <p className='nbEssais font-medium text-5xl leading-normal text-black'>{nbEssais}</p>
+        <div className="flex flex-col gap-0.5">
+            <span className="text-(--secondary-jaune) text-xs font-semibold text-left leading-[1.2]">Essai(s)</span>
+            <p className='text-white text-xl font-semibold text-left leading-[1.2]'>{String(nbEssais).padStart(2, '0')}</p>
         </div>
     );
 }

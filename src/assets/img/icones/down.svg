@@ -1,3 +1,4 @@
-<svg width="82" height="71" viewBox="0 0 82 71" fill="none" xmlns="http://www.w3.org/2000/svg">
-<path d="M37.5359 69C39.0755 71.6667 42.9245 71.6667 44.4641 69L80.8372 6C82.3768 3.33333 80.4523 0 77.3731 0H4.62693C1.54773 0 -0.376769 3.33333 1.16283 6L37.5359 69Z" fill="#BD2020"/>
+<svg width="10" height="17" viewBox="0 0 10 17" fill="none" xmlns="http://www.w3.org/2000/svg">
+<path fill-rule="evenodd" clip-rule="evenodd" d="M10 0L10 4.25L5 8.5L-1.11464e-06 4.25L-1.48619e-06 8.74228e-07L5 4.0264L10 0Z" fill="#FF5B5B"/>
+<path fill-rule="evenodd" clip-rule="evenodd" d="M10 8.5L10 12.75L5 17L-3.71547e-07 12.75L-7.43094e-07 8.5L5 12.5264L10 8.5Z" fill="#FF5B5B"/>
 </svg>

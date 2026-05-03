@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Search } from './searchBar';
+import { Search } from 'lucide-react';
 import PropTypes from 'prop-types';
 
 export default function PokemonSearchForm({ onSubmit, suggestions, onSuggestionClick, inputRef, disabled = false }) {
@@ -130,48 +130,53 @@ export default function PokemonSearchForm({ onSubmit, suggestions, onSuggestionC
   const isPokemonSubmitted = (pokemonName) => submittedPokemons.has(pokemonName);
 
   return (
-    <form 
+    <form
       id="formClassic"
-      className="bg-white h-[104px] p-3 rounded-xl flex flex-col justify-between grow" 
+      className="relative w-full"
       onSubmit={handleSubmit}
     >
-      <h2 className="mb-2 text-black">Trouve le Pokémon du jour !</h2>
-      <div className="relative flex">
-        <Search
-          id="pokeSearch"
-          placeholder="Nom du Pokémon..."
-          value={searchValue}
-          onChange={handleChange}
-          ref={inputRef}
-          disabled={disabled}
-        />
+      <div id='searchform' className="w-full rounded-full bg-(--secondary-jaune) flex items-center">
+        <div className="flex items-center gap-3 px-6 py-4 bg-white grow rounded-full">
+          <Search className="text-(--text-violet-color)" size={26} strokeWidth={3} />
+          <input
+            type="text"
+            id="pokeSearch"
+            placeholder="Tape un nom de Pokémon..."
+            className="text-lg text-[22px] text-(--text-violet-color) placeholder-(--placeholder-color) outline-none grow"
+            value={searchValue}
+            onChange={(e) => handleChange(e.target.value)}
+            autoComplete="off"
+            ref={inputRef}
+            disabled={disabled}
+          />
+        </div>
         <button
           type="submit"
           id="submitClassic"
-          className="bg-red-500 text-white px-4 rounded-r hover:bg-red-600"
-          disabled={isSubmitting || isPokemonSubmitted(searchValue.trim()) || disabled} // désactive le bouton pendant la soumission du formulaire
+          className="text-(--text-violet-color) text-2xl font-semibold italic bg-transparent pr-10 pl-8 cursor-pointer"
+          disabled={isSubmitting || isPokemonSubmitted(searchValue.trim()) || disabled}
         >
-          GO
+          JOUER
         </button>
-        
-        {showSuggestions && filteredSuggestions.length > 0 && !disabled && (
-          <div className="absolute w-full bg-white border rounded-b mt-12 shadow-lg z-10 max-h-[240px] overflow-y-auto">
-            {filteredSuggestions.map((pokemon, index) => {
-              const isSubmitted = isPokemonSubmitted(pokemon.name_french);
-              return (
-                <div
-                  key={pokemon.name_french}
-                  className={`py-2 hover:bg-[#EBC008]/10 cursor-pointer text-black text-left px-4 flex items-center ${selectedIndex === index ? 'bg-[#EBC008]/10' : ''}`}
-                  onClick={() => !isSubmitted && handleSuggestionClick(pokemon.name_french)}
-                >
-                  <img src={getImageUrl(pokemon.img)} className="w-10 h-10 mr-4" />
-                  {pokemon.name_french}
-                </div>
-              );
-            })}
-          </div>
-        )}
       </div>
+
+      {showSuggestions && filteredSuggestions.length > 0 && !disabled && (
+        <div className="absolute w-full bg-white rounded-2xl mt-2 shadow-lg z-100 max-h-[260px] overflow-y-auto">
+          {filteredSuggestions.map((pokemon, index) => {
+            const isSubmitted = isPokemonSubmitted(pokemon.name_french);
+            return (
+              <div
+                key={pokemon.name_french}
+                className={`hover:bg-(--secondary-jaune)/50 cursor-pointer text-(--text-violet-color) font-medium text-left px-4 py-3 flex items-center ${selectedIndex === index ? 'bg-(--secondary-jaune)/50' : ''}`}
+                onClick={() => !isSubmitted && handleSuggestionClick(pokemon.name_french)}
+              >
+                <img src={getImageUrl(pokemon.img)} className="w-12 h-12 mr-4" />
+                {pokemon.name_french}
+              </div>
+            );
+          })}
+        </div>
+      )}
     </form>
   );
 } 

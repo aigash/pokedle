@@ -1,13 +1,12 @@
 import PropTypes from 'prop-types';
 
-import pokedexIcon from '../../assets/img/icones/pokedex.png';
+import pokedexIcon from '../../assets/img/icones/pokedex.svg';
 
 export default function PokedexATH({ togglePokedexModal }) {
     return (
-        <div id='openPokedex' className="blocAth rounded-xl p-3" onClick={() => togglePokedexModal(true)}>
-            <div className='flex w-full justify-center'>
-                <img src={ pokedexIcon } alt="Pokedex" />
-            </div>
+        <div id='openPokedex' className="flex items-center gap-3 border border-(--secondary-jaune) cursor-pointer rounded-full pr-[30px] pl-6" onClick={() => togglePokedexModal(true)}>
+            <img src={ pokedexIcon } alt="Pokedex" />
+            <p className="text-2xl text-(--secondary-jaune) italic font-semibold">Pokédex</p>
         </div>
     );
 }

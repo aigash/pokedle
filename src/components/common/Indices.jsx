@@ -1,14 +1,21 @@
 import PropTypes from 'prop-types';
+import { useState } from 'react';
 
-import indice1 from '../../assets/img/icones/indice1.png';
-import indice2 from '../../assets/img/icones/indice2.png';
-import indice3 from '../../assets/img/icones/indice3.png';
+import indice1 from '../../assets/img/icones/indice1_new.png';
+import indice2 from '../../assets/img/icones/indice2_new.png';
+import indice3 from '../../assets/img/icones/indice3_new.png';
+import lockIcon from '../../assets/img/icones/lock.svg';
+import shinyIcon from '../../assets/img/icones/shiny.svg';
+import starsIcon from '../../assets/img/icones/stars.svg';
 
 export default function Indice({typeIndice, pokemon, nbEssais, nbRequis, numIndice}) {
-    /*if (nbEssais < nbRequis) {
-      return <div>{nbRequis - nbEssais} essai(s) restant(s)</div>;
-    }*/
-      const getIndiceImage = () => {
+    const [isUsed, setIsUsed] = useState(false);
+    const [audioElement, setAudioElement] = useState(null);
+    const [isPlaying, setIsPlaying] = useState(false);
+    const [currentTime, setCurrentTime] = useState(0);
+    const [duration, setDuration] = useState(0);
+
+    const getIndiceImage = () => {
         switch(numIndice) {
             case 1: return indice1;
             case 2: return indice2;
@@ -17,80 +24,166 @@ export default function Indice({typeIndice, pokemon, nbEssais, nbRequis, numIndi
         }
     };
 
-    function showIndice(e) {
+    function showIndice() {
         if (nbEssais < nbRequis) {
             return false;
         }
-        
-        const parentNode = e.target.parentNode;
-        let audio;
-        
-        switch (typeIndice) {
-            case 'Gen':
-                parentNode.innerHTML = (
-                        pokemon.gen == '1' ? 
-                            '<div class="flex flex-col items-center"><p class="font-semibold text-2xl text-black">1</p><p>(Rouge/Bleu)</p></div>'
-                        : (pokemon.gen == '2' ? 
-                            '<div class="flex flex-col items-center"><p class="font-semibold text-2xl text-black">2</p><p>(Or/Argent)</p></div>' 
-                        : '<div class="flex flex-col items-center"><p class="font-semibold text-2xl text-black">3</p><p>(Rubis/Saphir)</p></div>'
-                        )
-                );
-                break;
-            case 'Cri':
-                // Créer l'audio element avant de l'insérer dans le DOM
-                audio = new Audio(pokemon.cri);
-                audio.preload = 'auto';
-                
-                parentNode.innerHTML = "<div class='audio-player'><button class='play-button'></button></div>";
-                
-                requestAnimationFrame(() => {
-                    const audioPlayer = parentNode.querySelector('.audio-player');
-                    if (!audioPlayer) return;
 
-                    const playButton = audioPlayer.querySelector('.play-button');
-                    
-                    if (playButton) {
-                        playButton.addEventListener('click', async () => {
-                            try {
-                                if (audio.paused) {
-                                    await audio.play();
-                                    playButton.classList.add('playing');
-                                    
-                                    // Réinitialiser le bouton quand le son est terminé
-                                    audio.onended = () => {
-                                        playButton.classList.remove('playing');
-                                        audio.currentTime = 0;
-                                    };
-                                } else {
-                                    audio.pause();
-                                    audio.currentTime = 0;
-                                    playButton.classList.remove('playing');
-                                }
-                            } catch (error) {
-                                console.error('Erreur lors de la lecture du son:', error);
-                            }
-                        });
-                    }
-                });
-                break;
-            case 'Desc.':
-                parentNode.innerHTML = '<div><p class="font-semibold text-black">' + pokemon.desc_courte + '</p></div>';
-                break;
-            case 'Empreintes':
-                break;
-            case 'Type1':
-                parentNode.innerHTML = pokemon.type1.name_french;
-                break;
-            case 'Type2':
-                parentNode.innerHTML = pokemon.type2 === 'Aucun' ? 'Aucun' : pokemon.type2.name_french;
-                break;
+        // Marquer l'indice comme utilisé
+        setIsUsed(true);
+
+        // Si c'est un cri, créer l'élément audio
+        if (typeIndice === 'Cri' && !audioElement) {
+            const audio = new Audio(pokemon.cri);
+            audio.preload = 'auto';
+
+            audio.addEventListener('loadedmetadata', () => {
+                setDuration(Math.max(1, Math.floor(audio.duration)));
+            });
+
+            audio.addEventListener('timeupdate', () => {
+                setCurrentTime(Math.floor(audio.currentTime));
+            });
+
+            audio.addEventListener('ended', () => {
+                setIsPlaying(false);
+                setCurrentTime(0);
+            });
+
+            setAudioElement(audio);
         }
     }
 
-    return (<div className={"blocAth rounded-xl flex-col p-3" + (nbEssais < nbRequis ? " indiceDesac" : "")}>
-                <h3 className='text-black'>{typeIndice}</h3>
-                <div onClick={(e) => showIndice(e)} className='text-sm'>
-                    <img src={getIndiceImage()} alt={`Indice ${numIndice}`}></img>
+    const toggleAudio = async () => {
+        if (!audioElement) return;
+
+        try {
+            if (audioElement.paused) {
+                await audioElement.play();
+                setIsPlaying(true);
+            } else {
+                audioElement.pause();
+                audioElement.currentTime = 0;
+                setIsPlaying(false);
+                setCurrentTime(0);
+            }
+        } catch (error) {
+            console.error('Erreur lors de la lecture du son:', error);
+        }
+    };
+
+    const getIndiceContent = () => {
+        if (typeIndice === 'Génération') {
+            const genText = pokemon.gen == '1' ? '1 - Rouge / Bleu'
+                : (pokemon.gen == '2' ? '2 - Or / Argent' : '3 - Rubis / Saphir');
+            return <div><p className="font-semibold text-lg text-white text-left">{genText}</p></div>;
+        }
+
+        if (typeIndice === 'Cri') {
+            const progress = duration > 0 ? (audioElement?.currentTime / audioElement?.duration) * 100 : 0;
+            return (
+                <div className='flex items-center gap-2'>
+                    <button className={`play-button transition-colors ${isPlaying ? 'playing' : ''}`} onClick={toggleAudio}></button>
+                    <div className="flex-1 flex items-center gap-2">
+                        <span className="time-current text-xs text-white font-medium">
+                            0:{String(currentTime).padStart(2, '0')}
+                        </span>
+                        <span className="time-total text-xs text-white font-medium">
+                            {duration > 0 ? `0:${String(duration).padStart(2, '0')}` : '--'}
+                        </span>
+                        <div className="flex-1 h-1.5 bg-gray-300 rounded-full overflow-hidden">
+                            <div className="progress-bar h-full bg-(--border) transition-all" style={{width: `${progress}%`}}></div>
+                        </div>
+                    </div>
+                </div>
+            );
+        }
+
+        if (typeIndice === 'Description') {
+            return <div><p className="font-semibold text-lg text-white text-left">{pokemon.desc_courte}</p></div>;
+        }
+
+        if (typeIndice === 'Type1') {
+            return <div><p className="font-semibold text-lg text-white text-left">{pokemon.type1.name_french}</p></div>;
+        }
+
+        if (typeIndice === 'Type2') {
+            return <div><p className="font-semibold text-lg text-white text-left">{pokemon.type2 === 'Aucun' ? 'Aucun' : pokemon.type2.name_french}</p></div>;
+        }
+
+        return null;
+    };
+
+    // Déterminer l'état de l'indice
+    const isLocked = nbEssais < nbRequis;
+    const isUnlocked = nbEssais >= nbRequis && !isUsed;
+
+    // Styles conditionnels selon l'état
+    const getBorderColor = () => {
+        if (isLocked) return 'border-[var(--indice-locked-color)]';
+        if (isUnlocked) return 'border-[var(--indice-new-color)]';
+        return 'border-[var(--indice-color)]';
+    };
+
+    const getBackgroundStyle = () => {
+        if (isLocked) return 'bg-[linear-gradient(to_right,rgba(130,130,130,0.4)_0%,rgba(130,130,130,0.16)_40%,rgba(130,130,130,0.02)_100%)]';
+        if (isUnlocked) return 'bg-[linear-gradient(to_right,rgba(191,233,0,0.4)_0%,rgba(191,233,0,0.16)_40%,rgba(191,233,0,0.02)_100%)]';
+        return 'bg-[linear-gradient(to_right,rgba(118,129,251,0.4)_0%,rgba(118,129,251,0.16)_40%,rgba(118,129,251,0.02)_100%)]';
+    };
+
+    const getProgressBarColor = () => {
+        if (isLocked) return 'bg-[var(--indice-locked-color)]';
+        if (isUnlocked) return 'bg-[var(--indice-new-color)]';
+        return 'bg-(--border)';
+    };
+
+    return (<div className={"pl-6 relative grow h-17" + (isLocked ? " indiceDesac" : "")}>
+                <div className={`rounded-2xl pl-9 pr-4 py-2 w-full h-full flex flex-col justify-between border ${getBorderColor()} ${getBackgroundStyle()} ${isUnlocked ? 'drop-shadow-[0_0_16px_rgba(191,233,0,0.2)]' : ''}`}>
+                    <h3 className='text-white text-left font-bold italic'>{typeIndice}</h3>
+
+                    {/* Badge en haut à droite selon l'état */}
+                    {isLocked && (
+                        <img src={lockIcon} alt="Verrouillé" className="absolute top-2 right-2 w-5 h-5" />
+                    )}
+                    {isUnlocked && (
+                        <div className="absolute top-2 right-2 rounded-lg px-1.5 py-0.5 flex items-center gap-1 bg-[linear-gradient(to_right,rgba(191,233,0,0.24)_0%,rgba(191,233,0,0.10)_100%)]">
+                            <img src={shinyIcon} alt="Nouveau" className="w-4 h-4" />
+                            <span className="text-xs font-semibold text-(--indice-new-color)">Nouveau !</span>
+                        </div>
+                    )}
+                    {isUsed && (
+                        <div className="absolute top-2 right-2 rounded-lg px-1.5 py-0.5 flex bg-[linear-gradient(to_right,rgba(118,129,251,0.24)_0%,rgba(118,129,251,0.10)_100%)]">
+                            <span className="text-xs font-semibold text-(--indice-color)">Utilisé</span>
+                        </div>
+                    )}
+
+                    <div className="indice-content">
+                        {!isUsed ? (
+                            <>
+                                <p className="text-xs text-white text-left">
+                                    {nbEssais >= nbRequis ? 'Débloqué' : `Débloqué dans ${nbRequis - nbEssais} tentative(s)`}
+                                </p>
+                                <div className="flex gap-1 mt-2">
+                                    {Array.from({ length: nbRequis }).map((_, index) => (
+                                        <div
+                                            key={index}
+                                            className={`h-1 rounded-full flex-1 ${
+                                                index < nbEssais ? getProgressBarColor() : 'bg-gray-300'
+                                            }`}
+                                        />
+                                    ))}
+                                </div>
+                            </>
+                        ) : (
+                            getIndiceContent()
+                        )}
+                    </div>
+                </div>
+                <div onClick={showIndice} className='text-sm absolute left-0 -bottom-1 cursor-pointer'>
+                    {isUnlocked && (
+                        <img src={starsIcon} alt="Nouveau" className="absolute -left-2 -top-1.5" />
+                    )}
+                    <img src={getIndiceImage()} alt={`Indice ${numIndice}`} className={isUnlocked ? "drop-shadow-[0_0_16px_rgba(191,233,0,0.2)]" : ""}></img>
                 </div>
             </div>);
 }

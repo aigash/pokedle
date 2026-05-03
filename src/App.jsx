@@ -1,33 +1,53 @@
+import { useState, useEffect } from 'react';
 import GameMode from './components/accueil/GameMode';
+import PokemonSearchForm from './components/common/PokemonSearchForm';
 import { useNavigate } from 'react-router-dom';
-import { Search } from 'lucide-react';
+import pokemons from './pokemon.json';
 
 import classicIcon from './assets/img/icones/classic_new.png';
 import descIcon from './assets/img/icones/desc_new.png';
 import pixelsIcon from './assets/img/icones/pixels_new.png';
 import typesIcon from './assets/img/icones/types_new.png';
-import backgroundImage from './assets/img/backgrounds/background.png';
 
 export default function App() {
   const navigate = useNavigate();
-  
+  const [timeLeft, setTimeLeft] = useState({ hours: 0, minutes: 0, seconds: 0 });
+
+  useEffect(() => {
+    const calculateTimeLeft = () => {
+      const now = new Date();
+      const midnight = new Date();
+      midnight.setHours(24, 0, 0, 0);
+
+      const diff = midnight - now;
+
+      const hours = Math.floor(diff / (1000 * 60 * 60));
+      const minutes = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+      const seconds = Math.floor((diff % (1000 * 60)) / 1000);
+
+      setTimeLeft({ hours, minutes, seconds });
+    };
+
+    calculateTimeLeft();
+    const timer = setInterval(calculateTimeLeft, 1000);
+
+    return () => clearInterval(timer);
+  }, []);
+
+  const formatNumber = (num) => num.toString().padStart(2, '0');
+
   function launchMode(mode) {
     navigate('/' + mode);
   }
+
+  const handleSearchSubmit = (pokemonName) => {
+    navigate('/classic', { state: { initialGuess: pokemonName } });
+  };
 
   return (
     <div
       id='modesJeux'
       className='flex flex-col min-h-screen items-center'
-      style={{
-        background: `
-          url(${backgroundImage}) center/cover no-repeat,
-          linear-gradient(107deg, var(--bg-color1), var(--bg-color2)),
-          linear-gradient(rgba(0,0,0,0.36), rgba(0,0,0,0.36)),
-          #fff
-        `,
-        backgroundBlendMode: 'overlay, normal, normal'
-      }}
     >
       <div className="grow flex items-center justify-center">
         <div className="w-[680px] mx-auto flex flex-col gap-14">
@@ -38,28 +58,20 @@ export default function App() {
           </div>
 
           <div className="flex flex-col items-center gap-8">
-            <div className="w-full rounded-full bg-(--secondary-jaune) flex items-center">
-              <div className="flex items-center gap-3 px-6 py-4 bg-white grow rounded-full">
-                <Search className="text-(--text-violet-color)" size={26} strokeWidth={3} />
-                <input
-                  type="text"
-                  placeholder="Tape un nom de Pokémon..."
-                  className="text-lg text-[22px] text-(--text-violet-color) placeholder-(--placeholder-color) outline-none grow"
-                />
-              </div>
-              <button className="text-(--text-violet-color) text-2xl font-semibold italic bg-transparent pr-10 pl-8">
-                JOUER
-              </button>
-            </div>
+            <PokemonSearchForm
+              onSubmit={handleSearchSubmit}
+              suggestions={pokemons.pokemon}
+              onSuggestionClick={handleSearchSubmit}
+            />
 
             <div className="">
               <p className="text-sm text-(--secondary-jaune) italic font-semibold text-center">Prochain défi</p>
-              <div className="flex items-center gap-1 text-white text-2xl font-semibold">
-                <p>05<span className="text-white/80 text-sm">H</span></p>
+              <div id='compteur' className="flex items-center gap-1 text-white text-2xl font-semibold">
+                <p id='heures'>{formatNumber(timeLeft.hours)}<span className="text-white/80 text-sm">H</span></p>
                 <p className="text-(--secondary-jaune)">:</p>
-                <p>04<span className="text-white/80 text-sm">M</span></p>
+                <p id='minutes'>{formatNumber(timeLeft.minutes)}<span className="text-white/80 text-sm">M</span></p>
                 <p className="text-(--secondary-jaune)">:</p>
-                <p>28<span className="text-white/80 text-sm">S</span></p>
+                <p id='secondes'>{formatNumber(timeLeft.seconds)}<span className="text-white/80 text-sm">S</span></p>
               </div>
             </div>
           </div>

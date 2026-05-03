@@ -62,13 +62,14 @@ export const formatPokemonData = (rawData, pokemons) => {
     const pokemonInfo = pokemons.pokemon.find(p => p.id === pokeData.id);
 
     return {
+        id: pokeData.id,
         couleur: pokemonInfo?.couleur || [],
         type1: type1,
         type2: type2,
         taille: pokeData.height,
         poids: pokeData.weight,
         sprite_off: pokeData.sprites.other['official-artwork'].front_default,
-        gif: pokeData.sprites.other.showdown.front_default,
+        gif: pokeData.sprites.other.dream_world.front_default,
         sprite: pokeData.sprites.versions['generation-iv'].platinum.front_default,
         nameFr: speciesData.names[4].name,
         gen: speciesData.generation.url.replace('/', ' ').slice(-2).slice(0,1),
