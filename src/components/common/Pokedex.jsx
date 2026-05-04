@@ -2,6 +2,8 @@ import { PropTypes } from 'prop-types';
 import { useEffect, useState } from 'react';
 import pokemonData from '../../pokemon.json';
 
+import MotifBgModale from '../../assets/img/backgrounds/motif-bg/points_modale.svg';
+
 export default function Pokedex({ isModalOpen, onClose }) {
     const [isMobile, setIsMobile] = useState(false);
     const [selectedGen, setSelectedGen] = useState('all');
@@ -96,15 +98,28 @@ export default function Pokedex({ isModalOpen, onClose }) {
             ) : (
                 // Version desktop: modale centrée avec hover
                 <div
-                    className="max-w-[1400px] max-h-[85%] overflow-auto rounded-4xl bg-[#091044] py-6 px-11.5 border border-(--secondary-jaune) flex flex-col gap-6"
+                    className="max-w-[1400px] max-h-[85%] rounded-4xl bg-[#091044] py-6 px-11.5 border border-(--secondary-jaune) flex flex-col gap-6 relative overflow-hidden"
                     onClick={(e) => e.stopPropagation()}
                 >
-                    <div>
+                    {/* Image de fond avec centre positionné sur le coin haut-gauche */}
+                    <div
+                        className='absolute inset-0 pointer-events-none z-0'
+                        style={{
+                            backgroundImage: `url(${MotifBgModale})`,
+                            backgroundPosition: '0 0',
+                            backgroundRepeat: 'no-repeat',
+                            backgroundSize: 'auto',
+                            transform: 'translate(-20%, -42%)',
+                            mixBlendMode: 'overlay'
+                        }}
+                    />
+
+                    <div className="relative z-1">
                         <h1 className="text-white text-[86px] font-bold italic leading-[1.2]" style={{ textShadow: '2px 2px 0 var(--secondary-jaune)' }}>POKÉDEX</h1>
                         <h2 className="text-2xl font-bold italic text-white">CONSULTE TOUS LES POKÉMON !</h2>
                     </div>
 
-                    <div className="filtres flex gap-4 items-center">
+                    <div className="filtres flex gap-4 items-center z-1">
                         <button
                             onClick={() => setSelectedGen('all')}
                             className={`rounded-2xl border border-(--secondary-jaune) py-3 px-6 font-bold italic cursor-pointer ${selectedGen === 'all' ? 'bg-(--secondary-jaune) text-(--main-color)' : 'text-(--secondary-jaune)'}`}

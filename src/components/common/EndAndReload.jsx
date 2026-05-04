@@ -21,7 +21,7 @@ import AcierIcon from '../../assets/img/icones/types/acier.svg';
 import EauIcon from '../../assets/img/icones/types/eau.svg';
 
 import ArrowRight from '../../assets/img/icones/arrow-right.svg';
-import MotifBgVictoire from '../../assets/img/backgrounds/motif-bg/points_modale_victoire.svg';
+import MotifBgVictoire from '../../assets/img/backgrounds/motif-bg/points_modale.svg';
 
 const typeIcons = {
     'Insecte': InsecteIcon,
