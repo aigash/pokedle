@@ -4,23 +4,41 @@ import pokemonData from '../../pokemon.json';
 
 export default function Pokedex({ isModalOpen, onClose }) {
     const [isMobile, setIsMobile] = useState(false);
+    const [selectedGen, setSelectedGen] = useState('all');
+
     // Détection du mode mobile
     useEffect(() => {
         const checkIfMobile = () => {
             setIsMobile(window.innerWidth < 768);
         };
-        
+
         // Vérification initiale
         checkIfMobile();
-        
+
         // Ajout d'un écouteur pour les changements de taille d'écran
         window.addEventListener('resize', checkIfMobile);
-        
+
         // Nettoyage
         return () => {
             window.removeEventListener('resize', checkIfMobile);
         };
     }, []);
+
+    // Filtrage des Pokémon par génération
+    const getFilteredPokemon = () => {
+        switch (selectedGen) {
+            case 'gen1':
+                return pokemonData.pokemon.filter(p => p.id >= 1 && p.id <= 151);
+            case 'gen2':
+                return pokemonData.pokemon.filter(p => p.id >= 152 && p.id <= 251);
+            case 'gen3':
+                return pokemonData.pokemon.filter(p => p.id >= 252 && p.id <= 386);
+            default:
+                return pokemonData.pokemon;
+        }
+    };
+
+    const filteredPokemon = getFilteredPokemon();
 
     const getImageUrl = (imgPath) => {
         return `${import.meta.env.BASE_URL}/assets/img/pokemons/${imgPath}`;
@@ -43,7 +61,7 @@ export default function Pokedex({ isModalOpen, onClose }) {
 
     return (
         <div 
-            className={`fixed inset-0 bg-white/90 z-50 flex ${isMobile ? 'flex-col' : 'items-center justify-center'}`}
+            className={`alerte fixed z-100 flex ${isMobile ? 'flex-col' : 'items-center justify-center'}`}
             onClick={isMobile ? undefined : onClose}
         >
             {isMobile ? (
@@ -62,7 +80,7 @@ export default function Pokedex({ isModalOpen, onClose }) {
                     </div>
                     <div className="flex-1 overflow-y-auto p-4">
                         <div className="grid grid-cols-4 sm:grid-cols-5 gap-2">
-                            {pokemonData.pokemon.map((pokemon, index) => (
+                            {filteredPokemon.map((pokemon, index) => (
                                 <div key={index} className="relative group flex flex-col items-center">
                                     <img 
                                         src={getImageUrl(pokemon.img)}
@@ -77,22 +95,57 @@ export default function Pokedex({ isModalOpen, onClose }) {
                 </>
             ) : (
                 // Version desktop: modale centrée avec hover
-                <div 
-                    className="max-w-[1400px] max-h-[85%] flex flex-wrap overflow-auto"
+                <div
+                    className="max-w-[1400px] max-h-[85%] overflow-auto rounded-4xl bg-[#091044] py-6 px-11.5 border border-(--secondary-jaune) flex flex-col gap-6"
                     onClick={(e) => e.stopPropagation()}
                 >
-                    {pokemonData.pokemon.map((pokemon, index) => (
-                        <div key={index} className="relative group">
-                            <img 
-                                src={getImageUrl(pokemon.img)}
-                                className=""
-                                alt={pokemon.name_french}
-                            />
-                            <span className="hidden absolute bottom-full left-1/2 transform -translate-x-1/2 bg-black/70 text-white p-1.5 rounded-sm z-10 opacity-0 group-hover:block group-hover:opacity-100 transition-opacity duration-200 ease-in-out whitespace-nowrap">
-                                {pokemon.name_french}
-                            </span>
-                        </div>
-                    ))}
+                    <div>
+                        <h1 className="text-white text-[86px] font-bold italic leading-[1.2]" style={{ textShadow: '2px 2px 0 var(--secondary-jaune)' }}>POKÉDEX</h1>
+                        <h2 className="text-2xl font-bold italic text-white">CONSULTE TOUS LES POKÉMON !</h2>
+                    </div>
+
+                    <div className="filtres flex gap-4 items-center">
+                        <button
+                            onClick={() => setSelectedGen('all')}
+                            className={`rounded-2xl border border-(--secondary-jaune) py-3 px-6 font-bold italic cursor-pointer ${selectedGen === 'all' ? 'bg-(--secondary-jaune) text-(--main-color)' : 'text-(--secondary-jaune)'}`}
+                        >
+                            TOUS
+                        </button>
+                        <button
+                            onClick={() => setSelectedGen('gen1')}
+                            className={`rounded-2xl border border-(--secondary-jaune) py-3 px-6 font-bold italic cursor-pointer ${selectedGen === 'gen1' ? 'bg-(--secondary-jaune) text-(--main-color)' : 'text-(--secondary-jaune)'}`}
+                        >
+                            GÉN. 1
+                        </button>
+                        <button
+                            onClick={() => setSelectedGen('gen2')}
+                            className={`rounded-2xl border border-(--secondary-jaune) py-3 px-6 font-bold italic cursor-pointer ${selectedGen === 'gen2' ? 'bg-(--secondary-jaune) text-(--main-color)' : 'text-(--secondary-jaune)'}`}
+                        >
+                            GÉN. 2
+                        </button>
+                        <button
+                            onClick={() => setSelectedGen('gen3')}
+                            className={`rounded-2xl border border-(--secondary-jaune) py-3 px-6 font-bold italic cursor-pointer ${selectedGen === 'gen3' ? 'bg-(--secondary-jaune) text-(--main-color)' : 'text-(--secondary-jaune)'}`}
+                        >
+                            GÉN. 3
+                        </button>
+                    </div>
+
+                    <div className="grid grid-cols-10 gap-4">
+                        {filteredPokemon.map((pokemon, index) => (
+                            <div key={index} className="relative p-4 rounded-2xl border border-(--border) flex flex-col items-center gap-1">
+                                <div className="flex flex-col items-center">
+                                    <span className="text-(--secondary-jaune) font-bold italic leading-[1.2]">#{String(pokemon.id).padStart(3, '0')}</span>
+                                    <p className="text-white font-bold italic">{pokemon.name_french}</p>
+                                </div>
+                                <img
+                                    src={getImageUrl(pokemon.img)}
+                                    className=""
+                                    alt={pokemon.name_french}
+                                />
+                            </div>
+                        ))}
+                    </div>
                 </div>
             )}
         </div>
