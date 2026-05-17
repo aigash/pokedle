@@ -1,7 +1,72 @@
 import PropTypes from 'prop-types';
 
+// Import des images de fond pour chaque type
+import bgInsecte from '../../assets/img/backgrounds/bg-types/insecte.png';
+import bgTenebre from '../../assets/img/backgrounds/bg-types/tenebre.png';
+import bgDragon from '../../assets/img/backgrounds/bg-types/dragon.png';
+import bgElectrique from '../../assets/img/backgrounds/bg-types/electrique.png';
+import bgFee from '../../assets/img/backgrounds/bg-types/fee.png';
+import bgCombat from '../../assets/img/backgrounds/bg-types/combat.png';
+import bgFeu from '../../assets/img/backgrounds/bg-types/feu.png';
+import bgVol from '../../assets/img/backgrounds/bg-types/vol.png';
+import bgSpectre from '../../assets/img/backgrounds/bg-types/spectre.png';
+import bgPlante from '../../assets/img/backgrounds/bg-types/plante.png';
+import bgSol from '../../assets/img/backgrounds/bg-types/sol.png';
+import bgGlace from '../../assets/img/backgrounds/bg-types/glace.png';
+import bgNormal from '../../assets/img/backgrounds/bg-types/normal.png';
+import bgPoison from '../../assets/img/backgrounds/bg-types/poison.png';
+import bgPsy from '../../assets/img/backgrounds/bg-types/psy.png';
+import bgRoche from '../../assets/img/backgrounds/bg-types/roche.png';
+import bgAcier from '../../assets/img/backgrounds/bg-types/acier.png';
+import bgEau from '../../assets/img/backgrounds/bg-types/eau.png';
+
+// Tableau de correspondance type -> couleur
+const TYPE_COLORS = {
+    'Insecte': '#9F9F28',
+    'Ténèbre': '#4F4747',
+    'Dragon': '#576FBC',
+    'Électrik': '#DFBC28',
+    'Fée': '#E18CE1',
+    'Combat': '#E49021',
+    'Feu': '#E4613E',
+    'Vol': '#74AAD0',
+    'Spectre': '#6F4570',
+    'Plante': '#439837',
+    'Sol': '#A4733C',
+    'Glace': '#47C8C8',
+    'Normal': '#828282',
+    'Poison': '#9354CB',
+    'Psy': '#E96C8C',
+    'Roche': '#A9A481',
+    'Acier': '#74B0CB',
+    'Eau': '#3099E1',
+};
+
+// Tableau de correspondance type -> image de fond
+const TYPE_BACKGROUNDS = {
+    'Insecte': bgInsecte,
+    'Ténèbre': bgTenebre,
+    'Dragon': bgDragon,
+    'Électrik': bgElectrique,
+    'Fée': bgFee,
+    'Combat': bgCombat,
+    'Feu': bgFeu,
+    'Vol': bgVol,
+    'Spectre': bgSpectre,
+    'Plante': bgPlante,
+    'Sol': bgSol,
+    'Glace': bgGlace,
+    'Normal': bgNormal,
+    'Poison': bgPoison,
+    'Psy': bgPsy,
+    'Roche': bgRoche,
+    'Acier': bgAcier,
+    'Eau': bgEau,
+};
+
 // Composant CutCard : simule une bordure avec clip-path
-function CutCard({ borderColor, bgGradient, cutSize = 18 }) {
+function CutCard({ borderColor, typeName, cutSize = 18 }) {
+    const bgImage = TYPE_BACKGROUNDS[typeName] || bgNormal;
     // Coins coupés : haut-gauche et bas-droit
     const outerClipPath = `polygon(
         0 0,
@@ -35,7 +100,10 @@ function CutCard({ borderColor, bgGradient, cutSize = 18 }) {
                 className="absolute inset-0 w-full h-full"
                 style={{
                     clipPath: innerClipPath,
-                    background: bgGradient,
+                    backgroundImage: `linear-gradient(to left, rgba(9,16,68,0.4), rgba(9,16,68,0.9)), url(${bgImage})`,
+                    backgroundSize: 'cover',
+                    backgroundPosition: 'center center',
+                    backgroundRepeat: 'no-repeat',
                 }}
             />
         </div>
@@ -44,20 +112,24 @@ function CutCard({ borderColor, bgGradient, cutSize = 18 }) {
 
 CutCard.propTypes = {
     borderColor: PropTypes.string.isRequired,
-    bgGradient: PropTypes.string.isRequired,
+    typeName: PropTypes.string.isRequired,
     cutSize: PropTypes.number,
 };
 
 export default function PokemonRow ({guess, pokemon, index}) {
     console.log(guess);
     console.log(index);
+
+    // Récupérer la couleur de bordure basée sur le type1
+    const borderColor = TYPE_COLORS[guess.type1.name_french] || '#2B31C3';
+
     return <div className='bloc-row relative h-31.5'>
         <div className='row-guess relative h-full'>
             {/* Couche 1 : fond avec coins coupés et bordure */}
             <div className="absolute inset-0 w-full h-full -scale-x-100">
                 <CutCard
-                    borderColor="#2B31C3"
-                    bgGradient="linear-gradient(to top right, #091044, #1B2088)"
+                    borderColor={borderColor}
+                    typeName={guess.type1.name_french}
                     cutSize={18}
                 />
             </div>

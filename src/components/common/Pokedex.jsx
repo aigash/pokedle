@@ -98,7 +98,7 @@ export default function Pokedex({ isModalOpen, onClose }) {
             ) : (
                 // Version desktop: modale centrée avec hover
                 <div
-                    className="max-w-[1400px] max-h-[85%] rounded-4xl bg-[#091044] py-6 px-11.5 border border-(--secondary-jaune) flex flex-col gap-6 relative overflow-hidden"
+                    className="max-w-[1400px] max-h-[85%] rounded-4xl bg-[#091044] py-6 px-11.5 border border-(--secondary-jaune) flex flex-col gap-6 relative"
                     onClick={(e) => e.stopPropagation()}
                 >
                     {/* Image de fond avec centre positionné sur le coin haut-gauche */}
@@ -146,20 +146,22 @@ export default function Pokedex({ isModalOpen, onClose }) {
                         </button>
                     </div>
 
-                    <div className="grid grid-cols-10 gap-4">
-                        {filteredPokemon.map((pokemon, index) => (
-                            <div key={index} className="relative p-4 rounded-2xl border border-(--border) flex flex-col items-center gap-1">
-                                <div className="flex flex-col items-center">
-                                    <span className="text-(--secondary-jaune) font-bold italic leading-[1.2]">#{String(pokemon.id).padStart(3, '0')}</span>
-                                    <p className="text-white font-bold italic">{pokemon.name_french}</p>
+                    <div className="overflow-y-auto flex-1 z-1">
+                        <div className="grid grid-cols-10 gap-4">
+                            {filteredPokemon.map((pokemon, index) => (
+                                <div key={index} className="relative p-4 rounded-2xl border border-(--border) flex flex-col items-center gap-1">
+                                    <div className="flex flex-col items-center">
+                                        <span className="text-(--secondary-jaune) font-bold italic leading-[1.2]">#{String(pokemon.id).padStart(3, '0')}</span>
+                                        <p className="text-white font-bold italic">{pokemon.name_french}</p>
+                                    </div>
+                                    <img
+                                        src={getImageUrl(pokemon.img)}
+                                        className=""
+                                        alt={pokemon.name_french}
+                                    />
                                 </div>
-                                <img
-                                    src={getImageUrl(pokemon.img)}
-                                    className=""
-                                    alt={pokemon.name_french}
-                                />
-                            </div>
-                        ))}
+                            ))}
+                        </div>
                     </div>
                 </div>
             )}

@@ -52,11 +52,11 @@
   background-attachment: fixed;
 }
 
-#classic {
+#classic, #desc {
   width:1460px;
 }
 
-.entete, #desc_pokedex, #guessesDesc, .entetePixels, #guessesPixels, #guessesPixels-container, #pixels_pokedex {
+.entete, #desc_pokedex, .entetePixels, #guessesPixels, #guessesPixels-container, #pixels_pokedex {
   position: relative;
   background: url('../img/backgrounds/motif-bg/forme-entete1.png') left 30px no-repeat,
               url('../img/backgrounds/motif-bg/forme-entete2.png') 77% center no-repeat,
@@ -76,7 +76,7 @@
   background-blend-mode: normal, normal, normal, overlay, normal; /* overlay pour points.png */
 }
 
-.entete::before, #desc_pokedex::before, #guessesDesc::before, .entetePixels::before, #guessesPixels::before, #guessesPixels-container::before, #pixels_pokedex::before {
+.entete::before, #desc_pokedex::before, .entetePixels::before, #guessesPixels::before, #guessesPixels-container::before, #pixels_pokedex::before {
   content: '';
   position: absolute;
   inset: 0;

@@ -8,7 +8,7 @@ import lockIcon from '../../assets/img/icones/lock.svg';
 import shinyIcon from '../../assets/img/icones/shiny.svg';
 import starsIcon from '../../assets/img/icones/stars.svg';
 
-export default function Indice({typeIndice, pokemon, nbEssais, nbRequis, numIndice}) {
+export default function Indice({typeIndice, pokemon, nbEssais, nbRequis, numIndice, onHintUsed}) {
     const [isUsed, setIsUsed] = useState(false);
     const [audioElement, setAudioElement] = useState(null);
     const [isPlaying, setIsPlaying] = useState(false);
@@ -31,6 +31,11 @@ export default function Indice({typeIndice, pokemon, nbEssais, nbRequis, numIndi
 
         // Marquer l'indice comme utilisé
         setIsUsed(true);
+
+        // Notifier le parent que l'indice a été utilisé
+        if (onHintUsed) {
+            onHintUsed(numIndice);
+        }
 
         // Si c'est un cri, créer l'élément audio
         if (typeIndice === 'Cri' && !audioElement) {
@@ -207,4 +212,5 @@ Indice.propTypes = {
     nbEssais: PropTypes.number.isRequired,
     nbRequis: PropTypes.number.isRequired,
     numIndice: PropTypes.number.isRequired,
+    onHintUsed: PropTypes.func,
 };

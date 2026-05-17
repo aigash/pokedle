@@ -1,5 +1,6 @@
 import { useEffect, useRef } from 'react';
 import PropTypes from 'prop-types';
+import { useScore } from '../../hooks/useScore';
 
 import InsecteIcon from '../../assets/img/icones/types/insecte.svg';
 import TenebreIcon from '../../assets/img/icones/types/tenebre.svg';
@@ -44,8 +45,39 @@ const typeIcons = {
     'Eau': EauIcon,
 };
 
-export default function EndAndReload({ pokemon, onReset, nbEssais, onClose }) {
+export default function EndAndReload({ pokemon, onReset, nbEssais, onClose, currentMode, onNextMode, timeInSeconds = 0, usedHints = [], pokedexUsed = false }) {
     const buttonRef = useRef(null);
+
+    // Calculer le score
+    const { finalScore, rank, formattedTime } = useScore({
+        nbEssais,
+        timeInSeconds,
+        usedHints,
+        pokedexUsed
+    });
+
+    // Définir l'ordre des modes de jeu
+    const gameModes = ['classic', 'description', 'pixels', 'types'];
+
+    // Fonction pour obtenir le mode suivant
+    const getNextMode = () => {
+        const currentIndex = gameModes.indexOf(currentMode);
+        const nextIndex = (currentIndex + 1) % gameModes.length;
+        return gameModes[nextIndex];
+    };
+
+    // Gestion du bouton MODE INFINI
+    const handleInfiniteMode = () => {
+        onReset();
+        onClose();
+    };
+
+    // Gestion du bouton PROCHAIN DÉFI
+    const handleNextChallenge = () => {
+        const nextMode = getNextMode();
+        onNextMode(nextMode);
+    };
+
     useEffect(() => {
         if (buttonRef.current) {
             buttonRef.current.focus(); // Mettre le focus sur le bouton
@@ -139,36 +171,49 @@ export default function EndAndReload({ pokemon, onReset, nbEssais, onClose }) {
                     <div className="flex-1 flex justify-center items-center">
                         <div>
                             <p className="text-(--border) font-medium">Tentative(s)</p>
-                            <p className="text-white font-semibold text-2xl italic">1</p>
+                            <p className="text-white font-semibold text-2xl italic">{nbEssais}</p>
                         </div>
                     </div>
                     <div className="w-px h-[40px] bg-(--border)"></div>
                     <div className="flex-1 flex justify-center items-center">
                         <div>
                             <p className="text-(--border) font-medium">Temps</p>
-                            <p className="text-white font-semibold text-2xl italic">1</p>
+                            <p className="text-white font-semibold text-2xl italic">{formattedTime}</p>
                         </div>
                     </div>
                     <div className="w-px h-[40px] bg-(--border)"></div>
                     <div className="flex-1 flex justify-center items-center">
                         <div>
                             <p className="text-(--border) font-medium">Score</p>
-                            <p className="text-white font-semibold text-2xl italic">1</p>
+                            <p className="text-white font-semibold text-2xl italic">{finalScore}</p>
+                        </div>
+                    </div>
+                    <div className="w-px h-[40px] bg-(--border)"></div>
+                    <div className="flex-1 flex justify-center items-center">
+                        <div>
+                            <p className="text-(--border) font-medium">Rang</p>
+                            <p className="text-(--secondary-jaune) font-semibold text-2xl italic">{rank}</p>
                         </div>
                     </div>
 
                     <span className="text-(--secondary-jaune) text-sm italic font-semibold px-3 bg-[#091044] absolute top-0 left-1/2 -translate-x-1/2 -translate-y-1/2">Ta performance</span>
                 </div>
 
-                <div className="w-[650px] mx-auto flex items-center gap-6">
-                    <button className="bg-white rounded-2xl text-(--main-color) px-6 py-3 flex-1 flex items-center justify-between cursor-pointer">
+                <div className="w-[650px] mx-auto flex items-center gap-6 z-1">
+                    <button
+                        onClick={handleInfiniteMode}
+                        className="bg-white rounded-2xl text-(--main-color) px-6 py-3 flex-1 flex items-center justify-between cursor-pointer hover:bg-gray-100 transition-colors"
+                    >
                         <div>
                             <p className="text-xl font-bold italic text-left">MODE INFINI</p>
                             <p className="text-sm text-left">Rejouer avec un autre Pokémon</p>
                         </div>
                         <p className="text-[34px] font-medium">∞</p>
                     </button>
-                    <button className="bg-(--secondary-jaune) rounded-2xl text-(--main-color) px-6 py-3 flex-1 flex items-center justify-between cursor-pointer">
+                    <button
+                        onClick={handleNextChallenge}
+                        className="bg-(--secondary-jaune) rounded-2xl text-(--main-color) px-6 py-3 flex-1 flex items-center justify-between cursor-pointer hover:opacity-90 transition-opacity"
+                    >
                         <div>
                             <p className="text-xl font-bold italic text-left">PROCHAIN DÉFI</p>
                             <p className="text-sm text-left">Mode de jeu suivant</p>
@@ -205,4 +250,9 @@ EndAndReload.propTypes = {
     onReset: PropTypes.func.isRequired,
     nbEssais: PropTypes.number.isRequired,
     onClose: PropTypes.func.isRequired,
+    currentMode: PropTypes.string.isRequired,
+    onNextMode: PropTypes.func.isRequired,
+    timeInSeconds: PropTypes.number,
+    usedHints: PropTypes.arrayOf(PropTypes.number),
+    pokedexUsed: PropTypes.bool,
 }
