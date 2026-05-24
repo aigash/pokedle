@@ -14,6 +14,8 @@ import Entete from '../components/common/Entete';
 import { usePixelsGame } from '../hooks/useGames/usePixelsGame';
 import ErrorBoundary from '../components/common/ErrorBoundary';
 
+import BallInclineeIcone from '../assets/img/icones/ball-incline.svg';
+
 function PixelsContent() {
     const navigate = useNavigate();
     const {
@@ -103,32 +105,45 @@ function PixelsContent() {
                     description="Devinez le Pokémon pixélisé, chaque tentative affiche un peu plus de pixels à l'écran."
                 />
 
-                <div className='flex justify-center flex-col items-center'>
-                    <div className='flex flex-col items-center'>
-                        <PixelifiedPokemon
-                            spriteOff={spriteOff}
-                            pixelSize={pixelSize}
-                        />
-                        <div className='flex justify-between mb-6 entetePixels gap-3 flex-wrap'>
-                            <PokemonSearchForm
-                                onSubmit={handleSubmit}
-                                suggestions={suggestions}
-                                onSuggestionClick={handleSubmit}
-                                inputRef={searchInputRef}
-                                disabled={isGameWon}
-                            />
-                            <div className='flex gap-3 flex-wrap'>
-                                <PokedexATH togglePokedexModal={togglePokedexModal} />
+                <div className='flex grow gap-6'>
+                    <div className='flex flex-col grow gap-6'>
+                        <div className='flex gap-6'>
+                            <div className="grow">
+                                <PokemonSearchForm
+                                    onSubmit={handleSubmit}
+                                    suggestions={suggestions}
+                                    onSuggestionClick={handleSubmit}
+                                    inputRef={searchInputRef}
+                                    disabled={isGameWon}
+                                />
                             </div>
+                            <PokedexATH togglePokedexModal={togglePokedexModal} />
+                        </div>
+
+                        <div>
+                            {guesses.length > 0 && (
+                                <div id='guessesPixels' className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-4 gap-4 justify-between">
+                                    {guesses.map((guess, index) => (
+                                        <GuessSticker key={`${guess.nameFr}-${index}`} guess={guess} pokemon={pokemon} index={index} totalGuesses={guesses.length} />
+                                    ))}
+                                </div>
+                            )}
                         </div>
                     </div>
-                    {guesses.length > 0 && (
-                        <div id='guessesPixels' className="grid grid-cols-4 gap-4">
-                            {guesses.map((guess, index) => (
-                                <GuessSticker key={`${guess.nameFr}-${index}`} guess={guess} pokemon={pokemon} index={index} totalGuesses={guesses.length} />
-                            ))}
+
+                    <div className="w-[376px]">
+                        <div id="header-pixels" className="flex gap-3 items-center px-8 py-4 rounded-tl-4xl">
+                            <img src={BallInclineeIcone} alt="Ball Inclinee" />
+                            <span className="text-white italic text-2xl font-bold">INDICES</span>
                         </div>
-                    )}
+
+                        <div className="py-1 bg-[linear-gradient(to_bottom,rgba(0,0,0,0.24),rgba(0,0,0,0))]">
+                            <PixelifiedPokemon
+                                spriteOff={spriteOff}
+                                pixelSize={pixelSize}
+                            />
+                        </div>
+                    </div>                    
                 </div>
             </div>
 

@@ -1,0 +1,8 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(python:*)",
+      "Bash(node download_gen4_sprites.js:*)"
+    ]
+  }
+}

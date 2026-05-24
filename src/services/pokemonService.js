@@ -52,14 +52,13 @@ export const formatPokemonData = (rawData, pokemons) => {
         }
     }
 
-    let habitat = '';
-    pokemons.habitats.forEach(val => {
-        if (speciesData.habitat.name === val.name_english) {
-            habitat = val.name_french;
-        }
-    });
-
     const pokemonInfo = pokemons.pokemon.find(p => p.id === pokeData.id);
+
+    let habitat = '';
+    if (pokemonInfo?.habitat) {
+        const habitatData = pokemons.habitats.find(h => h.name_english === pokemonInfo.habitat);
+        habitat = habitatData?.name_french || '';
+    }
 
     return {
         id: pokeData.id,

@@ -41,6 +41,7 @@
 #classic, #desc, #pixels {
   margin: 0 auto;
   text-align: center;
+  width:1460px;
 }
 
 #modesJeux, .containerClassic, .containerDesc, .containerPixels, #loading {
@@ -52,11 +53,7 @@
   background-attachment: fixed;
 }
 
-#classic, #desc {
-  width:1460px;
-}
-
-.entete, #desc_pokedex, .entetePixels, #guessesPixels, #guessesPixels-container, #pixels_pokedex {
+.entete, #desc_pokedex {
   position: relative;
   background: url('../img/backgrounds/motif-bg/forme-entete1.png') left 30px no-repeat,
               url('../img/backgrounds/motif-bg/forme-entete2.png') 77% center no-repeat,
@@ -76,7 +73,7 @@
   background-blend-mode: normal, normal, normal, overlay, normal; /* overlay pour points.png */
 }
 
-.entete::before, #desc_pokedex::before, .entetePixels::before, #guessesPixels::before, #guessesPixels-container::before, #pixels_pokedex::before {
+.entete::before, #desc_pokedex::before {
   content: '';
   position: absolute;
   inset: 0;
@@ -166,7 +163,7 @@ table tbody tr > td:nth-child(1) {
   gap:3em;
 }
 
-#header-indices {
+#header-indices, #header-pixels {
   background: url('../img/backgrounds/motif-bg/points2.png') 2% center no-repeat,
               linear-gradient(to right, #1B2088 0%, #091044 47%, rgba(9,16,68,0) 100%);
   background-blend-mode: overlay, normal;
@@ -313,4 +310,11 @@ table tbody tr > td:nth-child(1) {
 
 @media (min-width: 1024px) {
 
+}
+
+/* Pixelify canvas styles */
+.pixelify-wrapper canvas {
+  image-rendering: pixelated;
+  image-rendering: -moz-crisp-edges;
+  image-rendering: crisp-edges;
 }

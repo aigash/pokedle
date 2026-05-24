@@ -83,7 +83,7 @@ export default function App() {
           <GameMode img={classicIcon} titre='Classique' couleur='jaune' onclick={() => launchMode('classic')} />
           <GameMode img={descIcon} titre='Description' couleur='violet' onclick={() => launchMode('desc')} />
           <GameMode img={pixelsIcon} titre='Pixels' couleur='bleu' onclick={() => launchMode('pixels')} />
-          <GameMode img={typesIcon} titre='Types' couleur='orange'onclick={() => launchMode('types')} />
+          {/* <GameMode img={typesIcon} titre='Types' couleur='orange' onclick={() => launchMode('types')} /> */}
         </div>
       </div>
     </div>
