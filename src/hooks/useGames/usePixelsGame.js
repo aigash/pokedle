@@ -3,7 +3,7 @@ import { useBaseGame } from './useBaseGame';
 
 export function usePixelsGame(pokemons) {
     const baseGame = useBaseGame(pokemons);
-  
+
     const [pixelSize, setPixelSize] = useState(110);
     
     const spriteOff = useMemo(() => {

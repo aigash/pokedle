@@ -80,7 +80,8 @@ export default function Indice({typeIndice, pokemon, nbEssais, nbRequis, numIndi
     const getIndiceContent = () => {
         if (typeIndice === 'Génération') {
             const genText = pokemon.gen == '1' ? '1 - Rouge / Bleu'
-                : (pokemon.gen == '2' ? '2 - Or / Argent' : '3 - Rubis / Saphir');
+                : (pokemon.gen == '2' ? '2 - Or / Argent'
+                : (pokemon.gen == '3' ? '3 - Rubis / Saphir' : '4 - Diamant / Perle'));
             return <div><p className="font-semibold text-lg text-white text-left">{genText}</p></div>;
         }
 

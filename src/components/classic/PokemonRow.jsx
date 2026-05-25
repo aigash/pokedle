@@ -1,3 +1,4 @@
+import { memo } from 'react';
 import PropTypes from 'prop-types';
 
 // Import des images de fond pour chaque type
@@ -116,10 +117,8 @@ CutCard.propTypes = {
     cutSize: PropTypes.number,
 };
 
-export default function PokemonRow ({guess, pokemon, index}) {
+const PokemonRow = memo(function PokemonRow({guess, pokemon, index}) {
     console.log(guess);
-    console.log(index);
-
     // Récupérer la couleur de bordure basée sur le type1
     const borderColor = TYPE_COLORS[guess.type1.name_french] || '#2B31C3';
 
@@ -241,7 +240,9 @@ export default function PokemonRow ({guess, pokemon, index}) {
         </div>
 
     </div>
-}
+});
+
+export default PokemonRow;
 
 PokemonRow.propTypes = {
     guess: PropTypes.shape({
@@ -250,9 +251,10 @@ PokemonRow.propTypes = {
         type1: PropTypes.shape({
             name_french: PropTypes.string.isRequired,
         }).isRequired,
-        type2: PropTypes.shape({
-            name_french: PropTypes.string.isRequired,
-        }),
+        type2: PropTypes.oneOfType([
+            PropTypes.shape({ name_french: PropTypes.string.isRequired }),
+            PropTypes.string,
+        ]),
         couleur: PropTypes.arrayOf(PropTypes.string).isRequired,
         habitat: PropTypes.string.isRequired,
         stadeEvo: PropTypes.number.isRequired,
@@ -263,9 +265,10 @@ PokemonRow.propTypes = {
         type1: PropTypes.shape({
             name_french: PropTypes.string.isRequired,
         }).isRequired,
-        type2: PropTypes.shape({
-            name_french: PropTypes.string.isRequired,
-        }),
+        type2: PropTypes.oneOfType([
+            PropTypes.shape({ name_french: PropTypes.string.isRequired }),
+            PropTypes.string,
+        ]),
         couleur: PropTypes.arrayOf(PropTypes.string).isRequired,
         habitat: PropTypes.string.isRequired,
         stadeEvo: PropTypes.number.isRequired,

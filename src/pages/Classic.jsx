@@ -104,8 +104,8 @@ function ClassicContent() {
     const { isModalOpen, isGameWon, showEndModal } = gameState;
 
     return (
-        <div className='containerClassic flex flex-col min-h-screen py-6'>
-            <div className='flex flex-col gap-6 relative' id='classic'>
+        <div className='containerClassic flex flex-col h-screen py-6'>
+            <div className='flex flex-col gap-6 relative h-full' id='classic'>
 
                 <Entete
                     nbEssais={guesses.length}
@@ -117,11 +117,11 @@ function ClassicContent() {
                     description="Devine le Pokémon. Chaque tentative révèle des informations sur ses types, son habitat et ses caractéristiques"
                 />
 
-                <div className="flex grow gap-6">
-                    <div className="flex flex-col grow gap-6">
+                <div className="flex grow gap-6 min-h-0">
+                    <div className="flex flex-col grow gap-6 min-h-0">
                         <div className='flex gap-6'>
                             <div className='grow'>
-                                <PokemonSearchForm 
+                                <PokemonSearchForm
                                     onSubmit={handleSubmit}
                                     suggestions={suggestions}
                                     onSuggestionClick={handleSubmit}
@@ -131,7 +131,7 @@ function ClassicContent() {
                             </div>
                             <PokedexATH togglePokedexModal={togglePokedexModal} />
                         </div>
-                        <div>
+                        <div className="grow overflow-y-auto min-h-0">
                             {guesses.length > 0 && <PokemonTable guesses={guesses} pokemon={mysteryPokemon} nbEssais={guesses.length}/>}
                         </div>
                     </div>

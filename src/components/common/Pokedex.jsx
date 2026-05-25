@@ -35,6 +35,8 @@ export default function Pokedex({ isModalOpen, onClose }) {
                 return pokemonData.pokemon.filter(p => p.id >= 152 && p.id <= 251);
             case 'gen3':
                 return pokemonData.pokemon.filter(p => p.id >= 252 && p.id <= 386);
+            case 'gen4':
+                return pokemonData.pokemon.filter(p => p.id >= 387 && p.id <= 493);
             default:
                 return pokemonData.pokemon;
         }
@@ -98,7 +100,7 @@ export default function Pokedex({ isModalOpen, onClose }) {
             ) : (
                 // Version desktop: modale centrée avec hover
                 <div
-                    className="max-w-[1400px] max-h-[85%] rounded-4xl bg-[#091044] py-6 px-11.5 border border-(--secondary-jaune) flex flex-col gap-6 relative"
+                    className="max-w-[1400px] max-h-[85%] rounded-4xl bg-[#091044] py-6 px-11.5 border border-(--secondary-jaune) flex flex-col gap-6 relative overflow-hidden"
                     onClick={(e) => e.stopPropagation()}
                 >
                     {/* Image de fond avec centre positionné sur le coin haut-gauche */}
@@ -143,6 +145,12 @@ export default function Pokedex({ isModalOpen, onClose }) {
                             className={`rounded-2xl border border-(--secondary-jaune) py-3 px-6 font-bold italic cursor-pointer ${selectedGen === 'gen3' ? 'bg-(--secondary-jaune) text-(--main-color)' : 'text-(--secondary-jaune)'}`}
                         >
                             GÉN. 3
+                        </button>
+                        <button
+                            onClick={() => setSelectedGen('gen4')}
+                            className={`rounded-2xl border border-(--secondary-jaune) py-3 px-6 font-bold italic cursor-pointer ${selectedGen === 'gen4' ? 'bg-(--secondary-jaune) text-(--main-color)' : 'text-(--secondary-jaune)'}`}
+                        >
+                            GÉN. 4
                         </button>
                     </div>
 

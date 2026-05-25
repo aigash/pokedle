@@ -3,12 +3,11 @@ import PropTypes from 'prop-types';
 export default function EndAndReloadMini({ pokemon, nbEssais, onReset }) {
     return (
         <div className="fixed bottom-4 left-0 right-0 flex justify-center z-100">
-            <div className="bg-white p-3 rounded-xl shadow-lg flex items-center">
-                <div className="mr-3">
-                    <p className="font-bold text-black">Bien joué ! Tu as trouvé {pokemon.nameFr} en {nbEssais} essais.</p>
-                </div>
+            <div className="bg-(--sombre)/60 backdrop-blur-xs p-4 rounded-full shadow-lg flex gap-6 items-center">
+                <p className="text-white font-medium">Bien joué ! Tu as trouvé {pokemon.nameFr} en {nbEssais} essais.</p>
+
                 <button
-                    className="bg-red-500 text-white px-4 py-2 rounded-sm hover:bg-red-600 focus:outline-hidden"
+                    className="bg-(--secondary-jaune) text-(--text-violet-color) font-semibold italic px-4 py-2 rounded-full focus:outline-hidden"
                     onClick={onReset}
                 >
                     Rejouer

@@ -4310,7 +4310,7 @@
                 "Marron"
             ],
             "img": "387_Tortipouss.png",
-            "habitat": "grassland"
+            "habitat": "forest"
         },
         {
             "id": 388,
@@ -4321,7 +4321,7 @@
                 "Marron"
             ],
             "img": "388_Boskara.png",
-            "habitat": "grassland"
+            "habitat": "forest"
         },
         {
             "id": 389,
@@ -4332,7 +4332,7 @@
                 "Marron"
             ],
             "img": "389_Torterra.png",
-            "habitat": "grassland"
+            "habitat": "forest"
         },
         {
             "id": 390,
@@ -4343,7 +4343,7 @@
                 "Crème"
             ],
             "img": "390_Ouisticram.png",
-            "habitat": "grassland"
+            "habitat": "mountain"
         },
         {
             "id": 391,
@@ -4354,7 +4354,7 @@
                 "Blanc"
             ],
             "img": "391_Chimpenfeu.png",
-            "habitat": "grassland"
+            "habitat": "mountain"
         },
         {
             "id": 392,
@@ -4365,7 +4365,7 @@
                 "Blanc"
             ],
             "img": "392_Simiabraz.png",
-            "habitat": "grassland"
+            "habitat": "mountain"
         },
         {
             "id": 393,
@@ -4376,7 +4376,7 @@
                 "Blanc"
             ],
             "img": "393_Tiplouf.png",
-            "habitat": "grassland"
+            "habitat": "waters-edge"
         },
         {
             "id": 394,
@@ -4387,7 +4387,7 @@
                 "Blanc"
             ],
             "img": "394_Prinplouf.png",
-            "habitat": "grassland"
+            "habitat": "sea"
         },
         {
             "id": 395,
@@ -4398,7 +4398,7 @@
                 "Jaune"
             ],
             "img": "395_Pingoléon.png",
-            "habitat": "grassland"
+            "habitat": "sea"
         },
         {
             "id": 396,
@@ -4420,7 +4420,7 @@
                 "Blanc"
             ],
             "img": "397_Étourvol.png",
-            "habitat": "grassland"
+            "habitat": "forest"
         },
         {
             "id": 398,
@@ -4442,7 +4442,7 @@
                 "Crème"
             ],
             "img": "399_Keunotor.png",
-            "habitat": "grassland"
+            "habitat": "waters-edge"
         },
         {
             "id": 400,
@@ -4453,7 +4453,7 @@
                 "Crème"
             ],
             "img": "400_Castorno.png",
-            "habitat": "grassland"
+            "habitat": "waters-edge"
         },
         {
             "id": 401,
@@ -4464,7 +4464,7 @@
                 "Noir"
             ],
             "img": "401_Crikzik.png",
-            "habitat": "grassland"
+            "habitat": "forest"
         },
         {
             "id": 402,
@@ -4475,7 +4475,7 @@
                 "Noir"
             ],
             "img": "402_Mélokrik.png",
-            "habitat": "grassland"
+            "habitat": "forest"
         },
         {
             "id": 403,
@@ -4519,7 +4519,7 @@
                 "Rose"
             ],
             "img": "406_Rozbouton.png",
-            "habitat": "grassland"
+            "habitat": "waters-edge"
         },
         {
             "id": 407,
@@ -4541,7 +4541,7 @@
                 "Gris"
             ],
             "img": "408_Kranidos.png",
-            "habitat": "grassland"
+            "habitat": "forest"
         },
         {
             "id": 409,
@@ -4552,7 +4552,7 @@
                 "Gris"
             ],
             "img": "409_Charkos.png",
-            "habitat": "grassland"
+            "habitat": "rough-terrain"
         },
         {
             "id": 410,
@@ -4563,7 +4563,7 @@
                 "Jaune"
             ],
             "img": "410_Dinoclier.png",
-            "habitat": "grassland"
+            "habitat": "rough-terrain"
         },
         {
             "id": 411,
@@ -4574,7 +4574,7 @@
                 "Jaune"
             ],
             "img": "411_Bastiodon.png",
-            "habitat": "grassland"
+            "habitat": "rough-terrain"
         },
         {
             "id": 412,
@@ -4585,7 +4585,7 @@
                 "Marron"
             ],
             "img": "412_Cheniti.png",
-            "habitat": "grassland"
+            "habitat": "forest"
         },
         {
             "id": 413,
@@ -4596,7 +4596,7 @@
                 "Marron"
             ],
             "img": "413_Cheniselle.png",
-            "habitat": "grassland"
+            "habitat": "forest"
         },
         {
             "id": 414,
@@ -4607,7 +4607,7 @@
                 "Jaune"
             ],
             "img": "414_Papilord.png",
-            "habitat": "grassland"
+            "habitat": "forest"
         },
         {
             "id": 415,
@@ -4618,7 +4618,7 @@
                 "Orange"
             ],
             "img": "415_Apitrini.png",
-            "habitat": "grassland"
+            "habitat": "forest"
         },
         {
             "id": 416,
@@ -4629,7 +4629,7 @@
                 "Noir"
             ],
             "img": "416_Apireine.png",
-            "habitat": "grassland"
+            "habitat": "forest"
         },
         {
             "id": 417,
@@ -4640,7 +4640,7 @@
                 "Bleu"
             ],
             "img": "417_Pachirisu.png",
-            "habitat": "grassland"
+            "habitat": "forest"
         },
         {
             "id": 418,
@@ -4651,7 +4651,7 @@
                 "Crème"
             ],
             "img": "418_Mustébouée.png",
-            "habitat": "grassland"
+            "habitat": "waters-edge"
         },
         {
             "id": 419,
@@ -4662,7 +4662,7 @@
                 "Crème"
             ],
             "img": "419_Mustéflott.png",
-            "habitat": "grassland"
+            "habitat": "waters-edge"
         },
         {
             "id": 420,
@@ -4673,7 +4673,7 @@
                 "Vert"
             ],
             "img": "420_Ceribou.png",
-            "habitat": "grassland"
+            "habitat": "forest"
         },
         {
             "id": 421,
@@ -4684,7 +4684,7 @@
                 "Vert"
             ],
             "img": "421_Ceriflor.png",
-            "habitat": "grassland"
+            "habitat": "forest"
         },
         {
             "id": 422,
@@ -4695,7 +4695,7 @@
                 "Bleu"
             ],
             "img": "422_Sancoki.png",
-            "habitat": "grassland"
+            "habitat": "waters-edge"
         },
         {
             "id": 423,
@@ -4706,7 +4706,7 @@
                 "Bleu"
             ],
             "img": "423_Tritosor.png",
-            "habitat": "grassland"
+            "habitat": "waters-edge"
         },
         {
             "id": 424,
@@ -4717,7 +4717,7 @@
                 "Crème"
             ],
             "img": "424_Capidextre.png",
-            "habitat": "grassland"
+            "habitat": "forest"
         },
         {
             "id": 425,
@@ -4728,7 +4728,7 @@
                 "Jaune"
             ],
             "img": "425_Baudrive.png",
-            "habitat": "grassland"
+            "habitat": "urban"
         },
         {
             "id": 426,
@@ -4739,7 +4739,7 @@
                 "Jaune"
             ],
             "img": "426_Grodrive.png",
-            "habitat": "grassland"
+            "habitat": "urban"
         },
         {
             "id": 427,
@@ -4750,7 +4750,7 @@
                 "Crème"
             ],
             "img": "427_Laporeille.png",
-            "habitat": "grassland"
+            "habitat": "forest"
         },
         {
             "id": 428,
@@ -4761,7 +4761,7 @@
                 "Crème"
             ],
             "img": "428_Lockpin.png",
-            "habitat": "grassland"
+            "habitat": "urban"
         },
         {
             "id": 429,
@@ -4772,7 +4772,7 @@
                 "Jaune"
             ],
             "img": "429_Magirêve.png",
-            "habitat": "grassland"
+            "habitat": "urban"
         },
         {
             "id": 430,
@@ -4783,7 +4783,7 @@
                 "Blanc"
             ],
             "img": "430_Corboss.png",
-            "habitat": "grassland"
+            "habitat": "urban"
         },
         {
             "id": 431,
@@ -4794,7 +4794,7 @@
                 "Blanc"
             ],
             "img": "431_Chaglam.png",
-            "habitat": "grassland"
+            "habitat": "urban"
         },
         {
             "id": 432,
@@ -4805,7 +4805,7 @@
                 "Blanc"
             ],
             "img": "432_Chaffreux.png",
-            "habitat": "grassland"
+            "habitat": "urban"
         },
         {
             "id": 433,
@@ -4816,7 +4816,7 @@
                 "Rouge"
             ],
             "img": "433_Korillon.png",
-            "habitat": "grassland"
+            "habitat": "mountain"
         },
         {
             "id": 434,
@@ -4827,7 +4827,7 @@
                 "Blanc"
             ],
             "img": "434_Moufouette.png",
-            "habitat": "grassland"
+            "habitat": "urban"
         },
         {
             "id": 435,
@@ -4838,7 +4838,7 @@
                 "Blanc"
             ],
             "img": "435_Moufflair.png",
-            "habitat": "grassland"
+            "habitat": "urban"
         },
         {
             "id": 436,
@@ -4849,7 +4849,7 @@
                 "Vert"
             ],
             "img": "436_Archéomire.png",
-            "habitat": "grassland"
+            "habitat": "cave"
         },
         {
             "id": 437,
@@ -4860,7 +4860,7 @@
                 "Vert"
             ],
             "img": "437_Archéodong.png",
-            "habitat": "grassland"
+            "habitat": "cave"
         },
         {
             "id": 438,
@@ -4871,7 +4871,7 @@
                 "Vert"
             ],
             "img": "438_Manzaï.png",
-            "habitat": "grassland"
+            "habitat": "rough-terrain"
         },
         {
             "id": 439,
@@ -4882,7 +4882,7 @@
                 "Bleu"
             ],
             "img": "439_Mime Jr..png",
-            "habitat": "grassland"
+            "habitat": "mountain"
         },
         {
             "id": 440,
@@ -4893,7 +4893,7 @@
                 "Blanc"
             ],
             "img": "440_Ptiravi.png",
-            "habitat": "grassland"
+            "habitat": "urban"
         },
         {
             "id": 441,
@@ -4904,7 +4904,7 @@
                 "Jaune"
             ],
             "img": "441_Pijako.png",
-            "habitat": "grassland"
+            "habitat": "forest"
         },
         {
             "id": 442,
@@ -4915,7 +4915,7 @@
                 "Vert"
             ],
             "img": "442_Spiritomb.png",
-            "habitat": "grassland"
+            "habitat": "rare"
         },
         {
             "id": 443,
@@ -4926,7 +4926,7 @@
                 "Rouge"
             ],
             "img": "443_Griknot.png",
-            "habitat": "grassland"
+            "habitat": "cave"
         },
         {
             "id": 444,
@@ -4937,7 +4937,7 @@
                 "Rouge"
             ],
             "img": "444_Carmache.png",
-            "habitat": "grassland"
+            "habitat": "cave"
         },
         {
             "id": 445,
@@ -4948,7 +4948,7 @@
                 "Rouge"
             ],
             "img": "445_Carchacrok.png",
-            "habitat": "grassland"
+            "habitat": "mountain"
         },
         {
             "id": 446,
@@ -4959,7 +4959,7 @@
                 "Crème"
             ],
             "img": "446_Goinfrex.png",
-            "habitat": "grassland"
+            "habitat": "forest"
         },
         {
             "id": 447,
@@ -4970,7 +4970,7 @@
                 "Noir"
             ],
             "img": "447_Riolu.png",
-            "habitat": "grassland"
+            "habitat": "mountain"
         },
         {
             "id": 448,
@@ -4981,7 +4981,7 @@
                 "Noir"
             ],
             "img": "448_Lucario.png",
-            "habitat": "grassland"
+            "habitat": "mountain"
         },
         {
             "id": 449,
@@ -4992,7 +4992,7 @@
                 "Jaune"
             ],
             "img": "449_Hippopotas.png",
-            "habitat": "grassland"
+            "habitat": "rough-terrain"
         },
         {
             "id": 450,
@@ -5003,7 +5003,7 @@
                 "Gris"
             ],
             "img": "450_Hippodocus.png",
-            "habitat": "grassland"
+            "habitat": "rough-terrain"
         },
         {
             "id": 451,
@@ -5014,7 +5014,7 @@
                 "Blanc"
             ],
             "img": "451_Rapion.png",
-            "habitat": "grassland"
+            "habitat": "rough-terrain"
         },
         {
             "id": 452,
@@ -5025,7 +5025,7 @@
                 "Noir"
             ],
             "img": "452_Drascore.png",
-            "habitat": "grassland"
+            "habitat": "rough-terrain"
         },
         {
             "id": 453,
@@ -5036,7 +5036,7 @@
                 "Orange"
             ],
             "img": "453_Cradopaud.png",
-            "habitat": "grassland"
+            "habitat": "waters-edge"
         },
         {
             "id": 454,
@@ -5047,7 +5047,7 @@
                 "Orange"
             ],
             "img": "454_Coatox.png",
-            "habitat": "grassland"
+            "habitat": "waters-edge"
         },
         {
             "id": 455,
@@ -5058,7 +5058,7 @@
                 "Rouge"
             ],
             "img": "455_Vortente.png",
-            "habitat": "grassland"
+            "habitat": "waters-edge"
         },
         {
             "id": 456,
@@ -5069,7 +5069,7 @@
                 "Rose"
             ],
             "img": "456_Écayon.png",
-            "habitat": "grassland"
+            "habitat": "sea"
         },
         {
             "id": 457,
@@ -5080,7 +5080,7 @@
                 "Rose"
             ],
             "img": "457_Luminéon.png",
-            "habitat": "grassland"
+            "habitat": "sea"
         },
         {
             "id": 458,
@@ -5091,7 +5091,7 @@
                 "Blanc"
             ],
             "img": "458_Babimanta.png",
-            "habitat": "grassland"
+            "habitat": "sea"
         },
         {
             "id": 459,
@@ -5102,7 +5102,7 @@
                 "Vert"
             ],
             "img": "459_Blizzi.png",
-            "habitat": "grassland"
+            "habitat": "mountain"
         },
         {
             "id": 460,
@@ -5113,7 +5113,7 @@
                 "Vert"
             ],
             "img": "460_Blizzaroi.png",
-            "habitat": "grassland"
+            "habitat": "mountain"
         },
         {
             "id": 461,
@@ -5124,7 +5124,7 @@
                 "Rouge"
             ],
             "img": "461_Dimoret.png",
-            "habitat": "grassland"
+            "habitat": "mountain"
         },
         {
             "id": 462,
@@ -5135,7 +5135,7 @@
                 "Bleu"
             ],
             "img": "462_Magnézone.png",
-            "habitat": "grassland"
+            "habitat": "mountain"
         },
         {
             "id": 463,
@@ -5157,7 +5157,7 @@
                 "Orange"
             ],
             "img": "464_Rhinastoc.png",
-            "habitat": "grassland"
+            "habitat": "rough-terrain"
         },
         {
             "id": 465,
@@ -5179,7 +5179,7 @@
                 "Noir"
             ],
             "img": "466_Élekable.png",
-            "habitat": "grassland"
+            "habitat": "mountain"
         },
         {
             "id": 467,
@@ -5190,7 +5190,7 @@
                 "Jaune"
             ],
             "img": "467_Maganon.png",
-            "habitat": "grassland"
+            "habitat": "mountain"
         },
         {
             "id": 468,
@@ -5201,7 +5201,7 @@
                 "Bleu"
             ],
             "img": "468_Togekiss.png",
-            "habitat": "grassland"
+            "habitat": "rare"
         },
         {
             "id": 469,
@@ -5212,7 +5212,7 @@
                 "Rouge"
             ],
             "img": "469_Yanmega.png",
-            "habitat": "grassland"
+            "habitat": "forest"
         },
         {
             "id": 470,
@@ -5223,7 +5223,7 @@
                 "Vert"
             ],
             "img": "470_Phyllali.png",
-            "habitat": "grassland"
+            "habitat": "forest"
         },
         {
             "id": 471,
@@ -5234,7 +5234,7 @@
                 "Blanc"
             ],
             "img": "471_Givrali.png",
-            "habitat": "grassland"
+            "habitat": "mountain"
         },
         {
             "id": 472,
@@ -5245,7 +5245,7 @@
                 "Bleu"
             ],
             "img": "472_Scorvol.png",
-            "habitat": "grassland"
+            "habitat": "rough-terrain"
         },
         {
             "id": 473,
@@ -5256,7 +5256,7 @@
                 "Blanc"
             ],
             "img": "473_Mammochon.png",
-            "habitat": "grassland"
+            "habitat": "mountain"
         },
         {
             "id": 474,
@@ -5267,7 +5267,7 @@
                 "Bleu"
             ],
             "img": "474_Porygon-Z.png",
-            "habitat": "grassland"
+            "habitat": "urban"
         },
         {
             "id": 475,
@@ -5278,7 +5278,7 @@
                 "Vert"
             ],
             "img": "475_Gallame.png",
-            "habitat": "grassland"
+            "habitat": "mountain"
         },
         {
             "id": 476,
@@ -5289,7 +5289,7 @@
                 "Rouge"
             ],
             "img": "476_Tarinorme.png",
-            "habitat": "grassland"
+            "habitat": "cave"
         },
         {
             "id": 477,
@@ -5300,7 +5300,7 @@
                 "Jaune"
             ],
             "img": "477_Noctunoir.png",
-            "habitat": "grassland"
+            "habitat": "rare"
         },
         {
             "id": 478,
@@ -5311,7 +5311,7 @@
                 "Rouge"
             ],
             "img": "478_Momartik.png",
-            "habitat": "grassland"
+            "habitat": "mountain"
         },
         {
             "id": 479,
@@ -5322,7 +5322,7 @@
                 "Bleu"
             ],
             "img": "479_Motisma.png",
-            "habitat": "grassland"
+            "habitat": "urban"
         },
         {
             "id": 480,
@@ -5333,7 +5333,7 @@
                 "Gris"
             ],
             "img": "480_Créhelf.png",
-            "habitat": "grassland"
+            "habitat": "cave"
         },
         {
             "id": 481,
@@ -5344,7 +5344,7 @@
                 "Gris"
             ],
             "img": "481_Créfollet.png",
-            "habitat": "grassland"
+            "habitat": "waters-edge"
         },
         {
             "id": 482,
@@ -5355,7 +5355,7 @@
                 "Gris"
             ],
             "img": "482_Créfadet.png",
-            "habitat": "grassland"
+            "habitat": "waters-edge"
         },
         {
             "id": 483,
@@ -5366,7 +5366,7 @@
                 "Gris"
             ],
             "img": "483_Dialga.png",
-            "habitat": "grassland"
+            "habitat": "rare"
         },
         {
             "id": 484,
@@ -5377,7 +5377,7 @@
                 "Blanc"
             ],
             "img": "484_Palkia.png",
-            "habitat": "grassland"
+            "habitat": "rare"
         },
         {
             "id": 485,
@@ -5388,7 +5388,7 @@
                 "Orange"
             ],
             "img": "485_Heatran.png",
-            "habitat": "grassland"
+            "habitat": "cave"
         },
         {
             "id": 486,
@@ -5399,7 +5399,7 @@
                 "Jaune"
             ],
             "img": "486_Regigigas.png",
-            "habitat": "grassland"
+            "habitat": "cave"
         },
         {
             "id": 487,
@@ -5410,7 +5410,7 @@
                 "Jaune"
             ],
             "img": "487_Giratina.png",
-            "habitat": "grassland"
+            "habitat": "rare"
         },
         {
             "id": 488,
@@ -5421,7 +5421,7 @@
                 "Jaune"
             ],
             "img": "488_Cresselia.png",
-            "habitat": "grassland"
+            "habitat": "rare"
         },
         {
             "id": 489,
@@ -5432,7 +5432,7 @@
                 "Blanc"
             ],
             "img": "489_Phione.png",
-            "habitat": "grassland"
+            "habitat": "sea"
         },
         {
             "id": 490,
@@ -5442,7 +5442,7 @@
                 "Bleu"
             ],
             "img": "490_Manaphy.png",
-            "habitat": "grassland"
+            "habitat": "sea"
         },
         {
             "id": 491,
@@ -5453,7 +5453,7 @@
                 "Blanc"
             ],
             "img": "491_Darkrai.png",
-            "habitat": "grassland"
+            "habitat": "rare"
         },
         {
             "id": 492,
@@ -5475,7 +5475,7 @@
                 "Jaune"
             ],
             "img": "493_Arceus.png",
-            "habitat": "grassland"
+            "habitat": "rare"
         }
     ]
 }

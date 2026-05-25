@@ -9,7 +9,7 @@ function PokemonTableComponent({ guesses, pokemon }) {
         <div className='w-full overflow-x-auto overflow-y-visible flex flex-col gap-10 py-4'>
             {guesses.map((guess, index) => (
                 <PokemonRow
-                    key={`${guess.nameFr}-${index}`}
+                    key={guess.id}
                     guess={guess}
                     pokemon={pokemon}
                     index={guesses.length - index}

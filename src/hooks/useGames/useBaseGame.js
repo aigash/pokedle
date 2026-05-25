@@ -5,7 +5,7 @@ import { getRandomPokemonId } from '../../services/pokemonService';
 
 export function useBaseGame(pokemons) {
   // Common state and logic for all game modes
-  const randomId = useMemo(() => getRandomPokemonId(1, 386), []);
+  const randomId = useMemo(() => getRandomPokemonId(1, 493), []);
   const { pokemonData: pokemon, isLoading, error } = usePokemonData(randomId, pokemons);
   const { guesses, suggestions, pokemonSearch, handleGuess, resetGame } = usePokemonGame(pokemons);
 
